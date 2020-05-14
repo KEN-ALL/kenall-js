@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -d"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/opencollector/kenall-js/issues"
   },
-  "homepage": "https://github.com/opencollector/kenall-js#readme"
+  "homepage": "https://github.com/opencollector/kenall-js#readme",
+  "devDependencies": {
+    "typescript": "^3.9.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
 }
