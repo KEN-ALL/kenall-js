@@ -1,11 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 import { validate } from 'superstruct-ts-transformer';
 import { StructError } from 'superstruct';
-
-interface Config {
-  readonly apibase?: string;
-  readonly timeout?: number;
-}
+import { Config } from '../config';
 
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
