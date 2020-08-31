@@ -1,23 +1,39 @@
 import axios, { AxiosInstance } from 'axios';
-
-// interface FieldArgs {
-//   zip?: string
-//   pref?: string
-// }
+import { validate } from 'superstruct-ts-transformer';
+import { StructError } from 'superstruct';
 
 interface Config {
-  apibase?: string
-  timeout?: number
+  readonly apibase?: string;
+  readonly timeout?: number;
 }
 
-export class KEN_ALL {
+const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
-  private axios: AxiosInstance | null = null;
+export type Address = {
+  postalcode: string;
+  prefecture: string;
+  city: string;
+  town: string;
+  prefecture_kana: string;
+  city_kana: string;
+  town_kana: string;
+  town_partial: boolean;
+  town_koazabanchi: boolean;
+  town_multi: boolean;
+  town_chome: boolean;
+};
+
+export class KENALLV1 {
+  private readonly axios: AxiosInstance;
+  readonly apibase: string;
+  readonly timeout: number;
 
   constructor(
     readonly apikey: string,
-    readonly config: Config = {}
+    config: Config = {},
   ) {
+    this.apibase = config.apibase || DEFAULT_APIBASE_V1;
+    this.timeout = config.timeout || 1000;
     this.axios = axios.create({
       baseURL: this.apibase,
       timeout: this.timeout,
@@ -25,26 +41,29 @@ export class KEN_ALL {
     });
   }
 
-  get apibase(): string {
-      return this.config.apibase || 'https://kenall.jp';
+  async request(endpoint: string, params = {}): Promise<object> {
+    const r = await this.axios.get(endpoint, {params: params});
+    return r.data;
   }
 
-  get timeout(): number {
-    return this.config.timeout || 1000;
-  }
-
-  async request(endpoint: string, params = {}) {
+  async get(postal_code: string, version?: string): Promise<Address> {
     try {
-      const r = await this.axios!.get(`${this.apibase}/api${endpoint}`, {
-        params: params
-      });
-      return r.data;
+      return validate<Address>(
+        await this.request(
+          `/postalcode/${postal_code}`,
+          {
+            version: version,
+          }
+        )
+       );
     } catch (e) {
-      console.error(e);
+      if (e instanceof StructError) {
+        throw new Error(`invalid response payload: ${e.path} must be ${e.type}`);
+      } else {
+        throw e;
+      }
     }
   }
-
-  get(postal_code: string) {
-    return this.request(`/postalcode/${postal_code}`)
-  }
 }
+
+export const KENALL = KENALLV1;
