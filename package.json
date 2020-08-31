@@ -5,7 +5,9 @@
   "main": "built/kenall.js",
   "types": "built/kenall.d.ts",
   "scripts": {
-    "build": "tsc -d"
+    "build": "ttsc -d",
+    "bundle": "gulp",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,15 +19,33 @@
     "url": "https://github.com/opencollector/kenall-js/issues"
   },
   "homepage": "https://github.com/opencollector/kenall-js#readme",
-  "peerDependencies": {
-    "typescript": "^3.9.2"
-  },
   "devDependencies": {
-    "jest": "^26.4",
-    "ts-jest": "^26.3.0",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@rollup/plugin-babel": "^5.2.0",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-replace": "^2.3.3",
+    "@rollup/plugin-typescript": "^5.0.2",
+    "@types/gulp": "^4.0.6",
+    "@types/gulp-minify": "^3.1.0",
+    "@types/gulp-sourcemaps": "0.0.32",
+    "@types/gulp-terser": "^1.2.1",
     "@types/jest": "^26.0.10",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
+    "gulp": "^4.0.2",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^1.4.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "jest": "^26.4",
+    "rollup": "^2.26.8",
     "superstruct-ts-transformer": "^0.2.2",
-    "ttypescript": "^1.5.11"
+    "ts-jest": "^26.3.0",
+    "ts-node": "^8.0.2",
+    "ttypescript": "^1.5.11",
+    "typescript": "^3.5.2"
   },
   "dependencies": {
     "axios": "^0.20.0"
