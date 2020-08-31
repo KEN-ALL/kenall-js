@@ -1,4 +1,4 @@
-interface Postalcode {
+export interface Address {
   postalcode: string;
   prefecture: string;
   city: string;
@@ -6,13 +6,13 @@ interface Postalcode {
   prefecture_kana: string;
   city_kana: string;
   town_kana: string;
-  town_partial: number;
-  town_koazabanchi: number;
-  town_multi: number;
-  town_chome: number;
+  town_partial: boolean;
+  town_koazabanchi: boolean;
+  town_multi: boolean;
+  town_chome: boolean;
 }
 
-interface PostalcodeResponse {
+export interface AddressResolverResponse {
   version: string;
-  data: Postalcode[];
+  data: Address[];
 }

@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/opencollector/kenall-js#readme",
   "peerDependencies": {
-    "typescript": "^3.9.2",
+    "typescript": "^3.9.2"
   },
   "devDependencies": {
     "jest": "^26.4",

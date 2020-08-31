@@ -34,7 +34,12 @@ test('request method', async () => {
     return retval; 
   });
   const fixture = {
-    postalcode: '000-0000',
+    version: '1',
+    data: [
+      {
+        postalcode: '000-0000',
+      },
+    ],
   };
   mockedAxiosGet.mockResolvedValue({
     data: fixture,
@@ -59,17 +64,22 @@ test('get method', async () => {
     return retval; 
   });
   const fixture = {
-    postalcode: '000-0000',
-    prefecture: '北海道',
-    prefecture_kana: 'ホッカイドウ',
-    city: '市区町村',
-    city_kana: 'シクチョウソン',
-    town: '町名番地',
-    town_kana: 'チョウメイバンチ',
-    town_partial: false,
-    town_chome: false,
-    town_koazabanchi: false,
-    town_multi: false,
+    version: '1',
+    data: [
+      {
+        postalcode: '000-0000',
+        prefecture: '北海道',
+        prefecture_kana: 'ホッカイドウ',
+        city: '市区町村',
+        city_kana: 'シクチョウソン',
+        town: '町名番地',
+        town_kana: 'チョウメイバンチ',
+        town_partial: false,
+        town_chome: false,
+        town_koazabanchi: false,
+        town_multi: false,
+      },
+    ],
   };
   mockedAxiosGet.mockResolvedValue({
     data: fixture,

@@ -2,22 +2,8 @@ import axios, { AxiosInstance } from 'axios';
 import { validate } from 'superstruct-ts-transformer';
 import { StructError } from 'superstruct';
 import { Config } from '../config';
-
+import { AddressResolverResponse } from '../interfaces';
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
-
-export type Address = {
-  postalcode: string;
-  prefecture: string;
-  city: string;
-  town: string;
-  prefecture_kana: string;
-  city_kana: string;
-  town_kana: string;
-  town_partial: boolean;
-  town_koazabanchi: boolean;
-  town_multi: boolean;
-  town_chome: boolean;
-};
 
 export class KENALLV1 {
   private readonly axios: AxiosInstance;
@@ -42,9 +28,9 @@ export class KENALLV1 {
     return r.data;
   }
 
-  async get(postal_code: string, version?: string): Promise<Address> {
+  async get(postal_code: string, version?: string): Promise<AddressResolverResponse> {
     try {
-      return validate<Address>(
+      return validate<AddressResolverResponse>(
         await this.request(
           `/postalcode/${postal_code}`,
           {
