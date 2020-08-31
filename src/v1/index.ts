@@ -37,7 +37,7 @@ export class KENALLV1 {
             version: version,
           }
         )
-       );
+      );
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(`invalid response payload: ${e.path} must be ${e.type}`);
