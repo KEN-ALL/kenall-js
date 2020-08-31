@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/opencollector/kenall-js#readme",
   "devDependencies": {
-    "typescript": "^3.9.2"
+    "typescript": "3.9.2"
   },
   "dependencies": {
     "axios": "^0.19.2"
