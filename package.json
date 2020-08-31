@@ -2,13 +2,14 @@
   "name": "kenall",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "built/kenall.js",
+  "types": "built/kenall.d.ts",
   "scripts": {
     "build": "tsc -d"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/opencollector/kenall-js.git"
+    "url": "https://github.com/opencollector/kenall-js.git"
   },
   "author": "Open Collector, Inc.",
   "license": "Apache-2.0",
@@ -16,10 +17,17 @@
     "url": "https://github.com/opencollector/kenall-js/issues"
   },
   "homepage": "https://github.com/opencollector/kenall-js#readme",
+  "peerDependencies": {
+    "typescript": "^3.9.2",
+  },
   "devDependencies": {
-    "typescript": "3.9.2"
+    "jest": "^26.4",
+    "ts-jest": "^26.3.0",
+    "@types/jest": "^26.0.10",
+    "superstruct-ts-transformer": "^0.2.2",
+    "ttypescript": "^1.5.11"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.20.0"
   }
 }
