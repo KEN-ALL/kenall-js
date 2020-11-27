@@ -37,7 +37,7 @@ test('request method', async () => {
     version: '1',
     data: [
       {
-        postalcode: '000-0000',
+        postal_code: '0600000',
       },
     ],
   };
@@ -64,19 +64,27 @@ test('get method', async () => {
     return retval; 
   });
   const fixture = {
-    version: '1',
+    version: '2020-08-31',
     data: [
       {
-        postalcode: '000-0000',
+        jisx0402 : '01101',
+        old_code : '060  ',
+        postal_code: '0600000',
         prefecture: '北海道',
         prefecture_kana: 'ホッカイドウ',
-        city: '市区町村',
-        city_kana: 'シクチョウソン',
-        town: '町名番地',
-        town_kana: 'チョウメイバンチ',
+        city: '札幌市中央区',
+        city_kana: 'サッポロシチュウオウク',
+        town: '',
+        town_kana: '',
+        town_raw: '以下に掲載がない場合',
+        town_kana_raw: 'イカニケイサイガナイバアイ',
+        koaza : '',
+        kyoto_street : '',
+        building : '',
+        floor : '',
         town_partial: false,
         town_chome: false,
-        town_koazabanchi: false,
+        town_addressed_koaza: false,
         town_multi: false,
       },
     ],
