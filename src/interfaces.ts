@@ -1,13 +1,21 @@
 export interface Address {
-  postalcode: string;
+  jisx0402:string;
+  old_code:string;
+  postal_code: string;
   prefecture: string;
-  city: string;
-  town: string;
   prefecture_kana: string;
+  city: string;
   city_kana: string;
+  town: string;
   town_kana: string;
+  town_raw: string;
+  town_kana_raw: string;
+  koaza: string;
+  kyoto_street: string;
+  building: string;
+  floor: string;
   town_partial: boolean;
-  town_koazabanchi: boolean;
+  town_addressed_koaza: boolean;
   town_multi: boolean;
   town_chome: boolean;
 }
