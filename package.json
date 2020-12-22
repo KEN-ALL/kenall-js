@@ -29,7 +29,7 @@
     "@rollup/plugin-typescript": "^5.0.2",
     "@types/gulp": "^4.0.6",
     "@types/gulp-minify": "^3.1.0",
-    "@types/gulp-sourcemaps": "0.0.32",
+    "@types/gulp-sourcemaps": "0.0.34",
     "@types/gulp-terser": "^1.2.1",
     "@types/jest": "^26.0.12",
     "babel-loader": "^8.1.0",
