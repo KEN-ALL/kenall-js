@@ -29,7 +29,7 @@
         e.preventDefault();
         var kenallApi = new kenall.KENALL();
         var postalcode = postalcodeElem.value;
-        kenallApi.get(postalcode).then(
+        kenallApi.getAddress(postalcode).then(
           function (data) {
             result.innerText = JSON.stringify(data);
           }
