@@ -28,7 +28,7 @@ export class KENALLV1 {
     return r.data;
   }
 
-  async get(postal_code: string, version?: string): Promise<AddressResolverResponse> {
+  async getAddress(postal_code: string, version?: string): Promise<AddressResolverResponse> {
     try {
       return validate<AddressResolverResponse>(
         await this.request(

@@ -31,7 +31,7 @@ test('request method', async () => {
   mocked(axios).create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
     retval.get = mockedAxiosGet;
-    return retval; 
+    return retval;
   });
   const fixture = {
     version: '1',
@@ -53,7 +53,7 @@ test('request method', async () => {
       foo: 'foo',
     },
   });
-  expect(result).toEqual(fixture); 
+  expect(result).toEqual(fixture);
 });
 
 test('get method', async () => {
@@ -61,7 +61,7 @@ test('get method', async () => {
   mocked(axios).create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
     retval.get = mockedAxiosGet;
-    return retval; 
+    return retval;
   });
   const fixture = {
     version: '2020-08-31',
@@ -93,7 +93,7 @@ test('get method', async () => {
     data: fixture,
   });
   const ka = new KENALL('key');
-  const result = await ka.get('0000000');
+  const result = await ka.getAddress('0000000');
   expect(mockedAxiosGet.mock.calls).toHaveLength(1);
   expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/0000000');
   expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
@@ -101,5 +101,5 @@ test('get method', async () => {
       version: undefined,
     },
   });
-  expect(result).toEqual(fixture); 
+  expect(result).toEqual(fixture);
 });
