@@ -23,7 +23,7 @@ export interface Address {
 
 export interface Corporation {
   name: string;
-  name_kane: string;
+  name_kana: string;
   block_lot: string;
   post_office: string;
   code_type: number;
