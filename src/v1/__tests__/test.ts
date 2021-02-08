@@ -56,19 +56,13 @@ test('request method', async () => {
   expect(result).toEqual(fixture);
 });
 
-test('get method', async () => {
-  const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn((...args): AxiosInstance => {
-    const retval = jest.requireActual('axios').create(...args);
-    retval.get = mockedAxiosGet;
-    return retval;
-  });
-  const fixture = {
+test.each([
+  {
     version: '2020-08-31',
     data: [
       {
         jisx0402 : '01101',
-        old_code : '060  ',
+        old_code : '060',
         postal_code: '0600000',
         prefecture: '北海道',
         prefecture_kana: 'ホッカイドウ',
@@ -86,9 +80,51 @@ test('get method', async () => {
         town_chome: false,
         town_addressed_koaza: false,
         town_multi: false,
+        corporation: null,
       },
     ],
-  };
+  },
+  {
+    version: '2020-08-31',
+    data: [
+      {
+        jisx0402 : '13101',
+        old_code : '100',
+        postal_code: '1008926',
+        prefecture: '東京都',
+        prefecture_kana: '',
+        city: '千代田区',
+        city_kana: '',
+        town: '霞ヶ関',
+        town_kana: '',
+        town_raw: '',
+        town_kana_raw: '',
+        koaza : '',
+        kyoto_street : '',
+        building : '',
+        floor : '',
+        town_partial: false,
+        town_chome: false,
+        town_addressed_koaza: false,
+        town_multi: false,
+        corporation: {
+          name: '総務省',
+          name_kana: 'ソウムショウ',
+          block_lot: '２丁目１−２',
+          post_office: '銀座',
+          code_type: 0,
+        },
+      },
+    ],
+  },
+
+])('getAddress method', async (fixture) => {
+  const mockedAxiosGet = jest.fn();
+  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+    const retval = jest.requireActual('axios').create(...args);
+    retval.get = mockedAxiosGet;
+    return retval;
+  });
   mockedAxiosGet.mockResolvedValue({
     data: fixture,
   });
