@@ -1,6 +1,6 @@
 export interface Address {
-  jisx0402:string;
-  old_code:string;
+  jisx0402: string;
+  old_code: string;
   postal_code: string;
   prefecture: string;
   prefecture_kana: string;
@@ -18,6 +18,15 @@ export interface Address {
   town_addressed_koaza: boolean;
   town_multi: boolean;
   town_chome: boolean;
+  corporation: Corporation | null;
+}
+
+export interface Corporation {
+  name: string;
+  name_kane: string;
+  block_lot: string;
+  post_office: string;
+  code_type: number;
 }
 
 export interface AddressResolverResponse {
