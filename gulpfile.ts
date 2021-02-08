@@ -6,6 +6,7 @@ import terser from 'gulp-terser';
 import rollupNodeResolve from '@rollup/plugin-node-resolve';
 import rollupCommonJS from '@rollup/plugin-commonjs';
 import rollupBabel from '@rollup/plugin-babel';
+// import rollupInject from '@rollup/plugin-inject';
 import rollupReplace from '@rollup/plugin-replace';
 
 
@@ -15,6 +16,7 @@ export default () =>
       typescript: require('ttypescript'),
     })())
     .pipe(dest('built/'))
+    .pipe(sourcemaps.init())
     .pipe(
       rollup({
         input: './built/index.js',
@@ -36,9 +38,9 @@ export default () =>
                 '@babel/preset-env',
                 {
                   useBuiltIns: 'usage',
-                  corejs: 3,
+                  corejs: '3',
                   targets: {
-                    ie: "11",
+                    ie: '11',
                   },
                 },
               ],
@@ -51,7 +53,6 @@ export default () =>
         format: 'umd',
       }),
     )
-    .pipe(sourcemaps.init())
     .pipe(terser())
     .pipe(sourcemaps.write('./'))
     .pipe(dest('dist/'));
