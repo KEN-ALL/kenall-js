@@ -2,8 +2,8 @@
   "name": "kenall",
   "version": "1.0.0",
   "description": "",
-  "main": "built/kenall.js",
-  "types": "built/kenall.d.ts",
+  "main": "built/index.js",
+  "types": "built/index.d.ts",
   "scripts": {
     "build": "ttsc -d",
     "bundle": "gulp",
