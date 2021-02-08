@@ -23,7 +23,8 @@ $ npx jest
 ```javascript
 const { KENALL } = require('kenall');
 
-(new KENALL(API_KEY_DAYO)).then(r => {
+// APIキーはダッシュボードから取得してください
+(new KENALL({API_KEY_DAYO})).then(r => {
   console.log(r);
 }).catch(e => {
   console.error(e);
