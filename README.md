@@ -24,7 +24,7 @@ kenall-jsはブラウザでそのまま利用可能なスタンドアロンのJa
 <script type="text/javascript">
 function fill(form) {
   // APIキーはダッシュボードから取得してください
-  const k = new KENALL('API_KEY_DAYO');
+  const k = new kenall.KENALL('API_KEY_DAYO');
   const postalCode = form.elements["postalcode"].value;
   k.getAddress(postalCode).then(
     function (address) {
