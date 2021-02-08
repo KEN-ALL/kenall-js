@@ -1,21 +1,13 @@
 # kenall-js
 
-## ビルド
-
-ttypescriptを用いているので、
+## build
 
 ```
 $ npx ttsc
 ```
 
-で。
-
-## テスト
-
-jest + ts-jestです。
+## test
 
 ```
 $ npx jest
 ```
-
-で。
