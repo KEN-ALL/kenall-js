@@ -8,7 +8,7 @@ kenall-js は日本の郵便番号・住所検索APIサービス「[ケンオー
 
 ## 使い方
 
-kenall-jsはブラウザでそのまま利用可能なスタンドアロンのJavaScriptバンドルとしても、nodeのモジュールとしても利用することができます。
+kenall-jsはブラウザでそのまま利用可能なスタンドアロンのJavaScriptバンドルとしても、Node.jsのモジュールとしても利用することができます。
 
 ### ブラウザで使う場合
 
@@ -40,7 +40,7 @@ function fill(form) {
 
 のように利用してください。
 
-### Nodeで使う場合
+### Node.jsで使う場合
 
 プロジェクトのディレクトリで
 
@@ -59,7 +59,7 @@ const { KENALL } = require('kenall');
 }).catch(e => {
   console.error(e);
 })
-
+```
 
 ## ビルド方法
 
