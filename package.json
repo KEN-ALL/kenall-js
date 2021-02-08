@@ -1,7 +1,7 @@
 {
   "name": "kenall",
   "version": "1.0.0",
-  "description": "",
+  "description": "KENALL JavaScript SDK",
   "main": "built/index.js",
   "types": "built/index.d.ts",
   "scripts": {
