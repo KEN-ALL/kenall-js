@@ -18,7 +18,6 @@ export default () =>
       })()
     )
     .pipe(dest('built/'))
-    .pipe(sourcemaps.init())
     .pipe(
       rollup({
         input: './built/index.js',
@@ -51,12 +50,17 @@ export default () =>
           banner2(
             () => {
               const pkg = JSON.parse(fs.readFileSync(__dirname + '/package.json').toString('utf-8'));
-              return `kenall.js\nv${pkg.version}\nby ${pkg.author}`;
+              return `/* @license kenall.js\nv${pkg.version}\nby ${pkg.author} */`;
             }
           ),
         ],
-      }),
+      }, {
+        file: 'kenall.bundle.js',
+        name: 'kenall',
+        format: 'umd',
+      })
     )
+    .pipe(sourcemaps.init())
     .pipe(terser())
     .pipe(sourcemaps.write('./'))
     .pipe(dest('dist/'));
