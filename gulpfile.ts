@@ -3,13 +3,11 @@ import rollupBabel from '@rollup/plugin-babel';
 import rollupCommonJS from '@rollup/plugin-commonjs';
 import rollupNodeResolve from '@rollup/plugin-node-resolve';
 import rollupReplace from '@rollup/plugin-replace';
-import rollupJSCC from 'rollup-plugin-jscc';
 import sourcemaps from 'gulp-sourcemaps';
 import terser from 'gulp-terser';
 import typescript from 'gulp-typescript';
 import Vinyl from 'vinyl';
 import zip from 'gulp-zip';
-// import { exec as _exec } from 'child_process';
 import { src, dest, task, series } from 'gulp';
 const exec = require('gulp-exec'); // eslint-disable-line @typescript-eslint/no-var-requires
 const clean = require('gulp-clean'); // eslint-disable-line @typescript-eslint/no-var-requires
@@ -40,9 +38,6 @@ const bundle = () =>
               browser: true,
               extensions: ['.js'],
             }),
-            rollupJSCC({
-              values: { _BUNDLE: true },
-            }),
             rollupCommonJS(),
             // for Superstruct!
             rollupReplace({
@@ -50,7 +45,7 @@ const bundle = () =>
             }),
             rollupBabel({
               babelHelpers: 'bundled',
-              exclude: /node_modules/,
+              exclude: /node_modules\/core-js/,
               presets: [
                 [
                   '@babel/preset-env',
