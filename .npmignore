@@ -1,0 +1,15 @@
+dist/
+examples/
+src/
+.github/
+**/__tests__
+.editorconfig
+.eslintignore
+.eslintrc.js
+.prettierrc
+README.ja.md
+README.md
+gulpfile.ts
+jest.config.js
+renovate.json
+tsconfig.json
