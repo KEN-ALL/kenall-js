@@ -40,13 +40,13 @@ const bundle = () =>
               browser: true,
               extensions: ['.js'],
             }),
+            rollupJSCC({
+              values: { _BUNDLE: true },
+            }),
             rollupCommonJS(),
             // for Superstruct!
             rollupReplace({
               'process.env.NODE_ENV': JSON.stringify('production'),
-            }),
-            rollupJSCC({
-              values: { _BUNDLE: true },
             }),
             rollupBabel({
               babelHelpers: 'bundled',
@@ -89,7 +89,7 @@ task('bundle', () => bundle());
 task('release', (done): unknown => {
   const pkg = readPackageMetadata();
   const tag = `v${pkg.version}`;
-  const baseName = `${pkg.name}-bundle-${pkg.version}`;
+  const baseName = `kenall-bundle-${pkg.version}`;
   return series(
     () =>
       bundle()
