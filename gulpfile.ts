@@ -50,7 +50,7 @@ export default () =>
           banner2(
             () => {
               const pkg = JSON.parse(fs.readFileSync(__dirname + '/package.json').toString('utf-8'));
-              return `/* @license kenall.js\nv${pkg.version}\nby ${pkg.author} */`;
+              return `/* @license ${pkg.license}\nv${pkg.version}\nBuild time: ${(new Date())}\nby ${pkg.author} */`;
             }
           ),
         ],
