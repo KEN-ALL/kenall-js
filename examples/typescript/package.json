@@ -1,0 +1,17 @@
+{
+  "name": "kenall-example-typescript",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Open Collector, Inc.",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "kenall": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  }
+}
