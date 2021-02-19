@@ -62,6 +62,6 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "superstruct": "^0.14.2"
+    "superstruct": "^0.8.3"
   }
 }
