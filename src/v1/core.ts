@@ -1,7 +1,8 @@
+/*#if _BUNDLE
 import 'core-js/features/string/ends-with'; // for SuperStruct on IE11!
 import 'core-js/features/string/includes'; // for SuperStruct on IE11!
 import 'core-js/features/set'; // for SuperStruct on IE11!
-
+//#endif */
 import axios, { AxiosInstance } from 'axios';
 import { validate } from 'superstruct-ts-transformer';
 import { StructError } from 'superstruct';

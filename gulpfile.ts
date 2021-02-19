@@ -3,6 +3,7 @@ import rollupBabel from '@rollup/plugin-babel';
 import rollupCommonJS from '@rollup/plugin-commonjs';
 import rollupNodeResolve from '@rollup/plugin-node-resolve';
 import rollupReplace from '@rollup/plugin-replace';
+import rollupJSCC from 'rollup-plugin-jscc';
 import sourcemaps from 'gulp-sourcemaps';
 import terser from 'gulp-terser';
 import typescript from 'gulp-typescript';
@@ -43,6 +44,9 @@ const bundle = () =>
             // for Superstruct!
             rollupReplace({
               'process.env.NODE_ENV': JSON.stringify('production'),
+            }),
+            rollupJSCC({
+              values: { _BUNDLE: true },
             }),
             rollupBabel({
               babelHelpers: 'bundled',
@@ -92,9 +96,7 @@ task('release', (done): unknown => {
         .pipe(dest(baseName, { cwd: 'dist' }))
         .pipe(zip(`${baseName}.zip`))
         .pipe(dest('dist'))
-        .pipe(
-          exec((f: Vinyl) => `gh release create --draft ${tag} ${f.path}`)
-        ),
+        .pipe(exec((f: Vinyl) => `gh release create --draft ${tag} ${f.path}`)),
     () => src([`dist/${baseName}`]).pipe(clean())
   )(done);
 });
