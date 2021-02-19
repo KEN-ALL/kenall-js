@@ -10,7 +10,7 @@ kenall-js is a JavaScript client library for [KEN ALL](https://kenall.jp/), Japa
 
 There are two options to use kenall-js in your project.  The one is put a `<script>` tag referring to the script bundle somewhere atop of your HTML file to invoke the API from within your script, and the other is specify `kenall` package as a dependency in your Node.js project's package.json.
 
-### Usage from within the plain-old JavaScrpt
+### Usage from within the plain-old JavaScript
 
 All you need is put a `<script>` tag that refers to the script bundle as follows:
 
@@ -76,7 +76,7 @@ api.getAddress(postalCode).then(
 or either in TypeScript,
 
 ```typescript
-import { KENALL } from 'kenall';
+import { KENALL } from '@ken-all/kenall';
 
 const kenall = new KENALL('API_KEY');
 const r = await kenall.getAddress(postalCode);
