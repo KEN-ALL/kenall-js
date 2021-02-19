@@ -43,7 +43,7 @@ function fill(form) {
 プロジェクトのディレクトリで
 
 ```
-$ npm i kenall
+$ npm i @ken-all/kenall
 ```
 
 を実行します。

@@ -9,7 +9,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "kenall": "^1.0.0"
+    "@ken-all/kenall": "^1.0.0"
   },
   "devDependencies": {
     "typescript": "^4.1.5"

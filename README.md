@@ -50,7 +50,7 @@ Alternatively, you can use the following URL for the latest bundle.  Beware that
 Run
 
 ```
-$ npm i kenall
+$ npm i @ken-all/kenall
 ```
 
 to add kenall.js as a dependency for your project.

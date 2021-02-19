@@ -1,5 +1,5 @@
 {
-  "name": "kenall",
+  "name": "@ken-all/kenall",
   "version": "1.0.0",
   "description": "KENALL JavaScript SDK",
   "main": "built/index.js",
