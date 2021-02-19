@@ -27,19 +27,17 @@ export class KENALLV1 {
     });
   }
 
-  async request(endpoint: string, params = {}): Promise<object> {
+  async request(endpoint: string, params = {}): Promise<unknown> {
     const r = await this.axios.get(endpoint, {params: params});
     return r.data;
   }
 
-  async getAddress(postal_code: string, version?: string): Promise<AddressResolverResponse> {
+  async getAddress(postal_code: string, version?: string | undefined): Promise<AddressResolverResponse> {
     try {
       return validate<AddressResolverResponse>(
         await this.request(
           `/postalcode/${postal_code}`,
-          {
-            version: version,
-          }
+          version != undefined ? {version: version} : {},
         )
       );
     } catch (e) {
