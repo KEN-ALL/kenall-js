@@ -58,7 +58,7 @@ to add kenall.js as a dependency for your project.
 Then you can use it like the following:
 
 ```javascript
-const { KENALL } = require('kenall');
+const { KENALL } = require('@ken-all/kenall');
 
 // You can obtain the API key from the dashboard at kenall.jp/home
 const api = new KENALL('API_KEY');
