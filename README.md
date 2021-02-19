@@ -1,30 +1,30 @@
 # kenall-js
 
+![](https://github.com/KEN-ALL/kenall-js/workflows/CI/badge.svg" alt="CI" />
+
 ## What's this?
 
 kenall-js is a JavaScript client library for [KEN ALL](https://kenall.jp/), Japan postal code to address translation API service.
 
-kenall-js は日本の郵便番号・住所検索APIサービス「[ケンオール](https://kenall.jp/)」のクライアントライブラリです。
+## How to use
 
-## 使い方
+There are two options to use kenall-js in your project.  The one is put a `<script>` tag referring to the script bundle somewhere atop of your HTML file to invoke the API from within your script, and the other is specify `kenall` package as a dependency in your Node.js project's package.json.
 
-kenall-jsはブラウザでそのまま利用可能なスタンドアロンのJavaScriptバンドルとしても、Node.jsのモジュールとしても利用することができます。
+### Usage from within the plain-old JavaScrpt
 
-### ブラウザで使う場合
-
-スクリプトを利用するHTMLファイルに
+All you need is put a `<script>` tag that refers to the script bundle as follows:
 
 ```html
-<script type="text/javascript" src="https://js.kenall.jp/2021-02-01/kenall.js"></script>
+<script type="text/javascript" src="LOCATION-TO-THE-SCRIPT-BUNDLE"></script>
 ```
 
-を記載すると、(以降に読み込まれた`<script>`タグの中で) `window`オブジェクトに`kenall`オブジェクトが追加され、`kenall`オブジェクトの`KENALL`プロパティの値として`KENALL`コンストラクタが利用可能になります。コンストラクタに対して`new`を適用することで、`KENALL`オブジェクトを扱うことができるようになります。
+This adds a property `kenall` to the global `window` object, from which you can refer to `KENALL` constructor to create the object that works as the interface.  Look at the following example to see what it goes like.
 
 ```html
 <script type="text/javascript">
 function fill(form) {
-  // APIキーはダッシュボードから取得してください
-  const k = new kenall.KENALL('API_KEY_DAYO');
+  // You can obtain the API key from the dashboard at kenall.jp/home
+  const k = new kenall.KENALL('API_KEY');
   const postalCode = form.elements["postalcode"].value;
   k.getAddress(postalCode).then(
     function (address) {
@@ -32,51 +32,75 @@ function fill(form) {
       form.elements["prefecture"].value = firstCandidate["prefecture"];
     }
   ).catch(function () {
-    alert("API呼び出しに失敗しました");
+    alert("Failed to invoke the API");
   });
 }
 </script>
 ```
 
-のように利用してください。
+The script bundle can be downloaded at the release page.
 
-### Node.jsで使う場合
+Alternatively, you can use the following URL for the latest bundle.  Beware that we don't provide any warranty on its availability, though we'll put as much effort as possible for keeping it up.
 
-プロジェクトのディレクトリで
+[https://js.kenall.jp/2021-02-01/kenall.js](https://js.kenall.jp/2021-02-01/kenall.js)
+
+
+### Usage in a Node.js project
+
+Run
 
 ```
 $ npm i kenall
 ```
 
-を実行します。
+to add kenall.js as a dependency for your project.
+
+Then you can use it like the following:
 
 ```javascript
 const { KENALL } = require('kenall');
 
-// APIキーはダッシュボードから取得してください
-(new KENALL('API_KEY_DAYO')).then(r => {
-  console.log(r);
-}).catch(e => {
-  console.error(e);
-})
+// You can obtain the API key from the dashboard at kenall.jp/home
+const api = new KENALL('API_KEY');
+api.getAddress(postalCode).then(
+  r => {
+    console.log(r);
+  }
+).catch(
+  e => {
+    console.error(e);
+  }
+);
 ```
 
-## ビルド方法
+or either in TypeScript,
+
+```typescript
+import { KENALL } from 'kenall';
+
+const kenall = new KENALL('API_KEY');
+const r = await kenall.getAddress(postalCode);
+console.log(r);
+```
+
+## Building
+
+Run
 
 ```
 $ npm run build
 ```
 
-を実行すると、生成されたjsファイルが`built/`配下に出力されます。
+to generate JavaScript scripts under `built/`.  If you want to get the bundle, run
 
 ```
 $ npm run bundle
 ```
 
-を実行すると、ブラウザ向けバンドルファイルが`dist/`配下に出力されます。
+and you'll find one under `dist/`.
 
 
-## テスト
+## Tests
 
 ```
 $ npm run test
@@ -84,5 +108,5 @@ $ npm run test
 
 ## Examples & Demos
 
-* [API呼び出しのサンプル (CodePen)](https://codepen.io/kenall/pen/NWbPYda)
+* [CodePen](https://codepen.io/kenall/pen/NWbPYda)
 * https://github.com/KEN-ALL/kenall-js/tree/master/examples
