@@ -49,7 +49,7 @@ $ npm i @ken-all/kenall
 を実行します。
 
 ```javascript
-const { KENALL } = require('kenall');
+const { KENALL } = require('@ken-all/kenall');
 
 // APIキーはダッシュボードから取得してください
 const api = new KENALL('API_KEY_DAYO');
