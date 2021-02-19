@@ -1,16 +1,16 @@
 import fs from 'fs';
 import { src, dest } from 'gulp';
 import typescript from 'gulp-typescript';
-const rollup = require('gulp-better-rollup');
+const rollup = require('gulp-better-rollup'); // eslint-disable-line @typescript-eslint/no-var-requires
 import sourcemaps from 'gulp-sourcemaps';
 import terser from 'gulp-terser';
 import rollupNodeResolve from '@rollup/plugin-node-resolve';
 import rollupCommonJS from '@rollup/plugin-commonjs';
 import rollupBabel from '@rollup/plugin-babel';
 import rollupReplace from '@rollup/plugin-replace';
-const banner2 = require('rollup-plugin-banner2');
+const banner2 = require('rollup-plugin-banner2'); // eslint-disable-line @typescript-eslint/no-var-requires
 
-export default () =>
+export default (): void =>
   src(['src/**/*.ts', '!src/**/__tests__/*.ts'])
     .pipe(
       typescript.createProject('tsconfig.json', {

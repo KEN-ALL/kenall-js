@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  linting-and-testing:
+    name: Do linting and testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: |
+          npm i
+
+      - name: Lint
+        run: |
+          set -xe
+          npm run lint
+          npm run check-format
+      
+      - name: Test
+        run: |
+          npm run test

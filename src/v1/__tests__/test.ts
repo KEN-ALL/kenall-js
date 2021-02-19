@@ -5,7 +5,6 @@ import axios from 'axios';
 
 jest.mock('axios');
 
-
 test('default API base', () => {
   {
     const ka = new KENALL('key');
@@ -18,7 +17,7 @@ test('default API base', () => {
 });
 
 test('override API base', () => {
-  const ka = new KENALL('key', {apibase: 'https://example.com'});
+  const ka = new KENALL('key', { apibase: 'https://example.com' });
   expect(ka.apibase).toBe('https://example.com');
 });
 
@@ -28,11 +27,13 @@ test('api key is correctly propagated', () => {
 
 test('request method', async () => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn((...args): AxiosInstance => {
-    const retval = jest.requireActual('axios').create(...args);
-    retval.get = mockedAxiosGet;
-    return retval;
-  });
+  mocked(axios).create = jest.fn(
+    (...args): AxiosInstance => {
+      const retval = jest.requireActual('axios').create(...args);
+      retval.get = mockedAxiosGet;
+      return retval;
+    }
+  );
   const fixture = {
     version: '1',
     data: [
@@ -45,7 +46,7 @@ test('request method', async () => {
     data: fixture,
   });
   const ka = new KENALL('key');
-  const result = await ka.request('some/endpoint', {foo: 'foo'});
+  const result = await ka.request('some/endpoint', { foo: 'foo' });
   expect(mockedAxiosGet.mock.calls).toHaveLength(1);
   expect(mockedAxiosGet.mock.calls[0][0]).toBe('some/endpoint');
   expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
@@ -61,8 +62,8 @@ test.each([
     version: '2020-08-31',
     data: [
       {
-        jisx0402 : '01101',
-        old_code : '060',
+        jisx0402: '01101',
+        old_code: '060',
         postal_code: '0600000',
         prefecture: '北海道',
         prefecture_kana: 'ホッカイドウ',
@@ -72,10 +73,10 @@ test.each([
         town_kana: '',
         town_raw: '以下に掲載がない場合',
         town_kana_raw: 'イカニケイサイガナイバアイ',
-        koaza : '',
-        kyoto_street : '',
-        building : '',
-        floor : '',
+        koaza: '',
+        kyoto_street: '',
+        building: '',
+        floor: '',
         town_partial: false,
         town_chome: false,
         town_addressed_koaza: false,
@@ -88,8 +89,8 @@ test.each([
     version: '2020-08-31',
     data: [
       {
-        jisx0402 : '13101',
-        old_code : '100',
+        jisx0402: '13101',
+        old_code: '100',
         postal_code: '1008926',
         prefecture: '東京都',
         prefecture_kana: '',
@@ -99,10 +100,10 @@ test.each([
         town_kana: '',
         town_raw: '',
         town_kana_raw: '',
-        koaza : '',
-        kyoto_street : '',
-        building : '',
-        floor : '',
+        koaza: '',
+        kyoto_street: '',
+        building: '',
+        floor: '',
         town_partial: false,
         town_chome: false,
         town_addressed_koaza: false,
@@ -117,14 +118,15 @@ test.each([
       },
     ],
   },
-
 ])('getAddress method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn((...args): AxiosInstance => {
-    const retval = jest.requireActual('axios').create(...args);
-    retval.get = mockedAxiosGet;
-    return retval;
-  });
+  mocked(axios).create = jest.fn(
+    (...args): AxiosInstance => {
+      const retval = jest.requireActual('axios').create(...args);
+      retval.get = mockedAxiosGet;
+      return retval;
+    }
+  );
   mockedAxiosGet.mockResolvedValue({
     data: fixture,
   });
