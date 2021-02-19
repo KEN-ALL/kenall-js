@@ -1,6 +1,6 @@
 # kenall-js
 
-![](https://github.com/KEN-ALL/kenall-js/workflows/CI/badge.svg" alt="CI" />
+![](https://github.com/KEN-ALL/kenall-js/workflows/CI/badge.svg)
 
 ## What's this?
 

@@ -1,5 +1,7 @@
 # kenall-js
 
+![](https://github.com/KEN-ALL/kenall-js/workflows/CI/badge.svg)
+
 kenall-js は日本の郵便番号・住所検索APIサービス「[ケンオール](https://kenall.jp/)」のクライアントライブラリです。
 
 ## 使い方
