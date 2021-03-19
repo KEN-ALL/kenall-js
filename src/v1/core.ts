@@ -7,7 +7,7 @@ import axios, { AxiosInstance } from 'axios';
 import { validate } from 'superstruct-ts-transformer';
 import { StructError } from 'superstruct';
 import { Config } from '../config';
-import { AddressResolverResponse } from './interfaces';
+import { AddressResolverResponse, CityResolverResponse } from './interfaces';
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
 export class KENALLV1 {
@@ -38,6 +38,28 @@ export class KENALLV1 {
       return validate<AddressResolverResponse>(
         await this.request(
           `/postalcode/${postal_code}`,
+          version != undefined ? { version: version } : {}
+        )
+      );
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  async getCities(
+    prefecture_code: string,
+    version?: string | undefined
+  ): Promise<CityResolverResponse> {
+    try {
+      return validate<CityResolverResponse>(
+        await this.request(
+          `/cities/${prefecture_code}`,
           version != undefined ? { version: version } : {}
         )
       );
