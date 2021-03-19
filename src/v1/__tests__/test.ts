@@ -141,3 +141,51 @@ test.each([
   });
   expect(result).toEqual(fixture);
 });
+
+test.each([
+  {
+    version: '2020-08-31',
+    data: [
+      {
+        jisx0402: '01101',
+        prefecture_code: '01',
+        city_code: '101',
+        prefecture_kana: 'ホッカイドウ',
+        city_kana: 'サッポロシチュウオウク',
+        prefecture: '北海道',
+        city: '札幌市中央区',
+      },
+      {
+        jisx0402: '01102',
+        prefecture_code: '01',
+        city_code: '102',
+        prefecture_kana: 'ホッカイドウ',
+        city_kana: 'サッポロシキタク',
+        prefecture: '北海道',
+        city: '札幌市北区',
+      },
+    ],
+  },
+])('getCities method', async (fixture) => {
+  const mockedAxiosGet = jest.fn();
+  mocked(axios).create = jest.fn(
+    (...args): AxiosInstance => {
+      const retval = jest.requireActual('axios').create(...args);
+      retval.get = mockedAxiosGet;
+      return retval;
+    }
+  );
+  mockedAxiosGet.mockResolvedValue({
+    data: fixture,
+  });
+  const ka = new KENALL('key');
+  const result = await ka.getCities('01');
+  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
+  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
+  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    params: {
+      version: undefined,
+    },
+  });
+  expect(result).toEqual(fixture);
+});

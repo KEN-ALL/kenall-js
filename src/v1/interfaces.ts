@@ -33,3 +33,18 @@ export interface AddressResolverResponse {
   version: string;
   data: Address[];
 }
+
+export interface City {
+  jisx0402: string;
+  prefecture_code: string;
+  prefecture: string;
+  prefecture_kana: string;
+  city_code: string;
+  city: string;
+  city_kana: string;
+}
+
+export interface CityResolverResponse {
+  version: string;
+  data: City[];
+}
