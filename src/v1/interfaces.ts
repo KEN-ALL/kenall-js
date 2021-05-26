@@ -49,6 +49,7 @@ export type AddressSearcherOptions = {
   offset?: number | undefined;
   limit?: number | undefined;
   version?: string | undefined;
+  facet?: string | undefined;
 };
 
 export interface City {

@@ -95,6 +95,9 @@ export class KENALLV1 {
     if (options.version !== undefined) {
       params['version'] = options.version;
     }
+    if (options.facet !== undefined) {
+      params['facet'] = options.facet;
+    }
     try {
       return validate<AddressSearcherResponse>(
         await this.request('/postalcode/', params)
