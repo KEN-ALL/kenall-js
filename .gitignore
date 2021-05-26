@@ -105,4 +105,5 @@ dist
 
 built/
 dist/
+docs/
 .DS_Store

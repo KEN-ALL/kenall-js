@@ -25,38 +25,6 @@ test('api key is correctly propagated', () => {
   expect(new KENALL('key').apikey).toBe('key');
 });
 
-test('request method', async () => {
-  const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn(
-    (...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    }
-  );
-  const fixture = {
-    version: '1',
-    data: [
-      {
-        postal_code: '0600000',
-      },
-    ],
-  };
-  mockedAxiosGet.mockResolvedValue({
-    data: fixture,
-  });
-  const ka = new KENALL('key');
-  const result = await ka.request('some/endpoint', { foo: 'foo' });
-  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-  expect(mockedAxiosGet.mock.calls[0][0]).toBe('some/endpoint');
-  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
-    params: {
-      foo: 'foo',
-    },
-  });
-  expect(result).toEqual(fixture);
-});
-
 test.each([
   {
     version: '2020-08-31',
