@@ -7,7 +7,12 @@ import axios, { AxiosInstance } from 'axios';
 import { validate } from 'superstruct-ts-transformer';
 import { StructError } from 'superstruct';
 import { Config } from '../config';
-import { AddressResolverResponse, CityResolverResponse } from './interfaces';
+import {
+  AddressResolverResponse,
+  AddressSearcherOptions,
+  AddressSearcherResponse,
+  CityResolverResponse,
+} from './interfaces';
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
 export class KENALLV1 {
@@ -62,6 +67,37 @@ export class KENALLV1 {
           `/cities/${prefecture_code}`,
           version != undefined ? { version: version } : {}
         )
+      );
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  async searchAddresses(
+    options: AddressSearcherOptions
+  ): Promise<AddressSearcherResponse> {
+    const params: { [k: string]: string } = {};
+    if (options.query !== undefined) {
+      params['q'] = options.query;
+    }
+    if (options.offset !== undefined) {
+      params['offset'] = String(options.offset | 0);
+    }
+    if (options.limit !== undefined) {
+      params['limit'] = String(options.limit | 0);
+    }
+    if (options.version !== undefined) {
+      params['version'] = options.version;
+    }
+    try {
+      return validate<AddressSearcherResponse>(
+        await this.request('/postalcode/', params)
       );
     } catch (e) {
       if (e instanceof StructError) {

@@ -34,6 +34,23 @@ export interface AddressResolverResponse {
   data: Address[];
 }
 
+export type Facet = [string, number];
+
+export interface AddressSearcherResponse extends AddressResolverResponse {
+  query: string;
+  count: number;
+  offset: number;
+  limit: number;
+  facets: Facet[] | null;
+}
+
+export type AddressSearcherOptions = {
+  query: string | undefined;
+  offset?: number | undefined;
+  limit?: number | undefined;
+  version?: string | undefined;
+};
+
 export interface City {
   jisx0402: string;
   prefecture_code: string;
