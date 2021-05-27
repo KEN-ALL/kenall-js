@@ -1,2 +1,11 @@
 export { KENALLV1 as KENALL } from './core';
-export { Address, Corporation, AddressResolverResponse } from './interfaces';
+export {
+  Address,
+  AddressResolverResponse,
+  AddressSearcherOptions,
+  AddressSearcherResponse,
+  City,
+  CityResolverResponse,
+  Corporation,
+  Facet,
+} from './interfaces';

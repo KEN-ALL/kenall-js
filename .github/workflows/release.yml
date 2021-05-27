@@ -28,3 +28,15 @@ jobs:
         run: |
           set -xe
           npm run release
+
+      - name: Build documents
+        run: |
+          set -xe
+          npm run doc:base
+          npm run doc:ja
+
+      - name: Deploy document to GitHub pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./built/docs

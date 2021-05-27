@@ -1,0 +1,26 @@
+{
+    "KENALL": {
+        "properties": {},
+        "methods": {
+            "getAddress": {
+                "comment": {
+                    "shortText": "\"getAddress\" API (エンドポイント: `/postalcode/{postalcode}`) を呼び出します。",
+                    "returns": "{@link AddressResolverResponse}\n"
+                }
+            },
+            "getCities": {
+                "comment": {
+                    "shortText": "\"getCities\" API (エンドポイント: `/cities/{prefectureCode}`) を呼び出します。",
+                    "returns": "{@link CityResolverResponse}\n"
+                }
+            },
+            "searchAddresses": {
+                "comment": {
+                    "shortText": "\"searchAddresses\" API (エンドポイント: `/postalcode/?...`) を呼び出します。",
+                    "returns": "{@link AddressSearcherResponse}\n"
+                }
+            }
+        },
+        "accessors": {}
+    }
+}

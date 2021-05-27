@@ -1,0 +1,49 @@
+{
+    "Corporation": {
+        "comment": {
+            "shortText": [
+                "A `Corporation` object would store the information about the organization,",
+                "or the division of a organization, which has its special postal code designated."
+            ]
+        },
+        "properties": {
+            "name": {
+                "comment": {
+                    "shortText": "The name of the organization, or the division of such."
+                }
+            },
+            "name_kana": {
+                "comment": {
+                    "shortText": "The reading of the division's name."
+                }
+            },
+            "block_lot": {
+                "comment": {
+                    "shortText": [
+                        "The address line by which the division is *postally* reachable,",
+                        "in the sense it doesn't necessarily point to the actual",
+                        "address of its business place."
+                    ]
+                }
+            },
+            "post_office": {
+                "comment": {
+                    "shortText": [
+                        "The name of the post office that handles the postal items",
+                        "for the division."
+                    ]
+                }
+            },
+            "code_type": {
+                "comment": {
+                    "shortText": [
+                        "`0` indicates the postal code most likely describes a",
+                        "actual business place, and `1` indicates it refers to a",
+                        "post office box."
+                    ]
+                }
+            }
+        },
+        "methods": {}
+    }
+}

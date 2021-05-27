@@ -1,0 +1,8 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "excludePrivate": true,
+  "theme": "minimal",
+  "out": "built/docs",
+  "readme": "README.md",
+  "highlightTheme": "solarized-dark"
+}

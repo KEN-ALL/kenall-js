@@ -1,0 +1,48 @@
+{
+    "AddressSearcherOptions": {
+        "comment": {
+            "shortText": [
+                "An `AddressSearcherOptions` stores a set of parameters",
+                "that will be sent to \"searchAddresses\" API."
+            ]
+        },
+        "properties": {
+            "query": {
+                "comment": {
+                    "text": "Example: `\"東京都 AND 渋谷区\"`",
+                    "shortText": "The query to search against the address database."
+                }
+            },
+            "offset": {
+                "comment": {
+                    "shortText": "The offset from which you want to retrieve the result."
+                }
+            },
+            "limit": {
+                "comment": {
+                    "text": "Defaults to 100 unless specified.",
+                    "shortText": "The maximum number of items that you want to retrieve."
+                }
+            },
+            "version": {
+                "comment": {
+                    "text": [
+                        "Defaults to the latest available version.",
+                        "Example: `\"2021-04-30\"`"
+                    ],
+                    "shortText": "The version of which the database is searched against."
+                }
+            },
+            "facet": {
+                "comment": {
+                    "text": "Example: `\"/東京都\"`",
+                    "shortText": [
+                        "The facet representation at which level the resulting facets",
+                        "will be shapen."
+                    ]
+                }
+            }
+        },
+        "methods": {}
+    }
+}

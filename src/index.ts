@@ -1,2 +1,12 @@
-export { KENALL, Address, AddressResolverResponse, Corporation } from './v1';
+export {
+  KENALL,
+  Address,
+  AddressResolverResponse,
+  AddressSearcherOptions,
+  AddressSearcherResponse,
+  City,
+  CityResolverResponse,
+  Corporation,
+  Facet,
+} from './v1';
 export { Config } from './config';

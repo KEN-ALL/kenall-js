@@ -1,0 +1,48 @@
+{
+    "AddressSearcherOptions": {
+        "comment": {
+            "shortText": [
+                "`AddressSearcherOptions` は \"searchAddresses\" API に送られる",
+                "パラメータを記述します。"
+            ]
+        },
+        "properties": {
+            "query": {
+                "comment": {
+                    "text": "例: `\"東京都 AND 渋谷区\"`",
+                    "shortText": "住所データベースに対して検索する問い合わせ文。"
+                }
+            },
+            "offset": {
+                "comment": {
+                    "shortText": "結果を取得する開始オフセット。"
+                }
+            },
+            "limit": {
+                "comment": {
+                    "text": "指定がない場合は100と見なされます。",
+                    "shortText": "取得したい項目の最大数。"
+                }
+            },
+            "version": {
+                "comment": {
+                    "text": [
+                        "デフォルトは利用可能な最新バージョンとなります。",
+                        "例: `\"2021-04-30\"`"
+                    ],
+                    "shortText": "検索を行うデータベースのバージョン。"
+                }
+            },
+            "facet": {
+                "comment": {
+                    "text": "例: `\"/東京都\"`",
+                    "shortText": [
+                        "結果として返されるファセットをどのレベルで形作るかを指定する",
+                        "ファセット表現。"
+                    ]
+                }
+            }
+        },
+        "methods": {}
+    }
+}

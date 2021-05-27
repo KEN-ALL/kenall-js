@@ -11,5 +11,6 @@ module.exports = {
   rules: {
     semi: ['error'],
     quotes: ['error', 'single'],
+    'no-irregular-whitespace': ['off'],
   },
 };
