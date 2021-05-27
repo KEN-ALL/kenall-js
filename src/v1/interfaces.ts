@@ -291,7 +291,7 @@ export interface AddressSearcherResponse extends AddressResolverResponse {
   offset: number;
 
   /**
-   * The number of items that has been intended, at most, to retrieve from the result.
+   * The number of items that have been intended, at most, to retrieve from the result.
    */
   limit: number;
 

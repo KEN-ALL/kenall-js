@@ -24,7 +24,7 @@
             },
             "limit": {
                 "comment": {
-                    "shortText": "The number of items that has been intended, at most, to retrieve from the result."
+                    "shortText": "The number of items that have been intended, at most, to retrieve from the result."
                 }
             },
             "facets": {
