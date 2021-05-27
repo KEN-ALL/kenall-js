@@ -247,7 +247,7 @@ export interface Corporation {
 export interface AddressResolverResponse {
   /**
    * The version of the data, in the form of `"YYYY-MM-DD"`
-   * where Y, M and D represents digits of the year, month and day
+   * where Y, M, and D represent digits of the year, month, and day
    * the source data became available.
    */
   version: string;
@@ -416,7 +416,7 @@ export interface City {
 export interface CityResolverResponse {
   /**
    * The version of the data, in the form of `"YYYY-MM-DD"`
-   * where Y, M and D represents digits of the year, month and day
+   * where Y, M, and D represent digits of the year, month, and day
    * the source data became available.
    */
   version: string;
