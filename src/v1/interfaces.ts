@@ -39,7 +39,7 @@ export interface Address {
    * ward would follow it in case the city has ordinance-designated wards.
    *
    * Examples:
-   * 
+   *
    * * `"港区"`
    * * `"大阪市北区"`
    * * `"各務原市"`
@@ -51,7 +51,7 @@ export interface Address {
    * The reading for the name of the city in katakana.
    *
    * Examples:
-   * 
+   *
    * * `"ミナトク"`
    * * `"オオサカシキタク"`
    * * `"カガミハラシ"`
@@ -62,13 +62,13 @@ export interface Address {
   /**
    * The name of the area that usually corresponds to lowest part of the
    * administrative division levels ("town").
-   * 
+   *
    * This is a synthetic value; that means it resulted from our original
    * interpretation of the `town_raw` data, and the corresponding value might
    * well not be present in the original KEN_ALL data provided by Japan Post.
-   * 
+   *
    * Examples:
-   * 
+   *
    * * `箱石`
    * * `晴海`
    * * `西北小路町`
@@ -77,13 +77,13 @@ export interface Address {
 
   /**
    * The reading of the name of the town.
-   * 
+   *
    * This is a synthetic value; that means it resulted from our original
    * interpretation of the `town_raw` data, and the corresponding value might
    * well not be present in the original KEN_ALL data provided by Japan Post.
-   * 
+   *
    * Examples:
-   * 
+   *
    * * `ハコイシ`
    * * `ハルミ`
    * * `ニシキタコウジチョウ`
@@ -118,13 +118,13 @@ export interface Address {
 
   /**
    * The name of the (non-administrative) sub-area of the town.
-   * 
+   *
    * This is a synthetic value; that means it resulted from our original
    * interpretation of the `town_raw` data, and the corresponding value might
    * well not be present in the original KEN_ALL data provided by Japan Post.
-   * 
+   *
    * Examples:
-   * 
+   *
    * * `"第２地割"`
    * * `"１丁目"`
    */
@@ -134,13 +134,13 @@ export interface Address {
    * The instructional phrase (通り名 in Japanese that signifies the (non-administrative)
    * sub-area of the town, the way which describe is very specific to a district of
    * Kyoto city.
-   * 
+   *
    * This is a synthetic value; that means it resulted from our original
    * interpretation of the `town_raw` data, and the corresponding value might
    * well not be present in the original KEN_ALL data provided by Japan Post.
-   * 
+   *
    * Examples:
-   * 
+   *
    * * `"先斗町通蛸薬師上る"`
    * * `"大宮通寺之内半丁下る東入"`
    */
@@ -153,9 +153,9 @@ export interface Address {
    * This is a synthetic value; that means it resulted from our original
    * interpretation of the `town_raw` data, and the corresponding value might
    * well not be present in the original KEN_ALL data provided by Japan Post.
-   * 
+   *
    * Examples:
-   * 
+   *
    * * `"オフィスタワーＸ"`
    */
   building: string;
@@ -166,9 +166,9 @@ export interface Address {
    * This is a synthetic value; that means it resulted from our original
    * interpretation of the `town_raw` data, and the corresponding value might
    * well not be present in the original KEN_ALL data provided by Japan Post.
-   * 
+   *
    * Examples:
-   * 
+   *
    * * `"１階"`
    */
   floor: string;
@@ -337,7 +337,7 @@ export type AddressSearcherOptions = {
   version?: string | undefined;
 
   /**
-   * The facet representation at which level the resulting facets 
+   * The facet representation at which level the resulting facets
    * will be shapen.
    *
    * Example: `"/東京都"`
@@ -389,7 +389,7 @@ export interface City {
    * ward would follow it in case the city has ordinance-designated wards.
    *
    * Examples:
-   * 
+   *
    * * `"港区"`
    * * `"大阪市北区"`
    * * `"各務原市"`
@@ -401,7 +401,7 @@ export interface City {
    * The reading for the name of the city in katakana.
    *
    * Examples:
-   * 
+   *
    * * `"ミナトク"`
    * * `"オオサカシキタク"`
    * * `"カガミハラシ"`
