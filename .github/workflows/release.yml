@@ -2,6 +2,8 @@ name: Release
 
 on:
   push:
+    branches:
+      - "new-api"
     tags:
       - "v**"
 
@@ -24,10 +26,10 @@ jobs:
         run: |
           npm i
 
-      - name: Run gulp 
-        run: |
-          set -xe
-          npm run release
+      # - name: Run gulp 
+      #   run: |
+      #     set -xe
+      #     npm run release
 
       - name: Build documents
         run: |
