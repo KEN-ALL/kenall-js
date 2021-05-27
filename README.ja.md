@@ -15,10 +15,12 @@ kenall-jsはブラウザでそのまま利用可能なスタンドアロンのJa
 スクリプトを利用するHTMLファイルに
 
 ```html
-<script type="text/javascript" src="https://js.kenall.jp/2021-02-01/kenall.js"></script>
+<script type="text/javascript" src="スクリプトバンドルの場所"></script>
 ```
 
 を記載すると、(以降に読み込まれた`<script>`タグの中で) `window`オブジェクトに`kenall`オブジェクトが追加され、`kenall`オブジェクトの`KENALL`プロパティの値として`KENALL`コンストラクタが利用可能になります。コンストラクタに対して`new`を適用することで、`KENALL`オブジェクトを扱うことができるようになります。
+
+スクリプトバンドルは事前にブラウザからアクセス可能な場所にアップロードする必要があることに留意してください。
 
 ```html
 <script type="text/javascript">
@@ -39,6 +41,11 @@ function fill(form) {
 ```
 
 のように利用してください。
+
+なお、最新のスクリプトバンドルのURLとして、以下を使うこともできます。可能な限り問題が発生しないよう配慮しますが、このURLの場所から常にバンドルをダウンロードできるかどうかは保証できません。
+
+[https://js.kenall.jp/2021-05-28/kenall.js](https://js.kenall.jp/2021-05-28/kenall.js)
+
 
 ### Node.jsで使う場合
 
