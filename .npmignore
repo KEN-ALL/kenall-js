@@ -1,6 +1,8 @@
 dist/
+built/docs
 examples/
 src/
+translations/
 .github/
 **/__tests__
 .editorconfig
