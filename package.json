@@ -11,7 +11,10 @@
     "build": "ttsc -d",
     "bundle": "gulp bundle",
     "release": "gulp release",
-    "test": "jest"
+    "test": "jest",
+    "doc:gen-json": "typedoc --generate-json translations/base",
+    "doc:base": "typedoc --out built/docs",
+    "doc:ja": "typedoc --out built/docs/ja --readme README.ja.md --generate-from-json translations/ja"
   },
   "repository": {
     "type": "git",
@@ -59,6 +62,7 @@
     "tslib": "^2.1.0",
     "ttypescript": "1.5.11",
     "typedoc": "^0.20.36",
+    "typedoc-plugin-localization": "^2.2.4",
     "typescript": "4.0.2"
   },
   "dependencies": {

@@ -1,0 +1,53 @@
+{
+    "AddressSearcherResponse": {
+        "comment": {
+            "shortText": [
+                "AddressSearcherResponse` は、\"searchAddresses\" API 呼び出し",
+                "の結果を表現します。"
+            ]
+        },
+        "properties": {
+            "query": {
+                "comment": {
+                    "shortText": "検索が行われる対象となった問い合わせ。"
+                }
+            },
+            "count": {
+                "comment": {
+                    "shortText": "検索結果となる項目の総数。"
+                }
+            },
+            "offset": {
+                "comment": {
+                    "shortText": "取得した検索結果の開始オフセット。"
+                }
+            },
+            "limit": {
+                "comment": {
+                    "shortText": "検索結果から取得しようとした項目の最大数。"
+                }
+            },
+            "facets": {
+                "comment": {
+                    "text": "もしファセットが与えられていない場合はnullが入ります。",
+                    "shortText": "問い合わせによって形作られた、結果のファセット。"
+                }
+            },
+            "version": {
+                "comment": {
+                    "shortText": [
+                        "データのバージョン。 `\"YYYY-MM-DD\"`形式で、",
+                        "Y、M、Dはそれぞれソースとなったデータが利用可能になった日の",
+                        "年月日を表します。"
+                    ]
+                }
+            },
+            "data": {
+                "comment": {
+                    "shortText": "問い合わせに合致する項目の集合。"
+                }
+            }
+        },
+        "methods": {}
+    }
+}

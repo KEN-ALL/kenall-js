@@ -1,0 +1,53 @@
+{
+    "AddressResolverResponse": {
+        "comment": {
+            "shortText": [
+                "`AddressResolverResponse` は \"getAddress\" API 呼び出しの",
+                "応答を記述します。"
+            ]
+        },
+        "properties": {
+            "version": {
+                "comment": {
+                    "text": [
+                        "デフォルトは最新バージョンとなります。",
+                        "例: `\"2021-04-30\"`"
+                    ],
+                    "shortText": "どのデータベースのバージョンに対して検索を実行するか。"
+                }
+            },
+            "data": {
+                "comment": {
+                    "shortText": "問い合わせにマッチしたデータの集合。"
+                }
+            },
+            "query": {
+                "comment": {
+                    "text": "例: `\"東京都 AND 渋谷区\"`",
+                    "shortText": "住所データベースに対する問い合わせ内容。"
+                }
+            },
+            "offset": {
+                "comment": {
+                    "shortText": "結果を取得する開始オフセット。"
+                }
+            },
+            "limit": {
+                "comment": {
+                    "text": "指定がない場合のデフォルトは100です。",
+                    "shortText": "取得したい項目の最大数。"
+                }
+            },
+            "facet": {
+                "comment": {
+                    "text": "例: `\"/東京都\"`",
+                    "shortText": [
+                        "結果に含めるファセットをどの階層のものにするかを指定する",
+                        "ファセット表現。"
+                    ]
+                }
+            }
+        },
+        "methods": {}
+    }
+}

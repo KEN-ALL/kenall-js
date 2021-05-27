@@ -1,0 +1,24 @@
+{
+    "CityResolverResponse": {
+        "comment": {
+            "shortText": "`City` オブジェクトは解決された地域の情報を格納します。"
+        },
+        "properties": {
+            "version": {
+                "comment": {
+                    "shortText": [
+                        "データのバージョン。 `\"YYYY-MM-DD\"`形式で、",
+                        "Y、M、Dはそれぞれソースとなったデータが利用可能になった日の",
+                        "年月日を表します。"
+                    ]
+                }
+            },
+            "data": {
+                "comment": {
+                    "shortText": "問い合わせに合致する項目の集合。"
+                }
+            }
+        },
+        "methods": {}
+    }
+}

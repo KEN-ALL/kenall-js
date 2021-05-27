@@ -95,7 +95,7 @@ export interface Address {
    * multiple (non-administrative) sub-areas.
    *
    * Note that they don't always represent the actual name of the area,
-   * in case they might be expediently designated by Japan Post.
+   * in case they are expediently designated by Japan Post.
    *
    * Examples:
    *
@@ -220,7 +220,7 @@ export interface Corporation {
   name_kana: string;
 
   /**
-   * The address line by which the division is "postally" reachable,
+   * The address line by which the division is *postally* reachable,
    * in the sense it doesn't necessarily point to the actual
    * address of its business place.
    */
@@ -281,7 +281,7 @@ export interface AddressSearcherResponse extends AddressResolverResponse {
   query: string;
 
   /**
-   * The number of the returned items in total.
+   * The number of the resulting items in total.
    */
   count: number;
 
@@ -307,7 +307,7 @@ export interface AddressSearcherResponse extends AddressResolverResponse {
  * An `AddressSearcherOptions` stores a set of parameters
  * that will be sent to "searchAddresses" API.
  */
-export type AddressSearcherOptions = {
+export interface AddressSearcherOptions {
   /**
    * The query to search against the address database.
    *
@@ -343,7 +343,7 @@ export type AddressSearcherOptions = {
    * Example: `"/東京都"`
    */
   facet?: string | undefined;
-};
+}
 
 /**
  * A `City` object would store the information about the resolved area.
@@ -411,7 +411,7 @@ export interface City {
 }
 
 /**
- * A `City` object would store the information about the resolved area.
+ * A `CityResolverResponse` describes a response to "getCities" API call.
  */
 export interface CityResolverResponse {
   /**

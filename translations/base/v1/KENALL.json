@@ -1,0 +1,26 @@
+{
+    "KENALL": {
+        "properties": {},
+        "methods": {
+            "getAddress": {
+                "comment": {
+                    "shortText": "Invokes \"getAddress\" API (endpoint: `/postalcode/{postalcode}`).",
+                    "returns": "An {@link AddressResolverResponse}.\n"
+                }
+            },
+            "getCities": {
+                "comment": {
+                    "shortText": "Invokes \"getCities\" API (endpoint: `/cities/{prefectureCode}`).",
+                    "returns": "A {@link CityResolverResponse}.\n"
+                }
+            },
+            "searchAddresses": {
+                "comment": {
+                    "shortText": "Invokes \"searchAddresses\" API (endpoint: `/postalcode/?...`).",
+                    "returns": "A {@link AddressSearcherResponse}.\n"
+                }
+            }
+        },
+        "accessors": {}
+    }
+}

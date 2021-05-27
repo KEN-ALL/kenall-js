@@ -1,0 +1,23 @@
+{
+    "Config": {
+        "properties": {
+            "apibase": {
+                "comment": {
+                    "shortText": [
+                        "APIエンドポイントのベースURLを指定します。",
+                        "ベースURLのデフォルトは `https://api.kenall.jp/v1` となります。"
+                    ]
+                }
+            },
+            "timeout": {
+                "comment": {
+                    "shortText": [
+                        "APIリクエストのタイムアウト値を指定します。",
+                        "未指定時のデフォルトは1000ms (1秒) です。"
+                    ]
+                }
+            }
+        },
+        "methods": {}
+    }
+}

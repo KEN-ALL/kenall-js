@@ -1,0 +1,24 @@
+{
+    "CityResolverResponse": {
+        "comment": {
+            "shortText": "A `CityResolverResponse` describes a response to \"getCities\" API call."
+        },
+        "properties": {
+            "version": {
+                "comment": {
+                    "shortText": [
+                        "The version of the data, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M and D represents digits of the year, month and day",
+                        "the source data became available."
+                    ]
+                }
+            },
+            "data": {
+                "comment": {
+                    "shortText": "The set of the data that match to the query."
+                }
+            }
+        },
+        "methods": {}
+    }
+}

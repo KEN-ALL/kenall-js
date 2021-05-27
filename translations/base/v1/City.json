@@ -1,0 +1,70 @@
+{
+    "City": {
+        "comment": {
+            "shortText": "A `City` object would store the information about the resolved area."
+        },
+        "properties": {
+            "jisx0402": {
+                "comment": {
+                    "shortText": [
+                        "The 5 digit Japanese municipality code (全国地方公共団体コード)",
+                        "for the administrative division this object represents."
+                    ]
+                }
+            },
+            "prefecture_code": {
+                "comment": {
+                    "text": "Example: `\"13\"`",
+                    "shortText": "The prefecture code defined in JISX0401."
+                }
+            },
+            "prefecture": {
+                "comment": {
+                    "text": "Example: `\"東京都\"`",
+                    "shortText": "The name of the prefecture in Kanji."
+                }
+            },
+            "prefecture_kana": {
+                "comment": {
+                    "text": "Example: `\"トウキョウト\"`",
+                    "shortText": "The reading for the name of the prefecture in katakana."
+                }
+            },
+            "city_code": {
+                "comment": {
+                    "text": "Example: `\"113\"`",
+                    "shortText": "The remaining portion of the JISX0402 code that has the leading two-dight prefecture code removed."
+                }
+            },
+            "city": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"港区\"`",
+                        "* `\"大阪市北区\"`",
+                        "* `\"各務原市\"`",
+                        "* `\"秩父郡長瀞町\"`"
+                    ],
+                    "shortText": [
+                        "The name of the city.",
+                        "The county name may precede it, or to the contrary, the name of the",
+                        "ward would follow it in case the city has ordinance-designated wards."
+                    ]
+                }
+            },
+            "city_kana": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"ミナトク\"`",
+                        "* `\"オオサカシキタク\"`",
+                        "* `\"カガミハラシ\"`",
+                        "* `\"チチブグンナガトロチョウ\"`"
+                    ],
+                    "shortText": "The reading for the name of the city in katakana."
+                }
+            }
+        },
+        "methods": {}
+    }
+}

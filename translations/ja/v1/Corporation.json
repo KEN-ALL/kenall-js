@@ -1,0 +1,47 @@
+{
+    "Corporation": {
+        "comment": {
+            "shortText": [
+                "`Corporation` オブジェクトは、特別な郵便番号が割り当てられた組織や部署を",
+                "表します。"
+            ]
+        },
+        "properties": {
+            "name": {
+                "comment": {
+                    "shortText": "組織名または部署名。"
+                }
+            },
+            "name_kana": {
+                "comment": {
+                    "shortText": "組織名または部署名の読み。"
+                }
+            },
+            "block_lot": {
+                "comment": {
+                    "shortText": [
+                        "当該部署に *郵便的に* 到達可能な住所。",
+                        "つまり、この住所は必ずしも実際の事業所を指しているわけでは",
+                        "ないということです。"
+                    ]
+                }
+            },
+            "post_office": {
+                "comment": {
+                    "shortText": [
+                        "この部署への郵便物を扱う郵便局の名前。"
+                    ]
+                }
+            },
+            "code_type": {
+                "comment": {
+                    "shortText": [
+                        "`0` は実際の事業所を指しているであろうことを、`1` は",
+                        "私書箱であることを示します。"
+                    ]
+                }
+            }
+        },
+        "methods": {}
+    }
+}
