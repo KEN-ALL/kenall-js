@@ -4,6 +4,8 @@
 
 kenall-js は日本の郵便番号・住所検索APIサービス「[ケンオール](https://kenall.jp/)」のクライアントライブラリです。
 
+APIドキュメントは[こちら](https://ken-all.github.io/kenall-js/ja/)をご覧ください。
+
 ## 使い方
 
 kenall-jsはブラウザでそのまま利用可能なスタンドアロンのJavaScriptバンドルとしても、Node.jsのモジュールとしても利用することができます。

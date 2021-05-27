@@ -6,6 +6,8 @@
 
 kenall-js is a JavaScript client library for [KEN ALL](https://kenall.jp/), Japan postal code to address translation API service.
 
+API document is [here](https://ken-all.github.io/kenall-js/index.html).
+
 ## How to use
 
 There are two options to use kenall-js in your project.  The one is put a `<script>` tag referring to the script bundle somewhere atop of your HTML file to invoke the API from within your script, and the other is specify `kenall` package as a dependency in your Node.js project's package.json.
