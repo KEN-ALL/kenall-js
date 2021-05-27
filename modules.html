@@ -2747,10 +2747,11 @@ img {
 				<h2>What&#39;s this?</h2>
 			</a>
 			<p>kenall-js is a JavaScript client library for <a href="https://kenall.jp/">KEN ALL</a>, Japan postal code to address translation API service.</p>
+			<p>API document is <a href="https://ken-all.github.io/kenall-js/index.html">here</a>.</p>
 			<a href="#how-to-use" id="how-to-use" style="color: inherit; text-decoration: none;">
 				<h2>How to use</h2>
 			</a>
-			<p>There are two options to use kenall-js in your project.  The one is put a <code>&lt;script&gt;</code> tag referring to the script bundle somewhere atop of your HTML file to invoke the API from within your script, and the other is specify <code>kenall</code> package as a dependency in your Node.js project&#39;s package.json.</p>
+			<p>There are two options to use kenall-js in your project.  The one is to put a <code>&lt;script&gt;</code> tag referring to the script bundle somewhere atop of your HTML file to invoke the API from within your script, and the other is to specify <code>kenall</code> package as a dependency in your Node.js project&#39;s package.json.</p>
 			<a href="#usage-from-within-the-plain-old-javascript" id="usage-from-within-the-plain-old-javascript" style="color: inherit; text-decoration: none;">
 				<h3>Usage from within the plain-old JavaScript</h3>
 			</a>
@@ -2758,6 +2759,7 @@ img {
 			<pre><code class="language-html"><span style="color: #657B83">&lt;</span><span style="color: #268BD2">script</span><span style="color: #93A1A1"> type=</span><span style="color: #2AA198">&quot;text/javascript&quot;</span><span style="color: #93A1A1"> src=</span><span style="color: #2AA198">&quot;LOCATION-TO-THE-SCRIPT-BUNDLE&quot;</span><span style="color: #657B83">&gt;&lt;/</span><span style="color: #268BD2">script</span><span style="color: #657B83">&gt;</span>
 </code></pre>
 			<p>This adds a property <code>kenall</code> to the global <code>window</code> object, from which you can refer to <code>KENALL</code> constructor to create the object that works as the interface.  Look at the following example to see what it goes like.</p>
+			<p>Note that you need to upload the script bundle beforehand somewhere accessible from the browser.</p>
 			<pre><code class="language-html"><span style="color: #657B83">&lt;</span><span style="color: #268BD2">script</span><span style="color: #93A1A1"> type=</span><span style="color: #2AA198">&quot;text/javascript&quot;</span><span style="color: #657B83">&gt;</span>
 <span style="color: #93A1A1">function</span><span style="color: #93A1A1"> </span><span style="color: #268BD2">fill</span><span style="color: #93A1A1">(form) {</span>
 <span style="color: #93A1A1">  </span><span style="color: #657B83">// You can obtain the API key from the dashboard at kenall.jp/home</span>
@@ -2776,7 +2778,7 @@ img {
 </code></pre>
 			<p>The script bundle can be downloaded at the release page.</p>
 			<p>Alternatively, you can use the following URL for the latest bundle.  Beware that we don&#39;t provide any warranty on its availability, though we&#39;ll put as much effort as possible for keeping it up.</p>
-			<p><a href="https://js.kenall.jp/2021-02-01/kenall.js">https://js.kenall.jp/2021-02-01/kenall.js</a></p>
+			<p><a href="https://js.kenall.jp/2021-05-28/kenall.js">https://js.kenall.jp/2021-05-28/kenall.js</a></p>
 			<a href="#usage-in-a-nodejs-project" id="usage-in-a-nodejs-project" style="color: inherit; text-decoration: none;">
 				<h3>Usage in a Node.js project</h3>
 			</a>
@@ -2869,7 +2871,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Facet<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/c7673d4/src/v1/interfaces.ts#L271">v1/interfaces.ts:271</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/70bdfd7/src/v1/interfaces.ts#L271">v1/interfaces.ts:271</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">

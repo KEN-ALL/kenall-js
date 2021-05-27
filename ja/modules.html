@@ -2744,6 +2744,7 @@ img {
 			</a>
 			<p><img src="https://github.com/KEN-ALL/kenall-js/workflows/CI/badge.svg" alt=""></p>
 			<p>kenall-js は日本の郵便番号・住所検索APIサービス「<a href="https://kenall.jp/">ケンオール</a>」のクライアントライブラリです。</p>
+			<p>APIドキュメントは<a href="https://ken-all.github.io/kenall-js/ja/">こちら</a>をご覧ください。</p>
 			<a href="#使い方" id="使い方" style="color: inherit; text-decoration: none;">
 				<h2>使い方</h2>
 			</a>
@@ -2752,9 +2753,10 @@ img {
 				<h3>ブラウザで使う場合</h3>
 			</a>
 			<p>スクリプトを利用するHTMLファイルに</p>
-			<pre><code class="language-html"><span style="color: #657B83">&lt;</span><span style="color: #268BD2">script</span><span style="color: #93A1A1"> type=</span><span style="color: #2AA198">&quot;text/javascript&quot;</span><span style="color: #93A1A1"> src=</span><span style="color: #2AA198">&quot;https://js.kenall.jp/2021-02-01/kenall.js&quot;</span><span style="color: #657B83">&gt;&lt;/</span><span style="color: #268BD2">script</span><span style="color: #657B83">&gt;</span>
+			<pre><code class="language-html"><span style="color: #657B83">&lt;</span><span style="color: #268BD2">script</span><span style="color: #93A1A1"> type=</span><span style="color: #2AA198">&quot;text/javascript&quot;</span><span style="color: #93A1A1"> src=</span><span style="color: #2AA198">&quot;スクリプトバンドルの場所&quot;</span><span style="color: #657B83">&gt;&lt;/</span><span style="color: #268BD2">script</span><span style="color: #657B83">&gt;</span>
 </code></pre>
 			<p>を記載すると、(以降に読み込まれた<code>&lt;script&gt;</code>タグの中で) <code>window</code>オブジェクトに<code>kenall</code>オブジェクトが追加され、<code>kenall</code>オブジェクトの<code>KENALL</code>プロパティの値として<code>KENALL</code>コンストラクタが利用可能になります。コンストラクタに対して<code>new</code>を適用することで、<code>KENALL</code>オブジェクトを扱うことができるようになります。</p>
+			<p>スクリプトバンドルは事前にブラウザからアクセス可能な場所にアップロードする必要があることに留意してください。</p>
 			<pre><code class="language-html"><span style="color: #657B83">&lt;</span><span style="color: #268BD2">script</span><span style="color: #93A1A1"> type=</span><span style="color: #2AA198">&quot;text/javascript&quot;</span><span style="color: #657B83">&gt;</span>
 <span style="color: #93A1A1">function</span><span style="color: #93A1A1"> </span><span style="color: #268BD2">fill</span><span style="color: #93A1A1">(form) {</span>
 <span style="color: #93A1A1">  </span><span style="color: #657B83">// APIキーはダッシュボードから取得してください</span>
@@ -2772,6 +2774,8 @@ img {
 <span style="color: #657B83">&lt;/</span><span style="color: #268BD2">script</span><span style="color: #657B83">&gt;</span>
 </code></pre>
 			<p>のように利用してください。</p>
+			<p>なお、最新のスクリプトバンドルのURLとして、以下を使うこともできます。可能な限り問題が発生しないよう配慮しますが、このURLの場所から常にバンドルをダウンロードできるかどうかは保証できません。</p>
+			<p><a href="https://js.kenall.jp/2021-05-28/kenall.js">https://js.kenall.jp/2021-05-28/kenall.js</a></p>
 			<a href="#nodejsで使う場合" id="nodejsで使う場合" style="color: inherit; text-decoration: none;">
 				<h3>Node.jsで使う場合</h3>
 			</a>
@@ -2856,7 +2860,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Facet<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/c7673d4/src/v1/interfaces.ts#L271">v1/interfaces.ts:271</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/70bdfd7/src/v1/interfaces.ts#L271">v1/interfaces.ts:271</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
