@@ -110,6 +110,33 @@ test.each([
   expect(result).toEqual(fixture);
 });
 
+test('getAddress method: normalize postal code before sending request', async () => {
+  const fixture = {
+    version: '2020-08-31',
+    data: [],
+  };
+  const mockedAxiosGet = jest.fn();
+  mocked(axios).create = jest.fn(
+    (...args): AxiosInstance => {
+      const retval = jest.requireActual('axios').create(...args);
+      retval.get = mockedAxiosGet;
+      return retval;
+    }
+  );
+  mockedAxiosGet.mockResolvedValue({
+    data: fixture,
+  });
+  const ka = new KENALL('key');
+  await ka.getAddress('000-0000');
+  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
+  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/0000000');
+  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    params: {
+      version: undefined,
+    },
+  });
+});
+
 test.each([
   {
     version: '2020-08-31',
