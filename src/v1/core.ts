@@ -15,6 +15,14 @@ import {
 } from './interfaces';
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
+function normalizePostalCode(postalCode: string): string {
+  const match = postalCode.match(/^(\d{3})-(\d{4})$/);
+  if (match) {
+    return match[1] + match[2];
+  }
+  return postalCode;
+}
+
 export class KENALLV1 {
   private readonly axios: AxiosInstance;
   readonly apibase: string;
@@ -59,7 +67,7 @@ export class KENALLV1 {
     try {
       return validate<AddressResolverResponse>(
         await this.request(
-          `/postalcode/${postalCode}`,
+          `/postalcode/${normalizePostalCode(postalCode)}`,
           version != undefined ? { version: version } : {}
         )
       );
