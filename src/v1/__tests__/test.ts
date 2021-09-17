@@ -184,3 +184,62 @@ test.each([
   });
   expect(result).toEqual(fixture);
 });
+
+test.each([
+  {
+    version: '2021-09-15',
+    data: {
+      address_image_id: null,
+      address_outside: '',
+      address_outside_image_id: null,
+      assignment_date: '2015-10-05',
+      change_cause: '',
+      change_date: '2021-01-04',
+      city_name: '千代田区',
+      close_cause: null,
+      close_date: null,
+      corporate_number: '2021001052596',
+      correct: '0',
+      en_address_line: '',
+      en_address_outside: '',
+      en_name: '',
+      en_prefecture_name: 'Tokyo',
+      furigana: 'オープンコレクター',
+      hihyoji: '0',
+      jisx0402: '13101',
+      kind: '301',
+      name: '株式会社オープンコレクター',
+      name_image_id: null,
+      post_code: '1020083',
+      prefecture_name: '東京都',
+      process: '12',
+      published_date: '2021-08-31',
+      sequence_number: '1394014',
+      street_number: '麹町３丁目１２－１４麹町駅前ヒルトップ８階',
+      successor_corporate_number: null,
+      update_date: '2021-01-12',
+    },
+  },
+])('getNTACorporateInfo method', async (fixture) => {
+  const mockedAxiosGet = jest.fn();
+  mocked(axios).create = jest.fn(
+    (...args): AxiosInstance => {
+      const retval = jest.requireActual('axios').create(...args);
+      retval.get = mockedAxiosGet;
+      return retval;
+    }
+  );
+  mockedAxiosGet.mockResolvedValue({
+    data: fixture,
+  });
+  const ka = new KENALL('key');
+  const result = await ka.getNTACorporateInfo('0000000000000');
+  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
+  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/houjinbangou/0000000000000');
+  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    params: {
+      version: undefined,
+    },
+  });
+  expect(result).toEqual(fixture);
+});

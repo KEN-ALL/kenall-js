@@ -12,6 +12,7 @@ import {
   AddressSearcherOptions,
   AddressSearcherResponse,
   CityResolverResponse,
+  NTACorporateInfoResolverResponse,
 } from './interfaces';
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
@@ -141,6 +142,37 @@ export class KENALLV1 {
     try {
       return validate<AddressSearcherResponse>(
         await this.request('/postalcode/', params)
+      );
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  /**
+   * Invokes "getNTACorporateInfo" API (endpoint: `/houjinbangou/{corporateNumber}`).
+   *
+   * @param corporateNumber The corporate number to query with.
+   * @param version The version of the database that the query has to be
+   *                performed against. Will default to the latest available
+   *                version if not specified.
+   * @returns An {@link NTACorporateInfoResolverResponse}.
+   */
+  async getNTACorporateInfo(
+    corporateNumber: string,
+    version?: string | undefined
+  ): Promise<NTACorporateInfoResolverResponse> {
+    try {
+      return validate<NTACorporateInfoResolverResponse>(
+        await this.request(
+          `/houjinbangou/${corporateNumber}`,
+          version != undefined ? { version: version } : {}
+        )
       );
     } catch (e) {
       if (e instanceof StructError) {

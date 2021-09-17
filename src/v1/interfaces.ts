@@ -433,25 +433,25 @@ export interface CityResolverResponse {
  */
 export enum NTACorporateInfoProcess {
   /* New record */
-  NEW = 1,
+  NEW = '1',
   /* Trade name or corporate name was changed. */
-  NAME_CHANGED = 11,
+  NAME_CHANGED = '11',
   /* Domestic address was changed. */
-  DOMESTIC_ADDRESS_CHANGED = 12,
+  DOMESTIC_ADDRESS_CHANGED = '12',
   /* Overseas address was changed. */
-  OVERSEAS_ADDRESS_CHANGED = 13,
+  OVERSEAS_ADDRESS_CHANGED = '13',
   /* Registration record was closed. */
-  REGISTRATION_RECORD_CLOSED = 21,
+  REGISTRATION_RECORD_CLOSED = '21',
   /* Registration record was reopened. */
-  REGISTRATION_RECORD_REOPENED = 22,
+  REGISTRATION_RECORD_REOPENED = '22',
   /* Absorption merger completed. */
-  ABSORPTION_MERGER_COMPLETED = 71,
+  ABSORPTION_MERGER_COMPLETED = '71',
   /* Absorption merger was invalidated. */
-  ABSORPTION_MERGER_INVALIDATED = 72,
+  ABSORPTION_MERGER_INVALIDATED = '72',
   /* Registration record was erased. */
-  REGISTRATION_RECORD_ERASED = 81,
+  REGISTRATION_RECORD_ERASED = '81',
   /* The record was deleted. */
-  DELETED = 99,
+  DELETED = '99',
 }
 
 /**
@@ -459,25 +459,25 @@ export enum NTACorporateInfoProcess {
  */
 export enum NTACorporateInfoKind {
   /* National public entity */
-  NATIONAL_PUBLIC_ENTITY = 101,
+  NATIONAL_PUBLIC_ENTITY = '101',
   /* Local public entity */
-  LOCAL_PUBLIC_ENTITY = 201,
+  LOCAL_PUBLIC_ENTITY = '201',
   /* Limited liability company by share, aka K.K. */
-  KABUSHIKI_KAISHA = 301,
+  KABUSHIKI_KAISHA = '301',
   /* Old style of limited liability company not by share */
-  YUGEN_KAISHA = 302,
+  YUGEN_KAISHA = '302',
   /* General partnership company */
-  GOMEI_KAISHA = 303,
+  GOMEI_KAISHA = '303',
   /* Limited partnership company */
-  GOSHI_KAISHA = 304,
+  GOSHI_KAISHA = '304',
   /* Limited liability company, aka G.K. */
-  GODO_KAISHA = 305,
+  GODO_KAISHA = '305',
   /* Other types of company */
-  OTHER_COMPANY = 399,
+  OTHER_COMPANY = '399',
   /* Foreign company */
-  FOREIGN_COMPANY = 401,
+  FOREIGN_COMPANY = '401',
   /* Other */
-  OTHER = 499,
+  OTHER = '499',
 }
 
 /**
@@ -486,13 +486,13 @@ export enum NTACorporateInfoKind {
  */
 export enum NTACorporateInfoCloseCause {
   /* Liquidation completed */
-  LIQUIDATION_COMPLETED = 1,
+  LIQUIDATION_COMPLETED = '1',
   /* Dissolution by merger */
-  DISSOLUTION_BY_MERGER = 11,
+  DISSOLUTION_BY_MERGER = '11',
   /* A registerer closed the corporate */
-  CLOSED_BY_REGISTERER = 21,
+  CLOSED_BY_REGISTERER = '21',
   /* Other reasons */
-  OTHER = 31,
+  OTHER = '31',
 }
 
 /**
@@ -532,11 +532,11 @@ export interface NTACorporateInfo {
   process: NTACorporateInfoProcess;
 
   /**
-   * `true` if the record was corrected.
+   * `"1"` if the record was corrected.
    *
-   *  Example: `false`
+   *  Example: `"0"`
    */
-  correct: boolean;
+  correct: string;
 
   /**
    * The updated date of the record, in the form of `"YYYY-MM-DD"`
@@ -601,7 +601,7 @@ export interface NTACorporateInfo {
 
    * Example: `"東京都"`
    */
-  prefecture: string;
+  prefecture_name: string;
 
   /**
    * The name of the city.
@@ -615,7 +615,7 @@ export interface NTACorporateInfo {
    * * `"各務原市"`
    * * `"秩父郡長瀞町"`
    */
-  city: string;
+  city_name: string;
 
   /**
    * The name of the area that usually corresponds to lowest part of the
@@ -657,7 +657,7 @@ export interface NTACorporateInfo {
   /**
    * The postal code for the place this object represents.
    */
-  postal_code: string;
+  post_code: string;
 
   /**
    * The corporate address outside of Japan, written in Japanese.
@@ -747,7 +747,7 @@ export interface NTACorporateInfo {
 
    * Example: `"Tokyo"`
    */
-  en_prefecture: string;
+  en_prefecture_name: string;
 
   /**
    * The address without prefecture in English with hankaku format. 
@@ -782,11 +782,11 @@ export interface NTACorporateInfo {
 
   /**
    * If the corporate address is confirmed that it doesn't exist,
-   * this value is set to `true`.
+   * this value is set to `"1"`.
    *
-   * Example: `false`
+   * Example: `"0"`
    */
-  hidden: boolean;
+  hihyoji: string;
 }
 
 /**
@@ -804,5 +804,5 @@ export interface NTACorporateInfoResolverResponse {
   /**
    * The set of the data that match to the query.
    */
-  data: NTACorporateInfo[];
+  data: NTACorporateInfo;
 }
