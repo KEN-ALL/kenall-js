@@ -8,4 +8,9 @@ export {
   CityResolverResponse,
   Corporation,
   Facet,
+  NTACorporateInfo,
+  NTACorporateInfoCloseCause,
+  NTACorporateInfoKind,
+  NTACorporateInfoProcess,
+  NTACorporateInfoResolverResponse,
 } from './interfaces';

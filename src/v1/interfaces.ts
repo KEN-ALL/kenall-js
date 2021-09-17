@@ -426,3 +426,383 @@ export interface CityResolverResponse {
    */
   data: City[];
 }
+
+/**
+ * A `NTACorporateInfoProcess` represents the reason why the record
+ * was created.
+ */
+export enum NTACorporateInfoProcess {
+  /* New record */
+  NEW = 1,
+  /* Trade name or corporate name was changed. */
+  NAME_CHANGED = 11,
+  /* Domestic address was changed. */
+  DOMESTIC_ADDRESS_CHANGED = 12,
+  /* Overseas address was changed. */
+  OVERSEAS_ADDRESS_CHANGED = 13,
+  /* Registration record was closed. */
+  REGISTRATION_RECORD_CLOSED = 21,
+  /* Registration record was reopened. */
+  REGISTRATION_RECORD_REOPENED = 22,
+  /* Absorption merger completed. */
+  ABSORPTION_MERGER_COMPLETED = 71,
+  /* Absorption merger was invalidated. */
+  ABSORPTION_MERGER_INVALIDATED = 72,
+  /* Registration record was erased. */
+  REGISTRATION_RECORD_ERASED = 81,
+  /* The record was deleted. */
+  DELETED = 99,
+}
+
+/**
+ * A `NTACorporateInfoKind` represents the kind of corporate.
+ */
+export enum NTACorporateInfoKind {
+  /* National public entity */
+  NATIONAL_PUBLIC_ENTITY = 101,
+  /* Local public entity */
+  LOCAL_PUBLIC_ENTITY = 201,
+  /* Limited liability company by share, aka K.K. */
+  KABUSHIKI_KAISHA = 301,
+  /* Old style of limited liability company not by share */
+  YUGEN_KAISHA = 302,
+  /* General partnership company */
+  GOMEI_KAISHA = 303,
+  /* Limited partnership company */
+  GOSHI_KAISHA = 304,
+  /* Limited liability company, aka G.K. */
+  GODO_KAISHA = 305,
+  /* Other types of company */
+  OTHER_COMPANY = 399,
+  /* Foreign company */
+  FOREIGN_COMPANY = 401,
+  /* Other */
+  OTHER = 499,
+}
+
+/**
+ * A `NTACorporateInfoCloseCause` represents the reason why the corporate
+ * was closed.
+ */
+export enum NTACorporateInfoCloseCause {
+  /* Liquidation completed */
+  LIQUIDATION_COMPLETED = 1,
+  /* Dissolution by merger */
+  DISSOLUTION_BY_MERGER = 11,
+  /* A registerer closed the corporate */
+  CLOSED_BY_REGISTERER = 21,
+  /* Other reasons */
+  OTHER = 31,
+}
+
+/**
+ * A `NTACorporateInfo` object would store the information about Basic 3 Information
+ * of Corporate Number, which is published by Japan National Tax Agency.
+ */
+export interface NTACorporateInfo {
+  /**
+   * The published date of the record, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day
+   * the record was published.
+   *
+   *  Example: `"2021-01-01"`
+   */
+  published_date: string;
+
+  /**
+   * The revision number of the corporate record, non zero-padded
+   * 8 digit number at maximum.
+   *
+   *  Example: `1`
+   */
+  sequence_number: string;
+
+  /**
+   * The corporate number, 12 digit number plus 1 check digit.
+   *
+   *  Example: `2021001052596`
+   */
+  corporate_number: string;
+
+  /**
+   * The reason why the record was created.
+   *
+   *  Example: `NTACorporateInfoProcess.NEW`
+   */
+  process: NTACorporateInfoProcess;
+
+  /**
+   * `true` if the record was corrected.
+   *
+   *  Example: `false`
+   */
+  correct: boolean;
+
+  /**
+   * The updated date of the record, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day.
+   *
+   *  Example: `"2021-01-01"`
+   */
+  update_date: string;
+
+  /**
+   * The changed date of the record, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day.
+   *
+   * The meaning of "changed" depends on other contexts of the record.
+   * If `process` is `NEW`, the changed date means the corporate number
+   * was assigned. If `process` is not `NEW` and `kind` is not a public
+   * entity, the changed date means the date related to the process.
+   * If `kind` is a public entity, the changed date means when the
+   * process occurred.
+   *
+   *  Example: `"2021-01-01"`
+   */
+  change_date: string;
+  /**
+   * The trade name or the corporate name in Japanese with Zenkaku format.
+   * If the text is longer than 150 characters, it will be truncated
+   * to 150 characters. If the text uses a Kanji which is not JIS
+   * Level 1 or 2, The Kanji will be converted into correspondent
+   * JIS Level 1 or 2 Kanjis. You can refer to the unnormalized
+   * version of the text from a correspondent image file.
+   * See `name_image_id` for details.
+   *
+   *  Example: `"株式会社オープンコレクター"`
+   */
+  name: string;
+
+  /**
+   * The trade name or the corporate name image ID, 8 digit number at maximum.
+   * If you want to refer to the image file, please access
+   * https://www.houjin-bangou.nta.go.jp/image?imageid=NAME_IMAGE_ID,
+   * where NAME_IMAGE_ID is a zero-padded 8 digit number of the ID.
+   * For example, if the ID is `100`, You can get the image file from
+   * https://www.houjin-bangou.nta.go.jp/image?imageid=00000100.
+   * If `name` is not normalized, This value is set to `null`.
+   *
+   *  Examples:
+   *
+   *  * `"99999999"`
+   *  * `null`
+   */
+  name_image_id: string | null;
+
+  /**
+   * Kind of the corporate.
+   *
+   *  Example: `NTACorporateInfoKind.KABUSHIKI_KAISHA`
+   */
+  kind: NTACorporateInfoKind;
+
+  /**
+   * The name of the prefecture in Kanji.
+
+   * Example: `"東京都"`
+   */
+  prefecture: string;
+
+  /**
+   * The name of the city.
+   * The county name may precede it, or to the contrary, the name of the
+   * ward would follow it in case the city has ordinance-designated wards.
+   *
+   * Examples:
+   *
+   * * `"港区"`
+   * * `"大阪市北区"`
+   * * `"各務原市"`
+   * * `"秩父郡長瀞町"`
+   */
+  city: string;
+
+  /**
+   * The name of the area that usually corresponds to lowest part of the
+   * address.
+   * If the text is longer than 300 characters, it will be truncated
+   * to 300 characters. If the text uses a Kanji which is not JIS
+   * Level 1 or 2, The Kanji will be converted into correspondent
+   * JIS Level 1 or 2 Kanjis. You can refer to the unnormalized
+   * version of the text from a correspondent image file.
+   * See `address_image_id` for details.
+   *
+   * Example: `麹町３丁目１２－１４麹町駅前ヒルトップ８階`
+   */
+  street_number: string;
+
+  /**
+   * The address image ID, 8 digit number at maximum.
+   * If you want to refer to the image file, please access
+   * https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,
+   * where ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.
+   * For example, if the ID is `100`, You can get the image file from
+   * https://www.houjin-bangou.nta.go.jp/image?imageid=00000100.
+   * If `street_number` is not normalized, this value is set to `null`.
+   *
+   *  Examples:
+   *
+   *  * `"99999999"`
+   *  * `null`
+   */
+  address_image_id: string | null;
+
+  /**
+   * The 5 digit Japanese municipality code (全国地方公共団体コード)
+   * for the administrative division where the place this object represents
+   * belongs.
+   */
+  jisx0402: string;
+
+  /**
+   * The postal code for the place this object represents.
+   */
+  postal_code: string;
+
+  /**
+   * The corporate address outside of Japan, written in Japanese.
+   * If the text is longer than 300 characters, it will be truncated
+   * to 300 characters. If the text uses a Kanji which is not JIS
+   * Level 1 or 2, The Kanji will be converted into correspondent
+   * JIS Level 1 or 2 Kanjis. You can refer to the unnormalized
+   * version of the text from a correspondent image file.
+   * See `address_outside__image_id` for details.
+   *
+   * Example: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`
+   */
+  address_outside: string;
+
+  /**
+   * The foreign address image ID, 8 digit number at maximum.
+   * If you want to refer to the image file, please access
+   * https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,
+   * where ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.
+   * For example, if the ID is `100`, You can get the image file from
+   * https://www.houjin-bangou.nta.go.jp/image?imageid=00000100.
+   * If `address_outside` is not normalized, this value is set to `null`.
+   *
+   *  Examples:
+   *
+   *  * `"99999999"`
+   *  * `null`
+   */
+  address_outside_image_id: string | null;
+
+  /**
+   * The date of the record when the corporate was closed, in the
+   * form of `"YYYY-MM-DD"` where Y, M, and D represent digits of
+   * the year, month, and day.
+   * If the corporate is not closed, this value is set to `null`.
+   *
+   *
+   *  Example: `"2021-01-01"`
+   */
+  close_date: string | null;
+
+  /**
+   * The reason why the corporate was closed.
+   * If the corporate is not closed, this value is set to `null`.
+   *
+   *  Example: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`
+   */
+  close_cause: NTACorporateInfoCloseCause | null;
+
+  /**
+   * The corporate number of the successor of the closed corporate,
+   * 12 digit number plus 1 check digit.
+   * If the corporate is not closed, this value is set to `null`.
+   *
+   *  Example: `2021001052596`
+   */
+  successor_corporate_number: string | null;
+
+  /**
+   * The reason why the process occurred, 500 characters at maximum.
+   * Both zenkaku and hankaku format are allowed.
+   *
+   *  Example: `令和２年５月１日○○株式会社に合併し解散`
+   */
+  change_cause: string;
+
+  /**
+   * The date of the record when the corporate number was assigned,
+   * in the form of `"YYYY-MM-DD"` where Y, M, and D represent
+   * digits of the year, month, and day.
+   *
+   *  Example: `"2021-01-01"`
+   */
+  assignment_date: string;
+
+  /**
+   * The trade name or the corporate name in English with hankaku format,
+   * 600 characters at maximum.
+   * If the English name is not registered, this value is set to blank.
+   *
+   *  Example: `"Rumoi Summary Court"`
+   */
+  en_name: string;
+
+  /**
+   * The name of the prefecture in English.
+
+   * Example: `"Tokyo"`
+   */
+  en_prefecture: string;
+
+  /**
+   * The address without prefecture in English with hankaku format. 
+   * If the text is longer than 600 characters, it will be truncated
+   * to 600 characters. 
+   * If the address is not registered, this value is set to `null`.
+
+   * 
+   * Example: `4-7, Kashiwagicho, Tomakomai shi`
+   */
+  en_address_line: string | null;
+
+  /**
+   * The corporate address outside of Japan, written in English with 
+   * hankaku format. 
+   * If the text is longer than 600 characters, it will be truncated
+   * to 600 characters. 
+   * If the address is not registered, this value is set to `null`.
+
+   * 
+   * Example: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`
+   */
+  en_address_outside: string | null;
+
+  /**
+   * The furigana correspondent to the corporate name.
+   * If the furigana is not registered, this value is set to blank.
+   *
+   * Example: `オープンコレクター`
+   */
+  furigana: string;
+
+  /**
+   * If the corporate address is confirmed that it doesn't exist,
+   * this value is set to `true`.
+   *
+   * Example: `false`
+   */
+  hidden: boolean;
+}
+
+/**
+ * An `NTACorporateInfoResolverResponse` describes a response to
+ * "getNTACorporateInfo" API call.
+ */
+export interface NTACorporateInfoResolverResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day
+   * the source data became available.
+   */
+  version: string;
+
+  /**
+   * The set of the data that match to the query.
+   */
+  data: NTACorporateInfo[];
+}
