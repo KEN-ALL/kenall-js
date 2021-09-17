@@ -280,11 +280,11 @@ test.each([
         update_date: '2021-01-12',
       },
     ],
-    query: "オープンコレクター",
-    "count": 1,
-    "offset": 0,
-    "limit": 1,
-    "facets": null
+    query: 'オープンコレクター',
+    count: 1,
+    offset: 0,
+    limit: 1,
+    facets: null,
   },
 ])('searchNTACorporateInfo method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
@@ -302,13 +302,11 @@ test.each([
   const options = { query: 'オープンコレクター', limit: 1 };
   const result = await ka.searchNTACorporateInfo(options);
   expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-  expect(mockedAxiosGet.mock.calls[0][0]).toBe(
-    '/houjinbangou'
-  );
+  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/houjinbangou');
   expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
     params: {
-      q: "オープンコレクター",
-      limit: "1"
+      q: 'オープンコレクター',
+      limit: '1',
     },
   });
   expect(result).toEqual(fixture);
