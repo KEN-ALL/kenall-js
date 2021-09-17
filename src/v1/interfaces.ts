@@ -806,3 +806,154 @@ export interface NTACorporateInfoResolverResponse {
    */
   data: NTACorporateInfo;
 }
+
+/**
+ * An `NTACorporateInfoSearcherOptions` stores a set of parameters
+ * that will be sent to `searchCorporateInfo` API.
+ */
+export interface NTACorporateInfoSearcherOptions {
+  /**
+   * The query to search against the address database.
+   *
+   * Example: `"東京都 AND オープンコレクター"`
+   */
+  query: string;
+
+  /**
+   * The offset from which you want to retrieve the result.
+   */
+  offset?: number | undefined;
+
+  /**
+   * The maximum number of items that you want to retrieve.
+   *
+   * Defaults to 100 unless specified.
+   */
+  limit?: number | undefined;
+
+  /**
+   * The version of which the database is searched against.
+   *
+   * Defaults to the latest available version.
+   *
+   * Example: `"2021-04-30"`
+   */
+  version?: string | undefined;
+
+  /**
+   * The search mode.
+   *
+   * Defaults to `partial`. If `partial` is set, the API will
+   * return partially match results. If "exact" is set, the
+   * result includes only the corporates which name without
+   * corporate kind exactly matches the query. Please note
+   * that the `exact` mode doesn't match a query that contains
+   * corporate kind. For example, the query
+   * `株式会社オープンコレクター` doesn't return any result in
+   * the `exact` mode, but `オープンコレクター` will return
+   * the result. You can search with a corporate name with
+   * a corporate kind in `exact_with_kind` mode.
+   *
+   * Example: `"exact"`
+   */
+  mode?: string | undefined;
+
+  /**
+   * The facet representation at which level the resulting facets
+   * of prefecture and city will be shapen.
+   * The facet should be written in Japanese.
+   * If you want to specify foreign corporates, please set
+   * `/海外など` to this field.
+   *
+   * Example: `"/東京都"`
+   */
+  facet_area?: string | undefined;
+
+  /**
+   * The facet representation at which level the resulting facets
+   * of kind will be shapen.
+   * The facet should be written in Japanese.
+   *
+   * Example: `"/株式会社"`
+   */
+  facet_kind?: string | undefined;
+
+  /**
+   * The facet representation at which level the resulting facets
+   * of proecess will be shapen.
+   * The facet should be written in Japanese.
+   *
+   * Example: `"/商号又は名称の変更"`
+   */
+  facet_process?: string | undefined;
+
+  /**
+   * The facet representation at which level the resulting facets
+   * of close cause will be shapen.
+   * The facet should be written in Japanese.
+   *
+   * Example: `"/清算の結了等"`
+   */
+  facet_close_cause?: string | undefined;
+}
+
+/**
+ * A `NTACorporateInfoFacets` represents facets of some level and
+ * the number of the items in the result's subset that belong to
+ * the facet.
+ *
+ * Each facet representation consist of hierarchical facet strings
+ * delimited by slashes.
+ *
+ * Example: `{"area": ["/東京都/港区", 7], "kind": ["/株式会社", 7]}`
+ */
+export interface NTACorporateInfoFacets {
+  area?: Facet;
+  kind?: Facet;
+  process?: Facet;
+  close_cause?: Facet;
+}
+
+/**
+ * An `NTACorporateInfoSearcherResponse` describes a response to
+ * `searchNTACorporateInfo` API call.
+ */
+export interface NTACorporateInfoSearcherResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day
+   * the source data became available.
+   */
+  version: string;
+
+  /**
+   * The set of the data that match to the query.
+   */
+  data: NTACorporateInfo[];
+  /**
+   * The query that the search has been performed for.
+   */
+  query: string;
+
+  /**
+   * The number of the resulting items in total.
+   */
+  count: number;
+
+  /**
+   * The offset from which the result has been retrieved.
+   */
+  offset: number;
+
+  /**
+   * The number of items that have been intended, at most, to retrieve from the result.
+   */
+  limit: number;
+
+  /**
+   * The facets of the result that form with the query.
+   *
+   * If no facet is given, those will be unavailable and this stores null.
+   */
+  facets: NTACorporateInfoFacets | null;
+}

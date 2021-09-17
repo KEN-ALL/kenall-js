@@ -13,4 +13,7 @@ export {
   NTACorporateInfoKind,
   NTACorporateInfoProcess,
   NTACorporateInfoResolverResponse,
+  NTACorporateInfoSearcherOptions,
+  NTACorporateInfoFacets,
+  NTACorporateInfoSearcherResponse,
 } from './interfaces';

@@ -13,5 +13,8 @@ export {
   NTACorporateInfoKind,
   NTACorporateInfoProcess,
   NTACorporateInfoResolverResponse,
+  NTACorporateInfoSearcherOptions,
+  NTACorporateInfoFacets,
+  NTACorporateInfoSearcherResponse,
 } from './v1';
 export { Config } from './config';
