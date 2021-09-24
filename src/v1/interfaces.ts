@@ -600,7 +600,7 @@ export interface NTACorporateInfo {
    * where Y, M, and D represent digits of the year, month, and day.
    *
    * Unlike `change_date` and `published_date`, this field indicates the
-   * actual update date of the corporate information.
+   * actual update date of the corporate information in NTA data.
    * See `change_date` and `published_date` for further information.
    *
    * Example: `"2021-01-01"`
