@@ -582,7 +582,7 @@ export interface NTACorporateInfo {
 
   /**
    * The flag if the record was corrected or not.
-   * 
+   *
    *  * `"1"` indicates the record was corrected.
    *  * `"0"` indicates the record was not corrected.
    *
@@ -612,6 +612,7 @@ export interface NTACorporateInfo {
    * Example: `"2021-01-01"`
    */
   change_date: string;
+
   /**
    * The trade name or the corporate name in Japanese with Zenkaku format.
    * If the text is longer than 150 characters, it will be truncated
@@ -650,7 +651,7 @@ export interface NTACorporateInfo {
 
   /**
    * The name of the prefecture in Kanji.
-   * 
+   *
    * Example: `"東京都"`
    */
   prefecture_name: string;
@@ -795,28 +796,28 @@ export interface NTACorporateInfo {
 
   /**
    * The name of the prefecture in English.
-   * 
+   *
    * Example: `"Tokyo"`
    */
   en_prefecture_name: string;
 
   /**
-   * The address without prefecture in English with hankaku format. 
+   * The address without prefecture in English with hankaku format.
    * If the text is longer than 600 characters, it will be truncated
-   * to 600 characters. 
+   * to 600 characters.
    * If the address is not registered, this value is set to `null`.
-   * 
+   *
    * Example: `4-7, Kashiwagicho, Tomakomai shi`
    */
   en_address_line: string | null;
 
   /**
-   * The corporate address outside of Japan, written in English with 
-   * hankaku format. 
+   * The corporate address outside of Japan, written in English with
+   * hankaku format.
    * If the text is longer than 600 characters, it will be truncated
-   * to 600 characters. 
+   * to 600 characters.
    * If the address is not registered, this value is set to `null`.
-   * 
+   *
    * Example: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`
    */
   en_address_outside: string | null;
@@ -979,6 +980,7 @@ export interface NTACorporateInfoSearcherResponse {
    * The set of the data that match to the query.
    */
   data: NTACorporateInfo[];
+
   /**
    * The query that the search has been performed for.
    */
