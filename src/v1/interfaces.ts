@@ -516,7 +516,7 @@ export enum NTACorporateInfoKind {
    */
   FOREIGN_COMPANY = '401',
   /**
-   * Other
+   * Other corporate kinds which is not belong to the above
    */
   OTHER = '499',
 }
