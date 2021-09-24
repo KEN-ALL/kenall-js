@@ -51,7 +51,7 @@
             },
             "OTHER": {
                 "comment": {
-                    "shortText": "Other corporate kinds which is not belong to the above"
+                    "shortText": "Other corporate kinds which do not belong to the above"
                 }
             }
         }
