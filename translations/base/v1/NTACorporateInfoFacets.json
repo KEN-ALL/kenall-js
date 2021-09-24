@@ -1,0 +1,18 @@
+{
+    "NTACorporateInfoFacets": {
+        "comment": {
+            "text": [
+                "Each facet representation consist of hierarchical facet strings",
+                "delimited by slashes.",
+                "Example: `{\"area\": [\"/東京都/港区\", 7], \"kind\": [\"/株式会社\", 7]}`"
+            ],
+            "shortText": [
+                "A `NTACorporateInfoFacets` represents facets of some level and",
+                "the number of the items in the result's subset that belong to",
+                "the facet."
+            ]
+        },
+        "properties": {},
+        "methods": {}
+    }
+}
