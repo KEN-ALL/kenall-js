@@ -753,7 +753,7 @@ export interface NTACorporateInfo {
   close_date: string | null;
 
   /**
-   * The reason why the corporate was closed.
+   * The reason the corporate was closed.
    * If the corporate is not closed, this value is set to `null`.
    *
    * Example: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`

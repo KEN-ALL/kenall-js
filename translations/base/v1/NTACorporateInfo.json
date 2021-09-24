@@ -229,7 +229,7 @@
                 "comment": {
                     "text": "Example: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`",
                     "shortText": [
-                        "The reason why the corporate was closed.",
+                        "The reason the corporate was closed.",
                         "If the corporate is not closed, this value is set to `null`."
                     ]
                 }
