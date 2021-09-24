@@ -35,7 +35,7 @@ export interface Address {
 
   /**
    * The name of the city.
-   * The county name may precede it, or to the contrary, the name of the
+   * The county name may precede it, or the name of the
    * ward would follow it in case the city has ordinance-designated wards.
    *
    * Examples:
@@ -385,7 +385,7 @@ export interface City {
 
   /**
    * The name of the city.
-   * The county name may precede it, or to the contrary, the name of the
+   * The county name may precede it, or the name of the
    * ward would follow it in case the city has ordinance-designated wards.
    *
    * Examples:
@@ -659,7 +659,7 @@ export interface NTACorporateInfo {
 
   /**
    * The name of the city.
-   * The county name may precede it, or to the contrary, the name of the
+   * The county name may precede it, or the name of the
    * ward would follow it in case the city has ordinance-designated wards.
    *
    * Examples:
