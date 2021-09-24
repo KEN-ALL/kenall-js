@@ -40,8 +40,12 @@
             },
             "correct": {
                 "comment": {
-                    "text": "Example: `\"0\"`",
-                    "shortText": "`\"1\"` if the record was corrected."
+                    "text": [
+                        " * `\"1\"` indicates the record was corrected.",
+                        " * `\"0\"` indicates the record was not corrected.",
+                        "Example: `\"0\"`"
+                    ],
+                    "shortText": "The flag if the record was corrected or not."
                 }
             },
             "update_date": {

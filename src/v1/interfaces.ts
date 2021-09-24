@@ -581,7 +581,10 @@ export interface NTACorporateInfo {
   process: NTACorporateInfoProcess;
 
   /**
-   * `"1"` if the record was corrected.
+   * The flag if the record was corrected or not.
+   * 
+   *  * `"1"` indicates the record was corrected.
+   *  * `"0"` indicates the record was not corrected.
    *
    * Example: `"0"`
    */
