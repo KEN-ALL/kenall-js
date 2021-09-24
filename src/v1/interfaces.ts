@@ -666,7 +666,7 @@ export interface NTACorporateInfo {
    * Level 1 or 2, The Kanji will be converted into correspondent
    * JIS Level 1 or 2 Kanjis. You can refer to the unnormalized
    * version of the text from a correspondent image file.
-   * See `address_outside__image_id` for details.
+   * See `address_outside_image_id` for details.
    *
    * Example: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`
    */
@@ -735,7 +735,7 @@ export interface NTACorporateInfo {
 
   /**
    * The trade name or the corporate name in English with hankaku format,
-   * 600 characters at maximum.
+   * 300 characters at maximum.
    * If the English name is not registered, this value is set to blank.
    *
    *  Example: `"Rumoi Summary Court"`
