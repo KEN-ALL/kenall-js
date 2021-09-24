@@ -599,9 +599,9 @@ export interface NTACorporateInfo {
    * The date the record was updated, in the form of `"YYYY-MM-DD"`
    * where Y, M, and D represent digits of the year, month, and day.
    *
-   * Unlike `change_date` and `publish_date`, this field indicates the
+   * Unlike `change_date` and `published_date`, this field indicates the
    * actual update date of the corporate information.
-   * See `change_date` and `publish_date` for further information.
+   * See `change_date` and `published_date` for further information.
    *
    * Example: `"2021-01-01"`
    */
