@@ -1,0 +1,321 @@
+{
+    "NTACorporateInfo": {
+        "comment": {
+            "shortText": [
+                "A `NTACorporateInfo` object would store the information about Basic 3 Information",
+                "of Corporate Number, which is published by Japan National Tax Agency."
+            ]
+        },
+        "properties": {
+            "published_date": {
+                "comment": {
+                    "text": " Example: `\"2021-01-01\"`",
+                    "shortText": [
+                        "The published date of the record, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day",
+                        "the record was published."
+                    ]
+                }
+            },
+            "sequence_number": {
+                "comment": {
+                    "text": " Example: `1`",
+                    "shortText": [
+                        "The revision number of the corporate record, non zero-padded",
+                        "8 digit number at maximum."
+                    ]
+                }
+            },
+            "corporate_number": {
+                "comment": {
+                    "text": " Example: `2021001052596`",
+                    "shortText": "The corporate number, 12 digit number plus 1 check digit."
+                }
+            },
+            "process": {
+                "comment": {
+                    "text": " Example: `NTACorporateInfoProcess.NEW`",
+                    "shortText": "The reason why the record was created."
+                }
+            },
+            "correct": {
+                "comment": {
+                    "text": " Example: `\"0\"`",
+                    "shortText": "`\"1\"` if the record was corrected."
+                }
+            },
+            "update_date": {
+                "comment": {
+                    "text": " Example: `\"2021-01-01\"`",
+                    "shortText": [
+                        "The updated date of the record, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day."
+                    ]
+                }
+            },
+            "change_date": {
+                "comment": {
+                    "text": [
+                        "The meaning of \"changed\" depends on other contexts of the record.",
+                        "If `process` is `NEW`, the changed date means the corporate number",
+                        "was assigned. If `process` is not `NEW` and `kind` is not a public",
+                        "entity, the changed date means the date related to the process.",
+                        "If `kind` is a public entity, the changed date means when the",
+                        "process occurred.",
+                        " Example: `\"2021-01-01\"`"
+                    ],
+                    "shortText": [
+                        "The changed date of the record, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day."
+                    ]
+                }
+            },
+            "name": {
+                "comment": {
+                    "text": " Example: `\"株式会社オープンコレクター\"`",
+                    "shortText": [
+                        "The trade name or the corporate name in Japanese with Zenkaku format.",
+                        "If the text is longer than 150 characters, it will be truncated",
+                        "to 150 characters. If the text uses a Kanji which is not JIS",
+                        "Level 1 or 2, The Kanji will be converted into correspondent",
+                        "JIS Level 1 or 2 Kanjis. You can refer to the unnormalized",
+                        "version of the text from a correspondent image file.",
+                        "See `name_image_id` for details."
+                    ]
+                }
+            },
+            "name_image_id": {
+                "comment": {
+                    "text": [
+                        " Examples:",
+                        " * `\"99999999\"`",
+                        " * `null`"
+                    ],
+                    "shortText": [
+                        "The trade name or the corporate name image ID, 8 digit number at maximum.",
+                        "If you want to refer to the image file, please access",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=NAME_IMAGE_ID,",
+                        "where NAME_IMAGE_ID is a zero-padded 8 digit number of the ID.",
+                        "For example, if the ID is `100`, You can get the image file from",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100.",
+                        "If `name` is not normalized, This value is set to `null`."
+                    ]
+                }
+            },
+            "kind": {
+                "comment": {
+                    "text": " Example: `NTACorporateInfoKind.KABUSHIKI_KAISHA`",
+                    "shortText": "Kind of the corporate."
+                }
+            },
+            "prefecture_name": {
+                "comment": {
+                    "text": "Example: `\"東京都\"`",
+                    "shortText": "The name of the prefecture in Kanji."
+                }
+            },
+            "city_name": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"港区\"`",
+                        "* `\"大阪市北区\"`",
+                        "* `\"各務原市\"`",
+                        "* `\"秩父郡長瀞町\"`"
+                    ],
+                    "shortText": [
+                        "The name of the city.",
+                        "The county name may precede it, or to the contrary, the name of the",
+                        "ward would follow it in case the city has ordinance-designated wards."
+                    ]
+                }
+            },
+            "street_number": {
+                "comment": {
+                    "text": "Example: `麹町３丁目１２－１４麹町駅前ヒルトップ８階`",
+                    "shortText": [
+                        "The name of the area that usually corresponds to lowest part of the",
+                        "address.",
+                        "If the text is longer than 300 characters, it will be truncated",
+                        "to 300 characters. If the text uses a Kanji which is not JIS",
+                        "Level 1 or 2, The Kanji will be converted into correspondent",
+                        "JIS Level 1 or 2 Kanjis. You can refer to the unnormalized",
+                        "version of the text from a correspondent image file.",
+                        "See `address_image_id` for details."
+                    ]
+                }
+            },
+            "address_image_id": {
+                "comment": {
+                    "text": [
+                        " Examples:",
+                        " * `\"99999999\"`",
+                        " * `null`"
+                    ],
+                    "shortText": [
+                        "The address image ID, 8 digit number at maximum.",
+                        "If you want to refer to the image file, please access",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,",
+                        "where ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.",
+                        "For example, if the ID is `100`, You can get the image file from",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100.",
+                        "If `street_number` is not normalized, this value is set to `null`."
+                    ]
+                }
+            },
+            "jisx0402": {
+                "comment": {
+                    "shortText": [
+                        "The 5 digit Japanese municipality code (全国地方公共団体コード)",
+                        "for the administrative division where the place this object represents",
+                        "belongs."
+                    ]
+                }
+            },
+            "post_code": {
+                "comment": {
+                    "shortText": "The postal code for the place this object represents."
+                }
+            },
+            "address_outside": {
+                "comment": {
+                    "text": "Example: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`",
+                    "shortText": [
+                        "The corporate address outside of Japan, written in Japanese.",
+                        "If the text is longer than 300 characters, it will be truncated",
+                        "to 300 characters. If the text uses a Kanji which is not JIS",
+                        "Level 1 or 2, The Kanji will be converted into correspondent",
+                        "JIS Level 1 or 2 Kanjis. You can refer to the unnormalized",
+                        "version of the text from a correspondent image file.",
+                        "See `address_outside__image_id` for details."
+                    ]
+                }
+            },
+            "address_outside_image_id": {
+                "comment": {
+                    "text": [
+                        " Examples:",
+                        " * `\"99999999\"`",
+                        " * `null`"
+                    ],
+                    "shortText": [
+                        "The foreign address image ID, 8 digit number at maximum.",
+                        "If you want to refer to the image file, please access",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,",
+                        "where ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.",
+                        "For example, if the ID is `100`, You can get the image file from",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100.",
+                        "If `address_outside` is not normalized, this value is set to `null`."
+                    ]
+                }
+            },
+            "close_date": {
+                "comment": {
+                    "text": " Example: `\"2021-01-01\"`",
+                    "shortText": [
+                        "The date of the record when the corporate was closed, in the",
+                        "form of `\"YYYY-MM-DD\"` where Y, M, and D represent digits of",
+                        "the year, month, and day.",
+                        "If the corporate is not closed, this value is set to `null`."
+                    ]
+                }
+            },
+            "close_cause": {
+                "comment": {
+                    "text": " Example: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`",
+                    "shortText": [
+                        "The reason why the corporate was closed.",
+                        "If the corporate is not closed, this value is set to `null`."
+                    ]
+                }
+            },
+            "successor_corporate_number": {
+                "comment": {
+                    "text": " Example: `2021001052596`",
+                    "shortText": [
+                        "The corporate number of the successor of the closed corporate,",
+                        "12 digit number plus 1 check digit.",
+                        "If the corporate is not closed, this value is set to `null`."
+                    ]
+                }
+            },
+            "change_cause": {
+                "comment": {
+                    "text": " Example: `令和２年５月１日○○株式会社に合併し解散`",
+                    "shortText": [
+                        "The reason why the process occurred, 500 characters at maximum.",
+                        "Both zenkaku and hankaku format are allowed."
+                    ]
+                }
+            },
+            "assignment_date": {
+                "comment": {
+                    "text": " Example: `\"2021-01-01\"`",
+                    "shortText": [
+                        "The date of the record when the corporate number was assigned,",
+                        "in the form of `\"YYYY-MM-DD\"` where Y, M, and D represent",
+                        "digits of the year, month, and day."
+                    ]
+                }
+            },
+            "en_name": {
+                "comment": {
+                    "text": " Example: `\"Rumoi Summary Court\"`",
+                    "shortText": [
+                        "The trade name or the corporate name in English with hankaku format,",
+                        "600 characters at maximum.",
+                        "If the English name is not registered, this value is set to blank."
+                    ]
+                }
+            },
+            "en_prefecture_name": {
+                "comment": {
+                    "text": "Example: `\"Tokyo\"`",
+                    "shortText": "The name of the prefecture in English."
+                }
+            },
+            "en_address_line": {
+                "comment": {
+                    "text": "Example: `4-7, Kashiwagicho, Tomakomai shi`",
+                    "shortText": [
+                        "The address without prefecture in English with hankaku format.",
+                        "If the text is longer than 600 characters, it will be truncated",
+                        "to 600 characters.",
+                        "If the address is not registered, this value is set to `null`."
+                    ]
+                }
+            },
+            "en_address_outside": {
+                "comment": {
+                    "text": "Example: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`",
+                    "shortText": [
+                        "The corporate address outside of Japan, written in English with",
+                        "hankaku format.",
+                        "If the text is longer than 600 characters, it will be truncated",
+                        "to 600 characters.",
+                        "If the address is not registered, this value is set to `null`."
+                    ]
+                }
+            },
+            "furigana": {
+                "comment": {
+                    "text": "Example: `オープンコレクター`",
+                    "shortText": [
+                        "The furigana correspondent to the corporate name.",
+                        "If the furigana is not registered, this value is set to blank."
+                    ]
+                }
+            },
+            "hihyoji": {
+                "comment": {
+                    "text": "Example: `\"0\"`",
+                    "shortText": [
+                        "If the corporate address is confirmed that it doesn't exist,",
+                        "this value is set to `\"1\"`."
+                    ]
+                }
+            }
+        },
+        "methods": {}
+    }
+}

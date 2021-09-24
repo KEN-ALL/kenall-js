@@ -1,0 +1,291 @@
+{
+    "NTACorporateInfo": {
+        "comment": {
+            "shortText": [
+                "`NTACorporateInfo`オブジェクトは国税庁が公開する法人番号基本3情報を格納します。"
+            ]
+        },
+        "properties": {
+            "published_date": {
+                "comment": {
+                    "text": " 例: `\"2021-01-01\"`",
+                    "shortText": [
+                        "国税庁のサイトに記載の更新日。"
+                    ]
+                }
+            },
+            "sequence_number": {
+                "comment": {
+                    "text": " 例: `1`",
+                    "shortText": [
+                        "同一法人番号レコードについての変更履歴番号。数字が大きい方が最新。",
+                        "左にゼロを詰めない数字で、最大桁数8桁で表されます。"
+                    ]
+                }
+            },
+            "corporate_number": {
+                "comment": {
+                    "text": " 例: `2021001052596`",
+                    "shortText": "法人番号。国税庁によって法人ごとに付与された、12桁+チェックディジット1桁の法人番号"
+                }
+            },
+            "process": {
+                "comment": {
+                    "text": " 例: `NTACorporateInfoProcess.NEW`",
+                    "shortText": "レコードがなぜ作成・更新されたかの処理区分。"
+                }
+            },
+            "correct": {
+                "comment": {
+                    "text": " 例: `\"0\"`",
+                    "shortText": "訂正区分。 \"0\":訂正以外、\"1\":訂正"
+                }
+            },
+            "update_date": {
+                "comment": {
+                    "text": " 例: `\"2021-01-01\"`",
+                    "shortText": [
+                        "更新年月日。"
+                    ]
+                }
+            },
+            "change_date": {
+                "comment": {
+                    "text": [
+                        "`process`が`NEW`の場合、法人番号が指定された年月日。",
+                        "`process`が`NEW`以外の場合で、`kind`が設立登記法人のときは、",
+                        "処理区分の事由に係る登記年月日。",
+                        "`kind`が設立登記法人以外のときは、処理区分の事由が生じた年月日。",
+                        " 例: `\"2021-01-01\"`"
+                    ],
+                    "shortText": [
+                        "変更年月日。"
+                    ]
+                }
+            },
+            "name": {
+                "comment": {
+                    "text": " 例: `\"株式会社オープンコレクター\"`",
+                    "shortText": [
+                        "商号又は名称。全角。150文字を超過した場合は切り捨てられます。",
+                        "JIS第１・第２水準以外の文字を使用している場合はJIS第１・第２水準に",
+                        "縮退されています。前情報を確認するにはイメージファイルを閲覧してください。",
+                        "`name_image_id`も参照してください。"
+                    ]
+                }
+            },
+            "name_image_id": {
+                "comment": {
+                    "text": [
+                        " Examples:",
+                        " * `\"99999999\"`",
+                        " * `null`"
+                    ],
+                    "shortText": [
+                        "商号又は名称イメージID。`name`にJIS第１・第２水準以外の文字を",
+                        "使用している、あるいは`name`の文字が150文字を超えた場合に値が",
+                        "設定されます。次のURLからイメージファイルを直接確認できます。",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=NAME_IMAGE_ID",
+                        "URLに指定するときは左にゼロを詰めて数字8桁にする必要があります。",
+                        "例えばIDが`100`の場合、以下のURLからイメージファイルを確認できます。",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100",
+                        "`name`が正規化されていない場合は`null`になります。"
+                    ]
+                }
+            },
+            "kind": {
+                "comment": {
+                    "text": " 例: `NTACorporateInfoKind.KABUSHIKI_KAISHA`",
+                    "shortText": "法人番号種別。"
+                }
+            },
+            "prefecture_name": {
+                "comment": {
+                    "text": "例: `\"東京都\"`",
+                    "shortText": "漢字の都道府県名。"
+                }
+            },
+            "city_name": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"港区\"`",
+                        "* `\"大阪市北区\"`",
+                        "* `\"各務原市\"`",
+                        "* `\"秩父郡長瀞町\"`"
+                    ],
+                    "shortText": [
+                        "市区町村名。",
+                        "郡名が市区町村名の前につくことがあります。また逆に、",
+                        "当該市区町村が政令指定都市の場合は行政区名が後につきます。"
+                    ]
+                }
+            },
+            "street_number": {
+                "comment": {
+                    "text": "例: `麹町３丁目１２－１４麹町駅前ヒルトップ８階`",
+                    "shortText": [
+                        "国内所在地(丁目番地等)。全角。300文字を超過した場合は切り捨てられます。",
+                        "JIS第１・第２水準以外の文字を使用している場合はJIS第１・第２水準に",
+                        "縮退されています。前情報を確認するにはイメージファイルを閲覧してください。",
+                        "`address_image_id`も参照してください。"
+                    ]
+                }
+            },
+            "address_image_id": {
+                "comment": {
+                    "text": [
+                        " Examples:",
+                        " * `\"99999999\"`",
+                        " * `null`"
+                    ],
+                    "shortText": [
+                        "国内所在地イメージID。`street_number`にJIS第１・第２水準以外の文字を",
+                        "使用している、あるいは`street_number`の文字が300文字を超えた場合に値が",
+                        "設定されます。次のURLからイメージファイルを直接確認できます。",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID",
+                        "URLに指定するときは左にゼロを詰めて数字8桁にする必要があります。",
+                        "例えばIDが`100`の場合、以下のURLからイメージファイルを確認できます。",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100",
+                        "`street_number`が正規化されていない場合は`null`になります。"
+                    ]
+                }
+            },
+            "jisx0402": {
+                "comment": {
+                    "shortText": [
+                        "このオブジェクトが表現する行政区分に対応する5桁の全国地方公共団体コード。"
+                    ]
+                }
+            },
+            "post_code": {
+                "comment": {
+                    "shortText":  "このオブジェクトが表現する場所の郵便番号。"
+                }
+            },
+            "address_outside": {
+                "comment": {
+                    "text": "例: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`",
+                    "shortText": [
+                        "国外所在地。全角。300文字を超過した場合は切り捨てられます。",
+                        "JIS第１・第２水準以外の文字を使用している場合はJIS第１・第２水準に",
+                        "縮退されています。前情報を確認するにはイメージファイルを閲覧してください。",
+                        "`address_outside_image_id`も参照してください。"
+                    ]
+                }
+            },
+            "address_outside_image_id": {
+                "comment": {
+                    "text": [
+                        " Examples:",
+                        " * `\"99999999\"`",
+                        " * `null`"
+                    ],
+                    "shortText": [
+                        "国外所在地イメージID。`address_outside`にJIS第１・第２水準以外の文字を",
+                        "使用している、あるいは`address_outside`の文字が300文字を超えた場合に値が",
+                        "設定されます。次のURLからイメージファイルを直接確認できます。",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_OUTSIDE_IMAGE_ID",
+                        "URLに指定するときは左にゼロを詰めて数字8桁にする必要があります。",
+                        "例えばIDが`100`の場合、以下のURLからイメージファイルを確認できます。",
+                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100",
+                        "`address_outside`が正規化されていない場合は`null`になります。"
+                    ]
+                }
+            },
+            "close_date": {
+                "comment": {
+                    "text": " 例: `\"2021-01-01\"`",
+                    "shortText": [
+                        "登記記録の閉鎖等年月日。閉鎖していない場合は`null`になります。"
+
+                    ]
+                }
+            },
+            "close_cause": {
+                "comment": {
+                    "text": " 例: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`",
+                    "shortText": [
+                        "登記記録の閉鎖等の事由。閉鎖していない場合は`null`になります。"
+                    ]
+                }
+            },
+            "successor_corporate_number": {
+                "comment": {
+                    "text": " 例: `2021001052596`",
+                    "shortText": [
+                        "合併等による事業承継があったときの存続法人の法人番号。12桁+チェックディジット1桁。",
+                        "存在しない場合は`null`になります。"
+                    ]
+                }
+            },
+            "change_cause": {
+                "comment": {
+                    "text": " 例: `令和２年５月１日○○株式会社に合併し解散`",
+                    "shortText": [
+                        "変更事由の詳細。全角半角混在500文字。"
+                    ]
+                }
+            },
+            "assignment_date": {
+                "comment": {
+                    "text": " 例: `\"2021-01-01\"`",
+                    "shortText": [
+                        "法人番号指定年月日。"
+                    ]
+                }
+            },
+            "en_name": {
+                "comment": {
+                    "text": " 例: `\"Rumoi Summary Court\"`",
+                    "shortText": [
+                        "商号又は名称(英語表記) 半角英数300文字。登録がない場合はブランク"
+                    ]
+                }
+            },
+            "en_prefecture_name": {
+                "comment": {
+                    "text": "例: `\"Tokyo\"`",
+                    "shortText": "英語表記の都道府県名。"
+                }
+            },
+            "en_address_line": {
+                "comment": {
+                    "text": "例: `4-7, Kashiwagicho, Tomakomai shi`",
+                    "shortText": [
+                        "英語表記の市区町村以下の住所。",
+                        "半角600文字。601文字以降の文字は格納されない。",
+                        "存在しない場合は`null`になります。"
+                    ]
+                }
+            },
+            "en_address_outside": {
+                "comment": {
+                    "text": "例: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`",
+                    "shortText": [
+                        "国外所在地(英語表記) 半角600文字。601文字以降の文字は格納されない。",
+                        "存在しない場合は`null`になります。"
+                    ]
+                }
+            },
+            "furigana": {
+                "comment": {
+                    "text": "例: `オープンコレクター`",
+                    "shortText": [
+                        "nameに対するフリガナ。全角カナ及び長音のみ使用。",
+                        "フリガナの登録がない場合ブランクになります。"
+                    ]
+                }
+            },
+            "hihyoji": {
+                "comment": {
+                    "text": "例: `\"0\"`",
+                    "shortText": [
+                        "対象の法人の住所が存在しないことが確認できた場合、 `\"1\"`に設定されます。"
+                    ]
+                }
+            }
+        },
+        "methods": {}
+    }
+}
