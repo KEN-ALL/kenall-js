@@ -616,11 +616,12 @@ export interface NTACorporateInfo {
   /**
    * The trade name or corporate name in Japanese.
    * All the characters are rendered in full-width form.
-   * If the text is longer than 150 characters, it will be truncated
-   * to 150 characters. If the text uses a Kanji which is not JIS
-   * Level 1 or 2, The Kanji will be converted into correspondent
-   * JIS Level 1 or 2 Kanjis. You can refer to the unnormalized
-   * version of the text from a correspondent image file.
+   * The string is preprocessed so it would fit within 150 characters
+   * by NTA if it is longer than that length actually.
+   * If the text uses a Kanji which is not JIS Level 1 or 2, The Kanji
+   * will be converted into correspondent JIS Level 1 or 2 Kanjis.
+   * You can refer to the unnormalized version of the text from a
+   * correspondent image file.
    * See `name_image_id` for details.
    *
    * Example: `"株式会社オープンコレクター"`
@@ -674,11 +675,12 @@ export interface NTACorporateInfo {
   /**
    * The name of the area that usually corresponds to lowest part of the
    * address.
-   * If the text is longer than 300 characters, it will be truncated
-   * to 300 characters. If the text uses a Kanji which is not JIS
-   * Level 1 or 2, The Kanji will be converted into correspondent
-   * JIS Level 1 or 2 Kanjis. You can refer to the unnormalized
-   * version of the text from a correspondent image file.
+   * The string is preprocessed so it would fit within 300 characters
+   * by NTA if it is longer than that length actually.
+   * If the text uses a Kanji which is not JIS Level 1 or 2, The Kanji
+   * will be converted into correspondent JIS Level 1 or 2 Kanjis.
+   * You can refer to the unnormalized version of the text from a
+   * correspondent image file.
    * See `address_image_id` for details.
    *
    * Example: `麹町３丁目１２－１４麹町駅前ヒルトップ８階`
@@ -715,11 +717,12 @@ export interface NTACorporateInfo {
 
   /**
    * The corporate address outside of Japan, written in Japanese.
-   * If the text is longer than 300 characters, it will be truncated
-   * to 300 characters. If the text uses a Kanji which is not JIS
-   * Level 1 or 2, The Kanji will be converted into correspondent
-   * JIS Level 1 or 2 Kanjis. You can refer to the unnormalized
-   * version of the text from a correspondent image file.
+   * The string is preprocessed so it would fit within 300 characters
+   * by NTA if it is longer than that length actually.
+   * If the text uses a Kanji which is not JIS Level 1 or 2, The Kanji
+   * will be converted into correspondent JIS Level 1 or 2 Kanjis.
+   * You can refer to the unnormalized version of the text from a
+   * correspondent image file.
    * See `address_outside_image_id` for details.
    *
    * Example: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`
@@ -804,8 +807,8 @@ export interface NTACorporateInfo {
 
   /**
    * The address without prefecture in English with hankaku format.
-   * If the text is longer than 600 characters, it will be truncated
-   * to 600 characters.
+   * The string is preprocessed so it would fit within 600 characters
+   * by NTA if it is longer than that length actually.
    * If the address is not registered, this value is set to `null`.
    *
    * Example: `4-7, Kashiwagicho, Tomakomai shi`
@@ -814,8 +817,8 @@ export interface NTACorporateInfo {
 
   /**
    * The corporate address outside of Japan, written in alphabetical form.
-   * If the text is longer than 600 characters, it will be truncated
-   * to 600 characters.
+   * The string is preprocessed so it would fit within 600 characters
+   * by NTA if it is longer than that length actually.
    * If the address is not registered, this value is set to `null`.
    *
    * Example: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`
