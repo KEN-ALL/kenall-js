@@ -78,7 +78,8 @@
                 "comment": {
                     "text": "Example: `\"株式会社オープンコレクター\"`",
                     "shortText": [
-                        "The trade name or corporate name in Japanese with Zenkaku format.",
+                        "The trade name or corporate name in Japanese.",
+                        "All the characters are rendered in full-width form.",
                         "If the text is longer than 150 characters, it will be truncated",
                         "to 150 characters. If the text uses a Kanji which is not JIS",
                         "Level 1 or 2, The Kanji will be converted into correspondent",
@@ -293,8 +294,7 @@
                 "comment": {
                     "text": "Example: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`",
                     "shortText": [
-                        "The corporate address outside of Japan, written in English with",
-                        "hankaku format.",
+                        "The corporate address outside of Japan, written in alphabetical form.",
                         "If the text is longer than 600 characters, it will be truncated",
                         "to 600 characters.",
                         "If the address is not registered, this value is set to `null`."

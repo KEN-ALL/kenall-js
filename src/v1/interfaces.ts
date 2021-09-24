@@ -614,7 +614,8 @@ export interface NTACorporateInfo {
   change_date: string;
 
   /**
-   * The trade name or corporate name in Japanese with Zenkaku format.
+   * The trade name or corporate name in Japanese.
+   * All the characters are rendered in full-width form.
    * If the text is longer than 150 characters, it will be truncated
    * to 150 characters. If the text uses a Kanji which is not JIS
    * Level 1 or 2, The Kanji will be converted into correspondent
@@ -812,8 +813,7 @@ export interface NTACorporateInfo {
   en_address_line: string | null;
 
   /**
-   * The corporate address outside of Japan, written in English with
-   * hankaku format.
+   * The corporate address outside of Japan, written in alphabetical form.
    * If the text is longer than 600 characters, it will be truncated
    * to 600 characters.
    * If the address is not registered, this value is set to `null`.
@@ -893,8 +893,8 @@ export interface NTACorporateInfoSearcherOptions {
   /**
    * The search mode.
    *
-   * Defaults to `partial`. If `partial` is set, the API will
-   * return partially match results. If `exact` is set, the
+   * Defaults to `partial`. If set to `partial`, the API will
+   * return partially match results. If set to `exact`, the
    * result includes only the corporates which name without
    * corporate kind exactly matches the query. Please note
    * that the `exact` mode doesn't match a query that contains
