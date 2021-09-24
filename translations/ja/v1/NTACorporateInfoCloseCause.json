@@ -1,0 +1,9 @@
+{
+    "NTACorporateInfoCloseCause": {
+        "comment": {
+            "shortText": [
+                "`NTACorporateInfoCloseCause`は、なぜその法人登記が閉鎖されたかを表します。"            ]
+        },
+        "members": {}
+    }
+}

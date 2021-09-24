@@ -1,0 +1,10 @@
+{
+    "NTACorporateInfoProcess": {
+        "comment": {
+            "shortText": [
+                "`NTACorporateInfoProcess`は、なぜ当該レコードが作成されたかを表します。"
+            ]
+        },
+        "members": {}
+    }
+}

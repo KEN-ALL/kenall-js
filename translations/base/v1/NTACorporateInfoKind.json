@@ -1,0 +1,8 @@
+{
+    "NTACorporateInfoKind": {
+        "comment": {
+            "shortText": "A `NTACorporateInfoKind` represents the kind of corporate."
+        },
+        "members": {}
+    }
+}

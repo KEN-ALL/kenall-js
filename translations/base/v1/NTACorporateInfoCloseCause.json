@@ -1,0 +1,11 @@
+{
+    "NTACorporateInfoCloseCause": {
+        "comment": {
+            "shortText": [
+                "A `NTACorporateInfoCloseCause` represents the reason why the corporate",
+                "was closed."
+            ]
+        },
+        "members": {}
+    }
+}
