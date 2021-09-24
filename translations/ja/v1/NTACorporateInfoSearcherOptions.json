@@ -2,7 +2,7 @@
     "NTACorporateInfoSearcherOptions": {
         "comment": {
             "shortText": [
-                "`NTACorporateInfoSearcherOptions`は \"searchCorporateInfo\" API",
+                "`NTACorporateInfoSearcherOptions`は `searchCorporateInfo` API",
                 "に送られるパラメータを記述します。"
             ]
         },
@@ -36,7 +36,7 @@
                 "comment": {
                     "text": [
                         "デフォルトは`partial`です。`partial`が設定されていると、APIは",
-                        "部分一致検索の結果を返します。\"exact\"が設定されていると、",
+                        "部分一致検索の結果を返します。`exact`が設定されていると、",
                         "法人種別を除いた法人名に対する完全一致検索の結果を返します。",
                         "`exact`モードは法人種別が含まれているとマッチしないことに",
                         "注意してください。例えば、`株式会社オープンコレクター`というクエリは",

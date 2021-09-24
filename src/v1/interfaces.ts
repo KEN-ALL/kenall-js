@@ -844,7 +844,7 @@ export interface NTACorporateInfoSearcherOptions {
    * The search mode.
    *
    * Defaults to `partial`. If `partial` is set, the API will
-   * return partially match results. If "exact" is set, the
+   * return partially match results. If `exact` is set, the
    * result includes only the corporates which name without
    * corporate kind exactly matches the query. Please note
    * that the `exact` mode doesn't match a query that contains
