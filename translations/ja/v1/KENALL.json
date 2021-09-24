@@ -19,6 +19,18 @@
                     "shortText": "\"searchAddresses\" API (エンドポイント: `/postalcode/?...`) を呼び出します。",
                     "returns": "{@link AddressSearcherResponse}\n"
                 }
+            },
+            "getNTACorporateInfo": {
+                "comment": {
+                    "shortText": "\"getNTACorporateInfo\" API (エンドポイント: `/houjinbangou/{corporateNumber}`) を呼び出します。",
+                    "returns": "{@link NTACorporateInfoResolverResponse}.\n"
+                }
+            },
+            "searchNTACorporateInfo": {
+                "comment": {
+                    "shortText": "\"searchNTACorporateInfo\" API (エンドポイント: `/houjinbangou?...`) を呼び出します。",
+                    "returns": "{@link NTACorporateInfoSearcherResponse}.\n"
+                }
             }
         },
         "accessors": {}

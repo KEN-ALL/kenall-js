@@ -19,6 +19,18 @@
                     "shortText": "Invokes \"searchAddresses\" API (endpoint: `/postalcode/?...`).",
                     "returns": "A {@link AddressSearcherResponse}.\n"
                 }
+            },
+            "getNTACorporateInfo": {
+                "comment": {
+                    "shortText": "Invokes \"getNTACorporateInfo\" API (endpoint: `/houjinbangou/{corporateNumber}`).",
+                    "returns": "An {@link NTACorporateInfoResolverResponse}.\n"
+                }
+            },
+            "searchNTACorporateInfo": {
+                "comment": {
+                    "shortText": "Invokes \"searchNTACorporateInfo\" API (endpoint: `/houjinbangou?...`).",
+                    "returns": "A {@link NTACorporateInfoSearcherResponse}.\n"
+                }
             }
         },
         "accessors": {}
