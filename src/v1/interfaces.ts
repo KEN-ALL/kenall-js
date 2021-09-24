@@ -647,7 +647,7 @@ export interface NTACorporateInfo {
 
   /**
    * The name of the prefecture in Kanji.
-
+   * 
    * Example: `"東京都"`
    */
   prefecture_name: string;
@@ -743,7 +743,6 @@ export interface NTACorporateInfo {
    * the year, month, and day.
    * If the corporate is not closed, this value is set to `null`.
    *
-   *
    * Example: `"2021-01-01"`
    */
   close_date: string | null;
@@ -793,7 +792,7 @@ export interface NTACorporateInfo {
 
   /**
    * The name of the prefecture in English.
-
+   * 
    * Example: `"Tokyo"`
    */
   en_prefecture_name: string;
@@ -803,7 +802,6 @@ export interface NTACorporateInfo {
    * If the text is longer than 600 characters, it will be truncated
    * to 600 characters. 
    * If the address is not registered, this value is set to `null`.
-
    * 
    * Example: `4-7, Kashiwagicho, Tomakomai shi`
    */
@@ -815,7 +813,6 @@ export interface NTACorporateInfo {
    * If the text is longer than 600 characters, it will be truncated
    * to 600 characters. 
    * If the address is not registered, this value is set to `null`.
-
    * 
    * Example: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`
    */
