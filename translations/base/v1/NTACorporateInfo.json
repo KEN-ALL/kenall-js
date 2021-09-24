@@ -98,7 +98,7 @@
                     ],
                     "shortText": [
                         "The trade name or corporate name image ID, 8 digit number at maximum.",
-                        "If you want to refer to the image file, please access",
+                        "If you want to obtain the image file, please refer to",
                         "https://www.houjin-bangou.nta.go.jp/image?imageid=NAME_IMAGE_ID,",
                         "where NAME_IMAGE_ID is a zero-padded 8 digit number of the ID.",
                         "For example, if the ID is `100`, You can get the image file from",
@@ -159,7 +159,7 @@
                     ],
                     "shortText": [
                         "The address image ID, 8 digit number at maximum.",
-                        "If you want to refer to the image file, please access",
+                        "If you want to obtain the image file, please refer to",
                         "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,",
                         "where ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.",
                         "For example, if the ID is `100`, You can get the image file from",
@@ -205,7 +205,7 @@
                     ],
                     "shortText": [
                         "The foreign address image ID, 8 digit number at maximum.",
-                        "If you want to refer to the image file, please access",
+                        "If you want to obtain the image file, please refer to",
                         "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,",
                         "where ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.",
                         "For example, if the ID is `100`, You can get the image file from",
