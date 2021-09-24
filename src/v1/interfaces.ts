@@ -554,6 +554,11 @@ export interface NTACorporateInfo {
    * where Y, M, and D represent digits of the year, month, and day
    * the record was published.
    *
+   * Please note that this field doesn't indicate the actual date of
+   * the updated date of the record. The published date may
+   * be later than the updated date. Please see `update_date` for further
+   * details.
+   *
    * Example: `"2021-01-01"`
    */
   published_date: string;
@@ -593,6 +598,10 @@ export interface NTACorporateInfo {
   /**
    * The updated date of the record, in the form of `"YYYY-MM-DD"`
    * where Y, M, and D represent digits of the year, month, and day.
+   *
+   * Unlike `change_date` and `publish_date`, this field indicates the
+   * actual update date of the corporate information.
+   * See `change_date` and `publish_date` for further information.
    *
    * Example: `"2021-01-01"`
    */
