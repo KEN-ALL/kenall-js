@@ -554,7 +554,7 @@ export interface NTACorporateInfo {
    * where Y, M, and D represent digits of the year, month, and day
    * the record was published.
    *
-   *  Example: `"2021-01-01"`
+   * Example: `"2021-01-01"`
    */
   published_date: string;
 
@@ -562,28 +562,28 @@ export interface NTACorporateInfo {
    * The revision number of the corporate record, non zero-padded
    * 8 digit number at maximum.
    *
-   *  Example: `1`
+   * Example: `1`
    */
   sequence_number: string;
 
   /**
    * The corporate number, 12 digit number plus 1 check digit.
    *
-   *  Example: `2021001052596`
+   * Example: `2021001052596`
    */
   corporate_number: string;
 
   /**
    * The reason why the record was created.
    *
-   *  Example: `NTACorporateInfoProcess.NEW`
+   * Example: `NTACorporateInfoProcess.NEW`
    */
   process: NTACorporateInfoProcess;
 
   /**
    * `"1"` if the record was corrected.
    *
-   *  Example: `"0"`
+   * Example: `"0"`
    */
   correct: string;
 
@@ -591,7 +591,7 @@ export interface NTACorporateInfo {
    * The updated date of the record, in the form of `"YYYY-MM-DD"`
    * where Y, M, and D represent digits of the year, month, and day.
    *
-   *  Example: `"2021-01-01"`
+   * Example: `"2021-01-01"`
    */
   update_date: string;
 
@@ -606,7 +606,7 @@ export interface NTACorporateInfo {
    * If `kind` is a public entity, the changed date means when the
    * process occurred.
    *
-   *  Example: `"2021-01-01"`
+   * Example: `"2021-01-01"`
    */
   change_date: string;
   /**
@@ -618,7 +618,7 @@ export interface NTACorporateInfo {
    * version of the text from a correspondent image file.
    * See `name_image_id` for details.
    *
-   *  Example: `"株式会社オープンコレクター"`
+   * Example: `"株式会社オープンコレクター"`
    */
   name: string;
 
@@ -641,7 +641,7 @@ export interface NTACorporateInfo {
   /**
    * Kind of the corporate.
    *
-   *  Example: `NTACorporateInfoKind.KABUSHIKI_KAISHA`
+   * Example: `NTACorporateInfoKind.KABUSHIKI_KAISHA`
    */
   kind: NTACorporateInfoKind;
 
@@ -744,7 +744,7 @@ export interface NTACorporateInfo {
    * If the corporate is not closed, this value is set to `null`.
    *
    *
-   *  Example: `"2021-01-01"`
+   * Example: `"2021-01-01"`
    */
   close_date: string | null;
 
@@ -752,7 +752,7 @@ export interface NTACorporateInfo {
    * The reason why the corporate was closed.
    * If the corporate is not closed, this value is set to `null`.
    *
-   *  Example: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`
+   * Example: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`
    */
   close_cause: NTACorporateInfoCloseCause | null;
 
@@ -761,7 +761,7 @@ export interface NTACorporateInfo {
    * 12 digit number plus 1 check digit.
    * If the corporate is not closed, this value is set to `null`.
    *
-   *  Example: `2021001052596`
+   * Example: `2021001052596`
    */
   successor_corporate_number: string | null;
 
@@ -769,7 +769,7 @@ export interface NTACorporateInfo {
    * The reason why the process occurred, 500 characters at maximum.
    * Both zenkaku and hankaku format are allowed.
    *
-   *  Example: `令和２年５月１日○○株式会社に合併し解散`
+   * Example: `令和２年５月１日○○株式会社に合併し解散`
    */
   change_cause: string;
 
@@ -778,7 +778,7 @@ export interface NTACorporateInfo {
    * in the form of `"YYYY-MM-DD"` where Y, M, and D represent
    * digits of the year, month, and day.
    *
-   *  Example: `"2021-01-01"`
+   * Example: `"2021-01-01"`
    */
   assignment_date: string;
 
@@ -787,7 +787,7 @@ export interface NTACorporateInfo {
    * 300 characters at maximum.
    * If the English name is not registered, this value is set to blank.
    *
-   *  Example: `"Rumoi Summary Court"`
+   * Example: `"Rumoi Summary Court"`
    */
   en_name: string;
 

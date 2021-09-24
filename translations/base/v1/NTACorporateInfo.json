@@ -9,7 +9,7 @@
         "properties": {
             "published_date": {
                 "comment": {
-                    "text": " Example: `\"2021-01-01\"`",
+                    "text": "Example: `\"2021-01-01\"`",
                     "shortText": [
                         "The published date of the record, in the form of `\"YYYY-MM-DD\"`",
                         "where Y, M, and D represent digits of the year, month, and day",
@@ -19,7 +19,7 @@
             },
             "sequence_number": {
                 "comment": {
-                    "text": " Example: `1`",
+                    "text": "Example: `1`",
                     "shortText": [
                         "The revision number of the corporate record, non zero-padded",
                         "8 digit number at maximum."
@@ -28,25 +28,25 @@
             },
             "corporate_number": {
                 "comment": {
-                    "text": " Example: `2021001052596`",
+                    "text": "Example: `2021001052596`",
                     "shortText": "The corporate number, 12 digit number plus 1 check digit."
                 }
             },
             "process": {
                 "comment": {
-                    "text": " Example: `NTACorporateInfoProcess.NEW`",
+                    "text": "Example: `NTACorporateInfoProcess.NEW`",
                     "shortText": "The reason why the record was created."
                 }
             },
             "correct": {
                 "comment": {
-                    "text": " Example: `\"0\"`",
+                    "text": "Example: `\"0\"`",
                     "shortText": "`\"1\"` if the record was corrected."
                 }
             },
             "update_date": {
                 "comment": {
-                    "text": " Example: `\"2021-01-01\"`",
+                    "text": "Example: `\"2021-01-01\"`",
                     "shortText": [
                         "The updated date of the record, in the form of `\"YYYY-MM-DD\"`",
                         "where Y, M, and D represent digits of the year, month, and day."
@@ -62,7 +62,7 @@
                         "entity, the changed date means the date related to the process.",
                         "If `kind` is a public entity, the changed date means when the",
                         "process occurred.",
-                        " Example: `\"2021-01-01\"`"
+                        "Example: `\"2021-01-01\"`"
                     ],
                     "shortText": [
                         "The changed date of the record, in the form of `\"YYYY-MM-DD\"`",
@@ -72,7 +72,7 @@
             },
             "name": {
                 "comment": {
-                    "text": " Example: `\"株式会社オープンコレクター\"`",
+                    "text": "Example: `\"株式会社オープンコレクター\"`",
                     "shortText": [
                         "The trade name or the corporate name in Japanese with Zenkaku format.",
                         "If the text is longer than 150 characters, it will be truncated",
@@ -104,7 +104,7 @@
             },
             "kind": {
                 "comment": {
-                    "text": " Example: `NTACorporateInfoKind.KABUSHIKI_KAISHA`",
+                    "text": "Example: `NTACorporateInfoKind.KABUSHIKI_KAISHA`",
                     "shortText": "Kind of the corporate."
                 }
             },
@@ -211,7 +211,7 @@
             },
             "close_date": {
                 "comment": {
-                    "text": " Example: `\"2021-01-01\"`",
+                    "text": "Example: `\"2021-01-01\"`",
                     "shortText": [
                         "The date of the record when the corporate was closed, in the",
                         "form of `\"YYYY-MM-DD\"` where Y, M, and D represent digits of",
@@ -222,7 +222,7 @@
             },
             "close_cause": {
                 "comment": {
-                    "text": " Example: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`",
+                    "text": "Example: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`",
                     "shortText": [
                         "The reason why the corporate was closed.",
                         "If the corporate is not closed, this value is set to `null`."
@@ -231,7 +231,7 @@
             },
             "successor_corporate_number": {
                 "comment": {
-                    "text": " Example: `2021001052596`",
+                    "text": "Example: `2021001052596`",
                     "shortText": [
                         "The corporate number of the successor of the closed corporate,",
                         "12 digit number plus 1 check digit.",
@@ -241,7 +241,7 @@
             },
             "change_cause": {
                 "comment": {
-                    "text": " Example: `令和２年５月１日○○株式会社に合併し解散`",
+                    "text": "Example: `令和２年５月１日○○株式会社に合併し解散`",
                     "shortText": [
                         "The reason why the process occurred, 500 characters at maximum.",
                         "Both zenkaku and hankaku format are allowed."
@@ -250,7 +250,7 @@
             },
             "assignment_date": {
                 "comment": {
-                    "text": " Example: `\"2021-01-01\"`",
+                    "text": "Example: `\"2021-01-01\"`",
                     "shortText": [
                         "The date of the record when the corporate number was assigned,",
                         "in the form of `\"YYYY-MM-DD\"` where Y, M, and D represent",
@@ -260,7 +260,7 @@
             },
             "en_name": {
                 "comment": {
-                    "text": " Example: `\"Rumoi Summary Court\"`",
+                    "text": "Example: `\"Rumoi Summary Court\"`",
                     "shortText": [
                         "The trade name or the corporate name in English with hankaku format,",
                         "300 characters at maximum.",
