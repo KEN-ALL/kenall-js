@@ -432,25 +432,46 @@ export interface CityResolverResponse {
  * was created.
  */
 export enum NTACorporateInfoProcess {
-  /* New record */
+  /**
+   * New record
+   */
   NEW = '1',
-  /* Trade name or corporate name was changed. */
+
+  /**
+   * Trade name or corporate name was changed.
+   */
   NAME_CHANGED = '11',
-  /* Domestic address was changed. */
+  /**
+   *  Domestic address was changed.
+   */
   DOMESTIC_ADDRESS_CHANGED = '12',
-  /* Overseas address was changed. */
+  /**
+   *  Overseas address was changed.
+   */
   OVERSEAS_ADDRESS_CHANGED = '13',
-  /* Registration record was closed. */
+  /**
+   *  Registration record was closed.
+   */
   REGISTRATION_RECORD_CLOSED = '21',
-  /* Registration record was reopened. */
+  /**
+   *  Registration record was reopened.
+   */
   REGISTRATION_RECORD_REOPENED = '22',
-  /* Absorption merger completed. */
+  /**
+   *  Absorption merger completed.
+   */
   ABSORPTION_MERGER_COMPLETED = '71',
-  /* Absorption merger was invalidated. */
+  /**
+   *  Absorption merger was invalidated.
+   */
   ABSORPTION_MERGER_INVALIDATED = '72',
-  /* Registration record was erased. */
+  /**
+   *  Registration record was erased.
+   */
   REGISTRATION_RECORD_ERASED = '81',
-  /* The record was deleted. */
+  /**
+   *  The record was deleted.
+   */
   DELETED = '99',
 }
 
@@ -458,25 +479,45 @@ export enum NTACorporateInfoProcess {
  * A `NTACorporateInfoKind` represents the kind of corporate.
  */
 export enum NTACorporateInfoKind {
-  /* National public entity */
+  /**
+   *  National public entity
+   */
   NATIONAL_PUBLIC_ENTITY = '101',
-  /* Local public entity */
+  /**
+   *  Local public entity
+   */
   LOCAL_PUBLIC_ENTITY = '201',
-  /* Limited liability company by share, aka K.K. */
+  /**
+   *  Limited liability company by share, aka K.K.
+   */
   KABUSHIKI_KAISHA = '301',
-  /* Old style of limited liability company not by share */
+  /**
+   *  Old style of limited liability company not by share
+   */
   YUGEN_KAISHA = '302',
-  /* General partnership company */
+  /**
+   *  General partnership company
+   */
   GOMEI_KAISHA = '303',
-  /* Limited partnership company */
+  /**
+   *  Limited partnership company
+   */
   GOSHI_KAISHA = '304',
-  /* Limited liability company, aka G.K. */
+  /**
+   *  Limited liability company, aka G.K.
+   */
   GODO_KAISHA = '305',
-  /* Other types of company */
+  /**
+   *  Other types of company
+   */
   OTHER_COMPANY = '399',
-  /* Foreign company */
+  /**
+   *  Foreign company
+   */
   FOREIGN_COMPANY = '401',
-  /* Other */
+  /**
+   *  Other
+   */
   OTHER = '499',
 }
 
@@ -485,13 +526,21 @@ export enum NTACorporateInfoKind {
  * was closed.
  */
 export enum NTACorporateInfoCloseCause {
-  /* Liquidation completed */
+  /**
+   *  Liquidation completed
+   */
   LIQUIDATION_COMPLETED = '1',
-  /* Dissolution by merger */
+  /**
+   *  Dissolution by merger
+   */
   DISSOLUTION_BY_MERGER = '11',
-  /* A registerer closed the corporate */
+  /**
+   *  A registerer closed the corporate
+   */
   CLOSED_BY_REGISTERER = '21',
-  /* Other reasons */
+  /**
+   *  Other reasons
+   */
   OTHER = '31',
 }
 

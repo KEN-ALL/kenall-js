@@ -6,6 +6,57 @@
                 "was created."
             ]
         },
-        "members": {}
+        "members": {
+            "NEW": {
+                "comment": {
+                    "shortText": "New record"
+                }
+            },
+            "NAME_CHANGED": {
+                "comment": {
+                    "shortText": "Trade name or corporate name was changed."
+                }
+            },
+            "DOMESTIC_ADDRESS_CHANGED": {
+                "comment": {
+                    "shortText": " Domestic address was changed."
+                }
+            },
+            "OVERSEAS_ADDRESS_CHANGED": {
+                "comment": {
+                    "shortText": " Overseas address was changed."
+                }
+            },
+            "REGISTRATION_RECORD_CLOSED": {
+                "comment": {
+                    "shortText": " Registration record was closed."
+                }
+            },
+            "REGISTRATION_RECORD_REOPENED": {
+                "comment": {
+                    "shortText": " Registration record was reopened."
+                }
+            },
+            "ABSORPTION_MERGER_COMPLETED": {
+                "comment": {
+                    "shortText": " Absorption merger completed."
+                }
+            },
+            "ABSORPTION_MERGER_INVALIDATED": {
+                "comment": {
+                    "shortText": " Absorption merger was invalidated."
+                }
+            },
+            "REGISTRATION_RECORD_ERASED": {
+                "comment": {
+                    "shortText": " Registration record was erased."
+                }
+            },
+            "DELETED": {
+                "comment": {
+                    "shortText": " The record was deleted."
+                }
+            }
+        }
     }
 }

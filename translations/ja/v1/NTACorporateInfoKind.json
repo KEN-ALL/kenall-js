@@ -3,6 +3,57 @@
         "comment": {
             "shortText": "`NTACorporateInfoKind`は、法人種別を表します。"
         },
-        "members": {}
+        "members": {
+            "NATIONAL_PUBLIC_ENTITY": {
+                "comment": {
+                    "shortText": "国の機関"
+                }
+            },
+            "LOCAL_PUBLIC_ENTITY": {
+                "comment": {
+                    "shortText": "地方公共団体"
+                }
+            },
+            "KABUSHIKI_KAISHA": {
+                "comment": {
+                    "shortText": "株式会社"
+                }
+            },
+            "YUGEN_KAISHA": {
+                "comment": {
+                    "shortText": "有限会社"
+                }
+            },
+            "GOMEI_KAISHA": {
+                "comment": {
+                    "shortText": "合名会社"
+                }
+            },
+            "GOSHI_KAISHA": {
+                "comment": {
+                    "shortText": "合資会社"
+                }
+            },
+            "GODO_KAISHA": {
+                "comment": {
+                    "shortText": "合同会社"
+                }
+            },
+            "OTHER_COMPANY": {
+                "comment": {
+                    "shortText": "その他の設立登記法人"
+                }
+            },
+            "FOREIGN_COMPANY": {
+                "comment": {
+                    "shortText": "外国会社等"
+                }
+            },
+            "OTHER": {
+                "comment": {
+                    "shortText": "その他"
+                }
+            }
+        }
     }
 }
