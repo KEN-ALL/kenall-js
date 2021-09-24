@@ -433,44 +433,44 @@ export interface CityResolverResponse {
  */
 export enum NTACorporateInfoProcess {
   /**
-   * New record
+   * Indicates new record.
    */
   NEW = '1',
 
   /**
-   * Trade name or corporate name was changed.
+   * Indicates trade name or corporate name was changed.
    */
   NAME_CHANGED = '11',
   /**
-   *  Domestic address was changed.
+   * Indicates domestic address was changed.
    */
   DOMESTIC_ADDRESS_CHANGED = '12',
   /**
-   *  Overseas address was changed.
+   * Indicates overseas address was changed.
    */
   OVERSEAS_ADDRESS_CHANGED = '13',
   /**
-   *  Registration record was closed.
+   * Indicates registration record was closed.
    */
   REGISTRATION_RECORD_CLOSED = '21',
   /**
-   *  Registration record was reopened.
+   * Indicates registration record was reopened.
    */
   REGISTRATION_RECORD_REOPENED = '22',
   /**
-   *  Absorption merger completed.
+   * Indicates absorption merger completed.
    */
   ABSORPTION_MERGER_COMPLETED = '71',
   /**
-   *  Absorption merger was invalidated.
+   * Indicates absorption merger was invalidated.
    */
   ABSORPTION_MERGER_INVALIDATED = '72',
   /**
-   *  Registration record was erased.
+   * Indicates registration record was erased.
    */
   REGISTRATION_RECORD_ERASED = '81',
   /**
-   *  The record was deleted.
+   * Indicates the record was deleted.
    */
   DELETED = '99',
 }
@@ -480,43 +480,43 @@ export enum NTACorporateInfoProcess {
  */
 export enum NTACorporateInfoKind {
   /**
-   *  National public entity
+   * National public entity
    */
   NATIONAL_PUBLIC_ENTITY = '101',
   /**
-   *  Local public entity
+   * Local public entity
    */
   LOCAL_PUBLIC_ENTITY = '201',
   /**
-   *  Limited liability company by share, aka K.K.
+   * Limited liability company by share, aka K.K.
    */
   KABUSHIKI_KAISHA = '301',
   /**
-   *  Old style of limited liability company not by share
+   * Old style of limited liability company not by share
    */
   YUGEN_KAISHA = '302',
   /**
-   *  General partnership company
+   * General partnership company
    */
   GOMEI_KAISHA = '303',
   /**
-   *  Limited partnership company
+   * Limited partnership company
    */
   GOSHI_KAISHA = '304',
   /**
-   *  Limited liability company, aka G.K.
+   * Limited liability company, aka G.K.
    */
   GODO_KAISHA = '305',
   /**
-   *  Other types of company
+   * Other types of company
    */
   OTHER_COMPANY = '399',
   /**
-   *  Foreign company
+   * Foreign company
    */
   FOREIGN_COMPANY = '401',
   /**
-   *  Other
+   * Other
    */
   OTHER = '499',
 }

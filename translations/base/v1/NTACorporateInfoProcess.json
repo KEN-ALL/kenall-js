@@ -9,52 +9,52 @@
         "members": {
             "NEW": {
                 "comment": {
-                    "shortText": "New record"
+                    "shortText": "Indicates new record."
                 }
             },
             "NAME_CHANGED": {
                 "comment": {
-                    "shortText": "Trade name or corporate name was changed."
+                    "shortText": "Indicates trade name or corporate name was changed."
                 }
             },
             "DOMESTIC_ADDRESS_CHANGED": {
                 "comment": {
-                    "shortText": " Domestic address was changed."
+                    "shortText": "Indicates domestic address was changed."
                 }
             },
             "OVERSEAS_ADDRESS_CHANGED": {
                 "comment": {
-                    "shortText": " Overseas address was changed."
+                    "shortText": "Indicates overseas address was changed."
                 }
             },
             "REGISTRATION_RECORD_CLOSED": {
                 "comment": {
-                    "shortText": " Registration record was closed."
+                    "shortText": "Indicates registration record was closed."
                 }
             },
             "REGISTRATION_RECORD_REOPENED": {
                 "comment": {
-                    "shortText": " Registration record was reopened."
+                    "shortText": "Indicates registration record was reopened."
                 }
             },
             "ABSORPTION_MERGER_COMPLETED": {
                 "comment": {
-                    "shortText": " Absorption merger completed."
+                    "shortText": "Indicates absorption merger completed."
                 }
             },
             "ABSORPTION_MERGER_INVALIDATED": {
                 "comment": {
-                    "shortText": " Absorption merger was invalidated."
+                    "shortText": "Indicates absorption merger was invalidated."
                 }
             },
             "REGISTRATION_RECORD_ERASED": {
                 "comment": {
-                    "shortText": " Registration record was erased."
+                    "shortText": "Indicates registration record was erased."
                 }
             },
             "DELETED": {
                 "comment": {
-                    "shortText": " The record was deleted."
+                    "shortText": "Indicates the record was deleted."
                 }
             }
         }
