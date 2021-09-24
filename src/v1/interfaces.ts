@@ -596,7 +596,7 @@ export interface NTACorporateInfo {
   correct: string;
 
   /**
-   * The updated date of the record, in the form of `"YYYY-MM-DD"`
+   * The date the record was updated, in the form of `"YYYY-MM-DD"`
    * where Y, M, and D represent digits of the year, month, and day.
    *
    * Unlike `change_date` and `publish_date`, this field indicates the

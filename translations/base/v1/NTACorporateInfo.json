@@ -63,7 +63,7 @@
                         "Example: `\"2021-01-01\"`"
                     ],
                     "shortText": [
-                        "The updated date of the record, in the form of `\"YYYY-MM-DD\"`",
+                        "The date the record was updated, in the form of `\"YYYY-MM-DD\"`",
                         "where Y, M, and D represent digits of the year, month, and day."
                     ]
                 }
