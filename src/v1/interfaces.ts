@@ -614,7 +614,7 @@ export interface NTACorporateInfo {
   change_date: string;
 
   /**
-   * The trade name or the corporate name in Japanese with Zenkaku format.
+   * The trade name or corporate name in Japanese with Zenkaku format.
    * If the text is longer than 150 characters, it will be truncated
    * to 150 characters. If the text uses a Kanji which is not JIS
    * Level 1 or 2, The Kanji will be converted into correspondent
@@ -627,7 +627,7 @@ export interface NTACorporateInfo {
   name: string;
 
   /**
-   * The trade name or the corporate name image ID, 8 digit number at maximum.
+   * The trade name or corporate name image ID, 8 digit number at maximum.
    * If you want to refer to the image file, please access
    * https://www.houjin-bangou.nta.go.jp/image?imageid=NAME_IMAGE_ID,
    * where NAME_IMAGE_ID is a zero-padded 8 digit number of the ID.
@@ -786,7 +786,7 @@ export interface NTACorporateInfo {
   assignment_date: string;
 
   /**
-   * The trade name or the corporate name in English with hankaku format,
+   * The trade name or corporate name in English with hankaku format,
    * 300 characters at maximum.
    * If the English name is not registered, this value is set to blank.
    *
