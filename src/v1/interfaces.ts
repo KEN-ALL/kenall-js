@@ -429,7 +429,7 @@ export interface CityResolverResponse {
 
 /**
  * A `NTACorporateInfoProcess` represents the reason why the record
- * was created.
+ * was added.
  */
 export enum NTACorporateInfoProcess {
   /**
@@ -579,7 +579,7 @@ export interface NTACorporateInfo {
   corporate_number: string;
 
   /**
-   * The reason why the record was created.
+   * The reason why the record was added.
    *
    * Example: `NTACorporateInfoProcess.NEW`
    */

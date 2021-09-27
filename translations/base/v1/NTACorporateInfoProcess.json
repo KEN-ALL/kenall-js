@@ -3,7 +3,7 @@
         "comment": {
             "shortText": [
                 "A `NTACorporateInfoProcess` represents the reason why the record",
-                "was created."
+                "was added."
             ]
         },
         "members": {

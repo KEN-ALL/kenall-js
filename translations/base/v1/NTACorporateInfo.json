@@ -41,7 +41,7 @@
             "process": {
                 "comment": {
                     "text": "Example: `NTACorporateInfoProcess.NEW`",
-                    "shortText": "The reason why the record was created."
+                    "shortText": "The reason why the record was added."
                 }
             },
             "correct": {
