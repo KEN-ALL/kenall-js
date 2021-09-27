@@ -12,6 +12,9 @@ import {
   AddressSearcherOptions,
   AddressSearcherResponse,
   CityResolverResponse,
+  NTACorporateInfoResolverResponse,
+  NTACorporateInfoSearcherOptions,
+  NTACorporateInfoSearcherResponse,
 } from './interfaces';
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
@@ -146,6 +149,76 @@ export class KENALLV1 {
       if (e instanceof StructError) {
         throw new Error(
           `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  /**
+   * Invokes "getNTACorporateInfo" API (endpoint: `/houjinbangou/{corporateNumber}`).
+   *
+   * @param corporateNumber The corporate number to query with.
+   * @returns An {@link NTACorporateInfoResolverResponse}.
+   */
+  async getNTACorporateInfo(
+    corporateNumber: string
+  ): Promise<NTACorporateInfoResolverResponse> {
+    try {
+      return validate<NTACorporateInfoResolverResponse>(
+        await this.request(`/houjinbangou/${corporateNumber}`, {})
+      );
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+  /**
+   * Invokes "searchNTACorporateInfo" API (endpoint: `/houjinbangou?...`).
+   *
+   * @param options The query.
+   * @returns A {@link NTACorporateInfoSearcherResponse}.
+   */
+  async searchNTACorporateInfo(
+    options: NTACorporateInfoSearcherOptions
+  ): Promise<NTACorporateInfoSearcherResponse> {
+    const params: { [k: string]: string } = {};
+    if (options.query !== undefined) {
+      params['q'] = options.query;
+    }
+    if (options.offset !== undefined) {
+      params['offset'] = String(options.offset | 0);
+    }
+    if (options.limit !== undefined) {
+      params['limit'] = String(options.limit | 0);
+    }
+    if (options.facet_area !== undefined) {
+      params['facet_area'] = options.facet_area;
+    }
+    if (options.facet_kind !== undefined) {
+      params['facet_kind'] = options.facet_kind;
+    }
+    if (options.facet_process !== undefined) {
+      params['facet_process'] = options.facet_process;
+    }
+    if (options.facet_close_cause !== undefined) {
+      params['facet_close_cause'] = options.facet_close_cause;
+    }
+    try {
+      return validate<NTACorporateInfoSearcherResponse>(
+        await this.request('/houjinbangou', params)
+      );
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `${e}`
+          //  `invalid response payload: ${e.path} must be ${e.type}`
         );
       } else {
         throw e;

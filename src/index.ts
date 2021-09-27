@@ -8,5 +8,13 @@ export {
   CityResolverResponse,
   Corporation,
   Facet,
+  NTACorporateInfo,
+  NTACorporateInfoCloseCause,
+  NTACorporateInfoKind,
+  NTACorporateInfoProcess,
+  NTACorporateInfoResolverResponse,
+  NTACorporateInfoSearcherOptions,
+  NTACorporateInfoFacets,
+  NTACorporateInfoSearcherResponse,
 } from './v1';
 export { Config } from './config';

@@ -1,0 +1,61 @@
+{
+    "NTACorporateInfoProcess": {
+        "comment": {
+            "shortText": [
+                "`NTACorporateInfoProcess`は、なぜ当該レコードが作成されたかを表します。"
+            ]
+        },
+        "members": {
+            "NEW": {
+                "comment": {
+                    "shortText": "新規"
+                }
+            },
+            "NAME_CHANGED": {
+                "comment": {
+                    "shortText": "商号又は名称の変更"
+                }
+            },
+            "DOMESTIC_ADDRESS_CHANGED": {
+                "comment": {
+                    "shortText": "国内所在地の変更"
+                }
+            },
+            "OVERSEAS_ADDRESS_CHANGED": {
+                "comment": {
+                    "shortText": "国外所在地の変更"
+                }
+            },
+            "REGISTRATION_RECORD_CLOSED": {
+                "comment": {
+                    "shortText": "登記記録の閉鎖等"
+                }
+            },
+            "REGISTRATION_RECORD_REOPENED": {
+                "comment": {
+                    "shortText": "登記記録の復活等"
+                }
+            },
+            "ABSORPTION_MERGER_COMPLETED": {
+                "comment": {
+                    "shortText": "吸収合併"
+                }
+            },
+            "ABSORPTION_MERGER_INVALIDATED": {
+                "comment": {
+                    "shortText": "吸収合併無効"
+                }
+            },
+            "REGISTRATION_RECORD_ERASED": {
+                "comment": {
+                    "shortText": "商号の登記抹消"
+                }
+            },
+            "DELETED": {
+                "comment": {
+                    "shortText": "削除"
+                }
+            }
+        }
+    }
+}

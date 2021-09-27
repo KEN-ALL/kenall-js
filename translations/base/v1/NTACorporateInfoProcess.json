@@ -1,0 +1,62 @@
+{
+    "NTACorporateInfoProcess": {
+        "comment": {
+            "shortText": [
+                "A `NTACorporateInfoProcess` represents the reason why the record",
+                "was added."
+            ]
+        },
+        "members": {
+            "NEW": {
+                "comment": {
+                    "shortText": "Indicates new record."
+                }
+            },
+            "NAME_CHANGED": {
+                "comment": {
+                    "shortText": "Indicates trade name or corporate name was changed."
+                }
+            },
+            "DOMESTIC_ADDRESS_CHANGED": {
+                "comment": {
+                    "shortText": "Indicates domestic address was changed."
+                }
+            },
+            "OVERSEAS_ADDRESS_CHANGED": {
+                "comment": {
+                    "shortText": "Indicates overseas address was changed."
+                }
+            },
+            "REGISTRATION_RECORD_CLOSED": {
+                "comment": {
+                    "shortText": "Indicates registration record was closed."
+                }
+            },
+            "REGISTRATION_RECORD_REOPENED": {
+                "comment": {
+                    "shortText": "Indicates registration record was reopened."
+                }
+            },
+            "ABSORPTION_MERGER_COMPLETED": {
+                "comment": {
+                    "shortText": "Indicates absorption merger completed."
+                }
+            },
+            "ABSORPTION_MERGER_INVALIDATED": {
+                "comment": {
+                    "shortText": "Indicates absorption merger was invalidated."
+                }
+            },
+            "REGISTRATION_RECORD_ERASED": {
+                "comment": {
+                    "shortText": "Indicates registration record was erased."
+                }
+            },
+            "DELETED": {
+                "comment": {
+                    "shortText": "Indicates the record was deleted."
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "NTACorporateInfoCloseCause": {
+        "comment": {
+            "shortText": [
+                "A `NTACorporateInfoCloseCause` represents the reason why the corporate",
+                "was closed."
+            ]
+        },
+        "members": {
+            "LIQUIDATION_COMPLETED": {
+                "comment": {
+                    "shortText": " Liquidation completed"
+                }
+            },
+            "DISSOLUTION_BY_MERGER": {
+                "comment": {
+                    "shortText": " Dissolution by merger"
+                }
+            },
+            "CLOSED_BY_REGISTERER": {
+                "comment": {
+                    "shortText": " A registerer closed the corporate"
+                }
+            },
+            "OTHER": {
+                "comment": {
+                    "shortText": " Other reasons"
+                }
+            }
+        }
+    }
+}

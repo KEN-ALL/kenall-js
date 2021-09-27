@@ -8,4 +8,12 @@ export {
   CityResolverResponse,
   Corporation,
   Facet,
+  NTACorporateInfo,
+  NTACorporateInfoCloseCause,
+  NTACorporateInfoKind,
+  NTACorporateInfoProcess,
+  NTACorporateInfoResolverResponse,
+  NTACorporateInfoSearcherOptions,
+  NTACorporateInfoFacets,
+  NTACorporateInfoSearcherResponse,
 } from './interfaces';

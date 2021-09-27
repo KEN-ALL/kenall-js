@@ -1,0 +1,16 @@
+{
+    "NTACorporateInfoFacets": {
+        "comment": {
+            "text": [
+                "それぞれのファセット表現は、スラッシュで区切られたファセット文字列の階層で構成されます。",
+                "例: `{\"area\": [\"/東京都/港区\", 7], \"kind\": [\"/株式会社\", 7]}`"
+            ],
+            "shortText": [
+                "`NTACorporateInfoFacets`は、ある階層のファセットと、",
+                "そのファセットに属する結果の件数を表現します。"
+            ]
+        },
+        "properties": {},
+        "methods": {}
+    }
+}

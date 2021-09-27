@@ -1,0 +1,53 @@
+{
+    "NTACorporateInfoSearcherResponse": {
+        "comment": {
+            "shortText": [
+                "An `NTACorporateInfoSearcherResponse` describes a response to",
+                "`searchNTACorporateInfo` API call."
+            ]
+        },
+        "properties": {
+            "version": {
+                "comment": {
+                    "shortText": [
+                        "The version of the data, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day",
+                        "the source data became available."
+                    ]
+                }
+            },
+            "data": {
+                "comment": {
+                    "shortText": "The set of the data that match to the query."
+                }
+            },
+            "query": {
+                "comment": {
+                    "shortText": "The query that the search has been performed for."
+                }
+            },
+            "count": {
+                "comment": {
+                    "shortText": "The number of the resulting items in total."
+                }
+            },
+            "offset": {
+                "comment": {
+                    "shortText": "The offset from which the result has been retrieved."
+                }
+            },
+            "limit": {
+                "comment": {
+                    "shortText": "The number of items that have been intended, at most, to retrieve from the result."
+                }
+            },
+            "facets": {
+                "comment": {
+                    "text": "If no facet is given, those will be unavailable and this stores null.",
+                    "shortText": "The facets of the result that form with the query."
+                }
+            }
+        },
+        "methods": {}
+    }
+}
