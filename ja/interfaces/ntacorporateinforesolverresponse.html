@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Config | @ken-all/kenall</title>
+	<title>NTACorporateInfoResolverResponse | @ken-all/kenall</title>
 	<meta name="description" content="Documentation for @ken-all/kenall">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
@@ -2734,16 +2734,8 @@ img {
 		<li class=" tsd-kind-interface">
 			<a href="cityresolverresponse.html" class="tsd-kind-icon">City<wbr>Resolver<wbr>Response</a>
 		</li>
-		<li class="current tsd-kind-interface">
+		<li class=" tsd-kind-interface">
 			<a href="config.html" class="tsd-kind-icon">Config</a>
-			<ul>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="config.html#apibase" class="tsd-kind-icon">apibase</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="config.html#timeout" class="tsd-kind-icon">timeout</a>
-				</li>
-			</ul>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="corporation.html" class="tsd-kind-icon">Corporation</a>
@@ -2754,8 +2746,16 @@ img {
 		<li class=" tsd-kind-interface">
 			<a href="ntacorporateinfofacets.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Facets</a>
 		</li>
-		<li class=" tsd-kind-interface">
+		<li class="current tsd-kind-interface">
 			<a href="ntacorporateinforesolverresponse.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Resolver<wbr>Response</a>
+			<ul>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="ntacorporateinforesolverresponse.html#data" class="tsd-kind-icon">data</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="ntacorporateinforesolverresponse.html#version" class="tsd-kind-icon">version</a>
+				</li>
+			</ul>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="ntacorporateinfosearcheroptions.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Searcher<wbr>Options</a>
@@ -2770,11 +2770,19 @@ img {
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>An <code>NTACorporateInfoResolverResponse</code>は&quot;getNTACorporateInfo&quot; API
+					呼び出しの応答を記述します。</p>
+				</div>
+			</div>
+		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">Config</span>
+					<span class="target">NTACorporateInfoResolverResponse</span>
 				</li>
 			</ul>
 		</section>
@@ -2785,8 +2793,8 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="config.html#apibase" class="tsd-kind-icon">apibase</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="config.html#timeout" class="tsd-kind-icon">timeout</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ntacorporateinforesolverresponse.html#data" class="tsd-kind-icon">data</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ntacorporateinforesolverresponse.html#version" class="tsd-kind-icon">version</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2795,34 +2803,32 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="apibase" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> apibase</h3>
-				<div class="tsd-signature tsd-kind-icon">apibase<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<a name="data" class="tsd-anchor"></a>
+				<h3>data</h3>
+				<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="ntacorporateinfo.html" class="tsd-signature-type" data-tsd-kind="Interface">NTACorporateInfo</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/config.ts#L6">config.ts:6</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/interfaces.ts#L869">v1/interfaces.ts:869</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>APIエンドポイントのベースURLを指定します。
-						ベースURLのデフォルトは <code>https://api.kenall.jp/v1</code> となります。</p>
+						<p>問い合わせにマッチしたデータの集合。</p>
 					</div>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="timeout" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> timeout</h3>
-				<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<a name="version" class="tsd-anchor"></a>
+				<h3>version</h3>
+				<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/config.ts#L12">config.ts:12</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/interfaces.ts#L864">v1/interfaces.ts:864</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>APIリクエストのタイムアウト値を指定します。
-						未指定時のデフォルトは1000ms (1秒) です。</p>
+						<p>どのデータベースのバージョンに対して検索を実行するか。</p>
 					</div>
 				</div>
 			</section>

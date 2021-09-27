@@ -2704,6 +2704,15 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class=" tsd-kind-enum">
+			<a href="../enums/ntacorporateinfoclosecause.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Close<wbr>Cause</a>
+		</li>
+		<li class=" tsd-kind-enum">
+			<a href="../enums/ntacorporateinfokind.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Kind</a>
+		</li>
+		<li class=" tsd-kind-enum">
+			<a href="../enums/ntacorporateinfoprocess.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Process</a>
+		</li>
 		<li class="current tsd-kind-class">
 			<a href="kenall.html" class="tsd-kind-icon">KENALL</a>
 			<ul>
@@ -2725,11 +2734,17 @@ img {
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="kenall.html#getcities" class="tsd-kind-icon">get<wbr>Cities</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="kenall.html#getntacorporateinfo" class="tsd-kind-icon">getNTACorporate<wbr>Info</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 					<a href="kenall.html#request" class="tsd-kind-icon">request</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="kenall.html#searchaddresses" class="tsd-kind-icon">search<wbr>Addresses</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="kenall.html#searchntacorporateinfo" class="tsd-kind-icon">searchNTACorporate<wbr>Info</a>
 				</li>
 			</ul>
 		</li>
@@ -2756,6 +2771,21 @@ img {
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="../interfaces/corporation.html" class="tsd-kind-icon">Corporation</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/ntacorporateinfo.html" class="tsd-kind-icon">NTACorporate<wbr>Info</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/ntacorporateinfofacets.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Facets</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/ntacorporateinforesolverresponse.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Resolver<wbr>Response</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/ntacorporateinfosearcheroptions.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Searcher<wbr>Options</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/ntacorporateinfosearcherresponse.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Searcher<wbr>Response</a>
 		</li>
 		<li class=" tsd-kind-type-alias">
 			<a href="../modules.html#facet" class="tsd-kind-icon">Facet</a>
@@ -2795,8 +2825,10 @@ img {
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="kenall.html#getaddress" class="tsd-kind-icon">get<wbr>Address</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="kenall.html#getcities" class="tsd-kind-icon">get<wbr>Cities</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="kenall.html#getntacorporateinfo" class="tsd-kind-icon">getNTACorporate<wbr>Info</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="kenall.html#request" class="tsd-kind-icon">request</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="kenall.html#searchaddresses" class="tsd-kind-icon">search<wbr>Addresses</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="kenall.html#searchntacorporateinfo" class="tsd-kind-icon">searchNTACorporate<wbr>Info</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2814,7 +2846,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/70bdfd7/src/v1/core.ts#L21">v1/core.ts:21</a></li>
+								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/core.ts#L32">v1/core.ts:32</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2852,7 +2884,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">apibase<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/70bdfd7/src/v1/core.ts#L20">v1/core.ts:20</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/core.ts#L31">v1/core.ts:31</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2869,7 +2901,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/70bdfd7/src/v1/core.ts#L21">v1/core.ts:21</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/core.ts#L32">v1/core.ts:32</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2886,7 +2918,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/70bdfd7/src/v1/core.ts#L55">v1/core.ts:55</a></li>
+								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/core.ts#L66">v1/core.ts:66</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2926,7 +2958,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/70bdfd7/src/v1/core.ts#L86">v1/core.ts:86</a></li>
+								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/core.ts#L97">v1/core.ts:97</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2956,6 +2988,38 @@ img {
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="getntacorporateinfo" class="tsd-anchor"></a>
+				<h3>getNTACorporate<wbr>Info</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">getNTACorporate<wbr>Info<span class="tsd-signature-symbol">(</span>corporateNumber<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ntacorporateinforesolverresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">NTACorporateInfoResolverResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/core.ts#L165">v1/core.ts:165</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>&quot;getNTACorporateInfo&quot; API (エンドポイント: <code>/houjinbangou/{corporateNumber}</code>) を呼び出します。</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>corporateNumber: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The corporate number to query with.</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ntacorporateinforesolverresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">NTACorporateInfoResolverResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						<p><a href="../interfaces/ntacorporateinforesolverresponse.html">NTACorporateInfoResolverResponse</a>.</p>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 				<a name="request" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagProtected">Protected</span> request</h3>
@@ -2966,7 +3030,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/70bdfd7/src/v1/core.ts#L41">v1/core.ts:41</a></li>
+								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/core.ts#L52">v1/core.ts:52</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2994,7 +3058,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/70bdfd7/src/v1/core.ts#L114">v1/core.ts:114</a></li>
+								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/core.ts#L125">v1/core.ts:125</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3013,6 +3077,38 @@ img {
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/addresssearcherresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">AddressSearcherResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						<p><a href="../interfaces/addresssearcherresponse.html">AddressSearcherResponse</a></p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="searchntacorporateinfo" class="tsd-anchor"></a>
+				<h3>searchNTACorporate<wbr>Info</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">searchNTACorporate<wbr>Info<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/ntacorporateinfosearcheroptions.html" class="tsd-signature-type" data-tsd-kind="Interface">NTACorporateInfoSearcherOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ntacorporateinfosearcherresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">NTACorporateInfoSearcherResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/3708a7c/src/v1/core.ts#L188">v1/core.ts:188</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>&quot;searchNTACorporateInfo&quot; API (エンドポイント: <code>/houjinbangou?...</code>) を呼び出します。</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>options: <a href="../interfaces/ntacorporateinfosearcheroptions.html" class="tsd-signature-type" data-tsd-kind="Interface">NTACorporateInfoSearcherOptions</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The query.</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ntacorporateinfosearcherresponse.html" class="tsd-signature-type" data-tsd-kind="Interface">NTACorporateInfoSearcherResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						<p><a href="../interfaces/ntacorporateinfosearcherresponse.html">NTACorporateInfoSearcherResponse</a>.</p>
 					</li>
 				</ul>
 			</section>
