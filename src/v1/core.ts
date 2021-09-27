@@ -160,21 +160,14 @@ export class KENALLV1 {
    * Invokes "getNTACorporateInfo" API (endpoint: `/houjinbangou/{corporateNumber}`).
    *
    * @param corporateNumber The corporate number to query with.
-   * @param version The version of the database that the query has to be
-   *                performed against. Will default to the latest available
-   *                version if not specified.
    * @returns An {@link NTACorporateInfoResolverResponse}.
    */
   async getNTACorporateInfo(
-    corporateNumber: string,
-    version?: string | undefined
+    corporateNumber: string
   ): Promise<NTACorporateInfoResolverResponse> {
     try {
       return validate<NTACorporateInfoResolverResponse>(
-        await this.request(
-          `/houjinbangou/${corporateNumber}`,
-          version != undefined ? { version: version } : {}
-        )
+        await this.request(`/houjinbangou/${corporateNumber}`, {})
       );
     } catch (e) {
       if (e instanceof StructError) {
@@ -204,9 +197,6 @@ export class KENALLV1 {
     }
     if (options.limit !== undefined) {
       params['limit'] = String(options.limit | 0);
-    }
-    if (options.version !== undefined) {
-      params['version'] = options.version;
     }
     if (options.facet_area !== undefined) {
       params['facet_area'] = options.facet_area;

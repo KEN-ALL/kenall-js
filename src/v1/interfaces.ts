@@ -894,15 +894,6 @@ export interface NTACorporateInfoSearcherOptions {
   limit?: number | undefined;
 
   /**
-   * The version of which the database is searched against.
-   *
-   * Defaults to the latest available version.
-   *
-   * Example: `"2021-04-30"`
-   */
-  version?: string | undefined;
-
-  /**
    * The search mode.
    *
    * Defaults to `partial`. If set to `partial`, the API will

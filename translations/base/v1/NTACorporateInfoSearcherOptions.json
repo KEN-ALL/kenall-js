@@ -24,15 +24,6 @@
                     "shortText": "The maximum number of items that you want to retrieve."
                 }
             },
-            "version": {
-                "comment": {
-                    "text": [
-                        "Defaults to the latest available version.",
-                        "Example: `\"2021-04-30\"`"
-                    ],
-                    "shortText": "The version of which the database is searched against."
-                }
-            },
             "mode": {
                 "comment": {
                     "text": [
