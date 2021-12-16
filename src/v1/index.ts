@@ -13,6 +13,7 @@ export {
   NTACorporateInfoKind,
   NTACorporateInfoProcess,
   NTACorporateInfoResolverResponse,
+  NTACorporateInfoSearchMode,
   NTACorporateInfoSearcherOptions,
   NTACorporateInfoFacets,
   NTACorporateInfoSearcherResponse,

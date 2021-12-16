@@ -192,6 +192,9 @@ export class KENALLV1 {
     if (options.query !== undefined) {
       params['q'] = options.query;
     }
+    if (options.mode !== undefined) {
+      params['mode'] = options.mode;
+    }
     if (options.offset !== undefined) {
       params['offset'] = String(options.offset | 0);
     }

@@ -1,5 +1,5 @@
 import { mocked } from 'ts-jest/utils';
-import { KENALL } from '..';
+import { KENALL, NTACorporateInfoSearchMode } from '..';
 import { AxiosInstance } from 'axios';
 import axios from 'axios';
 
@@ -299,13 +299,18 @@ test.each([
     data: fixture,
   });
   const ka = new KENALL('key');
-  const options = { query: 'オープンコレクター', limit: 1 };
+  const options = {
+    query: 'オープンコレクター',
+    mode: 'exact' as NTACorporateInfoSearchMode,
+    limit: 1,
+  };
   const result = await ka.searchNTACorporateInfo(options);
   expect(mockedAxiosGet.mock.calls).toHaveLength(1);
   expect(mockedAxiosGet.mock.calls[0][0]).toBe('/houjinbangou');
   expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
     params: {
       q: 'オープンコレクター',
+      mode: 'exact',
       limit: '1',
     },
   });
