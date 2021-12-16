@@ -869,6 +869,11 @@ export interface NTACorporateInfoResolverResponse {
   data: NTACorporateInfo;
 }
 
+export type NTACorporateInfoSearchMode =
+  | 'exact'
+  | 'partial'
+  | 'exact_with_kind';
+
 /**
  * An `NTACorporateInfoSearcherOptions` stores a set of parameters
  * that will be sent to `searchCorporateInfo` API.
@@ -909,7 +914,7 @@ export interface NTACorporateInfoSearcherOptions {
    *
    * Example: `"exact"`
    */
-  mode?: string | undefined;
+  mode?: NTACorporateInfoSearchMode | undefined;
 
   /**
    * The facet representation at which level the resulting facets
