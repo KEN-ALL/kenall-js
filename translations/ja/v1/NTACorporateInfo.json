@@ -8,7 +8,7 @@
         "properties": {
             "published_date": {
                 "comment": {
-                    "text": " 例: `\"2021-01-01\"`",
+                    "text": "例: `\"2021-01-01\"`",
                     "shortText": [
                         "国税庁のサイトに記載の更新日。"
                     ]
@@ -16,7 +16,7 @@
             },
             "sequence_number": {
                 "comment": {
-                    "text": " 例: `1`",
+                    "text": "例: `1`",
                     "shortText": [
                         "同一法人番号レコードについての変更履歴番号。数字が大きい方が最新。",
                         "左にゼロを詰めない数字で、最大桁数8桁で表されます。"
@@ -25,25 +25,25 @@
             },
             "corporate_number": {
                 "comment": {
-                    "text": " 例: `2021001052596`",
+                    "text": "例: `2021001052596`",
                     "shortText": "法人番号。国税庁によって法人ごとに付与された、12桁+チェックディジット1桁の法人番号"
                 }
             },
             "process": {
                 "comment": {
-                    "text": " 例: `NTACorporateInfoProcess.NEW`",
+                    "text": "例: `NTACorporateInfoProcess.NEW`",
                     "shortText": "レコードがなぜ作成・更新されたかの処理区分。"
                 }
             },
             "correct": {
                 "comment": {
-                    "text": " 例: `\"0\"`",
+                    "text": "例: `\"0\"`",
                     "shortText": "訂正区分。 \"0\":訂正以外、\"1\":訂正"
                 }
             },
             "update_date": {
                 "comment": {
-                    "text": " 例: `\"2021-01-01\"`",
+                    "text": "例: `\"2021-01-01\"`",
                     "shortText": [
                         "更新年月日。"
                     ]
@@ -56,7 +56,7 @@
                         "`process`が`NEW`以外の場合で、`kind`が設立登記法人のときは、",
                         "処理区分の事由に係る登記年月日。",
                         "`kind`が設立登記法人以外のときは、処理区分の事由が生じた年月日。",
-                        " 例: `\"2021-01-01\"`"
+                        "例: `\"2021-01-01\"`"
                     ],
                     "shortText": [
                         "変更年月日。"
@@ -65,7 +65,7 @@
             },
             "name": {
                 "comment": {
-                    "text": " 例: `\"株式会社オープンコレクター\"`",
+                    "text": "例: `\"株式会社オープンコレクター\"`",
                     "shortText": [
                         "商号又は名称。全角。150文字を超過した場合は切り捨てられます。",
                         "JIS第１・第２水準以外の文字を使用している場合はJIS第１・第２水準に",
@@ -77,7 +77,7 @@
             "name_image_id": {
                 "comment": {
                     "text": [
-                        " Examples:",
+                        "例:",
                         " * `\"99999999\"`",
                         " * `null`"
                     ],
@@ -95,7 +95,7 @@
             },
             "kind": {
                 "comment": {
-                    "text": " 例: `NTACorporateInfoKind.KABUSHIKI_KAISHA`",
+                    "text": "例: `NTACorporateInfoKind.KABUSHIKI_KAISHA`",
                     "shortText": "法人番号種別。"
                 }
             },
@@ -108,7 +108,7 @@
             "city_name": {
                 "comment": {
                     "text": [
-                        "Examples:",
+                        "例:",
                         "* `\"港区\"`",
                         "* `\"大阪市北区\"`",
                         "* `\"各務原市\"`",
@@ -123,19 +123,51 @@
             },
             "street_number": {
                 "comment": {
-                    "text": "例: `麹町３丁目１２－１４麹町駅前ヒルトップ８階`",
+                    "text": "例: `\"麹町３丁目１２－１４麹町駅前ヒルトップ８階\"`",
                     "shortText": [
-                        "国内所在地(丁目番地等)。全角。300文字を超過した場合は切り捨てられます。",
+                        "国内所在地 (丁目番地等)。全角。300文字を超過した場合は切り捨てられます。",
                         "JIS第１・第２水準以外の文字を使用している場合はJIS第１・第２水準に",
                         "縮退されています。前情報を確認するにはイメージファイルを閲覧してください。",
                         "`address_image_id`も参照してください。"
                     ]
                 }
             },
+            "town": {
+                "comment": {
+                    "text": "例: `\"麹町\"`",
+                    "shortText": [
+                        "「国内所在地 (丁目番地等)」から字・町名 (街区表示の行われている地域では丁目を取り除いた部分) を抜き出したもの"
+                    ]
+                }
+            },
+            "block_lot_num": {
+                "comment": {
+                    "text": "例: `\"3-12-14\"`",
+                    "shortText": [
+                        "「国内所在地 (丁目番地等)」の字・町名の後に続く「番地」「丁目・番・号」といった要素を表す文字列を正規化し、ハイフンで繋いだ数字としたもの"
+                    ]
+                }
+            },
+            "building": {
+                "comment": {
+                    "text": "例: `\"麹町駅前ヒルトップ\"`",
+                    "shortText": [
+                        "「国内所在地 (丁目番地等)」から抽出した建物名 (階名を含まない)"
+                    ]
+                }
+            },
+            "floor_room": {
+                "comment": {
+                    "text": "例: `\"８階８０１\"`",
+                    "shortText": [
+                        "「国内所在地 (丁目番地等)」から抽出した階名 (部屋番号等を含む場合がある)"
+                    ]
+                }
+            },
             "address_image_id": {
                 "comment": {
                     "text": [
-                        " Examples:",
+                        "例:",
                         " * `\"99999999\"`",
                         " * `null`"
                     ],
@@ -177,7 +209,7 @@
             "address_outside_image_id": {
                 "comment": {
                     "text": [
-                        " Examples:",
+                        "例:",
                         " * `\"99999999\"`",
                         " * `null`"
                     ],
@@ -195,7 +227,7 @@
             },
             "close_date": {
                 "comment": {
-                    "text": " 例: `\"2021-01-01\"`",
+                    "text": "例: `\"2021-01-01\"`",
                     "shortText": [
                         "登記記録の閉鎖等年月日。閉鎖していない場合は`null`になります。"
 
@@ -204,7 +236,7 @@
             },
             "close_cause": {
                 "comment": {
-                    "text": " 例: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`",
+                    "text": "例: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`",
                     "shortText": [
                         "登記記録の閉鎖等の事由。閉鎖していない場合は`null`になります。"
                     ]
@@ -212,7 +244,7 @@
             },
             "successor_corporate_number": {
                 "comment": {
-                    "text": " 例: `2021001052596`",
+                    "text": "例: `2021001052596`",
                     "shortText": [
                         "合併等による事業承継があったときの存続法人の法人番号。12桁+チェックディジット1桁。",
                         "存在しない場合は`null`になります。"
@@ -221,7 +253,7 @@
             },
             "change_cause": {
                 "comment": {
-                    "text": " 例: `令和２年５月１日○○株式会社に合併し解散`",
+                    "text": "例: `令和２年５月１日○○株式会社に合併し解散`",
                     "shortText": [
                         "変更事由の詳細。全角半角混在500文字。"
                     ]
@@ -229,7 +261,7 @@
             },
             "assignment_date": {
                 "comment": {
-                    "text": " 例: `\"2021-01-01\"`",
+                    "text": "例: `\"2021-01-01\"`",
                     "shortText": [
                         "法人番号指定年月日。"
                     ]
@@ -237,7 +269,7 @@
             },
             "en_name": {
                 "comment": {
-                    "text": " 例: `\"Rumoi Summary Court\"`",
+                    "text": "例: `\"Rumoi Summary Court\"`",
                     "shortText": [
                         "商号又は名称(英語表記) 半角英数300文字。登録がない場合はブランク"
                     ]

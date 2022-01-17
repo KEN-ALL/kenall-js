@@ -149,10 +149,9 @@
             },
             "street_number": {
                 "comment": {
-                    "text": "Example: `麹町３丁目１２－１４麹町駅前ヒルトップ８階`",
+                    "text": "Example: `\"麹町３丁目１２－１４麹町駅前ヒルトップ８階\"`",
                     "shortText": [
-                        "The name of the area that usually corresponds to lowest part of the",
-                        "address.",
+                        "The part of the address line below the second-level administrative division.",
                         "The string is preprocessed so it would fit within 300 characters",
                         "by NTA if it is longer than that length actually.",
                         "If the text uses a Kanji which is not JIS Level 1 or 2, The Kanji",
@@ -160,6 +159,42 @@
                         "You can refer to the unnormalized version of the text from a",
                         "correspondent image file.",
                         "See `address_image_id` for details."
+                    ]
+                }
+            },
+            "town": {
+                "comment": {
+                    "text": "Example: `\"麹町\"`",
+                    "shortText": [
+                        "The extracted name of the third-level administrative division, which",
+                        "correspond to the \"o-aza\", or the \"cho\" with its chome part stripped out."
+                    ]
+                }
+            },
+            "block_lot_num": {
+                "comment": {
+                    "text": "Example: `\"3-12-14\"`",
+                    "shortText": [
+                        "The reconstructed numerical part of the address line below the second-level",
+                        "administrative division."
+                    ]
+                }
+            },
+            "building": {
+                "comment": {
+                    "text": "Example: `\"麹町駅前ヒルトップ\"`",
+                    "shortText": [
+                        "The extracted building name in the address line below the second-level",
+                        "administrative devision, without the floor name."
+                    ]
+                }
+            },
+            "floor_room": {
+                "comment": {
+                    "text": "Example: `\"８階８０１\"`",
+                    "shortText": [
+                        "The extracted floor name and room number in the address line below the",
+                        "second-level administrative devision."
                     ]
                 }
             },
