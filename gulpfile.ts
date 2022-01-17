@@ -81,7 +81,7 @@ const bundle = () =>
 
 task('bundle', () => bundle());
 
-task('release', (done): unknown => {
+task('release', (done) => {
   const pkg = readPackageMetadata();
   const tag = `v${pkg.version}`;
   const baseName = `kenall-bundle-${pkg.version}`;
