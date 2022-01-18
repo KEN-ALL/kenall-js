@@ -122,13 +122,11 @@ test.each([
   },
 ])('getAddress method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn(
-    (...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    }
-  );
+  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+    const retval = jest.requireActual('axios').create(...args);
+    retval.get = mockedAxiosGet;
+    return retval;
+  });
   mockedAxiosGet.mockResolvedValue({
     data: fixture,
   });
@@ -150,13 +148,11 @@ test('getAddress method: normalize postal code before sending request', async ()
     data: [],
   };
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn(
-    (...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    }
-  );
+  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+    const retval = jest.requireActual('axios').create(...args);
+    retval.get = mockedAxiosGet;
+    return retval;
+  });
   mockedAxiosGet.mockResolvedValue({
     data: fixture,
   });
@@ -197,13 +193,11 @@ test.each([
   },
 ])('getCities method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn(
-    (...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    }
-  );
+  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+    const retval = jest.requireActual('axios').create(...args);
+    retval.get = mockedAxiosGet;
+    return retval;
+  });
   mockedAxiosGet.mockResolvedValue({
     data: fixture,
   });
@@ -294,13 +288,11 @@ test.each([
   },
 ])('getNTACorporateInfo method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn(
-    (...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    }
-  );
+  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+    const retval = jest.requireActual('axios').create(...args);
+    retval.get = mockedAxiosGet;
+    return retval;
+  });
   mockedAxiosGet.mockResolvedValue({
     data: fixture,
   });
@@ -405,13 +397,11 @@ test.each([
   },
 ])('searchNTACorporateInfo method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn(
-    (...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    }
-  );
+  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+    const retval = jest.requireActual('axios').create(...args);
+    retval.get = mockedAxiosGet;
+    return retval;
+  });
   mockedAxiosGet.mockResolvedValue({
     data: fixture,
   });
