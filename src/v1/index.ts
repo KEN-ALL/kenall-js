@@ -10,11 +10,11 @@ export {
   Facet,
   NTACorporateInfo,
   NTACorporateInfoCloseCause,
+  NTACorporateInfoFacets,
   NTACorporateInfoKind,
   NTACorporateInfoProcess,
   NTACorporateInfoResolverResponse,
   NTACorporateInfoSearchMode,
   NTACorporateInfoSearcherOptions,
-  NTACorporateInfoFacets,
   NTACorporateInfoSearcherResponse,
 } from './interfaces';

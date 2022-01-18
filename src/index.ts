@@ -1,5 +1,4 @@
 export {
-  KENALL,
   Address,
   AddressResolverResponse,
   AddressSearcherOptions,
@@ -8,13 +7,15 @@ export {
   CityResolverResponse,
   Corporation,
   Facet,
+  KENALL,
   NTACorporateInfo,
   NTACorporateInfoCloseCause,
+  NTACorporateInfoFacets,
   NTACorporateInfoKind,
   NTACorporateInfoProcess,
   NTACorporateInfoResolverResponse,
+  NTACorporateInfoSearchMode,
   NTACorporateInfoSearcherOptions,
-  NTACorporateInfoFacets,
   NTACorporateInfoSearcherResponse,
 } from './v1';
 export { Config } from './config';
