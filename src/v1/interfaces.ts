@@ -232,7 +232,7 @@ export interface Corporation {
    *
    * Example: `"3-12-14"`
    */
-  block_lot_num?: string;
+  block_lot_num?: string | null;
 
   /**
    * The name of the post office that handles the postal items
@@ -717,7 +717,7 @@ export interface NTACorporateInfo {
    *
    * Example: `"3-12-14"`
    */
-  block_lot_num?: string;
+  block_lot_num?: string | null;
 
   /**
    * The extracted building name in the address line below the second-level
@@ -725,7 +725,7 @@ export interface NTACorporateInfo {
    *
    * Example: `"麹町駅前ヒルトップ"`
    */
-  building?: string;
+  building?: string | null;
 
   /**
    * The extracted floor name and room number in the address line below the
@@ -733,7 +733,7 @@ export interface NTACorporateInfo {
    *
    * Example: `"８階８０１"`
    */
-  floor_room?: string;
+  floor_room?: string | null;
 
   /**
    * The address image ID, 8 digit number at maximum.
