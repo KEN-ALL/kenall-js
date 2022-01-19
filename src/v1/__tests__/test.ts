@@ -112,7 +112,7 @@ test.each([
         corporation: {
           name: '総務省',
           name_kana: 'ソウムショウ',
-          block_lot: '２丁目１−２',
+          block_lot: '２丁目１−２総務省ビル８階',
           block_lot_num: '2-1-2',
           post_office: '銀座',
           code_type: 0,
