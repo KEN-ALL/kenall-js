@@ -227,6 +227,14 @@ export interface Corporation {
   block_lot: string;
 
   /**
+   * The reconstructed numerical part of the address line below the second-level
+   * administrative division.
+   *
+   * Example: `"3-12-14"`
+   */
+  block_lot_num?: string;
+
+  /**
    * The name of the post office that handles the postal items
    * for the division.
    */
@@ -682,8 +690,7 @@ export interface NTACorporateInfo {
   city_name: string;
 
   /**
-   * The name of the area that usually corresponds to lowest part of the
-   * address.
+   * The part of the address line below the second-level administrative division.
    * The string is preprocessed so it would fit within 300 characters
    * by NTA if it is longer than that length actually.
    * If the text uses a Kanji which is not JIS Level 1 or 2, The Kanji
@@ -692,9 +699,41 @@ export interface NTACorporateInfo {
    * correspondent image file.
    * See `address_image_id` for details.
    *
-   * Example: `麹町３丁目１２－１４麹町駅前ヒルトップ８階`
+   * Example: `"麹町３丁目１２－１４麹町駅前ヒルトップ８階"`
    */
   street_number: string;
+
+  /**
+   * The extracted name of the third-level administrative division, which
+   * correspond to the "o-aza", or the "cho" with its chome part stripped out.
+   *
+   * Example: `"麹町"`
+   */
+  town?: string;
+
+  /**
+   * The reconstructed numerical part of the address line below the second-level
+   * administrative division.
+   *
+   * Example: `"3-12-14"`
+   */
+  block_lot_num?: string;
+
+  /**
+   * The extracted building name in the address line below the second-level
+   * administrative devision, without the floor name.
+   *
+   * Example: `"麹町駅前ヒルトップ"`
+   */
+  building?: string;
+
+  /**
+   * The extracted floor name and room number in the address line below the
+   * second-level administrative devision.
+   *
+   * Example: `"８階８０１"`
+   */
+  floor_room?: string;
 
   /**
    * The address image ID, 8 digit number at maximum.
