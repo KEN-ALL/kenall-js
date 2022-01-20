@@ -26,6 +26,15 @@
                     ]
                 }
             },
+            "block_lot_num": {
+                "comment": {
+                    "text": "例: `\"3-12-14\"`",
+                    "shortText": [
+                        "`block_lot`をパースして再構築した、字・町名以降の「番地」「丁目・番・号」といった要素を表す文字列を正規化し、ハイフンで繋いだ数字としたもの。",
+                        "残りの部分については `Address` の `koaza` `building` `floor` に出力される。"
+                    ]
+                }
+            },
             "post_office": {
                 "comment": {
                     "shortText": [

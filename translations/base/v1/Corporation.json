@@ -26,6 +26,15 @@
                     ]
                 }
             },
+            "block_lot_num": {
+                "comment": {
+                    "text": "Example: `\"3-12-14\"`",
+                    "shortText": [
+                        "The reconstructed numerical part of the address line below the second-level",
+                        "administrative division."
+                    ]
+                }
+            },
             "post_office": {
                 "comment": {
                     "shortText": [
