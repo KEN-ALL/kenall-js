@@ -851,7 +851,7 @@ export interface NTACorporateInfo {
    *
    * Example: `"Tokyo"`
    */
-  en_prefecture_name: string | null;
+  en_prefecture_name?: string | null;
 
   /**
    * The address without prefecture in English with hankaku format.
