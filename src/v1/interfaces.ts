@@ -673,7 +673,7 @@ export interface NTACorporateInfo {
    *
    * Example: `"東京都"`
    */
-  prefecture_name: string;
+  prefecture_name: string | null;
 
   /**
    * The name of the city.
@@ -687,7 +687,7 @@ export interface NTACorporateInfo {
    * * `"各務原市"`
    * * `"秩父郡長瀞町"`
    */
-  city_name: string;
+  city_name: string | null;
 
   /**
    * The part of the address line below the second-level administrative division.
@@ -756,12 +756,12 @@ export interface NTACorporateInfo {
    * for the administrative division where the place this object represents
    * belongs.
    */
-  jisx0402: string;
+  jisx0402: string | null;
 
   /**
    * The postal code for the place this object represents.
    */
-  post_code: string;
+  post_code: string | null;
 
   /**
    * The corporate address outside of Japan, written in Japanese.
@@ -851,7 +851,7 @@ export interface NTACorporateInfo {
    *
    * Example: `"Tokyo"`
    */
-  en_prefecture_name: string;
+  en_prefecture_name: string | null;
 
   /**
    * The address without prefecture in English with hankaku format.
