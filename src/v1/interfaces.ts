@@ -569,7 +569,7 @@ export interface NTACorporateInfo {
    *
    * Example: `"2021-01-01"`
    */
-  published_date: string;
+  published_date?: string;
 
   /**
    * The revision number of the corporate record, non zero-padded
