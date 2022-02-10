@@ -1,4 +1,4 @@
-import { mocked } from 'ts-jest/utils';
+import { mocked } from 'jest-mock';
 import { KENALL, NTACorporateInfoSearchMode } from '..';
 import { AxiosInstance } from 'axios';
 import axios from 'axios';
