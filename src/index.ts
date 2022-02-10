@@ -3,6 +3,7 @@ export {
   AddressResolverResponse,
   AddressSearcherOptions,
   AddressSearcherResponse,
+  AddressSearcherQuery,
   City,
   CityResolverResponse,
   Corporation,
