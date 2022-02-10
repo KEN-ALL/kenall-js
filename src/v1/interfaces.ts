@@ -367,7 +367,7 @@ export interface AddressSearcherResponse extends AddressResolverResponse {
   /**
    * The query that the search has been performed for.
    */
-  query: string | AddressSearcherQuery;
+  query: AddressSearcherQuery;
 
   /**
    * The number of the resulting items in total.
