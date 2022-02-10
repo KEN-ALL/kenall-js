@@ -1,0 +1,86 @@
+{
+    "AddressSearcherQuery": {
+        "comment": {
+            "shortText": "An `AddressSearcherQuery` describes a search query and its address elements."
+        },
+        "properties": {
+            "raw": {
+                "comment": {
+                    "shortText": "The query that the search has been performed for."
+                }
+            },
+            "prefecture": {
+                "comment": {
+                    "text": "Example: `\"東京都\"`",
+                    "shortText": "The name of the prefecture."
+                }
+            },
+            "county": {
+                "comment": {
+                    "text": "Example: `\"秩父郡\"`",
+                    "shortText": "The name of the county."
+                }
+            },
+            "city": {
+                "comment": {
+                    "text": "Example: `\"各務原市\"`",
+                    "shortText": "The name of the city, not including the county or the ward."
+                }
+            },
+            "city_ward": {
+                "comment": {
+                    "text": "Example: `\"北区\"`",
+                    "shortText": "The name of the ordinance-designated wards."
+                }
+            },
+            "town": {
+                "comment": {
+                    "text": "Example: `箱石`",
+                    "shortText": "The name of the town."
+                }
+            },
+            "kyoto_street": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"先斗町通蛸薬師上る\"`",
+                        "* `\"大宮通寺之内半丁下る東入\"`"
+                    ],
+                    "shortText": [
+                        "The instructional phrase (通り名 in Japanese that signifies the (non-administrative)",
+                        "sub-area of the town, the way which describe is very specific to a district of",
+                        "Kyoto city."
+                    ]
+                }
+            },
+            "block_lot_num": {
+                "comment": {
+                    "text": "Example: `\"3-12-14\"`",
+                    "shortText": [
+                        "The reconstructed numerical part of the address line below the second-level",
+                        "administrative division."
+                    ]
+                }
+            },
+            "building": {
+                "comment": {
+                    "text": "Example: `\"麹町駅前ヒルトップ\"`",
+                    "shortText": [
+                        "The extracted building name in the address line below the second-level",
+                        "administrative devision, without the floor name."
+                    ]
+                }
+            },
+            "floor_room": {
+                "comment": {
+                    "text": "Example: `\"8階801\"`",
+                    "shortText": [
+                        "The extracted floor name and room number in the address line below the",
+                        "second-level administrative devision."
+                    ]
+                }
+            }
+        },
+        "methods": {}
+    }
+}

@@ -279,6 +279,87 @@ export interface AddressResolverResponse {
 export type Facet = [string, number];
 
 /**
+ * An `AddressSearcherQuery` describes a search query and its address elements.
+ */
+export interface AddressSearcherQuery {
+  /**
+   * The query that the search has been performed for.
+   */
+  raw: string;
+
+  /**
+   * The name of the prefecture.
+   *
+   * Example: `"東京都"`
+   */
+  prefecture: string;
+
+  /**
+   * The name of the county.
+   *
+   * Example: `"秩父郡"`
+   */
+  county: string;
+
+  /**
+   * The name of the city, not including the county or the ward.
+   *
+   * Example: `"各務原市"`
+   */
+  city: string;
+
+  /**
+   * The name of the ordinance-designated wards.
+   *
+   * Example: `"北区"`
+   */
+  city_ward: string;
+
+  /**
+   * The name of the town.
+   *
+   * Example: `箱石`
+   */
+  town: string;
+
+  /**
+   * The instructional phrase (通り名 in Japanese that signifies the (non-administrative)
+   * sub-area of the town, the way which describe is very specific to a district of
+   * Kyoto city.
+   *
+   * Examples:
+   *
+   * * `"先斗町通蛸薬師上る"`
+   * * `"大宮通寺之内半丁下る東入"`
+   */
+  kyoto_street: string;
+
+  /**
+   * The reconstructed numerical part of the address line below the second-level
+   * administrative division.
+   *
+   * Example: `"3-12-14"`
+   */
+  block_lot_num: string;
+
+  /**
+   * The extracted building name in the address line below the second-level
+   * administrative devision, without the floor name.
+   *
+   * Example: `"麹町駅前ヒルトップ"`
+   */
+  building: string;
+
+  /**
+   * The extracted floor name and room number in the address line below the
+   * second-level administrative devision.
+   *
+   * Example: `"8階801"`
+   */
+  floor_room: string;
+}
+
+/**
  * An `AddressSearcherResponse` describes a response to
  * "searchAddresses" API call.
  */
@@ -286,7 +367,7 @@ export interface AddressSearcherResponse extends AddressResolverResponse {
   /**
    * The query that the search has been performed for.
    */
-  query: string;
+  query: AddressSearcherQuery;
 
   /**
    * The number of the resulting items in total.
