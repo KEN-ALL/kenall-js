@@ -129,6 +129,9 @@ export class KENALLV1 {
     if (options.query !== undefined) {
       params['q'] = options.query;
     }
+    if (options.unprocessedAddressLine !== undefined) {
+      params['t'] = options.unprocessedAddressLine;
+    }
     if (options.offset !== undefined) {
       params['offset'] = String(options.offset | 0);
     }

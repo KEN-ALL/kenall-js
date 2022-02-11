@@ -9,8 +9,17 @@
         "properties": {
             "query": {
                 "comment": {
-                    "text": "Example: `\"東京都 AND 渋谷区\"`",
+                    "text": [
+                        "Either `query` or `unprocessedAddressLine` must be present.",
+                        "Example: `\"東京都 AND 渋谷区\"`"
+                    ],
                     "shortText": "The query to search against the address database."
+                }
+            },
+            "unprocessedAddressLine": {
+                "comment": {
+                    "text": "Example: `\"東京都渋谷区初台\"`",
+                    "shortText": "The unprocessed portions of the address string to search against the address database."
                 }
             },
             "offset": {

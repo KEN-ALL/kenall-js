@@ -505,49 +505,121 @@ test.each([
 
 test.each([
   {
-    version: '2021-09-15',
-    data: [
-      {
-        jisx0402: '13101',
-        old_code: '102',
-        postal_code: '1020083',
-        prefecture: '東京都',
-        prefecture_kana: 'トウキョウト',
-        city: '千代田区',
-        city_kana: 'チヨダク',
-        town: '麹町',
-        town_kana: 'コウジマチ',
-        town_raw: '麹町',
-        town_kana_raw: 'コウジマチ',
-        koaza: '',
-        kyoto_street: '',
-        building: '',
-        floor: '',
-        town_partial: false,
-        town_chome: false,
-        town_addressed_koaza: false,
-        town_multi: false,
-        corporation: null,
+    expected: {
+      secondArg: {
+        params: {
+          q: '東京都 千代田区 麹町',
+          limit: '1',
+        },
       },
-    ],
-    query: {
-      raw: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
-      prefecture: '東京都',
-      county: null,
-      city: '千代田区',
-      city_ward: null,
-      town: '麹町',
-      kyoto_street: null,
-      block_lot_num: '3-12-14',
-      building: '麹町駅前ヒルトップ',
-      floor_room: '8F',
     },
-    count: 1,
-    offset: 0,
-    limit: 1,
-    facets: null,
+    options: {
+      query: '東京都 千代田区 麹町',
+      limit: 1,
+    },
+    fixture: {
+      version: '2021-09-15',
+      data: [
+        {
+          jisx0402: '13101',
+          old_code: '102',
+          postal_code: '1020083',
+          prefecture: '東京都',
+          prefecture_kana: 'トウキョウト',
+          city: '千代田区',
+          city_kana: 'チヨダク',
+          town: '麹町',
+          town_kana: 'コウジマチ',
+          town_raw: '麹町',
+          town_kana_raw: 'コウジマチ',
+          koaza: '',
+          kyoto_street: '',
+          building: '',
+          floor: '',
+          town_partial: false,
+          town_chome: false,
+          town_addressed_koaza: false,
+          town_multi: false,
+          corporation: null,
+        },
+      ],
+      query: {
+        raw: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
+        prefecture: '東京都',
+        county: null,
+        city: '千代田区',
+        city_ward: null,
+        town: '麹町',
+        kyoto_street: null,
+        block_lot_num: '3-12-14',
+        building: '麹町駅前ヒルトップ',
+        floor_room: '8F',
+      },
+      count: 1,
+      offset: 0,
+      limit: 1,
+      facets: null,
+    },
   },
-])('searchAddresses method', async (fixture) => {
+  {
+    expected: {
+      secondArg: {
+        params: {
+          t: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
+          limit: '1',
+        },
+      },
+    },
+    options: {
+      unprocessedAddressLine:
+        '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
+      limit: 1,
+    },
+    fixture: {
+      version: '2021-09-15',
+      data: [
+        {
+          jisx0402: '13101',
+          old_code: '102',
+          postal_code: '1020083',
+          prefecture: '東京都',
+          prefecture_kana: 'トウキョウト',
+          city: '千代田区',
+          city_kana: 'チヨダク',
+          town: '麹町',
+          town_kana: 'コウジマチ',
+          town_raw: '麹町',
+          town_kana_raw: 'コウジマチ',
+          koaza: '',
+          kyoto_street: '',
+          building: '',
+          floor: '',
+          town_partial: false,
+          town_chome: false,
+          town_addressed_koaza: false,
+          town_multi: false,
+          corporation: null,
+        },
+      ],
+      query: {
+        raw: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
+        prefecture: '東京都',
+        county: null,
+        city: '千代田区',
+        city_ward: null,
+        town: '麹町',
+        kyoto_street: null,
+        block_lot_num: '3-12-14',
+        building: '麹町駅前ヒルトップ',
+        floor_room: '8F',
+      },
+      count: 1,
+      offset: 0,
+      limit: 1,
+      facets: null,
+    },
+  },
+])('searchAddresses method', async ({ expected, options, fixture }) => {
   const mockedAxiosGet = jest.fn();
   mocked(axios).create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
@@ -558,18 +630,9 @@ test.each([
     data: fixture,
   });
   const ka = new KENALL('key');
-  const options = {
-    query: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
-    limit: 1,
-  };
   const result = await ka.searchAddresses(options);
   expect(mockedAxiosGet.mock.calls).toHaveLength(1);
   expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/');
-  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
-    params: {
-      q: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
-      limit: '1',
-    },
-  });
+  expect(mockedAxiosGet.mock.calls[0][1]).toEqual(expected.secondArg);
   expect(result).toEqual(fixture);
 });
