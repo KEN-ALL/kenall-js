@@ -171,6 +171,16 @@
                     ]
                 }
             },
+            "kyoto_street": {
+                "comment": {
+                    "text": "Example: `\"先斗町通蛸薬師上る\"`",
+                    "shortText": [
+                        "The extracted instructional phrase (通り名 in Japanese) very specific",
+                        "to Kyoto city, which helps one to locate the place out of the area of",
+                        "the town."
+                    ]
+                }
+            },
             "block_lot_num": {
                 "comment": {
                     "text": "Example: `\"3-12-14\"`",
