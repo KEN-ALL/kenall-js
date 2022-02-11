@@ -131,9 +131,8 @@ export interface Address {
   koaza: string;
 
   /**
-   * The instructional phrase (通り名 in Japanese that signifies the (non-administrative)
-   * sub-area of the town, the way which describe is very specific to a district of
-   * Kyoto city.
+   * The instructional phrase (通り名 in Japanese) very specific to Kyoto city,
+   * which helps one to locate the place out of the area of the town.
    *
    * This is a synthetic value; that means it resulted from our original
    * interpretation of the `town_raw` data, and the corresponding value might
@@ -144,7 +143,7 @@ export interface Address {
    * * `"先斗町通蛸薬師上る"`
    * * `"大宮通寺之内半丁下る東入"`
    */
-  kyoto_street: string;
+  kyoto_street: string | null;
 
   /**
    * The name of the building, in case the postal code is designated to a building,
@@ -791,6 +790,15 @@ export interface NTACorporateInfo {
    * Example: `"麹町"`
    */
   town?: string;
+
+  /**
+   * The extracted instructional phrase (通り名 in Japanese) very specific
+   * to Kyoto city, which helps one to locate the place out of the area of
+   * the town.
+   *
+   * Example: `"先斗町通蛸薬師上る"`
+   */
+  kyoto_street?: string | null;
 
   /**
    * The reconstructed numerical part of the address line below the second-level
