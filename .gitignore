@@ -106,3 +106,6 @@ dist
 built/
 dist/
 .DS_Store
+
+*.swp
+*.swo
