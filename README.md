@@ -48,6 +48,10 @@ Alternatively, you can use the following URL for the latest bundle.  Beware that
 
 [https://js.kenall.jp/2021-05-28/kenall.js](https://js.kenall.jp/2021-05-28/kenall.js)
 
+Previous versions:
+
+* [https://js.kenall.jp/2022-02-11/kenall.js](https://js.kenall.jp/2022-02-11/kenall.js)
+
 
 ### Usage in a Node.js project
 
@@ -112,5 +116,5 @@ $ npm run test
 
 ## Examples & Demos
 
-* [CodePen](https://codepen.io/kenall/pen/NWbPYda)
+* https://ken-all.github.io/kenall-js-demo/
 * https://github.com/KEN-ALL/kenall-js/tree/master/examples
