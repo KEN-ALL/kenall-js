@@ -399,9 +399,20 @@ export interface AddressSearcherOptions {
   /**
    * The query to search against the address database.
    *
+   * Either `query` or `unprocessedAddressLine` must be present.
+   *
    * Example: `"東京都 AND 渋谷区"`
    */
-  query: string | undefined;
+  query?: string;
+
+  /**
+   * The unprocessed portions of the address string to search against the address database.
+   *
+   * Either `query` or `unprocessedAddressLine` must be present.
+   *
+   * Example: `"東京都渋谷区初台"`
+   */
+  unprocessedAddressLine?: string;
 
   /**
    * The offset from which you want to retrieve the result.

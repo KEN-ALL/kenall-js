@@ -9,8 +9,20 @@
         "properties": {
             "query": {
                 "comment": {
-                    "text": "例: `\"東京都 AND 渋谷区\"`",
+                    "text": [
+                        "`query`あるいは`unprocessedAddressLine`のいずれかを必ず指定すうようにします。",
+                        "例: `\"東京都 AND 渋谷区\"`"
+                    ],
                     "shortText": "住所データベースに対して検索する問い合わせ文。"
+                }
+            },
+            "unprocessedAddressLine": {
+                "comment": {
+                    "text": [
+                        "`query`あるいは`unprocessedAddressLine`のいずれかを必ず指定すうようにします。",
+                        "Example: `\"東京都渋谷区初台\"`"
+                    ],
+                    "shortText": "住所データベースに対して検索を行う、未処理の住所文字列。"
                 }
             },
             "offset": {
