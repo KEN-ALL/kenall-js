@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NTACorporateInfoSearcherResponse | @ken-all/kenall</title>
+	<title>AddressSearcherQuery | @ken-all/kenall</title>
 	<meta name="description" content="Documentation for @ken-all/kenall">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">:root {
@@ -2725,8 +2725,40 @@ img {
 		<li class=" tsd-kind-interface">
 			<a href="AddressSearcherOptions.html" class="tsd-kind-icon">Address<wbr>Searcher<wbr>Options</a>
 		</li>
-		<li class=" tsd-kind-interface">
+		<li class="current tsd-kind-interface">
 			<a href="AddressSearcherQuery.html" class="tsd-kind-icon">Address<wbr>Searcher<wbr>Query</a>
+			<ul>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#block_lot_num" class="tsd-kind-icon">block_<wbr>lot_<wbr>num</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#building" class="tsd-kind-icon">building</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#city" class="tsd-kind-icon">city</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#city_ward" class="tsd-kind-icon">city_<wbr>ward</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#county" class="tsd-kind-icon">county</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#floor_room" class="tsd-kind-icon">floor_<wbr>room</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#kyoto_street" class="tsd-kind-icon">kyoto_<wbr>street</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#prefecture" class="tsd-kind-icon">prefecture</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#raw" class="tsd-kind-icon">raw</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="AddressSearcherQuery.html#town" class="tsd-kind-icon">town</a>
+				</li>
+			</ul>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="AddressSearcherResponse.html" class="tsd-kind-icon">Address<wbr>Searcher<wbr>Response</a>
@@ -2755,31 +2787,8 @@ img {
 		<li class=" tsd-kind-interface">
 			<a href="NTACorporateInfoSearcherOptions.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Searcher<wbr>Options</a>
 		</li>
-		<li class="current tsd-kind-interface">
+		<li class=" tsd-kind-interface">
 			<a href="NTACorporateInfoSearcherResponse.html" class="tsd-kind-icon">NTACorporate<wbr>Info<wbr>Searcher<wbr>Response</a>
-			<ul>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="NTACorporateInfoSearcherResponse.html#count" class="tsd-kind-icon">count</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="NTACorporateInfoSearcherResponse.html#data" class="tsd-kind-icon">data</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="NTACorporateInfoSearcherResponse.html#facets" class="tsd-kind-icon">facets</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="NTACorporateInfoSearcherResponse.html#limit" class="tsd-kind-icon">limit</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="NTACorporateInfoSearcherResponse.html#offset" class="tsd-kind-icon">offset</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="NTACorporateInfoSearcherResponse.html#query" class="tsd-kind-icon">query</a>
-				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="NTACorporateInfoSearcherResponse.html#version" class="tsd-kind-icon">version</a>
-				</li>
-			</ul>
 		</li>
 		<li class=" tsd-kind-type-alias">
 			<a href="../modules.html#Facet" class="tsd-kind-icon">Facet</a>
@@ -2794,8 +2803,7 @@ img {
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
 				<div class="lead">
-					<p><code>NTACorporateInfoSearcherResponse</code>は<code>searchNTACorporateInfo</code> API
-					呼び出しの応答を記述します。</p>
+					<p>An <code>AddressSearcherQuery</code> describes a search query and its address elements.</p>
 				</div>
 			</div>
 		</section>
@@ -2803,7 +2811,7 @@ img {
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">NTACorporateInfoSearcherResponse</span>
+					<span class="target">AddressSearcherQuery</span>
 				</li>
 			</ul>
 		</section>
@@ -2814,13 +2822,16 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="NTACorporateInfoSearcherResponse.html#count" class="tsd-kind-icon">count</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="NTACorporateInfoSearcherResponse.html#data" class="tsd-kind-icon">data</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="NTACorporateInfoSearcherResponse.html#facets" class="tsd-kind-icon">facets</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="NTACorporateInfoSearcherResponse.html#limit" class="tsd-kind-icon">limit</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="NTACorporateInfoSearcherResponse.html#offset" class="tsd-kind-icon">offset</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="NTACorporateInfoSearcherResponse.html#query" class="tsd-kind-icon">query</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="NTACorporateInfoSearcherResponse.html#version" class="tsd-kind-icon">version</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#block_lot_num" class="tsd-kind-icon">block_<wbr>lot_<wbr>num</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#building" class="tsd-kind-icon">building</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#city" class="tsd-kind-icon">city</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#city_ward" class="tsd-kind-icon">city_<wbr>ward</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#county" class="tsd-kind-icon">county</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#floor_room" class="tsd-kind-icon">floor_<wbr>room</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#kyoto_street" class="tsd-kind-icon">kyoto_<wbr>street</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#prefecture" class="tsd-kind-icon">prefecture</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#raw" class="tsd-kind-icon">raw</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherQuery.html#town" class="tsd-kind-icon">town</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2829,111 +2840,171 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="count" class="tsd-anchor"></a>
-				<h3>count</h3>
-				<div class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<a name="block_lot_num" class="tsd-anchor"></a>
+				<h3>block_<wbr>lot_<wbr>num</h3>
+				<div class="tsd-signature tsd-kind-icon">block_<wbr>lot_<wbr>num<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L1128">v1/interfaces.ts:1128</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L342">v1/interfaces.ts:342</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>検索結果となる項目の総数。</p>
+						<p>The reconstructed numerical part of the address line below the second-level
+						administrative division.</p>
+					</div>
+					<p>Example: <code>&quot;3-12-14&quot;</code></p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="building" class="tsd-anchor"></a>
+				<h3>building</h3>
+				<div class="tsd-signature tsd-kind-icon">building<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L350">v1/interfaces.ts:350</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The extracted building name in the address line below the second-level
+						administrative devision, without the floor name.</p>
+					</div>
+					<p>Example: <code>&quot;麹町駅前ヒルトップ&quot;</code></p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="city" class="tsd-anchor"></a>
+				<h3>city</h3>
+				<div class="tsd-signature tsd-kind-icon">city<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L308">v1/interfaces.ts:308</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The name of the city, not including the county or the ward.</p>
+					</div>
+					<p>Example: <code>&quot;各務原市&quot;</code></p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="city_ward" class="tsd-anchor"></a>
+				<h3>city_<wbr>ward</h3>
+				<div class="tsd-signature tsd-kind-icon">city_<wbr>ward<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L315">v1/interfaces.ts:315</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The name of the ordinance-designated wards.</p>
+					</div>
+					<p>Example: <code>&quot;北区&quot;</code></p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="county" class="tsd-anchor"></a>
+				<h3>county</h3>
+				<div class="tsd-signature tsd-kind-icon">county<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L301">v1/interfaces.ts:301</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The name of the county.</p>
+					</div>
+					<p>Example: <code>&quot;秩父郡&quot;</code></p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="floor_room" class="tsd-anchor"></a>
+				<h3>floor_<wbr>room</h3>
+				<div class="tsd-signature tsd-kind-icon">floor_<wbr>room<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L358">v1/interfaces.ts:358</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The extracted floor name and room number in the address line below the
+						second-level administrative devision.</p>
+					</div>
+					<p>Example: <code>&quot;8階801&quot;</code></p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="kyoto_street" class="tsd-anchor"></a>
+				<h3>kyoto_<wbr>street</h3>
+				<div class="tsd-signature tsd-kind-icon">kyoto_<wbr>street<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L334">v1/interfaces.ts:334</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The instructional phrase (通り名 in Japanese that signifies the (non-administrative)
+							sub-area of the town, the way which describe is very specific to a district of
+						Kyoto city.</p>
+					</div>
+					<p>Examples:</p>
+					<ul>
+						<li><code>&quot;先斗町通蛸薬師上る&quot;</code></li>
+						<li><code>&quot;大宮通寺之内半丁下る東入&quot;</code></li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="prefecture" class="tsd-anchor"></a>
+				<h3>prefecture</h3>
+				<div class="tsd-signature tsd-kind-icon">prefecture<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L294">v1/interfaces.ts:294</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The name of the prefecture.</p>
+					</div>
+					<p>Example: <code>&quot;東京都&quot;</code></p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="raw" class="tsd-anchor"></a>
+				<h3>raw</h3>
+				<div class="tsd-signature tsd-kind-icon">raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L287">v1/interfaces.ts:287</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The query that the search has been performed for.</p>
 					</div>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="data" class="tsd-anchor"></a>
-				<h3>data</h3>
-				<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="NTACorporateInfo.html" class="tsd-signature-type" data-tsd-kind="Interface">NTACorporateInfo</a><span class="tsd-signature-symbol">[]</span></div>
+				<a name="town" class="tsd-anchor"></a>
+				<h3>town</h3>
+				<div class="tsd-signature tsd-kind-icon">town<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L1118">v1/interfaces.ts:1118</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L322">v1/interfaces.ts:322</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>問い合わせに合致する項目の集合。</p>
+						<p>The name of the town.</p>
 					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="facets" class="tsd-anchor"></a>
-				<h3>facets</h3>
-				<div class="tsd-signature tsd-kind-icon">facets<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="NTACorporateInfoFacets.html" class="tsd-signature-type" data-tsd-kind="Interface">NTACorporateInfoFacets</a></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L1145">v1/interfaces.ts:1145</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>問い合わせによって形作られた、結果のファセット。</p>
-					</div>
-					<p>もしファセットが与えられていない場合はnullが入ります。</p>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="limit" class="tsd-anchor"></a>
-				<h3>limit</h3>
-				<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L1138">v1/interfaces.ts:1138</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>検索結果から取得しようとした項目の最大数。</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="offset" class="tsd-anchor"></a>
-				<h3>offset</h3>
-				<div class="tsd-signature tsd-kind-icon">offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L1133">v1/interfaces.ts:1133</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>取得した検索結果の開始オフセット。</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="query" class="tsd-anchor"></a>
-				<h3>query</h3>
-				<div class="tsd-signature tsd-kind-icon">query<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L1123">v1/interfaces.ts:1123</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>検索が行われる対象となった問い合わせ。</p>
-					</div>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="version" class="tsd-anchor"></a>
-				<h3>version</h3>
-				<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/e82d5c8/src/v1/interfaces.ts#L1113">v1/interfaces.ts:1113</a></li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>データのバージョン。 <code>&quot;YYYY-MM-DD&quot;</code>形式で、
-							Y、M、Dはそれぞれソースとなったデータが利用可能になった日の
-						年月日を表します。</p>
-					</div>
+					<p>Example: <code>箱石</code></p>
 				</div>
 			</section>
 		</section>
