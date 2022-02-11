@@ -291,35 +291,35 @@ export interface AddressSearcherQuery {
    *
    * Example: `"東京都"`
    */
-  prefecture: string;
+  prefecture: string | null;
 
   /**
    * The name of the county.
    *
    * Example: `"秩父郡"`
    */
-  county: string;
+  county: string | null;
 
   /**
    * The name of the city, not including the county or the ward.
    *
    * Example: `"各務原市"`
    */
-  city: string;
+  city: string | null;
 
   /**
    * The name of the ordinance-designated wards.
    *
    * Example: `"北区"`
    */
-  city_ward: string;
+  city_ward: string | null;
 
   /**
    * The name of the town.
    *
    * Example: `箱石`
    */
-  town: string;
+  town: string | null;
 
   /**
    * The instructional phrase (通り名 in Japanese that signifies the (non-administrative)
@@ -331,7 +331,7 @@ export interface AddressSearcherQuery {
    * * `"先斗町通蛸薬師上る"`
    * * `"大宮通寺之内半丁下る東入"`
    */
-  kyoto_street: string;
+  kyoto_street: string | null;
 
   /**
    * The reconstructed numerical part of the address line below the second-level
@@ -339,7 +339,7 @@ export interface AddressSearcherQuery {
    *
    * Example: `"3-12-14"`
    */
-  block_lot_num: string;
+  block_lot_num: string | null;
 
   /**
    * The extracted building name in the address line below the second-level
@@ -347,7 +347,7 @@ export interface AddressSearcherQuery {
    *
    * Example: `"麹町駅前ヒルトップ"`
    */
-  building: string;
+  building: string | null;
 
   /**
    * The extracted floor name and room number in the address line below the
@@ -355,7 +355,7 @@ export interface AddressSearcherQuery {
    *
    * Example: `"8階801"`
    */
-  floor_room: string;
+  floor_room: string | null;
 }
 
 /**
