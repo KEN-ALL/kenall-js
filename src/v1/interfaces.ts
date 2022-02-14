@@ -284,7 +284,12 @@ export interface AddressSearcherQuery {
   /**
    * The query that the search has been performed for.
    */
-  raw: string;
+  q: string | null;
+
+  /**
+   * The unprocessed portions of the address string that the search has been performed for.
+   */
+  t: string | null;
 
   /**
    * The name of the prefecture.
@@ -399,20 +404,20 @@ export interface AddressSearcherOptions {
   /**
    * The query to search against the address database.
    *
-   * Either `query` or `unprocessedAddressLine` must be present.
+   * Either `q` or `t` must be present.
    *
    * Example: `"東京都 AND 渋谷区"`
    */
-  query?: string;
+  q?: string;
 
   /**
    * The unprocessed portions of the address string to search against the address database.
    *
-   * Either `query` or `unprocessedAddressLine` must be present.
+   * Either `q` or `t` must be present.
    *
    * Example: `"東京都渋谷区初台"`
    */
-  unprocessedAddressLine?: string;
+  t?: string;
 
   /**
    * The offset from which you want to retrieve the result.
@@ -800,7 +805,7 @@ export interface NTACorporateInfo {
    *
    * Example: `"麹町"`
    */
-  town?: string;
+  town?: string | null;
 
   /**
    * The extracted instructional phrase (通り名 in Japanese) very specific

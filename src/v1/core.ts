@@ -12,6 +12,7 @@ import {
   AddressSearcherOptions,
   AddressSearcherResponse,
   CityResolverResponse,
+  Facet,
   NTACorporateInfoResolverResponse,
   NTACorporateInfoSearcherOptions,
   NTACorporateInfoSearcherResponse,
@@ -24,6 +25,29 @@ function normalizePostalCode(postalCode: string): string {
     return match[1] + match[2];
   }
   return postalCode;
+}
+
+interface AddressSearcherQueryInternal {
+  query?: string | null;
+  q?: string | null;
+  t?: string | null;
+  prefecture: string | null;
+  county: string | null;
+  city: string | null;
+  city_ward: string | null;
+  town: string | null;
+  kyoto_street: string | null;
+  block_lot_num: string | null;
+  building: string | null;
+  floor_room: string | null;
+}
+
+interface AddressSearcherResponseInternal extends AddressResolverResponse {
+  query: AddressSearcherQueryInternal | string;
+  count: number;
+  offset: number;
+  limit: number;
+  facets: Facet[] | null;
 }
 
 export class KENALLV1 {
@@ -126,11 +150,11 @@ export class KENALLV1 {
     options: AddressSearcherOptions
   ): Promise<AddressSearcherResponse> {
     const params: { [k: string]: string } = {};
-    if (options.query !== undefined) {
-      params['q'] = options.query;
+    if (options.q !== undefined) {
+      params['q'] = options.q;
     }
-    if (options.unprocessedAddressLine !== undefined) {
-      params['t'] = options.unprocessedAddressLine;
+    if (options.t !== undefined) {
+      params['t'] = options.t;
     }
     if (options.offset !== undefined) {
       params['offset'] = String(options.offset | 0);
@@ -145,9 +169,32 @@ export class KENALLV1 {
       params['facet'] = options.facet;
     }
     try {
-      return validate<AddressSearcherResponse>(
+      const resp = validate<AddressSearcherResponseInternal>(
         await this.request('/postalcode/', params)
       );
+      return {
+        ...resp,
+        query:
+          typeof resp.query === 'string'
+            ? {
+                q: resp.query,
+                t: null,
+                prefecture: null,
+                county: null,
+                city: null,
+                city_ward: null,
+                town: null,
+                kyoto_street: null,
+                block_lot_num: null,
+                building: null,
+                floor_room: null,
+              }
+            : {
+                ...resp.query,
+                q: resp.query.q === undefined ? null : resp.query.q,
+                t: resp.query.t === undefined ? null : resp.query.t,
+              },
+      };
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(
