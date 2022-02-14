@@ -512,12 +512,146 @@ test.each([
           limit: '1',
         },
       },
+      data: {
+        version: '2021-09-15',
+        data: [
+          {
+            jisx0402: '13101',
+            old_code: '102',
+            postal_code: '1020083',
+            prefecture: '東京都',
+            prefecture_kana: 'トウキョウト',
+            city: '千代田区',
+            city_kana: 'チヨダク',
+            town: '麹町',
+            town_kana: 'コウジマチ',
+            town_raw: '麹町',
+            town_kana_raw: 'コウジマチ',
+            koaza: '',
+            kyoto_street: '',
+            building: '',
+            floor: '',
+            town_partial: false,
+            town_chome: false,
+            town_addressed_koaza: false,
+            town_multi: false,
+            corporation: null,
+          },
+        ],
+        query: {
+          q: '東京都 千代田区 麹町',
+          t: null,
+          prefecture: null,
+          county: null,
+          city: null,
+          city_ward: null,
+          town: null,
+          kyoto_street: null,
+          block_lot_num: null,
+          building: null,
+          floor_room: null,
+        },
+        count: 1,
+        offset: 0,
+        limit: 1,
+        facets: null,
+      },
     },
     options: {
-      query: '東京都 千代田区 麹町',
+      q: '東京都 千代田区 麹町',
       limit: 1,
     },
-    fixture: {
+    response: {
+      version: '2021-09-15',
+      data: [
+        {
+          jisx0402: '13101',
+          old_code: '102',
+          postal_code: '1020083',
+          prefecture: '東京都',
+          prefecture_kana: 'トウキョウト',
+          city: '千代田区',
+          city_kana: 'チヨダク',
+          town: '麹町',
+          town_kana: 'コウジマチ',
+          town_raw: '麹町',
+          town_kana_raw: 'コウジマチ',
+          koaza: '',
+          kyoto_street: '',
+          building: '',
+          floor: '',
+          town_partial: false,
+          town_chome: false,
+          town_addressed_koaza: false,
+          town_multi: false,
+          corporation: null,
+        },
+      ],
+      query: '東京都 千代田区 麹町',
+      count: 1,
+      offset: 0,
+      limit: 1,
+      facets: null,
+    },
+  },
+  {
+    expected: {
+      secondArg: {
+        params: {
+          q: '東京都 千代田区 麹町',
+          limit: '1',
+        },
+      },
+      data: {
+        version: '2021-09-15',
+        data: [
+          {
+            jisx0402: '13101',
+            old_code: '102',
+            postal_code: '1020083',
+            prefecture: '東京都',
+            prefecture_kana: 'トウキョウト',
+            city: '千代田区',
+            city_kana: 'チヨダク',
+            town: '麹町',
+            town_kana: 'コウジマチ',
+            town_raw: '麹町',
+            town_kana_raw: 'コウジマチ',
+            koaza: '',
+            kyoto_street: '',
+            building: '',
+            floor: '',
+            town_partial: false,
+            town_chome: false,
+            town_addressed_koaza: false,
+            town_multi: false,
+            corporation: null,
+          },
+        ],
+        query: {
+          q: '東京都 千代田区 麹町',
+          t: null,
+          prefecture: '東京都',
+          county: null,
+          city: '千代田区',
+          city_ward: null,
+          town: '麹町',
+          kyoto_street: null,
+          block_lot_num: '3-12-14',
+          building: '麹町駅前ヒルトップ',
+          floor_room: '8F',
+        },
+        count: 1,
+        offset: 0,
+        limit: 1,
+        facets: null,
+      },
+    },
+    options: {
+      q: '東京都 千代田区 麹町',
+      limit: 1,
+    },
+    response: {
       version: '2021-09-15',
       data: [
         {
@@ -544,7 +678,8 @@ test.each([
         },
       ],
       query: {
-        raw: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
+        q: '東京都 千代田区 麹町',
+        t: null,
         prefecture: '東京都',
         county: null,
         city: '千代田区',
@@ -569,13 +704,56 @@ test.each([
           limit: '1',
         },
       },
+      data: {
+        version: '2021-09-15',
+        data: [
+          {
+            jisx0402: '13101',
+            old_code: '102',
+            postal_code: '1020083',
+            prefecture: '東京都',
+            prefecture_kana: 'トウキョウト',
+            city: '千代田区',
+            city_kana: 'チヨダク',
+            town: '麹町',
+            town_kana: 'コウジマチ',
+            town_raw: '麹町',
+            town_kana_raw: 'コウジマチ',
+            koaza: '',
+            kyoto_street: '',
+            building: '',
+            floor: '',
+            town_partial: false,
+            town_chome: false,
+            town_addressed_koaza: false,
+            town_multi: false,
+            corporation: null,
+          },
+        ],
+        query: {
+          q: null,
+          t: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
+          prefecture: '東京都',
+          county: null,
+          city: '千代田区',
+          city_ward: null,
+          town: '麹町',
+          kyoto_street: null,
+          block_lot_num: '3-12-14',
+          building: '麹町駅前ヒルトップ',
+          floor_room: '8F',
+        },
+        count: 1,
+        offset: 0,
+        limit: 1,
+        facets: null,
+      },
     },
     options: {
-      unprocessedAddressLine:
-        '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
+      t: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
       limit: 1,
     },
-    fixture: {
+    response: {
       version: '2021-09-15',
       data: [
         {
@@ -602,7 +780,8 @@ test.each([
         },
       ],
       query: {
-        raw: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
+        q: null,
+        t: '東京都千代田区麹町三丁目12-14麹町駅前ヒルトップ8F',
         prefecture: '東京都',
         county: null,
         city: '千代田区',
@@ -619,7 +798,7 @@ test.each([
       facets: null,
     },
   },
-])('searchAddresses method', async ({ expected, options, fixture }) => {
+])('searchAddresses method', async ({ expected, options, response }) => {
   const mockedAxiosGet = jest.fn();
   mocked(axios).create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
@@ -627,12 +806,12 @@ test.each([
     return retval;
   });
   mockedAxiosGet.mockResolvedValue({
-    data: fixture,
+    data: response,
   });
   const ka = new KENALL('key');
   const result = await ka.searchAddresses(options);
   expect(mockedAxiosGet.mock.calls).toHaveLength(1);
   expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/');
   expect(mockedAxiosGet.mock.calls[0][1]).toEqual(expected.secondArg);
-  expect(result).toEqual(fixture);
+  expect(result).toEqual(expected.data);
 });
