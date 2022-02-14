@@ -2735,10 +2735,10 @@ img {
 					<a href="AddressSearcherOptions.html#offset" class="tsd-kind-icon">offset</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="AddressSearcherOptions.html#query" class="tsd-kind-icon">query</a>
+					<a href="AddressSearcherOptions.html#q" class="tsd-kind-icon">q</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="AddressSearcherOptions.html#unprocessedAddressLine" class="tsd-kind-icon">unprocessed<wbr>Address<wbr>Line</a>
+					<a href="AddressSearcherOptions.html#t" class="tsd-kind-icon">t</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
 					<a href="AddressSearcherOptions.html#version" class="tsd-kind-icon">version</a>
@@ -2814,8 +2814,8 @@ img {
 							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherOptions.html#facet" class="tsd-kind-icon">facet</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherOptions.html#limit" class="tsd-kind-icon">limit</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherOptions.html#offset" class="tsd-kind-icon">offset</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherOptions.html#query" class="tsd-kind-icon">query</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherOptions.html#unprocessedAddressLine" class="tsd-kind-icon">unprocessed<wbr>Address<wbr>Line</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherOptions.html#q" class="tsd-kind-icon">q</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherOptions.html#t" class="tsd-kind-icon">t</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AddressSearcherOptions.html#version" class="tsd-kind-icon">version</a></li>
 						</ul>
 					</section>
@@ -2830,7 +2830,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">facet<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/740d220/src/v1/interfaces.ts#L444">v1/interfaces.ts:444</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/b86a830/src/v1/interfaces.ts#L449">v1/interfaces.ts:449</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2847,7 +2847,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/740d220/src/v1/interfaces.ts#L427">v1/interfaces.ts:427</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/b86a830/src/v1/interfaces.ts#L432">v1/interfaces.ts:432</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2863,7 +2863,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/740d220/src/v1/interfaces.ts#L420">v1/interfaces.ts:420</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/b86a830/src/v1/interfaces.ts#L425">v1/interfaces.ts:425</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2873,37 +2873,37 @@ img {
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="query" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagOptional">Optional</span> query</h3>
-				<div class="tsd-signature tsd-kind-icon">query<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<a name="q" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> q</h3>
+				<div class="tsd-signature tsd-kind-icon">q<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/740d220/src/v1/interfaces.ts#L406">v1/interfaces.ts:406</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/b86a830/src/v1/interfaces.ts#L411">v1/interfaces.ts:411</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>住所データベースに対して検索する問い合わせ文。</p>
+						<p>The query to search against the address database.</p>
 					</div>
-					<p><code>query</code>あるいは<code>unprocessedAddressLine</code>のいずれかを必ず指定すうようにします。
-					例: <code>&quot;東京都 AND 渋谷区&quot;</code></p>
+					<p>Either <code>q</code> or <code>t</code> must be present.</p>
+					<p>Example: <code>&quot;東京都 AND 渋谷区&quot;</code></p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="unprocessedAddressLine" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagOptional">Optional</span> unprocessed<wbr>Address<wbr>Line</h3>
-				<div class="tsd-signature tsd-kind-icon">unprocessed<wbr>Address<wbr>Line<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<a name="t" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> t</h3>
+				<div class="tsd-signature tsd-kind-icon">t<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/740d220/src/v1/interfaces.ts#L415">v1/interfaces.ts:415</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/b86a830/src/v1/interfaces.ts#L420">v1/interfaces.ts:420</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>住所データベースに対して検索を行う、未処理の住所文字列。</p>
+						<p>The unprocessed portions of the address string to search against the address database.</p>
 					</div>
-					<p><code>query</code>あるいは<code>unprocessedAddressLine</code>のいずれかを必ず指定すうようにします。
-					Example: <code>&quot;東京都渋谷区初台&quot;</code></p>
+					<p>Either <code>q</code> or <code>t</code> must be present.</p>
+					<p>Example: <code>&quot;東京都渋谷区初台&quot;</code></p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -2912,7 +2912,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/740d220/src/v1/interfaces.ts#L436">v1/interfaces.ts:436</a></li>
+						<li>Defined in <a href="https://github.com/KEN-ALL/kenall-js/blob/b86a830/src/v1/interfaces.ts#L441">v1/interfaces.ts:441</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
