@@ -33,6 +33,12 @@
                     "shortText": "カタカナでの都道府県名の読み。"
                 }
             },
+            "prefecture_roman": {
+                "comment": {
+                    "text": "例: `\"Tokyo\"`",
+                    "shortText": "ローマ字での都道府県名の読み。"
+                }
+            },
             "city": {
                 "comment": {
                     "text": [
@@ -55,10 +61,89 @@
                         "例:",
                         "* `\"ミナトク\"`",
                         "* `\"オオサカシキタク\"`",
-                        "* `\"カガミハラシ\"`",
-                        "* `\"チチブグンナガトロチョウ\"`"
+                        "* `\"カカミガハラシ\"`",
+                        "* `\"チチブグンナガトロマチ\"`"
                     ],
                     "shortText": "カタカナでの市区町村名の読み。"
+                }
+            },
+            "city_roman": {
+                "comment": {
+                    "text": [
+                        "例:",
+                        "* `\"Minato-ku\"`",
+                        "* `\"Kita-ku, Osaka\"`",
+                        "* `\"Kakamigahara\"`",
+                        "* `\"Nagatoro, Chichibu\"`"
+                    ],
+                    "shortText": "ローマ字での市区町村名の読み。"
+                }
+            },
+            "city_without_county_and_ward": {
+                "comment": {
+                    "text": [
+                        "例:",
+                        "* `\"港区\"`",
+                        "* `\"大阪市\"`",
+                        "* `\"各務原市\"`",
+                        "* `\"長瀞町\"`"
+                    ],
+                    "shortText": "市区町村名から、郡と政令指定都市の行政区を取り除いたもの。"
+                }
+            },
+            "city_without_county_and_ward_kana": {
+                "comment": {
+                    "text": [
+                        "例:",
+                        "* `\"ミナトク\"`",
+                        "* `\"オオサカシ\"`",
+                        "* `\"カカミガハラシ\"`",
+                        "* `\"ナガトロマチ\"`"
+                    ],
+                    "shortText": [
+                        "市区町村名の読みから、郡と政令指定都市の行政区を取り除いたもの。"
+                    ]
+                }
+            },
+            "city_without_county_and_ward_roman": {
+                "comment": {
+                    "text": [
+                        "例:",
+                        "* `\"Minato-ku\"`",
+                        "* `\"Osaka\"`",
+                        "* `\"Kakamigahara\"`",
+                        "* `\"Nagatoro\"`"
+                    ],
+                    "shortText": [
+                        "ローマ字での市区町村名の読みから、郡と政令指定都市の行政区を取り除いたもの。"
+                    ]
+                }
+            },
+            "city_ward": {
+                "comment": {
+                    "text": [
+                        "例:",
+                        "* `\"港北区\"`"
+                    ],
+                    "shortText": "該当する場合、政令指定都市の行政区。"
+                }
+            },
+            "city_ward_kana": {
+                "comment": {
+                    "text": [
+                        "例:",
+                        "* `\"千種区\"`"
+                    ],
+                    "shortText": "該当する場合、政令指定都市の行政区の読み。"
+                }
+            },
+            "city_ward_roman": {
+                "comment": {
+                    "text": [
+                        "例:",
+                        "* `\"Chikusa-ku\"`"
+                    ],
+                    "shortText": "該当する場合、政令指定都市の行政区のローマ字での読み。"
                 }
             },
             "town": {
@@ -90,6 +175,20 @@
                         "* `ニシキタコウジチョウ`"
                     ],
                     "shortText": "カタカナでの町域名の読み。"
+                }
+            },
+            "town_roman": {
+                "comment": {
+                    "text": [
+                        "この値は合成されたものです。つまり、ケンオールが",
+                        "`town_raw`データを独自に解釈した結果であり、対応する値が",
+                        "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。",
+                        "例:",
+                        "* `\"Hakoishi\"`",
+                        "* `\"Harumi\"`",
+                        "* `\"Nishikitakojicho\"`"
+                    ],
+                    "shortText": "ローマ字での町域名の読み。"
                 }
             },
             "town_raw": {
@@ -202,6 +301,25 @@
                     "shortText": [
                         "このプロパティの意味の詳細はAPIドキュメントを参照してください。",
                         "この値には利用価値がないため、参照しないことをお勧めします。"
+                    ]
+                }
+            },
+            "town_jukyohyoji": {
+                "comment": {
+                    "shortText": [
+                        "郵便番号に対応する地域が住居表示実施区域であることを示すフラグ。"
+                    ]
+                }
+            },
+            "update_status": {
+                "comment": {
+                    "shortText": "このバージョンについて、当該レコードが更新または削除されたことを示す値。"
+                }
+            },
+            "update_reason": {
+                "comment": {
+                    "shortText": [
+                        "`update_status` が`None`以外の値に設定されている時、当該レコードが変更された事由を示す値。"
                     ]
                 }
             },

@@ -7,18 +7,21 @@
             ]
         },
         "properties": {
-            "query": {
+            "q": {
                 "comment": {
                     "text": [
-                        "Either `query` or `unprocessedAddressLine` must be present.",
+                        "Either `q` or `t` must be present.",
                         "Example: `\"東京都 AND 渋谷区\"`"
                     ],
                     "shortText": "The query to search against the address database."
                 }
             },
-            "unprocessedAddressLine": {
+            "t": {
                 "comment": {
-                    "text": "Example: `\"東京都渋谷区初台\"`",
+                    "text": [
+                        "Either `q` or `t` must be present.",
+                        "Example: `\"東京都渋谷区初台\"`"
+                    ],
                     "shortText": "The unprocessed portions of the address string to search against the address database."
                 }
             },

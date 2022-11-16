@@ -4,9 +4,14 @@
             "shortText": "An `AddressSearcherQuery` describes a search query and its address elements."
         },
         "properties": {
-            "raw": {
+            "q": {
                 "comment": {
                     "shortText": "The query that the search has been performed for."
+                }
+            },
+            "t": {
+                "comment": {
+                    "shortText": "The unprocessed portions of the address string that the search has been performed for."
                 }
             },
             "prefecture": {

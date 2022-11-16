@@ -1,4 +1,60 @@
 /**
+ * The enum for `update_status` property of `Address` data.
+ */
+export enum UpdateStatus {
+  /**
+   * The record is not modified.
+   */
+  NONE = 0,
+  /**
+   * The record is modified.
+   */
+  UPDATED = 1,
+  /**
+   * The record is marked as no longer valid.
+   */
+  ABOLISHED = 2,
+}
+
+/**
+ * The enum for `update_reason` property of `Address` data.
+ */
+export enum UpdateReason {
+  /**
+   * The record is not modified.
+   */
+  NONE = 0,
+  /**
+   * The city where the area to which this record was assigned previously belongs
+   * was merged with other cities.
+   */
+  REDESIGNATED = 1,
+  /**
+   * The district to which this record is assigned had gone through address
+   * reorganization, such as designation as a building-based addressing area.
+   */
+  ADDRESSING_SYSTEM_RENEWAL = 2,
+  /**
+   * The district to which this record is assigned had gone through area
+   * reorganization.
+   */
+  READJUSTMENT = 3,
+  /**
+   * The area or its districts weren't changed, but the postal codes
+   * were reassigned.
+   */
+  REASSIGNMENT = 4,
+  /**
+   * The record contained some errors and was amended.
+   */
+  AMENDMENT = 5,
+  /**
+   * The record is marked as no longer valid.
+   */
+  ABOLISHED = 6,
+}
+
+/**
  * A `Address` object would store the information about the resolved area, place, or organization.
  */
 export interface Address {
@@ -27,11 +83,18 @@ export interface Address {
   prefecture: string;
 
   /**
-   * The reading for the name of the prefecture in katakana.
+   * The reading of the name of the prefecture in katakana.
    *
    * Example: `"トウキョウト"`
    */
   prefecture_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the prefecture.
+   *
+   * Example: `"Tokyo"`
+   */
+  prefecture_roman: string;
 
   /**
    * The name of the city.
@@ -48,16 +111,122 @@ export interface Address {
   city: string;
 
   /**
-   * The reading for the name of the city in katakana.
+   * The reading of the name of the city in katakana.
    *
    * Examples:
    *
    * * `"ミナトク"`
    * * `"オオサカシキタク"`
-   * * `"カガミハラシ"`
-   * * `"チチブグンナガトロチョウ"`
+   * * `"カカミガハラシ"`
+   * * `"チチブグンナガトロマチ"`
+   * "`
    */
   city_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the city.
+   *
+   * Examples:
+   *
+   * * `"Minato-ku"`
+   * * `"Kita-ku, Osaka"`
+   * * `"Kakamigahara"`
+   * * `"Nagatoro, Chichibu"`
+   */
+  city_roman: string;
+
+  /**
+   * The name of the county.
+   *
+   * Examples:
+   *
+   * * `"秩父郡"`
+   */
+  county: string;
+
+  /**
+   * The reading of the name of the county in katakana.
+   *
+   * Examples:
+   *
+   * * `"チチブグン"`
+   * "`
+   */
+  county_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the county.
+   *
+   * Examples:
+   *
+   * * `"Chichibu"`
+   */
+  county_roman: string;
+
+  /**
+   * The name of the city, with the county and ordinance-designated ward part removed.
+   *
+   * Examples:
+   *
+   * * `"港区"`
+   * * `"大阪市"`
+   * * `"各務原市"`
+   * * `"長瀞町"`
+   */
+  city_without_county_and_ward: string;
+
+  /**
+   * The reading of the name of the city, with the county and ordinance-designated ward
+   * part removed.
+   *
+   * Examples:
+   *
+   * * `"ミナトク"`
+   * * `"オオサカシ"`
+   * * `"カカミガハラシ"`
+   * * `"ナガトロマチ"`
+   */
+  city_without_county_and_ward_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the city, with the county and
+   * ordinance-designated ward part removed.
+   *
+   * Examples:
+   *
+   * * `"Minato-ku"`
+   * * `"Osaka"`
+   * * `"Kakamigahara"`
+   * * `"Nagatoro"`
+   */
+  city_without_county_and_ward_roman: string;
+
+  /**
+   * The name of the ordinance-designated ward, if applicable.
+   *
+   * Examples:
+   *
+   * * `"千種区"`
+   */
+  city_ward: string;
+
+  /**
+   * The reading of the name of the ordinance-designated ward in katakana.
+   *
+   * Examples:
+   *
+   * * `"チクサク"`
+   */
+  city_ward_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the city.
+   *
+   * Examples:
+   *
+   * * `"Chikusa-ku"`
+   */
+  city_ward_roman: string;
 
   /**
    * The name of the area that usually corresponds to lowest part of the
@@ -69,9 +238,9 @@ export interface Address {
    *
    * Examples:
    *
-   * * `箱石`
-   * * `晴海`
-   * * `西北小路町`
+   * * `"箱石"`
+   * * `"晴海"`
+   * * `"西北小路町"`
    */
   town: string;
 
@@ -84,11 +253,26 @@ export interface Address {
    *
    * Examples:
    *
-   * * `ハコイシ`
-   * * `ハルミ`
-   * * `ニシキタコウジチョウ`
+   * * `"ハコイシ"`
+   * * `"ハルミ"`
+   * * `"ニシキタコウジチョウ"`
    */
   town_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the town.
+   *
+   * This is a synthetic value; that means it resulted from our original
+   * interpretation of the `town_raw` data, and the corresponding value might
+   * well not be present in the original KEN_ALL data provided by Japan Post.
+   *
+   * Examples:
+   *
+   * * `"Hakoishi"`
+   * * `"Harumi"`
+   * * `"Nishikitakojicho"`
+   */
+  town_roman: string;
 
   /**
    * The unprocessed value(s) of the name of the area. It may consist of
@@ -106,7 +290,7 @@ export interface Address {
   town_raw: string;
 
   /**
-   * The reading for the unprocessed value(s) of the name of the area.
+   * The reading of the unprocessed value(s) of the name of the area.
    *
    * Examples:
    *
@@ -197,6 +381,23 @@ export interface Address {
   town_chome: boolean;
 
   /**
+   * The flag that indicates if the area corresponding to the postal code
+   * is designated as building-based addressing area (住居表示実施地区).
+   */
+  town_jukyohyoji: boolean;
+
+  /**
+   * The value that indicates if the record is updated or deleted for this version.
+   */
+  update_status: UpdateStatus;
+
+  /**
+   * The value that represents the reason how the record is changed, when
+   * `update_status` is set to non-zero value.
+   */
+  update_reason: UpdateReason;
+
+  /**
    * If the postal code is designated to an organization, or a division of such,
    * this property stores the `Corporation` object that describes it.
    */
@@ -231,7 +432,7 @@ export interface Corporation {
    *
    * Example: `"3-12-14"`
    */
-  block_lot_num?: string | null;
+  block_lot_num: string | null;
 
   /**
    * The name of the post office that handles the postal items
@@ -315,7 +516,7 @@ export interface AddressSearcherQuery {
   /**
    * The name of the ordinance-designated wards.
    *
-   * Example: `"北区"`
+   * Example: `"千種区"`
    */
   city_ward: string | null;
 
@@ -474,11 +675,18 @@ export interface City {
   prefecture: string;
 
   /**
-   * The reading for the name of the prefecture in katakana.
+   * The reading of the name of the prefecture in katakana.
    *
    * Example: `"トウキョウト"`
    */
   prefecture_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the prefecture.
+   *
+   * Example: `"Tokyo"`
+   */
+  prefecture_roman: string;
 
   /**
    * The remaining portion of the JISX0402 code that has the leading two-dight prefecture code removed.
@@ -502,16 +710,28 @@ export interface City {
   city: string;
 
   /**
-   * The reading for the name of the city in katakana.
+   * The reading of the name of the city in katakana.
    *
    * Examples:
    *
    * * `"ミナトク"`
    * * `"オオサカシキタク"`
-   * * `"カガミハラシ"`
-   * * `"チチブグンナガトロチョウ"`
+   * * `"カカミガハラシ"`
+   * * `"チチブグンナガトロマチ"`
    */
   city_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the city.
+   *
+   * Examples:
+   *
+   * * `"Minato-ku"`
+   * * `"Kita-ku, Osaka"`
+   * * `"Kakamigahara"`
+   * * `"Nagatoro, Chichibu"`
+   */
+  city_roman: string;
 }
 
 /**
@@ -540,7 +760,6 @@ export enum NTACorporateInfoProcess {
    * Indicates new record.
    */
   NEW = '1',
-
   /**
    * Indicates trade name or corporate name was changed.
    */
