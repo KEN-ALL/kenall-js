@@ -117,20 +117,20 @@ export class KENALLV1 {
     try {
       if (apiVersion === '2022-11-01') {
         // cope with superstruct-ts-transformer bug
-        interface AddressResolverResponseV20221101
+        interface AddressResolverResponseV20221101 // eslint-disable-line @typescript-eslint/no-empty-interface
           extends v20221101.AddressResolverResponse {}
         return validate<AddressResolverResponseV20221101>(
           resp
         ) as AddressResolverResponseForVersion<T>;
       } else if (apiVersion === '2022-09-01') {
         // cope with superstruct-ts-transformer bug
-        interface AddressResolverResponseV20220901
+        interface AddressResolverResponseV20220901 // eslint-disable-line @typescript-eslint/no-empty-interface
           extends v20220901.AddressResolverResponse {}
         return validate<AddressResolverResponseV20220901>(
           resp
         ) as AddressResolverResponseForVersion<T>;
       } else {
-        interface AddressResolverResponseCompat
+        interface AddressResolverResponseCompat // eslint-disable-line @typescript-eslint/no-empty-interface
           extends AddressResolverResponse {}
         return validate<AddressResolverResponseCompat>(
           resp
@@ -171,20 +171,20 @@ export class KENALLV1 {
     try {
       if (apiVersion === '2022-11-01') {
         // cope with superstruct-ts-transformer bug
-        interface CityResolverResponseV20221101
+        interface CityResolverResponseV20221101 // eslint-disable-line @typescript-eslint/no-empty-interface
           extends v20221101.CityResolverResponse {}
         return validate<CityResolverResponseV20221101>(
           resp
         ) as CityResolverResponseForVersion<T>;
       } else if (apiVersion === '2022-09-01') {
         // cope with superstruct-ts-transformer bug
-        interface CityResolverResponseV20220901
+        interface CityResolverResponseV20220901 // eslint-disable-line @typescript-eslint/no-empty-interface
           extends v20220901.CityResolverResponse {}
         return validate<CityResolverResponseV20220901>(
           resp
         ) as CityResolverResponseForVersion<T>;
       } else {
-        interface CityResolverResponseCompat extends CityResolverResponse {}
+        interface CityResolverResponseCompat extends CityResolverResponse {} // eslint-disable-line @typescript-eslint/no-empty-interface
         return validate<CityResolverResponseCompat>(
           resp
         ) as CityResolverResponseForVersion<T>;
@@ -235,22 +235,21 @@ export class KENALLV1 {
     try {
       if (apiVersion === '2022-11-01') {
         // cope with superstruct-ts-transformer bug
-        interface AddressSearcherResponseV20221101
+        interface AddressSearcherResponseV20221101 // eslint-disable-line @typescript-eslint/no-empty-interface
           extends v20221101.AddressSearcherResponse {}
         return validate<AddressSearcherResponseV20221101>(
           resp
         ) as AddressSearcherResponseForVersion<T>;
       } else if (apiVersion === '2022-09-01') {
         // cope with superstruct-ts-transformer bug
-        interface AddressSearcherResponseV20220901
+        interface AddressSearcherResponseV20220901 // eslint-disable-line @typescript-eslint/no-empty-interface
           extends v20220901.AddressSearcherResponse {}
         return validate<AddressSearcherResponseV20220901>(
           resp
         ) as AddressSearcherResponseForVersion<T>;
       } else {
-        type AddressSearcherResponseCompat = AddressSearcherResponse & {
-          [key: string]: any;
-        };
+        interface AddressSearcherResponseCompat // eslint-disable-line @typescript-eslint/no-empty-interface
+          extends AddressSearcherResponse {}
         return validate<AddressSearcherResponseCompat>(
           resp
         ) as AddressSearcherResponseForVersion<T>;

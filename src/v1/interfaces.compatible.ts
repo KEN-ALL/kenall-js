@@ -26,7 +26,7 @@ export interface Corporation extends v20221101.Corporation {
   /**
    * A catch-all property
    */
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
@@ -381,7 +381,7 @@ export interface Address {
   /**
    * A catch-all property
    */
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
@@ -521,7 +521,7 @@ export interface City {
   /**
    * A catch-all property
    */
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
