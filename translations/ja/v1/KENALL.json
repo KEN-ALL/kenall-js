@@ -5,19 +5,65 @@
             "getAddress": {
                 "comment": {
                     "shortText": "\"getAddress\" API (エンドポイント: `/postalcode/{postalcode}`) を呼び出します。",
-                    "returns": "{@link AddressResolverResponse}\n"
+                    "returns": "{@link AddressResolverResponse}\n",
+                    "parameters": {
+                        "postalCode": {
+                            "comment": {
+                                "text": "問い合わせ対象の郵便番号。"
+                            }
+                        },
+                        "version": {
+                            "comment": {
+                                "text": "問い合わせが実行される対象となるデータベースのバージョン。指定がない場合は最新のものに対する問い合わせとなります。"
+                            }
+                        },
+                        "apiVersion": {
+                            "comment": {
+                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
+                            }
+                        }
+                    }
                 }
             },
             "getCities": {
                 "comment": {
                     "shortText": "\"getCities\" API (エンドポイント: `/cities/{prefectureCode}`) を呼び出します。",
-                    "returns": "{@link CityResolverResponse}\n"
+                    "returns": "{@link CityResolverResponse}\n",
+                    "parameters": {
+                        "prefectureCode": {
+                            "comment": {
+                                "text": "問い合わせ対象の都道府県コード。"
+                            }
+                        },
+                        "version": {
+                            "comment": {
+                                "text": "問い合わせが実行される対象となるデータベースのバージョン。指定がない場合は最新のものに対する問い合わせとなります。"
+                            }
+                        },
+                        "apiVersion": {
+                            "comment": {
+                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
+                            }
+                        }
+                    }
                 }
             },
             "searchAddresses": {
                 "comment": {
                     "shortText": "\"searchAddresses\" API (エンドポイント: `/postalcode/?...`) を呼び出します。",
-                    "returns": "{@link AddressSearcherResponse}\n"
+                    "returns": "{@link AddressSearcherResponse}\n",
+                    "parameters": {
+                        "options": {
+                            "comment": {
+                                "text": "問い合わせ内容。"
+                            }
+                        },
+                        "apiVersion": {
+                            "comment": {
+                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
+                            }
+                        }
+                    }
                 }
             },
             "getNTACorporateInfo": {
