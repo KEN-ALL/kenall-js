@@ -18,4 +18,6 @@ export {
   NTACorporateInfoSearchMode,
   NTACorporateInfoSearcherOptions,
   NTACorporateInfoSearcherResponse,
-} from './interfaces';
+} from './interfaces.compatible';
+export * as v20221101 from './interfaces.v20221101';
+export * as v20220901 from './interfaces.v20220901';

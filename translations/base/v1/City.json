@@ -27,7 +27,13 @@
             "prefecture_kana": {
                 "comment": {
                     "text": "Example: `\"トウキョウト\"`",
-                    "shortText": "The reading for the name of the prefecture in katakana."
+                    "shortText": "The reading of the name of the prefecture in katakana."
+                }
+            },
+            "prefecture_roman": {
+                "comment": {
+                    "text": "Example: `\"Tokyo\"`",
+                    "shortText": "The \"romanized\" reading of the name of the prefecture."
                 }
             },
             "city_code": {
@@ -58,10 +64,22 @@
                         "Examples:",
                         "* `\"ミナトク\"`",
                         "* `\"オオサカシキタク\"`",
-                        "* `\"カガミハラシ\"`",
-                        "* `\"チチブグンナガトロチョウ\"`"
+                        "* `\"カカミガハラシ\"`",
+                        "* `\"チチブグンナガトロマチ\"`"
                     ],
-                    "shortText": "The reading for the name of the city in katakana."
+                    "shortText": "The reading of the name of the city in katakana."
+                }
+            },
+            "city_roman": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"Minato-ku\"`",
+                        "* `\"Kita-ku, Osaka\"`",
+                        "* `\"Kakamigahara\"`",
+                        "* `\"Nagatoro, Chichibu\"`"
+                    ],
+                    "shortText": "The \"romanized\" reading of the name of the city."
                 }
             }
         },

@@ -11,7 +11,7 @@ import zip from 'gulp-zip';
 import { src, dest, task, series } from 'gulp';
 const exec = require('gulp-exec'); // eslint-disable-line @typescript-eslint/no-var-requires
 const clean = require('gulp-clean'); // eslint-disable-line @typescript-eslint/no-var-requires
-const rollup = require('gulp-better-rollup'); // eslint-disable-line @typescript-eslint/no-var-requires
+const rollup = require('gulp-best-rollup-2'); // eslint-disable-line @typescript-eslint/no-var-requires
 const banner2 = require('rollup-plugin-banner2'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 const readPackageMetadata = (): {

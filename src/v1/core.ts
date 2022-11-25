@@ -12,11 +12,42 @@ import {
   AddressSearcherOptions,
   AddressSearcherResponse,
   CityResolverResponse,
-  Facet,
   NTACorporateInfoResolverResponse,
   NTACorporateInfoSearcherOptions,
   NTACorporateInfoSearcherResponse,
-} from './interfaces';
+} from './interfaces.compatible';
+import * as v20220901 from './interfaces.v20220901';
+import * as v20221101 from './interfaces.v20221101';
+
+type APIVersion = '2022-09-01' | '2022-11-01';
+
+type AddressResolverResponseForVersion<T extends APIVersion | undefined> =
+  T extends undefined
+    ? AddressResolverResponse
+    : T extends '2022-09-01'
+    ? v20220901.AddressResolverResponse
+    : T extends '2022-11-01'
+    ? v20221101.AddressResolverResponse
+    : unknown;
+
+type CityResolverResponseForVersion<T extends APIVersion | undefined> =
+  T extends undefined
+    ? CityResolverResponse
+    : T extends '2022-09-01'
+    ? v20220901.CityResolverResponse
+    : T extends '2022-11-01'
+    ? v20221101.CityResolverResponse
+    : unknown;
+
+type AddressSearcherResponseForVersion<T extends APIVersion | undefined> =
+  T extends undefined
+    ? AddressSearcherResponse
+    : T extends '2022-09-01'
+    ? v20220901.AddressSearcherResponse
+    : T extends '2022-11-01'
+    ? v20221101.AddressSearcherResponse
+    : unknown;
+
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
 function normalizePostalCode(postalCode: string): string {
@@ -25,29 +56,6 @@ function normalizePostalCode(postalCode: string): string {
     return match[1] + match[2];
   }
   return postalCode;
-}
-
-interface AddressSearcherQueryInternal {
-  query?: string | null;
-  q?: string | null;
-  t?: string | null;
-  prefecture: string | null;
-  county: string | null;
-  city: string | null;
-  city_ward: string | null;
-  town: string | null;
-  kyoto_street: string | null;
-  block_lot_num: string | null;
-  building: string | null;
-  floor_room: string | null;
-}
-
-interface AddressSearcherResponseInternal extends AddressResolverResponse {
-  query: AddressSearcherQueryInternal | string;
-  count: number;
-  offset: number;
-  limit: number;
-  facets: Facet[] | null;
 }
 
 export class KENALLV1 {
@@ -73,8 +81,15 @@ export class KENALLV1 {
     });
   }
 
-  protected async request(endpoint: string, params = {}): Promise<unknown> {
-    const r = await this.axios.get(endpoint, { params: params });
+  protected async request(
+    endpoint: string,
+    params = {},
+    apiVersion?: string
+  ): Promise<unknown> {
+    const r = await this.axios.get(endpoint, {
+      params: params,
+      headers: { ...(apiVersion ? { 'KenAll-API-Version': apiVersion } : {}) },
+    });
     return r.data;
   }
 
@@ -85,19 +100,42 @@ export class KENALLV1 {
    * @param version The version of the database that the query has to be
    *                performed against. Will default to the latest available
    *                version if not specified.
+   * @param apiVersion The API version. The return type is determined based
+   *                   on this argument, and thus it cannot be a variable.
    * @returns An {@link AddressResolverResponse}.
    */
-  async getAddress(
+  async getAddress<T extends APIVersion | undefined>(
     postalCode: string,
-    version?: string | undefined
-  ): Promise<AddressResolverResponse> {
+    version?: string | undefined,
+    apiVersion?: T
+  ): Promise<AddressResolverResponseForVersion<T>> {
+    const resp = await this.request(
+      `/postalcode/${normalizePostalCode(postalCode)}`,
+      version != undefined ? { version: version } : {},
+      apiVersion
+    );
     try {
-      return validate<AddressResolverResponse>(
-        await this.request(
-          `/postalcode/${normalizePostalCode(postalCode)}`,
-          version != undefined ? { version: version } : {}
-        )
-      );
+      if (apiVersion === '2022-11-01') {
+        // cope with superstruct-ts-transformer bug
+        interface AddressResolverResponseV20221101 // eslint-disable-line @typescript-eslint/no-empty-interface
+          extends v20221101.AddressResolverResponse {}
+        return validate<AddressResolverResponseV20221101>(
+          resp
+        ) as AddressResolverResponseForVersion<T>;
+      } else if (apiVersion === '2022-09-01') {
+        // cope with superstruct-ts-transformer bug
+        interface AddressResolverResponseV20220901 // eslint-disable-line @typescript-eslint/no-empty-interface
+          extends v20220901.AddressResolverResponse {}
+        return validate<AddressResolverResponseV20220901>(
+          resp
+        ) as AddressResolverResponseForVersion<T>;
+      } else {
+        interface AddressResolverResponseCompat // eslint-disable-line @typescript-eslint/no-empty-interface
+          extends AddressResolverResponse {}
+        return validate<AddressResolverResponseCompat>(
+          resp
+        ) as AddressResolverResponseForVersion<T>;
+      }
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(
@@ -116,19 +154,41 @@ export class KENALLV1 {
    * @param version The version of the database that the query has to be
    *                performed against. Will default to the latest available
    *                version if not specified.
+   * @param apiVersion The API version. The return type is determined based
+   *                   on this argument, and thus it cannot be a variable.
    * @returns A {@link CityResolverResponse}.
    */
-  async getCities(
+  async getCities<T extends APIVersion | undefined>(
     prefectureCode: string,
-    version?: string | undefined
-  ): Promise<CityResolverResponse> {
+    version?: string | undefined,
+    apiVersion?: T
+  ): Promise<CityResolverResponseForVersion<T>> {
+    const resp = await this.request(
+      `/cities/${prefectureCode}`,
+      version != undefined ? { version: version } : {},
+      apiVersion
+    );
     try {
-      return validate<CityResolverResponse>(
-        await this.request(
-          `/cities/${prefectureCode}`,
-          version != undefined ? { version: version } : {}
-        )
-      );
+      if (apiVersion === '2022-11-01') {
+        // cope with superstruct-ts-transformer bug
+        interface CityResolverResponseV20221101 // eslint-disable-line @typescript-eslint/no-empty-interface
+          extends v20221101.CityResolverResponse {}
+        return validate<CityResolverResponseV20221101>(
+          resp
+        ) as CityResolverResponseForVersion<T>;
+      } else if (apiVersion === '2022-09-01') {
+        // cope with superstruct-ts-transformer bug
+        interface CityResolverResponseV20220901 // eslint-disable-line @typescript-eslint/no-empty-interface
+          extends v20220901.CityResolverResponse {}
+        return validate<CityResolverResponseV20220901>(
+          resp
+        ) as CityResolverResponseForVersion<T>;
+      } else {
+        interface CityResolverResponseCompat extends CityResolverResponse {} // eslint-disable-line @typescript-eslint/no-empty-interface
+        return validate<CityResolverResponseCompat>(
+          resp
+        ) as CityResolverResponseForVersion<T>;
+      }
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(
@@ -144,11 +204,14 @@ export class KENALLV1 {
    * Invokes "searchAddresses" API (endpoint: `/postalcode/?...`).
    *
    * @param options The query.
+   * @param apiVersion The API version. The return type is determined based
+   *                   on this argument, and thus it cannot be a variable.
    * @returns A {@link AddressSearcherResponse}.
    */
-  async searchAddresses(
-    options: AddressSearcherOptions
-  ): Promise<AddressSearcherResponse> {
+  async searchAddresses<T extends APIVersion | undefined>(
+    options: AddressSearcherOptions,
+    apiVersion?: T
+  ): Promise<AddressSearcherResponseForVersion<T>> {
     const params: { [k: string]: string } = {};
     if (options.q !== undefined) {
       params['q'] = options.q;
@@ -168,33 +231,29 @@ export class KENALLV1 {
     if (options.facet !== undefined) {
       params['facet'] = options.facet;
     }
+    const resp = await this.request('/postalcode/', params, apiVersion);
     try {
-      const resp = validate<AddressSearcherResponseInternal>(
-        await this.request('/postalcode/', params)
-      );
-      return {
-        ...resp,
-        query:
-          typeof resp.query === 'string'
-            ? {
-                q: resp.query,
-                t: null,
-                prefecture: null,
-                county: null,
-                city: null,
-                city_ward: null,
-                town: null,
-                kyoto_street: null,
-                block_lot_num: null,
-                building: null,
-                floor_room: null,
-              }
-            : {
-                ...resp.query,
-                q: resp.query.q === undefined ? null : resp.query.q,
-                t: resp.query.t === undefined ? null : resp.query.t,
-              },
-      };
+      if (apiVersion === '2022-11-01') {
+        // cope with superstruct-ts-transformer bug
+        interface AddressSearcherResponseV20221101 // eslint-disable-line @typescript-eslint/no-empty-interface
+          extends v20221101.AddressSearcherResponse {}
+        return validate<AddressSearcherResponseV20221101>(
+          resp
+        ) as AddressSearcherResponseForVersion<T>;
+      } else if (apiVersion === '2022-09-01') {
+        // cope with superstruct-ts-transformer bug
+        interface AddressSearcherResponseV20220901 // eslint-disable-line @typescript-eslint/no-empty-interface
+          extends v20220901.AddressSearcherResponse {}
+        return validate<AddressSearcherResponseV20220901>(
+          resp
+        ) as AddressSearcherResponseForVersion<T>;
+      } else {
+        interface AddressSearcherResponseCompat // eslint-disable-line @typescript-eslint/no-empty-interface
+          extends AddressSearcherResponse {}
+        return validate<AddressSearcherResponseCompat>(
+          resp
+        ) as AddressSearcherResponseForVersion<T>;
+      }
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(

@@ -32,7 +32,13 @@
             "prefecture_kana": {
                 "comment": {
                     "text": "Example: `\"トウキョウト\"`",
-                    "shortText": "The reading for the name of the prefecture in katakana."
+                    "shortText": "The reading of the name of the prefecture in katakana."
+                }
+            },
+            "prefecture_roman": {
+                "comment": {
+                    "text": "Example: `\"Tokyo\"`",
+                    "shortText": "The \"romanized\" reading of the name of the prefecture."
                 }
             },
             "city": {
@@ -57,10 +63,120 @@
                         "Examples:",
                         "* `\"ミナトク\"`",
                         "* `\"オオサカシキタク\"`",
-                        "* `\"カガミハラシ\"`",
-                        "* `\"チチブグンナガトロチョウ\"`"
+                        "* `\"カカミガハラシ\"`",
+                        "* `\"チチブグンナガトロマチ\"`",
+                        "\"`"
                     ],
-                    "shortText": "The reading for the name of the city in katakana."
+                    "shortText": "The reading of the name of the city in katakana."
+                }
+            },
+            "city_roman": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"Minato-ku\"`",
+                        "* `\"Kita-ku, Osaka\"`",
+                        "* `\"Kakamigahara\"`",
+                        "* `\"Nagatoro, Chichibu\"`"
+                    ],
+                    "shortText": "The \"romanized\" reading of the name of the city."
+                }
+            },
+            "county": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"秩父郡\"`"
+                    ],
+                    "shortText": "The name of the county."
+                }
+            },
+            "county_kana": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"チチブグン\"`",
+                        "\"`"
+                    ],
+                    "shortText": "The reading of the name of the county in katakana."
+                }
+            },
+            "county_roman": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"Chichibu\"`"
+                    ],
+                    "shortText": "The \"romanized\" reading of the name of the county."
+                }
+            },
+            "city_without_county_and_ward": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"港区\"`",
+                        "* `\"大阪市\"`",
+                        "* `\"各務原市\"`",
+                        "* `\"長瀞町\"`"
+                    ],
+                    "shortText": "The name of the city, with the county and ordinance-designated ward part removed."
+                }
+            },
+            "city_without_county_and_ward_kana": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"ミナトク\"`",
+                        "* `\"オオサカシ\"`",
+                        "* `\"カカミガハラシ\"`",
+                        "* `\"ナガトロマチ\"`"
+                    ],
+                    "shortText": [
+                        "The reading of the name of the city, with the county and ordinance-designated ward",
+                        "part removed."
+                    ]
+                }
+            },
+            "city_without_county_and_ward_roman": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"Minato-ku\"`",
+                        "* `\"Osaka\"`",
+                        "* `\"Kakamigahara\"`",
+                        "* `\"Nagatoro\"`"
+                    ],
+                    "shortText": [
+                        "The \"romanized\" reading of the name of the city, with the county and",
+                        "ordinance-designated ward part removed."
+                    ]
+                }
+            },
+            "city_ward": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"千種区\"`"
+                    ],
+                    "shortText": "The name of the ordinance-designated ward, if applicable."
+                }
+            },
+            "city_ward_kana": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"チクサク\"`"
+                    ],
+                    "shortText": "The reading of the name of the ordinance-designated ward in katakana."
+                }
+            },
+            "city_ward_roman": {
+                "comment": {
+                    "text": [
+                        "Examples:",
+                        "* `\"Chikusa-ku\"`"
+                    ],
+                    "shortText": "The \"romanized\" reading of the name of the city."
                 }
             },
             "town": {
@@ -70,9 +186,9 @@
                         "interpretation of the `town_raw` data, and the corresponding value might",
                         "well not be present in the original KEN_ALL data provided by Japan Post.",
                         "Examples:",
-                        "* `箱石`",
-                        "* `晴海`",
-                        "* `西北小路町`"
+                        "* `\"箱石\"`",
+                        "* `\"晴海\"`",
+                        "* `\"西北小路町\"`"
                     ],
                     "shortText": [
                         "The name of the area that usually corresponds to lowest part of the",
@@ -87,11 +203,25 @@
                         "interpretation of the `town_raw` data, and the corresponding value might",
                         "well not be present in the original KEN_ALL data provided by Japan Post.",
                         "Examples:",
-                        "* `ハコイシ`",
-                        "* `ハルミ`",
-                        "* `ニシキタコウジチョウ`"
+                        "* `\"ハコイシ\"`",
+                        "* `\"ハルミ\"`",
+                        "* `\"ニシキタコウジチョウ\"`"
                     ],
                     "shortText": "The reading of the name of the town."
+                }
+            },
+            "town_roman": {
+                "comment": {
+                    "text": [
+                        "This is a synthetic value; that means it resulted from our original",
+                        "interpretation of the `town_raw` data, and the corresponding value might",
+                        "well not be present in the original KEN_ALL data provided by Japan Post.",
+                        "Examples:",
+                        "* `\"Hakoishi\"`",
+                        "* `\"Harumi\"`",
+                        "* `\"Nishikitakojicho\"`"
+                    ],
+                    "shortText": "The \"romanized\" reading of the name of the town."
                 }
             },
             "town_raw": {
@@ -118,7 +248,7 @@
                         "* `\"ニシキタコウジチョウ\"`",
                         "* `\"トウキョウトチユウオウクハルミ　オフイスタワーX　1カイ\"`"
                     ],
-                    "shortText": "The reading for the unprocessed value(s) of the name of the area."
+                    "shortText": "The reading of the unprocessed value(s) of the name of the area."
                 }
             },
             "koaza": {
@@ -206,6 +336,27 @@
                     "shortText": [
                         "For the detail of the meaning of this property, See the API documentation.",
                         "The value has no use; we recommend not referring to this."
+                    ]
+                }
+            },
+            "town_jukyohyoji": {
+                "comment": {
+                    "shortText": [
+                        "The flag that indicates if the area corresponding to the postal code",
+                        "is designated as building-based addressing area (住居表示実施地区)."
+                    ]
+                }
+            },
+            "update_status": {
+                "comment": {
+                    "shortText": "The value that indicates if the record is updated or deleted for this version."
+                }
+            },
+            "update_reason": {
+                "comment": {
+                    "shortText": [
+                        "The value that represents the reason how the record is changed, when",
+                        "`update_status` is set to non-zero value."
                     ]
                 }
             },
