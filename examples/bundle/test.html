@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <script type="text/javascript" src="../dist/kenall.bundle.js"></script>
+  <script type="text/javascript" src="../../dist/kenall.bundle.js"></script>
   <style type="text/css">
     #result {
       min-height: 1em;
@@ -22,12 +22,13 @@
   <pre id="result"></pre>
   <script type="text/javascript">
     (function (d, kenall) {
+      var apiKey = '<<enter public API key here>>';
       var form = d.getElementById('form');
       var postalcodeElem = d.getElementById('postalcode');
       var result = d.getElementById('result');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var kenallApi = new kenall.KENALL();
+        var kenallApi = new kenall.KENALL(apiKey);
         var postalcode = postalcodeElem.value;
         kenallApi.getAddress(postalcode).then(
           function (data) {
