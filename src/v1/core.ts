@@ -104,7 +104,7 @@ export class KENALLV1 {
    *                   on this argument, and thus it cannot be a variable.
    * @returns An {@link AddressResolverResponse}.
    */
-  async getAddress<T extends APIVersion | undefined>(
+  async getAddress<T extends APIVersion | undefined = undefined>(
     postalCode: string,
     version?: string | undefined,
     apiVersion?: T
@@ -158,7 +158,7 @@ export class KENALLV1 {
    *                   on this argument, and thus it cannot be a variable.
    * @returns A {@link CityResolverResponse}.
    */
-  async getCities<T extends APIVersion | undefined>(
+  async getCities<T extends APIVersion | undefined = undefined>(
     prefectureCode: string,
     version?: string | undefined,
     apiVersion?: T
@@ -208,7 +208,7 @@ export class KENALLV1 {
    *                   on this argument, and thus it cannot be a variable.
    * @returns A {@link AddressSearcherResponse}.
    */
-  async searchAddresses<T extends APIVersion | undefined>(
+  async searchAddresses<T extends APIVersion | undefined = undefined>(
     options: AddressSearcherOptions,
     apiVersion?: T
   ): Promise<AddressSearcherResponseForVersion<T>> {
