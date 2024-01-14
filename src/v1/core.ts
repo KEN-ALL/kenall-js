@@ -18,8 +18,9 @@ import {
 } from './interfaces.compatible';
 import * as v20220901 from './interfaces.v20220901';
 import * as v20221101 from './interfaces.v20221101';
+import * as v20230901 from './interfaces.v20230901';
 
-type APIVersion = '2022-09-01' | '2022-11-01';
+type APIVersion = '2022-09-01' | '2022-11-01' | '2023-09-01';
 
 type AddressResolverResponseForVersion<T extends APIVersion | undefined> =
   T extends undefined
@@ -28,6 +29,8 @@ type AddressResolverResponseForVersion<T extends APIVersion | undefined> =
     ? v20220901.AddressResolverResponse
     : T extends '2022-11-01'
     ? v20221101.AddressResolverResponse
+    : T extends '2023-09-01'
+    ? v20230901.AddressResolverResponse
     : unknown;
 
 type CityResolverResponseForVersion<T extends APIVersion | undefined> =
@@ -37,6 +40,8 @@ type CityResolverResponseForVersion<T extends APIVersion | undefined> =
     ? v20220901.CityResolverResponse
     : T extends '2022-11-01'
     ? v20221101.CityResolverResponse
+    : T extends '2023-09-01'
+    ? v20230901.CityResolverResponse
     : unknown;
 
 type AddressSearcherResponseForVersion<T extends APIVersion | undefined> =
@@ -46,6 +51,8 @@ type AddressSearcherResponseForVersion<T extends APIVersion | undefined> =
     ? v20220901.AddressSearcherResponse
     : T extends '2022-11-01'
     ? v20221101.AddressSearcherResponse
+    : T extends '2023-09-01'
+    ? v20230901.AddressSearcherResponse
     : unknown;
 
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
