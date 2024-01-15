@@ -1,33 +1,26 @@
-import * as v20220901 from './interfaces.v20220901';
-
-export type Corporation = v20220901.Corporation;
-export type Facet = v20220901.Facet;
-export type AddressSearcherQuery = v20220901.AddressSearcherQuery;
-export type AddressSearcherOptions = v20220901.AddressSearcherOptions;
-export type NTACorporateInfoProcess = v20220901.NTACorporateInfoProcess;
-export type NTACorporateInfoKind = v20220901.NTACorporateInfoKind;
-export type NTACorporateInfoCloseCause = v20220901.NTACorporateInfoCloseCause;
-export type NTACorporateInfo = v20220901.NTACorporateInfo;
-export type NTACorporateInfoResolverResponse =
-  v20220901.NTACorporateInfoResolverResponse;
-export type NTACorporateInfoSearchMode = v20220901.NTACorporateInfoSearchMode;
-export type NTACorporateInfoSearcherOptions =
-  v20220901.NTACorporateInfoSearcherOptions;
-export type NTACorporateInfoFacets = v20220901.NTACorporateInfoFacets;
-export type NTACorporateInfoSearcherResponse =
-  v20220901.NTACorporateInfoSearcherResponse;
-
 import * as v20221101 from './interfaces.v20221101';
 
+export type Corporation = v20221101.Corporation;
+export type Facet = v20221101.Facet;
 export type UpdateStatus = v20221101.UpdateStatus;
 export type UpdateReason = v20221101.UpdateReason;
 export type Address = v20221101.Address;
-export type Corporation = v20221101.Corporation;
 export type AddressResolverResponse = v20221101.AddressResolverResponse;
-export type Facet = v20221101.Facet;
 export type AddressSearcherQuery = v20221101.AddressSearcherQuery;
-export type AddressSearcherResponse = v20221101.AddressSearcherResponse;
 export type AddressSearcherOptions = v20221101.AddressSearcherOptions;
+export type AddressSearcherResponse = v20221101.AddressSearcherResponse;
+export type NTACorporateInfoProcess = v20221101.NTACorporateInfoProcess;
+export type NTACorporateInfoKind = v20221101.NTACorporateInfoKind;
+export type NTACorporateInfoCloseCause = v20221101.NTACorporateInfoCloseCause;
+export type NTACorporateInfo = v20221101.NTACorporateInfo;
+export type NTACorporateInfoResolverResponse =
+  v20221101.NTACorporateInfoResolverResponse;
+export type NTACorporateInfoSearchMode = v20221101.NTACorporateInfoSearchMode;
+export type NTACorporateInfoSearcherOptions =
+  v20221101.NTACorporateInfoSearcherOptions;
+export type NTACorporateInfoFacets = v20221101.NTACorporateInfoFacets;
+export type NTACorporateInfoSearcherResponse =
+  v20221101.NTACorporateInfoSearcherResponse;
 
 /**
  * A `City` object would store the information about the resolved area.
