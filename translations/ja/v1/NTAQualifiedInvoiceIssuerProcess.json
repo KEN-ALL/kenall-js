@@ -1,0 +1,34 @@
+{
+    "NTAQualifiedInvoiceIssuerProcess": {
+        "comment": {
+            "shortText": "`NTAQualifiedInvoiceIssuerProcess`はレコードの登録状況を表します。"
+        },
+        "members": {
+            "NEW": {
+                "comment": {
+                    "shortText": "新規に登録されたことを示します。"
+                }
+            },
+            "INFORMATION_CHANGED": {
+                "comment": {
+                    "shortText": "情報が更新されたことを示します。"
+                }
+            },
+            "REGISTRATION_EXPIRED": {
+                "comment": {
+                    "shortText": "レコードに対応する適格請求書発行事業者の登録が失効したことを示します。"
+                }
+            },
+            "REGISTRATION_DISPOSED": {
+                "comment": {
+                    "shortText": "レコードに対応する適格請求書発行事業者が廃止されたことを示します。"
+                }
+            },
+            "DELETED": {
+                "comment": {
+                    "shortText": "抹消されたことを示します。"
+                }
+            }
+        }
+    }
+}

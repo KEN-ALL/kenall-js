@@ -1,0 +1,34 @@
+{
+    "NTAQualifiedInvoiceIssuerProcess": {
+        "comment": {
+            "shortText": "An `NTAQualifiedInvoiceIssuerProcess` specifies the state of the registration."
+        },
+        "members": {
+            "NEW": {
+                "comment": {
+                    "shortText": "Implies that the record is newly registered."
+                }
+            },
+            "INFORMATION_CHANGED": {
+                "comment": {
+                    "shortText": "Implies that the record has been changed."
+                }
+            },
+            "REGISTRATION_EXPIRED": {
+                "comment": {
+                    "shortText": "Implies that the registration has been expired."
+                }
+            },
+            "REGISTRATION_DISPOSED": {
+                "comment": {
+                    "shortText": "Implies that the registration has been invalidated."
+                }
+            },
+            "DELETED": {
+                "comment": {
+                    "shortText": "Implies that the registration has been deleted."
+                }
+            }
+        }
+    }
+}

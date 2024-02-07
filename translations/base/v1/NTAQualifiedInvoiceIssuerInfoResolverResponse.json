@@ -1,0 +1,27 @@
+{
+    "NTAQualifiedInvoiceIssuerInfoResolverResponse": {
+        "comment": {
+            "shortText": [
+                "An `NTAQualifiedInvoiceIssuerInfoResolverResponse` describes a response to",
+                "`getNTAQualifiedInvoiceIssuerInfo` API call."
+            ]
+        },
+        "properties": {
+            "version": {
+                "comment": {
+                    "shortText": [
+                        "The version of the data, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day",
+                        "the source data became available."
+                    ]
+                }
+            },
+            "data": {
+                "comment": {
+                    "shortText": "The data that match to the query."
+                }
+            }
+        },
+        "methods": {}
+    }
+}

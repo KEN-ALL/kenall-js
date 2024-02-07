@@ -1,9 +1,9 @@
 {
-    "NTACorporateInfoResolverResponse": {
+    "NTAQualifiedInvoiceIssuerInfoResolverResponse": {
         "comment": {
             "shortText": [
-                "`NTACorporateInfoResolverResponse`は`getNTACorporateInfo`APIの",
-                "呼び出しの応答を記述します。"
+                "`NTAQualifiedInvoiceIssuerInfoResolverResponse`は",
+                "`getNTAQualifiedInvoiceIssuerInfo`APIの呼び出しの応答を記述します。"
             ]
         },
         "properties": {
@@ -18,7 +18,7 @@
             },
             "data": {
                 "comment": {
-                    "shortText": "問い合わせにマッチしたデータの集合。"
+                    "shortText": "問い合わせにマッチしたデータ。"
                 }
             }
         },

@@ -598,7 +598,7 @@ export interface CityResolverResponse {
 }
 
 /**
- * A `NTACorporateInfoProcess` represents the reason why the record
+ * An `NTACorporateInfoProcess` represents the reason why the record
  * was added.
  */
 export enum NTACorporateInfoProcess {
@@ -645,7 +645,7 @@ export enum NTACorporateInfoProcess {
 }
 
 /**
- * A `NTACorporateInfoKind` represents the kind of corporate.
+ * An `NTACorporateInfoKind` represents the kind of corporate.
  */
 export enum NTACorporateInfoKind {
   /**
@@ -691,7 +691,7 @@ export enum NTACorporateInfoKind {
 }
 
 /**
- * A `NTACorporateInfoCloseCause` represents the reason why the corporate
+ * An `NTACorporateInfoCloseCause` represents the reason why the corporate
  * was closed.
  */
 export enum NTACorporateInfoCloseCause {
@@ -714,7 +714,7 @@ export enum NTACorporateInfoCloseCause {
 }
 
 /**
- * A `NTACorporateInfo` object would store the information about Basic 3 Information
+ * An `NTACorporateInfo` object would store the information about Basic 3 Information
  * of Corporate Number, which is published by Japan National Tax Agency.
  */
 export interface NTACorporateInfo {
@@ -736,14 +736,14 @@ export interface NTACorporateInfo {
    * The revision number of the corporate record, non zero-padded
    * 8 digit number at maximum.
    *
-   * Example: `1`
+   * Example: `"1"`
    */
   sequence_number: string;
 
   /**
    * The corporate number, 12 digit number plus 1 check digit.
    *
-   * Example: `2021001052596`
+   * Example: `"2021001052596"`
    */
   corporate_number: string;
 
@@ -1165,7 +1165,7 @@ export interface NTACorporateInfoSearcherOptions {
 }
 
 /**
- * A `NTACorporateInfoFacets` represents facets of some level and
+ * An `NTACorporateInfoFacets` represents facets of some level and
  * the number of the items in the result's subset that belong to
  * the facet.
  *

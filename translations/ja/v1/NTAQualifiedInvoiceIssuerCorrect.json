@@ -1,0 +1,21 @@
+{
+    "NTAQualifiedInvoiceIssuerCorrect": {
+        "comment": {
+            "shortText": [
+                "`NTAQualifiedInvoiceIssuerCorrect`は、変更自由を表します。"
+            ]
+        },
+        "members": {
+            "OTHER": {
+                "comment": {
+                    "shortText": "訂正以外。"
+                }
+            },
+            "CORRECTION": {
+                "comment": {
+                    "shortText": "訂正。"
+                }
+            }
+        }
+    }
+}

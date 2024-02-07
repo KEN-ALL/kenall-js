@@ -18,5 +18,12 @@ export {
   NTACorporateInfoSearchMode,
   NTACorporateInfoSearcherOptions,
   NTACorporateInfoSearcherResponse,
+  NTACorporateInfoV20240101,
+  NTAQualifiedInvoiceIssuerCorrect,
+  NTAQualifiedInvoiceIssuerCountry,
+  NTAQualifiedInvoiceIssuerInfo,
+  NTAQualifiedInvoiceIssuerKind,
+  NTAQualifiedInvoiceIssuerProcess,
+  NTAQualifiedInvoiceIssuerInfoResolverResponse,
 } from './v1';
 export { Config } from './config';
