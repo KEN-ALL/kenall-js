@@ -100,8 +100,30 @@ export type Validators<T extends APIVersion | undefined> = {
     payload: unknown
   ) => NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<T>;
 };
+
+interface NTACorporateInfoResolverResponse_v20240101 // eslint-disable-line @typescript-eslint/no-empty-interface
+  extends _v20240101.NTACorporateInfoResolverResponse {}
+
+interface NTACorporateInfoSearcherResponse_v20240101 // eslint-disable-line @typescript-eslint/no-empty-interface
+  extends _v20240101.NTACorporateInfoSearcherResponse {}
+
 interface NTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101 // eslint-disable-line @typescript-eslint/no-empty-interface
   extends _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse {}
+
+const _validateNTACorporateInfoResolverResponse_v20240101 = (
+  payload: unknown
+): _v20240101.NTACorporateInfoResolverResponse =>
+  validate<NTACorporateInfoResolverResponse_v20240101>(payload);
+
+const _validateNTACorporateInfoSearcherResponse_v20240101 = (
+  payload: unknown
+): _v20240101.NTACorporateInfoSearcherResponse =>
+  validate<NTACorporateInfoSearcherResponse_v20240101>(payload);
+
+const _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101 = (
+  payload: unknown
+): _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse =>
+  validate<NTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101>(payload);
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace compatible {
@@ -115,10 +137,6 @@ export namespace compatible {
     extends _compatible.NTACorporateInfoResolverResponse {}
   interface NTACorporateInfoSearcherResponse_compatible // eslint-disable-line @typescript-eslint/no-empty-interface
     extends _compatible.NTACorporateInfoSearcherResponse {}
-  interface NTACorporateInfoResolverResponse_v20240101 // eslint-disable-line @typescript-eslint/no-empty-interface
-    extends _v20240101.NTACorporateInfoResolverResponse {}
-  interface NTACorporateInfoSearcherResponse_v20240101 // eslint-disable-line @typescript-eslint/no-empty-interface
-    extends _v20240101.NTACorporateInfoSearcherResponse {}
 
   const refillToCompatibleNTACorporateInfo = (
     data: _v20240101.NTACorporateInfo
@@ -186,8 +204,7 @@ export namespace compatible {
       if (!(e instanceof StructError)) {
         throw e;
       }
-      const data =
-        validate<NTACorporateInfoResolverResponse_v20240101>(payload);
+      const data = _validateNTACorporateInfoResolverResponse_v20240101(payload);
       return {
         version: data.version,
         data: refillToCompatibleNTACorporateInfo(data.data),
@@ -204,8 +221,7 @@ export namespace compatible {
       if (!(e instanceof StructError)) {
         throw e;
       }
-      const data =
-        validate<NTACorporateInfoSearcherResponse_v20240101>(payload);
+      const data = _validateNTACorporateInfoSearcherResponse_v20240101(payload);
       return {
         version: data.version,
         query: data.query,
@@ -218,10 +234,8 @@ export namespace compatible {
     }
   };
 
-  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse = (
-    payload: unknown
-  ): _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse =>
-    validate<NTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101>(payload);
+  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse =
+    _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -262,10 +276,8 @@ export namespace v20220901 {
   ): _v20220901.NTACorporateInfoSearcherResponse =>
     validate<NTACorporateInfoSearcherResponse_v20220901>(payload);
 
-  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse = (
-    payload: unknown
-  ): _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse =>
-    validate<NTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101>(payload);
+  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse =
+    _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -306,10 +318,8 @@ export namespace v20221101 {
   ): _v20221101.NTACorporateInfoSearcherResponse =>
     validate<NTACorporateInfoSearcherResponse_v20221101>(payload);
 
-  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse = (
-    payload: unknown
-  ): _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse =>
-    validate<NTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101>(payload);
+  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse =
+    _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -350,10 +360,8 @@ export namespace v20230901 {
   ): _v20230901.NTACorporateInfoSearcherResponse =>
     validate<NTACorporateInfoSearcherResponse_v20230901>(payload);
 
-  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse = (
-    payload: unknown
-  ): _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse =>
-    validate<NTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101>(payload);
+  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse =
+    _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -364,10 +372,6 @@ export namespace v20240101 {
     extends _v20240101.CityResolverResponse {}
   interface AddressSearcherResponse_v20240101 // eslint-disable-line @typescript-eslint/no-empty-interface
     extends _v20240101.AddressSearcherResponse {}
-  interface NTACorporateInfoResolverResponse_v20240101 // eslint-disable-line @typescript-eslint/no-empty-interface
-    extends _v20240101.NTACorporateInfoResolverResponse {}
-  interface NTACorporateInfoSearcherResponse_v20240101 // eslint-disable-line @typescript-eslint/no-empty-interface
-    extends _v20240101.NTACorporateInfoSearcherResponse {}
 
   export const validateAddressResolverResponse = (
     payload: unknown
@@ -384,20 +388,14 @@ export namespace v20240101 {
   ): _v20240101.AddressSearcherResponse =>
     validate<AddressSearcherResponse_v20240101>(payload);
 
-  export const validateNTACorporateInfoResolverResponse = (
-    payload: unknown
-  ): _v20240101.NTACorporateInfoResolverResponse =>
-    validate<NTACorporateInfoResolverResponse_v20240101>(payload);
+  export const validateNTACorporateInfoResolverResponse =
+    _validateNTACorporateInfoResolverResponse_v20240101;
 
-  export const validateNTACorporateInfoSearcherResponse = (
-    payload: unknown
-  ): _v20240101.NTACorporateInfoSearcherResponse =>
-    validate<NTACorporateInfoSearcherResponse_v20240101>(payload);
+  export const validateNTACorporateInfoSearcherResponse =
+    _validateNTACorporateInfoSearcherResponse_v20240101;
 
-  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse = (
-    payload: unknown
-  ): _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse =>
-    validate<NTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101>(payload);
+  export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse =
+    _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101;
 }
 
 export const getValidators = <T extends APIVersion | undefined>(
