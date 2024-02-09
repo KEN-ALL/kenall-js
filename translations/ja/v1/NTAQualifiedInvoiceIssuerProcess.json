@@ -21,7 +21,7 @@
             },
             "REGISTRATION_DISPOSED": {
                 "comment": {
-                    "shortText": "レコードに対応する適格請求書発行事業者が廃止されたことを示します。"
+                    "shortText": "レコードに対応する適格請求書発行事業者が取消されたことを示します。"
                 }
             },
             "DELETED": {
