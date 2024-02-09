@@ -1,59 +1,21 @@
-/*#if _BUNDLE
-import 'core-js/features/string/ends-with'; // for SuperStruct on IE11!
-import 'core-js/features/string/includes'; // for SuperStruct on IE11!
-import 'core-js/features/set'; // for SuperStruct on IE11!
-//#endif */
 import axios, { AxiosInstance } from 'axios';
-import { validate } from 'superstruct-ts-transformer';
 import { StructError } from 'superstruct';
 import { Config } from '../config';
 import {
-  AddressResolverResponse,
   AddressSearcherOptions,
-  AddressSearcherResponse,
-  CityResolverResponse,
-  NTACorporateInfoResolverResponse,
   NTACorporateInfoSearcherOptions,
-  NTACorporateInfoSearcherResponse,
 } from './interfaces.compatible';
-import * as v20220901 from './interfaces.v20220901';
-import * as v20221101 from './interfaces.v20221101';
-import * as v20230901 from './interfaces.v20230901';
-
-type APIVersion = '2022-09-01' | '2022-11-01' | '2023-09-01';
-
-type AddressResolverResponseForVersion<T extends APIVersion | undefined> =
-  T extends undefined
-    ? AddressResolverResponse
-    : T extends '2022-09-01'
-    ? v20220901.AddressResolverResponse
-    : T extends '2022-11-01'
-    ? v20221101.AddressResolverResponse
-    : T extends '2023-09-01'
-    ? v20230901.AddressResolverResponse
-    : unknown;
-
-type CityResolverResponseForVersion<T extends APIVersion | undefined> =
-  T extends undefined
-    ? CityResolverResponse
-    : T extends '2022-09-01'
-    ? v20220901.CityResolverResponse
-    : T extends '2022-11-01'
-    ? v20221101.CityResolverResponse
-    : T extends '2023-09-01'
-    ? v20230901.CityResolverResponse
-    : unknown;
-
-type AddressSearcherResponseForVersion<T extends APIVersion | undefined> =
-  T extends undefined
-    ? AddressSearcherResponse
-    : T extends '2022-09-01'
-    ? v20220901.AddressSearcherResponse
-    : T extends '2022-11-01'
-    ? v20221101.AddressSearcherResponse
-    : T extends '2023-09-01'
-    ? v20230901.AddressSearcherResponse
-    : unknown;
+import {
+  APIVersion,
+  AddressResolverResponseForVersion,
+  AddressSearcherResponseForVersion,
+  CityResolverResponseForVersion,
+  NTACorporateInfoResolverResponseForVersion,
+  NTACorporateInfoSearcherResponseForVersion,
+  NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion,
+  getValidators,
+} from './validators';
+export type { APIVersion } from './validators';
 
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
@@ -122,27 +84,9 @@ export class KENALLV1 {
       apiVersion
     );
     try {
-      if (apiVersion === '2022-11-01') {
-        // cope with superstruct-ts-transformer bug
-        interface AddressResolverResponseV20221101 // eslint-disable-line @typescript-eslint/no-empty-interface
-          extends v20221101.AddressResolverResponse {}
-        return validate<AddressResolverResponseV20221101>(
-          resp
-        ) as AddressResolverResponseForVersion<T>;
-      } else if (apiVersion === '2022-09-01') {
-        // cope with superstruct-ts-transformer bug
-        interface AddressResolverResponseV20220901 // eslint-disable-line @typescript-eslint/no-empty-interface
-          extends v20220901.AddressResolverResponse {}
-        return validate<AddressResolverResponseV20220901>(
-          resp
-        ) as AddressResolverResponseForVersion<T>;
-      } else {
-        interface AddressResolverResponseCompat // eslint-disable-line @typescript-eslint/no-empty-interface
-          extends AddressResolverResponse {}
-        return validate<AddressResolverResponseCompat>(
-          resp
-        ) as AddressResolverResponseForVersion<T>;
-      }
+      return getValidators(apiVersion).validateAddressResolverResponse(
+        resp
+      ) as AddressResolverResponseForVersion<T>;
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(
@@ -176,26 +120,9 @@ export class KENALLV1 {
       apiVersion
     );
     try {
-      if (apiVersion === '2022-11-01') {
-        // cope with superstruct-ts-transformer bug
-        interface CityResolverResponseV20221101 // eslint-disable-line @typescript-eslint/no-empty-interface
-          extends v20221101.CityResolverResponse {}
-        return validate<CityResolverResponseV20221101>(
-          resp
-        ) as CityResolverResponseForVersion<T>;
-      } else if (apiVersion === '2022-09-01') {
-        // cope with superstruct-ts-transformer bug
-        interface CityResolverResponseV20220901 // eslint-disable-line @typescript-eslint/no-empty-interface
-          extends v20220901.CityResolverResponse {}
-        return validate<CityResolverResponseV20220901>(
-          resp
-        ) as CityResolverResponseForVersion<T>;
-      } else {
-        interface CityResolverResponseCompat extends CityResolverResponse {} // eslint-disable-line @typescript-eslint/no-empty-interface
-        return validate<CityResolverResponseCompat>(
-          resp
-        ) as CityResolverResponseForVersion<T>;
-      }
+      return getValidators(apiVersion).validateCityResolverResponse(
+        resp
+      ) as CityResolverResponseForVersion<T>;
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(
@@ -213,7 +140,7 @@ export class KENALLV1 {
    * @param options The query.
    * @param apiVersion The API version. The return type is determined based
    *                   on this argument, and thus it cannot be a variable.
-   * @returns A {@link AddressSearcherResponse}.
+   * @returns An {@link AddressSearcherResponse}.
    */
   async searchAddresses<T extends APIVersion | undefined = undefined>(
     options: AddressSearcherOptions,
@@ -240,27 +167,9 @@ export class KENALLV1 {
     }
     const resp = await this.request('/postalcode/', params, apiVersion);
     try {
-      if (apiVersion === '2022-11-01') {
-        // cope with superstruct-ts-transformer bug
-        interface AddressSearcherResponseV20221101 // eslint-disable-line @typescript-eslint/no-empty-interface
-          extends v20221101.AddressSearcherResponse {}
-        return validate<AddressSearcherResponseV20221101>(
-          resp
-        ) as AddressSearcherResponseForVersion<T>;
-      } else if (apiVersion === '2022-09-01') {
-        // cope with superstruct-ts-transformer bug
-        interface AddressSearcherResponseV20220901 // eslint-disable-line @typescript-eslint/no-empty-interface
-          extends v20220901.AddressSearcherResponse {}
-        return validate<AddressSearcherResponseV20220901>(
-          resp
-        ) as AddressSearcherResponseForVersion<T>;
-      } else {
-        interface AddressSearcherResponseCompat // eslint-disable-line @typescript-eslint/no-empty-interface
-          extends AddressSearcherResponse {}
-        return validate<AddressSearcherResponseCompat>(
-          resp
-        ) as AddressSearcherResponseForVersion<T>;
-      }
+      return getValidators(apiVersion).validateAddressSearcherResponse(
+        resp
+      ) as AddressSearcherResponseForVersion<T>;
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(
@@ -276,15 +185,23 @@ export class KENALLV1 {
    * Invokes "getNTACorporateInfo" API (endpoint: `/houjinbangou/{corporateNumber}`).
    *
    * @param corporateNumber The corporate number to query with.
+   * @param apiVersion The API version. The return type is determined based
+   *                   on this argument, and thus it cannot be a variable.
    * @returns An {@link NTACorporateInfoResolverResponse}.
    */
-  async getNTACorporateInfo(
-    corporateNumber: string
-  ): Promise<NTACorporateInfoResolverResponse> {
+  async getNTACorporateInfo<T extends APIVersion | undefined = undefined>(
+    corporateNumber: string,
+    apiVersion?: T
+  ): Promise<NTACorporateInfoResolverResponseForVersion<T>> {
     try {
-      return validate<NTACorporateInfoResolverResponse>(
-        await this.request(`/houjinbangou/${corporateNumber}`, {})
+      const resp = await this.request(
+        `/houjinbangou/${corporateNumber}`,
+        {},
+        apiVersion
       );
+      return getValidators(apiVersion).validateNTACorporateInfoResolverResponse(
+        resp
+      ) as NTACorporateInfoResolverResponseForVersion<T>;
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(
@@ -295,15 +212,19 @@ export class KENALLV1 {
       }
     }
   }
+
   /**
    * Invokes "searchNTACorporateInfo" API (endpoint: `/houjinbangou?...`).
    *
    * @param options The query.
-   * @returns A {@link NTACorporateInfoSearcherResponse}.
+   * @param apiVersion The API version. The return type is determined based
+   *                   on this argument, and thus it cannot be a variable.
+   * @returns An {@link NTACorporateInfoSearcherResponse}.
    */
-  async searchNTACorporateInfo(
-    options: NTACorporateInfoSearcherOptions
-  ): Promise<NTACorporateInfoSearcherResponse> {
+  async searchNTACorporateInfo<T extends APIVersion | undefined = undefined>(
+    options: NTACorporateInfoSearcherOptions,
+    apiVersion?: T
+  ): Promise<NTACorporateInfoSearcherResponseForVersion<T>> {
     const params: { [k: string]: string } = {};
     if (options.query !== undefined) {
       params['q'] = options.query;
@@ -330,14 +251,51 @@ export class KENALLV1 {
       params['facet_close_cause'] = options.facet_close_cause;
     }
     try {
-      return validate<NTACorporateInfoSearcherResponse>(
-        await this.request('/houjinbangou', params)
-      );
+      const resp = await this.request('/houjinbangou', params, apiVersion);
+      return getValidators(apiVersion).validateNTACorporateInfoSearcherResponse(
+        resp
+      ) as NTACorporateInfoSearcherResponseForVersion<T>;
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(
           `${e}`
           //  `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  /**
+   * Invokes "getNTAQualifiedInvoiceIssuerInfo" API (endpoint: `/invoice/{issuerNumber}`).
+   *
+   * @param issuerNumber The qualified invoice issuer number to query with.
+   * @param apiVersion The API version. The return type is determined based
+   *                   on this argument, and thus it cannot be a variable.
+   * @returns An {@link NTAQualifiedInvoiceIssuerResolverResponse}.
+   */
+  async getNTAQualifiedInvoiceIssuerInfo<
+    T extends APIVersion | undefined = undefined
+  >(
+    issuerNumber: string,
+    apiVersion?: T
+  ): Promise<NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<T>> {
+    try {
+      const resp = await this.request(
+        `/invoice/${issuerNumber}`,
+        {},
+        apiVersion
+      );
+      return getValidators(
+        apiVersion
+      ).validateNTAQualifiedInvoiceIssuerInfoResolverResponse(
+        resp
+      ) as NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<T>;
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `invalid response payload: ${e.path} must be ${e.type}`
         );
       } else {
         throw e;

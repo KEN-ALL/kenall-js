@@ -1,0 +1,19 @@
+{
+    "NTAQualifiedInvoiceIssuerKind": {
+        "comment": {
+            "shortText": "An `NTAQualifiedInvoiceIssuerKind` specifies the kind of the invoice issuer."
+        },
+        "members": {
+            "INDIVIDUAL": {
+                "comment": {
+                    "shortText": "Implies that the record is for a sole proprietor."
+                }
+            },
+            "CORPORATION": {
+                "comment": {
+                    "shortText": "Implies that the record is for a corporate entity."
+                }
+            }
+        }
+    }
+}

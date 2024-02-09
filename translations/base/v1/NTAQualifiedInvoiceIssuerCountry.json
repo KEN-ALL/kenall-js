@@ -1,0 +1,27 @@
+{
+    "NTAQualifiedInvoiceIssuerCountry": {
+        "comment": {
+            "shortText": [
+                "An `NTAQualifiedInvoiceIssuerCountry` specifies whether the issuing entity is domestic or not,",
+                "and if domestic, whether it is specifically designated by the National Tax Agency."
+            ]
+        },
+        "members": {
+            "DOMESTIC_ENTITY": {
+                "comment": {
+                    "shortText": "Implies that the record is for a domestic entity"
+                }
+            },
+            "DESIGNATED_FOREIGN_ENTITY": {
+                "comment": {
+                    "shortText": "Implies that the record is for a designated foreign entity."
+                }
+            },
+            "GENERAL_FOREIGN_ENTITY": {
+                "comment": {
+                    "shortText": "Implies that the record is for a general (not specifically designated) foreign entity."
+                }
+            }
+        }
+    }
+}

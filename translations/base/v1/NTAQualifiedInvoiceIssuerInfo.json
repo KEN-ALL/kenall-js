@@ -1,0 +1,148 @@
+{
+    "NTAQualifiedInvoiceIssuerInfo": {
+        "comment": {
+            "shortText": [
+                "An `NTAQualifiedInvoiceIssuerInfo` represents a record for the invoice issuer qualified by",
+                "the National Tax Agency."
+            ]
+        },
+        "properties": {
+            "published_date": {
+                "comment": {
+                    "text": [
+                        "Please note that this field doesn't indicate the actual date of",
+                        "the updated date of the record. The published date may",
+                        "be later than the updated date. Please see `update_date` for further",
+                        "details.",
+                        "Example: `\"2021-01-01\"`"
+                    ],
+                    "shortText": [
+                        "The published date of the record, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day",
+                        "the record was published."
+                    ]
+                }
+            },
+            "sequence_number": {
+                "comment": {
+                    "text": "Example: `1`",
+                    "shortText": [
+                        "The revision number of the issuer record, non zero-padded",
+                        "8 digit number at maximum."
+                    ]
+                }
+            },
+            "qualified_invoice_issuer_number": {
+                "comment": {
+                    "text": "Example: `\"T2021001052596\"`",
+                    "shortText": "The qualified invoice issuer number of the entity."
+                }
+            },
+            "process": {
+                "comment": {
+                    "text": "Example: `NTAQualifiedInvoiceIssuerProcess.NEW`",
+                    "shortText": "The status of the registration."
+                }
+            },
+            "correct": {
+                "comment": {
+                    "shortText": "The reason for the change, if the record has been updated. `null` when the record has been deleted."
+                }
+            },
+            "kind": {
+                "comment": {
+                    "shortText": "The kind of the invoice issuer."
+                }
+            },
+            "country": {
+                "comment": {
+                    "shortText": [
+                        "Whether the issuing entity is domestic or not, and if domestic, whether it is",
+                        "specifically designated by the National Tax Agency."
+                    ]
+                }
+            },
+            "latest": {
+                "comment": {
+                    "shortText": "Whether the record is latest or obsolete."
+                }
+            },
+            "registration_date": {
+                "comment": {
+                    "text": "Example: `\"2021-01-01\"`",
+                    "shortText": [
+                        "The date of the registration, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day",
+                        "the issuer was qualified and registered."
+                    ]
+                }
+            },
+            "update_date": {
+                "comment": {
+                    "text": "Example: `\"2021-01-01\"`",
+                    "shortText": [
+                        "The date the record was updated, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day."
+                    ]
+                }
+            },
+            "disposal_date": {
+                "comment": {
+                    "text": "Example: `\"2021-01-01\"`",
+                    "shortText": [
+                        "The date the record was invalidated, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day."
+                    ]
+                }
+            },
+            "expire_date": {
+                "comment": {
+                    "text": "Example: `\"2021-01-01\"`",
+                    "shortText": [
+                        "The date the record was expired, in the form of `\"YYYY-MM-DD\"`",
+                        "where Y, M, and D represent digits of the year, month, and day."
+                    ]
+                }
+            },
+            "address": {
+                "comment": {
+                    "shortText": [
+                        "Address of the business entity's headquarter. This would differ from `address_request`",
+                        "for administrative or other reasons."
+                    ]
+                }
+            },
+            "address_request": {
+                "comment": {
+                    "shortText": "Address of the business entity's headquarter, as provided in the original application."
+                }
+            },
+            "address_inside": {
+                "comment": {
+                    "shortText": "Address of the domestic business location, if the issuer is a foreign entity, and there's any."
+                }
+            },
+            "kana": {
+                "comment": {
+                    "shortText": "Reading of the invoice issuer, if the issuer is a foreign entity."
+                }
+            },
+            "name": {
+                "comment": {
+                    "shortText": "Name of the issuer."
+                }
+            },
+            "trade_name": {
+                "comment": {
+                    "shortText": "Trade name of the issuer, if any."
+                }
+            },
+            "popular_name_previous_name": {
+                "comment": {
+                    "shortText": "Alias or former name of the issuer."
+                }
+            }
+        },
+        "methods": {}
+    }
+}

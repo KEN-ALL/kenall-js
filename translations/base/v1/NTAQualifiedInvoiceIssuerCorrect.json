@@ -1,0 +1,22 @@
+{
+    "NTAQualifiedInvoiceIssuerCorrect": {
+        "comment": {
+            "shortText": [
+                "An `NTAQualifiedInvoiceIssuerCorrect` implies the reason for the change,",
+                "if the record has been updated."
+            ]
+        },
+        "members": {
+            "OTHER": {
+                "comment": {
+                    "shortText": "Not the correction."
+                }
+            },
+            "CORRECTION": {
+                "comment": {
+                    "shortText": "Correction."
+                }
+            }
+        }
+    }
+}

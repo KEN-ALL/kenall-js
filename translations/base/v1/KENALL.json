@@ -17,7 +17,7 @@
             "searchAddresses": {
                 "comment": {
                     "shortText": "Invokes \"searchAddresses\" API (endpoint: `/postalcode/?...`).",
-                    "returns": "A {@link AddressSearcherResponse}.\n"
+                    "returns": "An {@link AddressSearcherResponse}.\n"
                 }
             },
             "getNTACorporateInfo": {
@@ -29,7 +29,13 @@
             "searchNTACorporateInfo": {
                 "comment": {
                     "shortText": "Invokes \"searchNTACorporateInfo\" API (endpoint: `/houjinbangou?...`).",
-                    "returns": "A {@link NTACorporateInfoSearcherResponse}.\n"
+                    "returns": "An {@link NTACorporateInfoSearcherResponse}.\n"
+                }
+            },
+            "getNTAQualifiedInvoiceIssuerInfo": {
+                "comment": {
+                    "shortText": "Invokes \"getNTAQualifiedInvoiceIssuerInfo\" API (endpoint: `/invoice/{issuerNumber}`).",
+                    "returns": "An {@link NTAQualifiedInvoiceIssuerResolverResponse}.\n"
                 }
             }
         },

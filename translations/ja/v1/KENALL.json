@@ -69,13 +69,55 @@
             "getNTACorporateInfo": {
                 "comment": {
                     "shortText": "\"getNTACorporateInfo\" API (エンドポイント: `/houjinbangou/{corporateNumber}`) を呼び出します。",
-                    "returns": "{@link NTACorporateInfoResolverResponse}.\n"
+                    "returns": "{@link NTACorporateInfoResolverResponse}.\n",
+                    "parameters": {
+                        "corporateNumber": {
+                            "comment": {
+                                "text": "問い合わせ対象の法人番号。"
+                            }
+                        },
+                        "apiVersion": {
+                            "comment": {
+                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
+                            }
+                        }
+                    }
                 }
             },
             "searchNTACorporateInfo": {
                 "comment": {
                     "shortText": "\"searchNTACorporateInfo\" API (エンドポイント: `/houjinbangou?...`) を呼び出します。",
-                    "returns": "{@link NTACorporateInfoSearcherResponse}.\n"
+                    "returns": "{@link NTACorporateInfoSearcherResponse}.\n",
+                    "parameters": {
+                        "options": {
+                            "comment": {
+                                "text": "問い合わせ内容。"
+                            }
+                        },
+                        "apiVersion": {
+                            "comment": {
+                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
+                            }
+                        }
+                    }
+                }
+            },
+            "getNTAQualifiedInvoiceIssuerInfo": {
+                "comment": {
+                    "shortText": "\"getNTAQualifiedInvoiceIssuerInfo\" API (エンドポイント: `/invoice/{issuerNumber}`) を呼び出します。",
+                    "returns": "{@link NTAQualifiedInvoiceIssuerResolverResponse}.\n",
+                    "parameters": {
+                        "issuerNumber": {
+                            "comment": {
+                                "text": "問い合わせ対象の適格請求書発行事業者登録番号。"
+                            }
+                        },
+                        "apiVersion": {
+                            "comment": {
+                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
+                            }
+                        }
+                    }
                 }
             }
         },

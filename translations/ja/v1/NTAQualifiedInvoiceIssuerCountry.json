@@ -1,0 +1,27 @@
+{
+    "NTAQualifiedInvoiceIssuerCountry": {
+        "comment": {
+            "shortText": [
+                "`NTAQualifiedInvoiceIssuerCountry` は発行者が国内事業者かどうかを示します。",
+                "また、もし国内事業者である場合、特定国外事業者かどうかを示します。"
+            ]
+        },
+        "members": {
+            "DOMESTIC_ENTITY": {
+                "comment": {
+                    "shortText": "国内事業者であることを示します。"
+                }
+            },
+            "DESIGNATED_FOREIGN_ENTITY": {
+                "comment": {
+                    "shortText": "特定国外事業者であることを示します。"
+                }
+            },
+            "GENERAL_FOREIGN_ENTITY": {
+                "comment": {
+                    "shortText": "その他の国外事業者であることを示します。"
+                }
+            }
+        }
+    }
+}
