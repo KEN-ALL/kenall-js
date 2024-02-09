@@ -525,6 +525,48 @@ const cityResolverResponsesV20221101 = [
   },
 ];
 
+const cityResolverResponsesV20230901 = [
+  {
+    version: '2020-08-31',
+    data: [
+      {
+        jisx0402: '01101',
+        prefecture_code: '01',
+        city_code: '101',
+        prefecture: '北海道',
+        prefecture_kana: 'ホッカイドウ',
+        prefecture_roman: 'Hokkaido',
+        city: '札幌市中央区',
+        city_kana: 'サッポロシチュウオウク',
+        city_roman: 'Chuo-ku, Sapporo',
+        county: '',
+        county_kana: '',
+        county_roman: '',
+        city_without_county_and_ward: '',
+        city_without_county_and_ward_kana: '',
+        city_without_county_and_ward_roman: '',
+      },
+      {
+        jisx0402: '01102',
+        prefecture_code: '01',
+        city_code: '102',
+        prefecture: '北海道',
+        prefecture_kana: 'ホッカイドウ',
+        prefecture_roman: 'Hokkaido',
+        city: '札幌市北区',
+        city_kana: 'サッポロシキタク',
+        city_roman: 'Kita-ku, Sapporo',
+        county: '',
+        county_kana: '',
+        county_roman: '',
+        city_without_county_and_ward: '',
+        city_without_county_and_ward_kana: '',
+        city_without_county_and_ward_roman: '',
+      },
+    ],
+  },
+];
+
 test.each(cityResolverResponsesV20220901)(
   'getCities method succeeds with compatible mode and old API',
   async (fixture) => {
@@ -577,7 +619,60 @@ test.each(cityResolverResponsesV20221101)(
   }
 );
 
+test.each(cityResolverResponsesV20230901)(
+  'getCities method succeeds with compatible mode and newer API',
+  async (fixture) => {
+    const mockedAxiosGet = jest.fn();
+    mocked(axios).create = jest.fn((...args): AxiosInstance => {
+      const retval = jest.requireActual('axios').create(...args);
+      retval.get = mockedAxiosGet;
+      return retval;
+    });
+    mockedAxiosGet.mockResolvedValue({
+      data: fixture,
+    });
+    const ka = new KENALL('key');
+    const result = await ka.getCities('01');
+    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
+    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
+    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+      headers: {},
+      params: {
+        version: undefined,
+      },
+    });
+    expect(result).toEqual(fixture);
+  }
+);
+
 test.each(cityResolverResponsesV20221101)(
+  'getCities method fails with strict mode and newer API',
+  async (fixture) => {
+    const mockedAxiosGet = jest.fn();
+    mocked(axios).create = jest.fn((...args): AxiosInstance => {
+      const retval = jest.requireActual('axios').create(...args);
+      retval.get = mockedAxiosGet;
+      return retval;
+    });
+    mockedAxiosGet.mockResolvedValue({
+      data: fixture,
+    });
+    const ka = new KENALL('key');
+    expect(ka.getCities('01', undefined, '2022-09-01')).rejects.toThrow('');
+    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
+    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
+    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+      headers: {
+        'KenAll-API-Version': '2022-09-01',
+      },
+      params: {
+        version: undefined,
+      },
+    });
+  }
+);
+
+test.each(cityResolverResponsesV20230901)(
   'getCities method fails with strict mode and newer API',
   async (fixture) => {
     const mockedAxiosGet = jest.fn();
@@ -651,6 +746,34 @@ test.each(cityResolverResponsesV20221101)(
     expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
       headers: {
         'KenAll-API-Version': '2022-11-01',
+      },
+      params: {
+        version: undefined,
+      },
+    });
+    expect(result).toEqual(fixture);
+  }
+);
+
+test.each(cityResolverResponsesV20230901)(
+  'getCities method succeeds with strict mode and newer API',
+  async (fixture) => {
+    const mockedAxiosGet = jest.fn();
+    mocked(axios).create = jest.fn((...args): AxiosInstance => {
+      const retval = jest.requireActual('axios').create(...args);
+      retval.get = mockedAxiosGet;
+      return retval;
+    });
+    mockedAxiosGet.mockResolvedValue({
+      data: fixture,
+    });
+    const ka = new KENALL('key');
+    const result = await ka.getCities('01', undefined, '2023-09-01');
+    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
+    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
+    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+      headers: {
+        'KenAll-API-Version': '2023-09-01',
       },
       params: {
         version: undefined,
