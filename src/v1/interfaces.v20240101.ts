@@ -12,6 +12,7 @@ export type AddressSearcherQuery = v20230901.AddressSearcherQuery;
 export type AddressSearcherOptions = v20230901.AddressSearcherOptions;
 export type AddressSearcherResponse = v20230901.AddressSearcherResponse;
 
+export type NTACorporateInfoCloseCause = v20230901.NTACorporateInfoCloseCause;
 export type NTACorporateInfoSearchMode = v20230901.NTACorporateInfoSearchMode;
 export type NTACorporateInfoSearcherOptions =
   v20230901.NTACorporateInfoSearcherOptions;
@@ -108,29 +109,6 @@ export enum NTACorporateInfoKind {
    * Other corporate kinds which do not belong to the above
    */
   OTHER = 499,
-}
-
-/**
- * An `NTACorporateInfoCloseCause` represents the reason why the corporate
- * was closed.
- */
-export enum NTACorporateInfoCloseCause {
-  /**
-   *  Liquidation completed
-   */
-  LIQUIDATION_COMPLETED = 1,
-  /**
-   *  Dissolution by merger
-   */
-  DISSOLUTION_BY_MERGER = 11,
-  /**
-   *  A registerer closed the corporate
-   */
-  CLOSED_BY_REGISTERER = 21,
-  /**
-   *  Other reasons
-   */
-  OTHER = 31,
 }
 
 /**
@@ -313,10 +291,10 @@ export interface NTACorporateInfo {
   /**
    * The flag if the record was corrected or not.
    *
-   *  * `"1"` indicates the record was corrected.
-   *  * `"0"` indicates the record was not corrected.
+   *  * `1` indicates the record was corrected.
+   *  * `0` indicates the record was not corrected.
    *
-   * Example: `"0"`
+   * Example: `0`
    */
   correct: number;
 
