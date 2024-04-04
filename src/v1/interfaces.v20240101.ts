@@ -313,10 +313,10 @@ export interface NTACorporateInfo {
   /**
    * The flag if the record was corrected or not.
    *
-   *  * `"1"` indicates the record was corrected.
-   *  * `"0"` indicates the record was not corrected.
+   *  * `1` indicates the record was corrected.
+   *  * `0` indicates the record was not corrected.
    *
-   * Example: `"0"`
+   * Example: `0`
    */
   correct: number;
 
