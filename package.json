@@ -1,6 +1,6 @@
 {
   "name": "@ken-all/kenall",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "KENALL JavaScript SDK",
   "main": "built/index.js",
   "types": "built/index.d.ts",
