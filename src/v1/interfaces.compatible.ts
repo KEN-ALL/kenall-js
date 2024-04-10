@@ -1,4 +1,5 @@
 import * as v20221101 from './interfaces.v20221101';
+import * as v20240101 from './interfaces.v20240101';
 
 export type UpdateStatus = v20221101.UpdateStatus;
 export type UpdateReason = v20221101.UpdateReason;
@@ -17,6 +18,8 @@ export type NTACorporateInfoSearcherOptions =
 export type NTACorporateInfoFacets = v20221101.NTACorporateInfoFacets;
 export type NTACorporateInfoSearcherResponse =
   v20221101.NTACorporateInfoSearcherResponse;
+export type Bank = v20240101.Bank;
+export type BankBranch = v20240101.BankBranch;
 
 /**
  * A `Corporation` object would store the information about the organization,
