@@ -18,66 +18,66 @@ export type APIVersion =
   | '2024-01-01';
 
 export type AddressResolverResponseForVersion<
-  T extends APIVersion | undefined
+  T extends APIVersion | undefined,
 > = T extends '2022-09-01'
   ? _v20220901.AddressResolverResponse
   : T extends '2022-11-01'
-  ? _v20221101.AddressResolverResponse
-  : T extends '2023-09-01'
-  ? _v20230901.AddressResolverResponse
-  : T extends '2024-01-01'
-  ? _v20240101.AddressResolverResponse
-  : _compatible.AddressResolverResponse;
+    ? _v20221101.AddressResolverResponse
+    : T extends '2023-09-01'
+      ? _v20230901.AddressResolverResponse
+      : T extends '2024-01-01'
+        ? _v20240101.AddressResolverResponse
+        : _compatible.AddressResolverResponse;
 
 export type CityResolverResponseForVersion<T extends APIVersion | undefined> =
   T extends '2022-09-01'
     ? _v20220901.CityResolverResponse
     : T extends '2022-11-01'
-    ? _v20221101.CityResolverResponse
-    : T extends '2023-09-01'
-    ? _v20230901.CityResolverResponse
-    : T extends '2024-01-01'
-    ? _v20240101.CityResolverResponse
-    : _compatible.CityResolverResponse;
+      ? _v20221101.CityResolverResponse
+      : T extends '2023-09-01'
+        ? _v20230901.CityResolverResponse
+        : T extends '2024-01-01'
+          ? _v20240101.CityResolverResponse
+          : _compatible.CityResolverResponse;
 
 export type AddressSearcherResponseForVersion<
-  T extends APIVersion | undefined
+  T extends APIVersion | undefined,
 > = T extends '2022-09-01'
   ? _v20220901.AddressSearcherResponse
   : T extends '2022-11-01'
-  ? _v20221101.AddressSearcherResponse
-  : T extends '2023-09-01'
-  ? _v20230901.AddressSearcherResponse
-  : T extends '2024-01-01'
-  ? _v20240101.AddressSearcherResponse
-  : _compatible.AddressSearcherResponse;
+    ? _v20221101.AddressSearcherResponse
+    : T extends '2023-09-01'
+      ? _v20230901.AddressSearcherResponse
+      : T extends '2024-01-01'
+        ? _v20240101.AddressSearcherResponse
+        : _compatible.AddressSearcherResponse;
 
 export type NTACorporateInfoResolverResponseForVersion<
-  T extends APIVersion | undefined
+  T extends APIVersion | undefined,
 > = T extends '2022-09-01'
   ? _v20220901.NTACorporateInfoResolverResponse
   : T extends '2022-11-01'
-  ? _v20221101.NTACorporateInfoResolverResponse
-  : T extends '2023-09-01'
-  ? _v20230901.NTACorporateInfoResolverResponse
-  : T extends '2024-01-01'
-  ? _v20240101.NTACorporateInfoResolverResponse
-  : _compatible.NTACorporateInfoResolverResponse;
+    ? _v20221101.NTACorporateInfoResolverResponse
+    : T extends '2023-09-01'
+      ? _v20230901.NTACorporateInfoResolverResponse
+      : T extends '2024-01-01'
+        ? _v20240101.NTACorporateInfoResolverResponse
+        : _compatible.NTACorporateInfoResolverResponse;
 
 export type NTACorporateInfoSearcherResponseForVersion<
-  T extends APIVersion | undefined
+  T extends APIVersion | undefined,
 > = T extends '2022-09-01'
   ? _v20220901.NTACorporateInfoSearcherResponse
   : T extends '2022-11-01'
-  ? _v20221101.NTACorporateInfoSearcherResponse
-  : T extends '2023-09-01'
-  ? _v20230901.NTACorporateInfoSearcherResponse
-  : T extends '2024-01-01'
-  ? _v20240101.NTACorporateInfoSearcherResponse
-  : _compatible.NTACorporateInfoSearcherResponse;
+    ? _v20221101.NTACorporateInfoSearcherResponse
+    : T extends '2023-09-01'
+      ? _v20230901.NTACorporateInfoSearcherResponse
+      : T extends '2024-01-01'
+        ? _v20240101.NTACorporateInfoSearcherResponse
+        : _compatible.NTACorporateInfoSearcherResponse;
 
 export type NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<
-  _ extends APIVersion | undefined // eslint-disable-line @typescript-eslint/no-unused-vars
+  _ extends APIVersion | undefined, // eslint-disable-line @typescript-eslint/no-unused-vars
 > = _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse;
 
 export type Validators<T extends APIVersion | undefined> = {

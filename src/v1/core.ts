@@ -40,7 +40,10 @@ export class KENALLV1 {
    *               signing in to the service.
    * @param config Specfies the configuration given by {@link Config}.
    */
-  constructor(readonly apikey: string, config: Config = {}) {
+  constructor(
+    readonly apikey: string,
+    config: Config = {}
+  ) {
     this.apibase = config.apibase || DEFAULT_APIBASE_V1;
     this.timeout = config.timeout || 1000;
     this.axios = axios.create({
@@ -276,7 +279,7 @@ export class KENALLV1 {
    * @returns An {@link NTAQualifiedInvoiceIssuerResolverResponse}.
    */
   async getNTAQualifiedInvoiceIssuerInfo<
-    T extends APIVersion | undefined = undefined
+    T extends APIVersion | undefined = undefined,
   >(
     issuerNumber: string,
     apiVersion?: T
