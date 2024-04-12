@@ -20,6 +20,10 @@ export {
   NTACorporateInfoSearcherResponse,
   Bank,
   BankBranch,
+  BanksResponse,
+  BankResolverResponse,
+  BankBranchesResponse,
+  BankBranchResolverResponse,
 } from './interfaces.compatible';
 export {
   NTACorporateInfo as NTACorporateInfoV20240101,
@@ -29,10 +33,6 @@ export {
   NTAQualifiedInvoiceIssuerKind,
   NTAQualifiedInvoiceIssuerProcess,
   NTAQualifiedInvoiceIssuerInfoResolverResponse,
-  BanksResponse,
-  BankResolverResponse,
-  BankBranchesResponse,
-  BankBranchResolverResponse,
 } from './interfaces.v20240101';
 export * as v20221101 from './interfaces.v20221101';
 export * as v20220901 from './interfaces.v20220901';

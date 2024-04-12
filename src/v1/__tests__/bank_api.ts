@@ -5,9 +5,9 @@ import axios from 'axios';
 
 jest.mock('axios');
 
-const banksResponseV20240101 = [
+const banksResponseV20230901 = [
   {
-    version: '2024-01-01',
+    version: '2023-10-01',
     data: [
       {
         code: '0001',
@@ -27,9 +27,9 @@ const banksResponseV20240101 = [
   },
 ];
 
-const bankResolverResponseV20240101 = [
+const bankResolverResponseV20230901 = [
   {
-    version: '2024-01-01',
+    version: '2023-10-01',
     data: {
       code: '0001',
       name: 'みずほ',
@@ -40,9 +40,9 @@ const bankResolverResponseV20240101 = [
   },
 ];
 
-const bankBranchesResponseV20240101 = [
+const bankBranchesResponseV20230901 = [
   {
-    version: '2024-01-01',
+    version: '2023-10-01',
     data: {
       bank: {
         code: '0001',
@@ -71,9 +71,9 @@ const bankBranchesResponseV20240101 = [
   },
 ];
 
-const bankBranchResolverResponseV20240101 = [
+const bankBranchResolverResponseV20230901 = [
   {
-    version: '2024-01-01',
+    version: '2023-10-01',
     data: {
       bank: {
         code: '0001',
@@ -93,7 +93,7 @@ const bankBranchResolverResponseV20240101 = [
   },
 ];
 
-test.each(banksResponseV20240101)('getBanks method', async (fixture) => {
+test.each(banksResponseV20230901)('getBanks method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
   mocked(axios).create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
@@ -114,7 +114,7 @@ test.each(banksResponseV20240101)('getBanks method', async (fixture) => {
   expect(result).toEqual(fixture);
 });
 
-test.each(bankResolverResponseV20240101)('getBank method', async (fixture) => {
+test.each(bankResolverResponseV20230901)('getBank method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
   mocked(axios).create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
@@ -135,7 +135,7 @@ test.each(bankResolverResponseV20240101)('getBank method', async (fixture) => {
   expect(result).toEqual(fixture);
 });
 
-test.each(bankBranchesResponseV20240101)(
+test.each(bankBranchesResponseV20230901)(
   'getBankBranches method',
   async (fixture) => {
     const mockedAxiosGet = jest.fn();
@@ -159,7 +159,7 @@ test.each(bankBranchesResponseV20240101)(
   }
 );
 
-test.each(bankBranchResolverResponseV20240101)(
+test.each(bankBranchResolverResponseV20230901)(
   'getBankBranch method',
   async (fixture) => {
     const mockedAxiosGet = jest.fn();

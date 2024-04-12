@@ -367,7 +367,7 @@ export class KENALLV1 {
    * @param bankCode The bank code to query with.
    * @param apiVersion The API version. The return type is determined based
    *                on this argument, and thus it cannot be a variable.
-   * @returns A {@link BankBranchesResponseForVersion}.
+   * @returns A {@link BankBranchesResponse}.
    */
   async getBankBranches<T extends APIVersion | undefined = undefined>(
     bankCode: string,
@@ -400,7 +400,7 @@ export class KENALLV1 {
    * @param branchCode The branch code to query with.
    * @param apiVersion The API version. The return type is determined based
    *               on this argument, and thus it cannot be a variable.
-   * @returns A {@link BankBranchResolverResponseForVersion}.
+   * @returns A {@link BankBranchResolverResponse}.
    */
   async getBankBranch<T extends APIVersion | undefined = undefined>(
     bankCode: string,
