@@ -822,7 +822,7 @@ export interface NTAQualifiedInvoiceIssuerInfoResolverResponse {
 }
 
 /**
- * A `Bank` object would store the information about the bank
+ * A `Bank` object would store the information about the bank.
  */
 export interface Bank {
   /**
@@ -862,7 +862,7 @@ export interface Bank {
 }
 
 /**
- * A `BankBranch` object would store the information about the bank branch
+ * A `BankBranch` object would store the information about the bank branch.
  */
 export interface BankBranch {
   /**
