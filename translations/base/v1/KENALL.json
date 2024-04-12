@@ -37,6 +37,30 @@
                     "shortText": "Invokes \"getNTAQualifiedInvoiceIssuerInfo\" API (endpoint: `/invoice/{issuerNumber}`).",
                     "returns": "An {@link NTAQualifiedInvoiceIssuerResolverResponse}.\n"
                 }
+            },
+            "getBanks": {
+                "comment": {
+                    "shortText": "Invokes \"getBanks\" API (endpoint: `/bank`).",
+                    "returns": "A {@link BanksResponse}.\n"
+                }
+            },
+            "getBank": {
+                "comment": {
+                    "shortText": "Invokes \"getBank\" API (endpoint: `/bank/{bankCode}`).",
+                    "returns": "A {@link BankResolverResponse}.\n"
+                }
+            },
+            "getBankBranches": {
+                "comment": {
+                    "shortText": "Invokes \"getBankBranch\" API (endpoint: `/bank/{bankCode}/branches`).",
+                    "returns": "A {@link BankBranchesResponse}.\n"
+                }
+            },
+            "getBankBranch": {
+                "comment": {
+                    "shortText": "Invokes \"getBankBranch\" API (endpoint: `/bank/{bankCode}/branches/{branchCode}`).",
+                    "returns": "A {@link BankBranchResolverResponse}.\n"
+                }
             }
         },
         "accessors": {}
