@@ -38,7 +38,7 @@ export class KENALLV1 {
    * @param apikey The key string that you want to call the API with. The key is
    *               shown in the dashboard you will be navigated to right after
    *               signing in to the service.
-   * @param config Specfies the configuration given by {@link Config}.
+   * @param config Specifies the configuration given by {@link Config}.
    */
   constructor(readonly apikey: string, config: Config = {}) {
     this.apibase = config.apibase || DEFAULT_APIBASE_V1;
