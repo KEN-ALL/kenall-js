@@ -232,7 +232,7 @@ export interface NTAEntityAddress {
 
   /**
    * The extracted building name in the address line below the second-level
-   * administrative devision, without the floor name.
+   * administrative division, without the floor name.
    *
    * Example: `"麹町駅前ヒルトップ"`
    */
@@ -240,7 +240,7 @@ export interface NTAEntityAddress {
 
   /**
    * The extracted floor name and room number in the address line below the
-   * second-level administrative devision.
+   * second-level administrative division.
    *
    * Example: `"８階８０１"`
    */
