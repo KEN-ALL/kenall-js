@@ -28,14 +28,11 @@
                     "shortText": "ひらがなでの支店名の読み。"
                 }
             },
-            "romaji": "romaji": {
+            "romaji": {
                 "comment": {
                     "text": "例: `\"ebisu\"`",
                     "shortText": "ローマ字での支店名の読み。"
                 }
-}{
-                "text": "例: `\"ebisu\"`",
-                "shortText": "ローマ字での支店名の読み。"
             }
         }
     }
