@@ -25,5 +25,11 @@ export {
   NTAQualifiedInvoiceIssuerKind,
   NTAQualifiedInvoiceIssuerProcess,
   NTAQualifiedInvoiceIssuerInfoResolverResponse,
+  Bank,
+  BankBranch,
+  BanksResponse,
+  BankResolverResponse,
+  BankBranchesResponse,
+  BankBranchResolverResponse,
 } from './v1';
 export { Config } from './config';

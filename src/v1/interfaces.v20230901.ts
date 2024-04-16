@@ -187,3 +187,169 @@ export interface CityResolverResponse {
    */
   data: City[];
 }
+
+/**
+ * A `Bank` object would store the information about the bank.
+ */
+export interface Bank {
+  /**
+   * The code of bank.
+   *
+   * Example: `"0001"`
+   */
+  code: string;
+
+  /**
+   * The name of bank.
+   *
+   * Example: `"みずほ"`
+   */
+  name: string;
+
+  /**
+   * The reading of the name of bank in katakana.
+   *
+   * Example: `"ミズホ"`
+   */
+  katakana: string;
+
+  /**
+   * The reading of the name of bank in hiragana.
+   *
+   * Example: `"みずほ"`
+   */
+  hiragana: string;
+
+  /**
+   * The "romanized" reading of the name of bank.
+   *
+   * Example : `"mizuho"`
+   */
+  romaji: string;
+}
+
+/**
+ * A `BankBranch` object would store the information about the bank branch.
+ */
+export interface BankBranch {
+  /**
+   * The code of bank branch.
+   *
+   * Example: `"188"`
+   */
+  code: string;
+
+  /**
+   * The name of bank branch.
+   *
+   * Example: `"恵比寿"`
+   */
+  name: string;
+
+  /**
+   * The reading of the name of bank branch in katakana.
+   *
+   * Example: `"エビス"`
+   */
+  katakana: string;
+
+  /**
+   * The reading of the name of bank branch in hiragana.
+   *
+   * Example: `"えびす"`
+   */
+  hiragana: string;
+
+  /**
+   * The "romanized" reading of the name of bank branch.
+   *
+   * Example : `"ebisu"`
+   */
+  romaji: string;
+}
+
+/**
+ * An `BanksResponse` describes a response to
+ * "getBanks" API call.
+ */
+export interface BanksResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day
+   * the source data became available.
+   */
+  version: string;
+
+  /**
+   * The set of the bank data.
+   */
+  data: Bank[];
+}
+
+/**
+ * An `BankResolverResponse` describes a response to
+ * "getBank" API call.
+ */
+export interface BankResolverResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day
+   * the source data became available.
+   */
+  version: string;
+
+  /**
+   * The bank data.
+   */
+  data: Bank;
+}
+
+/**
+ * An `BankBranchesResponse` describes a response to
+ * "getBankBranches" API call.
+ * The response includes the bank and the branch data.
+ * The bank data is the same as the `BankResolverResponse`.
+ */
+export interface BankBranchesResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day
+   * the source data became available.
+   */
+  version: string;
+
+  /**
+   * The bank and branch data.
+   * The branches key is the bank branch code.
+   */
+  data: {
+    bank: Bank;
+    branches: {
+      [key: string]: BankBranch;
+    };
+  };
+}
+
+/**
+ * An `BankBranchResolverResponse` describes a response to
+ * "getBankBranch" API call.
+ * The response includes the bank and the branch data.
+ * The bank data is the same as the `BankResolverResponse`.
+ * The branch data is the same as the one in `BankBranchesResponse`.
+ */
+export interface BankBranchResolverResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day
+   * the source data became available.
+   */
+  version: string;
+
+  /**
+   * The bank and branch data.
+   */
+  data: {
+    bank: Bank;
+    branch: BankBranch;
+  };
+}

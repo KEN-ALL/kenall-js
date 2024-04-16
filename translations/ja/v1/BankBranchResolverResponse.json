@@ -1,0 +1,27 @@
+{
+    "BankBranchResolverResponse": {
+        "comment": {
+            "shortText": [
+                "`BankBranchResolverResponse` は \"getBankBranch\" ",
+                "API 呼び出しの応答を記述します。"
+            ]
+        },
+        "properties": {
+            "version": {
+                "comment": {
+                    "text": [
+                        "デフォルトは最新バージョンとなります。",
+                        "例: `\"2021-04-30\"`"
+                    ],
+                    "shortText": "どのデータベースのバージョンに対して検索を実行するか。"
+                }
+            },
+            "data": {
+                "comment": {
+                    "shortText": "指定した金融機関コードに一致した銀行データと指定した支店コードに一致した支店データ。"
+                }
+            }
+        }
+    }
+}
+

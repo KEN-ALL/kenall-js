@@ -18,6 +18,12 @@ export {
   NTACorporateInfoSearchMode,
   NTACorporateInfoSearcherOptions,
   NTACorporateInfoSearcherResponse,
+  Bank,
+  BankBranch,
+  BanksResponse,
+  BankResolverResponse,
+  BankBranchesResponse,
+  BankBranchResolverResponse,
 } from './interfaces.compatible';
 export {
   NTACorporateInfo as NTACorporateInfoV20240101,

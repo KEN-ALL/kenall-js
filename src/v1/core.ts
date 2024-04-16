@@ -13,6 +13,10 @@ import {
   NTACorporateInfoResolverResponseForVersion,
   NTACorporateInfoSearcherResponseForVersion,
   NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion,
+  BanksResponseForVersion,
+  BankResolverResponseForVersion,
+  BankBranchesResponseForVersion,
+  BankBranchResolverResponseForVersion,
   getValidators,
 } from './validators';
 export type { APIVersion } from './validators';
@@ -291,6 +295,126 @@ export class KENALLV1 {
       ).validateNTAQualifiedInvoiceIssuerInfoResolverResponse(
         resp
       ) as NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<T>;
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  /**
+   * Invokes "getBanks" API (endpoint: `/bank`).
+   *
+   * @param apiVersion The API version. The return type is determined based
+   *                  on this argument, and thus it cannot be a variable.
+   * @returns A {@link BanksResponse}.
+   */
+  async getBanks<T extends APIVersion | undefined = undefined>(
+    apiVersion?: T
+  ): Promise<BanksResponseForVersion<T>> {
+    try {
+      const resp = await this.request('/bank', {}, apiVersion);
+      return getValidators(apiVersion).validateBanksResponse(
+        resp
+      ) as BanksResponseForVersion<T>;
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  /**
+   * Invokes "getBank" API (endpoint: `/bank/{bankCode}`).
+   *
+   * @param bankCode The bank code to query with.
+   * @param apiVersion The API version. The return type is determined based
+   *                 on this argument, and thus it cannot be a variable.
+   * @returns A {@link BankResolverResponse}.
+   */
+  async getBank<T extends APIVersion | undefined = undefined>(
+    bankCode: string,
+    apiVersion?: T
+  ): Promise<BankResolverResponseForVersion<T>> {
+    try {
+      const resp = await this.request(`/bank/${bankCode}`, {}, apiVersion);
+      return getValidators(apiVersion).validateBankResolverResponse(
+        resp
+      ) as BankResolverResponseForVersion<T>;
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  /**
+   * Invokes "getBankBranch" API (endpoint: `/bank/{bankCode}/branches`).
+   *
+   * @param bankCode The bank code to query with.
+   * @param apiVersion The API version. The return type is determined based
+   *                on this argument, and thus it cannot be a variable.
+   * @returns A {@link BankBranchesResponse}.
+   */
+  async getBankBranches<T extends APIVersion | undefined = undefined>(
+    bankCode: string,
+    apiVersion?: T
+  ): Promise<BankBranchesResponseForVersion<T>> {
+    try {
+      const resp = await this.request(
+        `/bank/${bankCode}/branches`,
+        {},
+        apiVersion
+      );
+      return getValidators(apiVersion).validateBankBranchesResponse(
+        resp
+      ) as BankBranchesResponseForVersion<T>;
+    } catch (e) {
+      if (e instanceof StructError) {
+        throw new Error(
+          `invalid response payload: ${e.path} must be ${e.type}`
+        );
+      } else {
+        throw e;
+      }
+    }
+  }
+
+  /**
+   * Invokes "getBankBranch" API (endpoint: `/bank/{bankCode}/branches/{branchCode}`).
+   *
+   * @param bankCode The bank code to query with.
+   * @param branchCode The branch code to query with.
+   * @param apiVersion The API version. The return type is determined based
+   *               on this argument, and thus it cannot be a variable.
+   * @returns A {@link BankBranchResolverResponse}.
+   */
+  async getBankBranch<T extends APIVersion | undefined = undefined>(
+    bankCode: string,
+    branchCode: string,
+    apiVersion?: T
+  ): Promise<BankBranchResolverResponseForVersion<T>> {
+    try {
+      const resp = await this.request(
+        `/bank/${bankCode}/branches/${branchCode}`,
+        {},
+        apiVersion
+      );
+      return getValidators(apiVersion).validateBankBranchResolverResponse(
+        resp
+      ) as BankBranchResolverResponseForVersion<T>;
     } catch (e) {
       if (e instanceof StructError) {
         throw new Error(
