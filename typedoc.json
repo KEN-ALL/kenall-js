@@ -1,5 +1,5 @@
 {
-  "entryPoints": ["src/index.ts"],
+  "entryPoints": ["src/v1", "src", "src/v1/validators.ts"],
   "excludePrivate": true,
   "theme": "default",
   "out": "built/docs",
