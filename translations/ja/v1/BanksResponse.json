@@ -1,0 +1,26 @@
+{
+    "BanksResponse": {
+        "comment": {
+            "shortText": [
+                "`BanksResponse` は \"getBanks\" API 呼び出しの",
+                "応答を記述します。"
+            ]
+        },
+        "properties": {
+            "version": {
+                "comment": {
+                    "text": [
+                        "デフォルトは最新バージョンとなります。",
+                        "例: `\"2021-04-30\"`"
+                    ],
+                    "shortText": "どのデータベースのバージョンに対して検索を実行するか。"
+                }
+            },
+            "data": {
+                "comment": {
+                    "shortText": "すべての銀行データの集合。"
+                }
+            }
+        }
+    }
+}

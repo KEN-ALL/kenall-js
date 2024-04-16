@@ -1,0 +1,41 @@
+{
+    "BankBranch": {
+        "comment": {
+            "shortText": "A `BankBranch` object would store the information about the bank branch."
+        },
+        "properties": {
+            "code": {
+                "comment": {
+                    "text": "Example: `\"188\"`",
+                    "shortText": "The code of bank branch."
+                }
+            },
+            "name": {
+                "comment": {
+                    "text": "Example: `\"恵比寿\"`",
+                    "shortText": "The name of bank branch."
+                }
+            },
+            "katakana": {
+                "comment": {
+                    "text": "Example: `\"エビス\"`",
+                    "shortText": "The reading of the name of bank branch in katakana."
+                }
+            },
+            "hiragana": {
+                "comment": {
+                    "text": "Example: `\"えびす\"`",
+                    "shortText": "The reading of the name of bank branch in hiragana."
+                }
+            },
+            "romaji": {
+                "comment": {
+                    "text": "Example : `\"ebisu\"`",
+                    "shortText": "The \"romanized\" reading of the name of bank branch."
+                }
+            }
+        },
+        "methods": {}
+    }
+}
+
