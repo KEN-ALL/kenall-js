@@ -47,9 +47,9 @@
             "correct": {
                 "comment": {
                     "text": [
-                        " * `1` indicates the record was corrected.",
-                        " * `0` indicates the record was not corrected.",
-                        "Example: `0`"
+                        " * `\"1\"` indicates the record was corrected.",
+                        " * `\"0\"` indicates the record was not corrected.",
+                        "Example: `\"0\"`"
                     ],
                     "shortText": "The flag if the record was corrected or not."
                 }
