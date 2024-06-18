@@ -1,0 +1,40 @@
+{
+    "Bank": {
+        "comment": {
+            "shortText": "A `Bank` object would store the information about the bank."
+        },
+        "properties": {
+            "code": {
+                "comment": {
+                    "text": "Example: `\"0001\"`",
+                    "shortText": "The code of bank."
+                }
+            },
+            "name": {
+                "comment": {
+                    "text": "Example: `\"みずほ\"`",
+                    "shortText": "The name of bank."
+                }
+            },
+            "katakana": {
+                "comment": {
+                    "text": "Example: `\"ミズホ\"`",
+                    "shortText": "The reading of the name of bank in katakana."
+                }
+            },
+            "hiragana": {
+                "comment": {
+                    "text": "Example: `\"みずほ\"`",
+                    "shortText": "The reading of the name of bank in hiragana."
+                }
+            },
+            "romaji": {
+                "comment": {
+                    "text": "Example : `\"mizuho\"`",
+                    "shortText": "The \"romanized\" reading of the name of bank."
+                }
+            }
+        },
+        "methods": {}
+    }
+}

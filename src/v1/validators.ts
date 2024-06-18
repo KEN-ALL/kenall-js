@@ -80,6 +80,22 @@ export type NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<
   _ extends APIVersion | undefined // eslint-disable-line @typescript-eslint/no-unused-vars
 > = _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse;
 
+export type BanksResponseForVersion<
+  _ extends APIVersion | undefined // eslint-disable-line @typescript-eslint/no-unused-vars
+> = _v20230901.BanksResponse;
+
+export type BankResolverResponseForVersion<
+  _ extends APIVersion | undefined // eslint-disable-line @typescript-eslint/no-unused-vars
+> = _v20230901.BankResolverResponse;
+
+export type BankBranchesResponseForVersion<
+  _ extends APIVersion | undefined // eslint-disable-line @typescript-eslint/no-unused-vars
+> = _v20230901.BankBranchesResponse;
+
+export type BankBranchResolverResponseForVersion<
+  _ extends APIVersion | undefined // eslint-disable-line @typescript-eslint/no-unused-vars
+> = _v20230901.BankBranchResolverResponse;
+
 export type Validators<T extends APIVersion | undefined> = {
   validateAddressResolverResponse: (
     payload: unknown
@@ -99,6 +115,16 @@ export type Validators<T extends APIVersion | undefined> = {
   validateNTAQualifiedInvoiceIssuerInfoResolverResponse: (
     payload: unknown
   ) => NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<T>;
+  validateBanksResponse: (payload: unknown) => BanksResponseForVersion<T>;
+  validateBankResolverResponse: (
+    payload: unknown
+  ) => BankResolverResponseForVersion<T>;
+  validateBankBranchesResponse: (
+    payload: unknown
+  ) => BankBranchesResponseForVersion<T>;
+  validateBankBranchResolverResponse: (
+    payload: unknown
+  ) => BankBranchResolverResponseForVersion<T>;
 };
 
 interface NTACorporateInfoResolverResponse_v20240101 // eslint-disable-line @typescript-eslint/no-empty-interface
@@ -124,6 +150,25 @@ const _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101 = (
   payload: unknown
 ): _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse =>
   validate<NTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101>(payload);
+
+const _validateBanksResponse_v20230901 = (
+  payload: unknown
+): _v20230901.BanksResponse => validate<_v20230901.BanksResponse>(payload);
+
+const _validateBankResolverResponse_v20230901 = (
+  payload: unknown
+): _v20230901.BankResolverResponse =>
+  validate<_v20230901.BankResolverResponse>(payload);
+
+const _validateBankBranchesResponse_v20230901 = (
+  payload: unknown
+): _v20230901.BankBranchesResponse =>
+  validate<_v20230901.BankBranchesResponse>(payload);
+
+const _validateBankBranchResolverResponse_v20230901 = (
+  payload: unknown
+): _v20230901.BankBranchResolverResponse =>
+  validate<_v20230901.BankBranchResolverResponse>(payload);
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace compatible {
@@ -236,6 +281,17 @@ export namespace compatible {
 
   export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse =
     _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101;
+
+  export const validateBanksResponse = _validateBanksResponse_v20230901;
+
+  export const validateBankResolverResponse =
+    _validateBankResolverResponse_v20230901;
+
+  export const validateBankBranchesResponse =
+    _validateBankBranchesResponse_v20230901;
+
+  export const validateBankBranchResolverResponse =
+    _validateBankBranchResolverResponse_v20230901;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -278,6 +334,17 @@ export namespace v20220901 {
 
   export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse =
     _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101;
+
+  export const validateBanksResponse = _validateBanksResponse_v20230901;
+
+  export const validateBankResolverResponse =
+    _validateBankResolverResponse_v20230901;
+
+  export const validateBankBranchesResponse =
+    _validateBankBranchesResponse_v20230901;
+
+  export const validateBankBranchResolverResponse =
+    _validateBankBranchResolverResponse_v20230901;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -362,6 +429,17 @@ export namespace v20230901 {
 
   export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse =
     _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101;
+
+  export const validateBanksResponse = _validateBanksResponse_v20230901;
+
+  export const validateBankResolverResponse =
+    _validateBankResolverResponse_v20230901;
+
+  export const validateBankBranchesResponse =
+    _validateBankBranchesResponse_v20230901;
+
+  export const validateBankBranchResolverResponse =
+    _validateBankBranchResolverResponse_v20230901;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -396,6 +474,17 @@ export namespace v20240101 {
 
   export const validateNTAQualifiedInvoiceIssuerInfoResolverResponse =
     _validateNTAQualifiedInvoiceIssuerInfoResolverResponse_v20240101;
+
+  export const validateBanksResponse = _validateBanksResponse_v20230901;
+
+  export const validateBankResolverResponse =
+    _validateBankResolverResponse_v20230901;
+
+  export const validateBankBranchesResponse =
+    _validateBankBranchesResponse_v20230901;
+
+  export const validateBankBranchResolverResponse =
+    _validateBankBranchResolverResponse_v20230901;
 }
 
 export const getValidators = <T extends APIVersion | undefined>(

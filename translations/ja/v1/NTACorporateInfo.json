@@ -42,8 +42,8 @@
             },
             "correct": {
                 "comment": {
-                    "text": "例: `\"0\"`",
-                    "shortText": "訂正区分。 \"0\":訂正以外、\"1\":訂正"
+                    "text": "例: `0`",
+                    "shortText": "訂正区分。 0:訂正以外、1:訂正"
                 }
             },
             "update_date": {
