@@ -44,7 +44,7 @@
     "@typescript-eslint/parser": "^5.10.0",
     "core-js": "^3.20.3",
     "eslint": "^8.7.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-best-rollup-2": "^5.0.3",
     "gulp-clean": "^0.4.0",
     "gulp-exec": "^5.0.0",
