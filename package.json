@@ -55,7 +55,7 @@
     "jest": "^27.4.7",
     "jest-mock": "^27.5.1",
     "prettier": "^2.5.1",
-    "rollup": "^2.79.0",
+    "rollup": "^3.29.5",
     "rollup-plugin-banner2": "^1.2.2",
     "superstruct-ts-transformer": "^0.2.3",
     "ts-jest": "^27.1.3",
