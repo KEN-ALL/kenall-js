@@ -1,87 +1,222 @@
 {
     "NTACorporateInfoSearcherOptions": {
         "comment": {
-            "shortText": [
-                "An `NTACorporateInfoSearcherOptions` stores a set of parameters",
-                "that will be sent to `searchCorporateInfo` API."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTACorporateInfoSearcherOptions`"
+                },
+                {
+                    "kind": "text",
+                    "text": " stores a set of parameters\nthat will be sent to "
+                },
+                {
+                    "kind": "code",
+                    "text": "`searchCorporateInfo`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "query": {
                 "comment": {
-                    "text": "Example: `\"東京都 AND オープンコレクター\"`",
-                    "shortText": "The query to search against the address database."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The query to search against the address database.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東京都 AND オープンコレクター\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "offset": {
                 "comment": {
-                    "shortText": "The offset from which you want to retrieve the result."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The offset from which you want to retrieve the result."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "limit": {
                 "comment": {
-                    "text": "Defaults to 100 unless specified.",
-                    "shortText": "The maximum number of items that you want to retrieve."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The maximum number of items that you want to retrieve.\n\nDefaults to 100 unless specified."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "mode": {
                 "comment": {
-                    "text": [
-                        "Defaults to `partial`. If set to `partial`, the API will",
-                        "return partially match results. If set to `exact`, the",
-                        "result includes only the corporates which name without",
-                        "corporate kind exactly matches the query. Please note",
-                        "that the `exact` mode doesn't match a query that contains",
-                        "corporate kind. For example, the query",
-                        "`株式会社オープンコレクター` doesn't return any result in",
-                        "the `exact` mode, but `オープンコレクター` will return",
-                        "the result. You can search with a corporate name with",
-                        "a corporate kind in `exact_with_kind` mode.",
-                        "Example: `\"exact\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The search mode.\n\nDefaults to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`partial`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ". If set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`partial`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", the API will\nreturn partially match results. If set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`exact`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", the\nresult includes only the corporates which name without\ncorporate kind exactly matches the query. Please note\nthat the "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`exact`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " mode doesn't match a query that contains\ncorporate kind. For example, the query\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`株式会社オープンコレクター`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " doesn't return any result in\nthe "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`exact`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " mode, but "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`オープンコレクター`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " will return\nthe result. You can search with a corporate name with\na corporate kind in "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`exact_with_kind`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " mode.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"exact\"`"
+                        }
                     ],
-                    "shortText": "The search mode."
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "facet_area": {
                 "comment": {
-                    "text": "Example: `\"/東京都\"`",
-                    "shortText": [
-                        "The facet representation at which level the resulting facets",
-                        "of prefecture and city will be shapen.",
-                        "The facet should be written in Japanese.",
-                        "If you want to specify foreign corporates, please set",
-                        "`/海外など` to this field."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facet representation at which level the resulting facets\nof prefecture and city will be shapen.\nThe facet should be written in Japanese.\nIf you want to specify foreign corporates, please set\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/海外など`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " to this field.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/東京都\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "facet_kind": {
                 "comment": {
-                    "text": "Example: `\"/株式会社\"`",
-                    "shortText": [
-                        "The facet representation at which level the resulting facets",
-                        "of kind will be shapen.",
-                        "The facet should be written in Japanese."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facet representation at which level the resulting facets\nof kind will be shapen.\nThe facet should be written in Japanese.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/株式会社\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "facet_process": {
                 "comment": {
-                    "text": "Example: `\"/商号又は名称の変更\"`",
-                    "shortText": [
-                        "The facet representation at which level the resulting facets",
-                        "of proecess will be shapen.",
-                        "The facet should be written in Japanese."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facet representation at which level the resulting facets\nof proecess will be shapen.\nThe facet should be written in Japanese.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/商号又は名称の変更\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "facet_close_cause": {
                 "comment": {
-                    "text": "Example: `\"/清算の結了等\"`",
-                    "shortText": [
-                        "The facet representation at which level the resulting facets",
-                        "of close cause will be shapen.",
-                        "The facet should be written in Japanese."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facet representation at which level the resulting facets\nof close cause will be shapen.\nThe facet should be written in Japanese.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/清算の結了等\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

@@ -1,56 +1,110 @@
 {
-    "Corporation": {
+  "Corporation": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`Corporation` オブジェクトは、特別な郵便番号が割り当てられた組織や部署を\n"
+        },
+        {
+          "kind": "text",
+          "text": "表します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "name": {
         "comment": {
-            "shortText": [
-                "`Corporation` オブジェクトは、特別な郵便番号が割り当てられた組織や部署を",
-                "表します。"
-            ]
-        },
-        "properties": {
-            "name": {
-                "comment": {
-                    "shortText": "組織名または部署名。"
-                }
-            },
-            "name_kana": {
-                "comment": {
-                    "shortText": "組織名または部署名の読み。"
-                }
-            },
-            "block_lot": {
-                "comment": {
-                    "shortText": [
-                        "当該部署に *郵便的に* 到達可能な住所。",
-                        "つまり、この住所は必ずしも実際の事業所を指しているわけでは",
-                        "ないということです。"
-                    ]
-                }
-            },
-            "block_lot_num": {
-                "comment": {
-                    "text": "例: `\"3-12-14\"`",
-                    "shortText": [
-                        "`block_lot`をパースして再構築した、字・町名以降の「番地」「丁目・番・号」といった要素を表す文字列を正規化し、ハイフンで繋いだ数字としたもの。",
-                        "残りの部分については `Address` の `koaza` `building` `floor` に出力される。"
-                    ]
-                }
-            },
-            "post_office": {
-                "comment": {
-                    "shortText": [
-                        "この部署への郵便物を扱う郵便局の名前。"
-                    ]
-                }
-            },
-            "code_type": {
-                "comment": {
-                    "shortText": [
-                        "`0` は実際の事業所を指しているであろうことを、`1` は",
-                        "私書箱であることを示します。"
-                    ]
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "組織名または部署名。\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "name_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "組織名または部署名の読み。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "block_lot": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "当該部署に *郵便的に* 到達可能な住所。\n"
+            },
+            {
+              "kind": "text",
+              "text": "つまり、この住所は必ずしも実際の事業所を指しているわけでは\n"
+            },
+            {
+              "kind": "text",
+              "text": "ないということです。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "block_lot_num": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "`block_lot`をパースして再構築した、字・町名以降の「番地」「丁目・番・号」といった要素を表す文字列を正規化し、ハイフンで繋いだ数字としたもの。\n"
+            },
+            {
+              "kind": "text",
+              "text": "残りの部分については `Address` の `koaza` `building` `floor` に出力される。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"3-12-14\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "post_office": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "この部署への郵便物を扱う郵便局の名前。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "code_type": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "`0` は実際の事業所を指しているであろうことを、`1` は\n"
+            },
+            {
+              "kind": "text",
+              "text": "私書箱であることを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

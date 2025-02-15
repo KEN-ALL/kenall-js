@@ -2,7 +2,7 @@
   "entryPoints": ["src/v1", "src", "src/v1/validators.ts"],
   "excludePrivate": true,
   "theme": "default",
-  "out": "built/docs",
+  "out": "dist/docs",
   "readme": "README.md",
   "lightHighlightTheme": "solarized-light",
   "darkHighlightTheme": "solarized-dark"

@@ -1,55 +1,110 @@
 {
     "Corporation": {
         "comment": {
-            "shortText": [
-                "A `Corporation` object would store the information about the organization,",
-                "or the division of a organization, which has its special postal code designated."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`Corporation`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object would store the information about the organization,\nor the division of a organization, which has its special postal code designated."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "name": {
                 "comment": {
-                    "shortText": "The name of the organization, or the division of such."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the organization, or the division of such."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "name_kana": {
                 "comment": {
-                    "shortText": "The reading of the division's name."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the division's name."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "block_lot": {
                 "comment": {
-                    "shortText": [
-                        "The address line by which the division is *postally* reachable,",
-                        "in the sense it doesn't necessarily point to the actual",
-                        "address of its business place."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The address line by which the division is *postally* reachable,\nin the sense it doesn't necessarily point to the actual\naddress of its business place."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "block_lot_num": {
                 "comment": {
-                    "text": "Example: `\"3-12-14\"`",
-                    "shortText": [
-                        "The reconstructed numerical part of the address line below the second-level",
-                        "administrative division."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reconstructed numerical part of the address line below the second-level\nadministrative division.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"3-12-14\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "post_office": {
                 "comment": {
-                    "shortText": [
-                        "The name of the post office that handles the postal items",
-                        "for the division."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the post office that handles the postal items\nfor the division."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "code_type": {
                 "comment": {
-                    "shortText": [
-                        "`0` indicates the postal code most likely describes a",
-                        "actual business place, and `1` indicates it refers to a",
-                        "post office box."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "code",
+                            "text": "`0`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " indicates the postal code most likely describes a\nactual business place, and "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`1`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " indicates it refers to a\npost office box."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

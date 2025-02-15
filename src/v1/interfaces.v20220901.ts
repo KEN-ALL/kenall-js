@@ -249,71 +249,6 @@ export interface Address {
 }
 
 /**
- * A `City` object would store the information about the resolved area.
- */
-export interface City {
-  /**
-   * The 5 digit Japanese municipality code (全国地方公共団体コード)
-   * for the administrative division this object represents.
-   */
-  jisx0402: string;
-
-  /**
-   * The prefecture code defined in JISX0401.
-   *
-   * Example: `"13"`
-   */
-  prefecture_code: string;
-
-  /**
-   * The name of the prefecture in Kanji.
-   *
-   * Example: `"東京都"`
-   */
-  prefecture: string;
-
-  /**
-   * The reading of the name of the prefecture in katakana.
-   *
-   * Example: `"トウキョウト"`
-   */
-  prefecture_kana: string;
-
-  /**
-   * The remaining portion of the JISX0402 code that has the leading two-dight prefecture code removed.
-   *
-   * Example: `"113"`
-   */
-  city_code: string;
-
-  /**
-   * The name of the city.
-   * The county name may precede it, or the name of the
-   * ward would follow it in case the city has ordinance-designated wards.
-   *
-   * Examples:
-   *
-   * * `"港区"`
-   * * `"大阪市北区"`
-   * * `"各務原市"`
-   * * `"秩父郡長瀞町"`
-   */
-  city: string;
-
-  /**
-   * The reading of the name of the city in katakana.
-   *
-   * Examples:
-   *
-   * * `"ミナトク"`
-   * * `"オオサカシキタク"`
-   * * `"カカミガハラシ"`
-   * * `"チチブグンナガトロマチ"`
-   */
-  city_kana: string;
-}
-
-/**
  * An `AddressResolverResponse` describes a response to
  * "getAddress" API call.
  */
@@ -574,8 +509,8 @@ export interface City {
    *
    * * `"ミナトク"`
    * * `"オオサカシキタク"`
-   * * `"カガミハラシ"`
-   * * `"チチブグンナガトロチョウ"`
+   * * `"カカミガハラシ"`
+   * * `"チチブグンナガトロマチ"`
    */
   city_kana: string;
 }

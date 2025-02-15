@@ -1,6 +1,5 @@
-import { mocked } from 'jest-mock';
 import { KENALL } from '..';
-import { AxiosInstance } from 'axios';
+import type { AxiosInstance } from 'axios';
 import axios from 'axios';
 
 jest.mock('axios');
@@ -150,7 +149,7 @@ test.each([
   'getNTAQualifiedInvoiceIssuerInfoResolver method',
   async ({ response, expected }) => {
     const mockedAxiosGet = jest.fn();
-    mocked(axios).create = jest.fn((...args): AxiosInstance => {
+    axios.create = jest.fn((...args): AxiosInstance => {
       const retval = jest.requireActual('axios').create(...args);
       retval.get = mockedAxiosGet;
       return retval;

@@ -1,53 +1,113 @@
 {
-    "AddressSearcherResponse": {
+  "AddressSearcherResponse": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "AddressSearcherResponse` は、\"searchAddresses\" API 呼び出し\n"
+        },
+        {
+          "kind": "text",
+          "text": "の結果を表現します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "query": {
         "comment": {
-            "shortText": [
-                "AddressSearcherResponse` は、\"searchAddresses\" API 呼び出し",
-                "の結果を表現します。"
-            ]
-        },
-        "properties": {
-            "query": {
-                "comment": {
-                    "shortText": "検索が行われる対象となった問い合わせ。"
-                }
-            },
-            "count": {
-                "comment": {
-                    "shortText": "検索結果となる項目の総数。"
-                }
-            },
-            "offset": {
-                "comment": {
-                    "shortText": "取得した検索結果の開始オフセット。"
-                }
-            },
-            "limit": {
-                "comment": {
-                    "shortText": "検索結果から取得しようとした項目の最大数。"
-                }
-            },
-            "facets": {
-                "comment": {
-                    "text": "もしファセットが与えられていない場合はnullが入ります。",
-                    "shortText": "問い合わせによって形作られた、結果のファセット。"
-                }
-            },
-            "version": {
-                "comment": {
-                    "shortText": [
-                        "データのバージョン。 `\"YYYY-MM-DD\"`形式で、",
-                        "Y、M、Dはそれぞれソースとなったデータが利用可能になった日の",
-                        "年月日を表します。"
-                    ]
-                }
-            },
-            "data": {
-                "comment": {
-                    "shortText": "問い合わせに合致する項目の集合。"
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "検索が行われる対象となった問い合わせ。\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "count": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "検索結果となる項目の総数。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "offset": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "取得した検索結果の開始オフセット。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "limit": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "検索結果から取得しようとした項目の最大数。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facets": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "問い合わせによって形作られた、結果のファセット。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "もしファセットが与えられていない場合はnullが入ります。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "version": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "データのバージョン。 `\"YYYY-MM-DD\"`形式で、\n"
+            },
+            {
+              "kind": "text",
+              "text": "Y、M、Dはそれぞれソースとなったデータが利用可能になった日の\n"
+            },
+            {
+              "kind": "text",
+              "text": "年月日を表します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "data": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "問い合わせに合致する項目の集合。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

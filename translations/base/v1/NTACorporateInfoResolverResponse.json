@@ -1,24 +1,54 @@
 {
     "NTACorporateInfoResolverResponse": {
         "comment": {
-            "shortText": [
-                "An `NTACorporateInfoResolverResponse` describes a response to",
-                "\"getNTACorporateInfo\" API call."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTACorporateInfoResolverResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": " describes a response to\n\"getNTACorporateInfo\" API call."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "version": {
                 "comment": {
-                    "shortText": [
-                        "The version of the data, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day",
-                        "the source data became available."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The version of the data, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day\nthe source data became available."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "data": {
                 "comment": {
-                    "shortText": "The set of the data that match to the query."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The set of the data that match to the query."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

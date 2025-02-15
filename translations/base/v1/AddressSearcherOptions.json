@@ -1,57 +1,142 @@
 {
     "AddressSearcherOptions": {
         "comment": {
-            "shortText": [
-                "An `AddressSearcherOptions` stores a set of parameters",
-                "that will be sent to \"searchAddresses\" API."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`AddressSearcherOptions`"
+                },
+                {
+                    "kind": "text",
+                    "text": " stores a set of parameters\nthat will be sent to \"searchAddresses\" API."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "q": {
                 "comment": {
-                    "text": [
-                        "Either `q` or `t` must be present.",
-                        "Example: `\"東京都 AND 渋谷区\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The query to search against the address database.\n\nEither "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`q`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " or "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`t`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " must be present.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東京都 AND 渋谷区\"`"
+                        }
                     ],
-                    "shortText": "The query to search against the address database."
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "t": {
                 "comment": {
-                    "text": [
-                        "Either `q` or `t` must be present.",
-                        "Example: `\"東京都渋谷区初台\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The unprocessed portions of the address string to search against the address database.\n\nEither "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`q`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " or "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`t`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " must be present.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東京都渋谷区初台\"`"
+                        }
                     ],
-                    "shortText": "The unprocessed portions of the address string to search against the address database."
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "offset": {
                 "comment": {
-                    "shortText": "The offset from which you want to retrieve the result."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The offset from which you want to retrieve the result."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "limit": {
                 "comment": {
-                    "text": "Defaults to 100 unless specified.",
-                    "shortText": "The maximum number of items that you want to retrieve."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The maximum number of items that you want to retrieve.\n\nDefaults to 100 unless specified."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "version": {
                 "comment": {
-                    "text": [
-                        "Defaults to the latest available version.",
-                        "Example: `\"2021-04-30\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The version of which the database is searched against.\n\nDefaults to the latest available version.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-04-30\"`"
+                        }
                     ],
-                    "shortText": "The version of which the database is searched against."
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "facet": {
                 "comment": {
-                    "text": "Example: `\"/東京都\"`",
-                    "shortText": [
-                        "The facet representation at which level the resulting facets",
-                        "will be shapen."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facet representation at which level the resulting facets\nwill be shapen.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/東京都\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

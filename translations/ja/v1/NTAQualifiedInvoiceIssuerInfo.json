@@ -1,142 +1,289 @@
 {
-    "NTAQualifiedInvoiceIssuerInfo": {
+  "NTAQualifiedInvoiceIssuerInfo": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTAQualifiedInvoiceIssuerInfo` は国税庁によって適格請求書発行事業者として登録されている事業者のレコードを表します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "published_date": {
         "comment": {
-            "shortText": [
-                "`NTAQualifiedInvoiceIssuerInfo` は国税庁によって適格請求書発行事業者として登録されている事業者のレコードを表します。"
-            ]
-        },
-        "properties": {
-            "published_date": {
-                "comment": {
-                    "text": [
-                        "このフィールドは実際の更新日と同期していないことがあります。",
-                        "公開日は更新日よりも後になることがあります。詳細は `update_date` を参照してください。",
-                        "例: `\"2021-01-01\"`"
-                    ],
-                    "shortText": [
-                        "`\"YYYY-MM-DD\"`形式の公開年月日。",
-                        "Yの部分は年、Mの部分は月、Dの部分は日をそれぞれ表しています。"
-                    ]
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "`\"YYYY-MM-DD\"`形式の公開年月日。\n"
             },
-            "sequence_number": {
-                "comment": {
-                    "text": [
-                        "同一の適格請求書発行事業者レコードについての変更履歴番号。発行事業者ごとに数字が大きい方が最新。",
-                        " (採番はソースとなるファイル毎に行われるため、異なる事業者のレコードの間で大小は一貫していないことに留意。)",
-                        "例: `1`"
-                    ],
-                    "shortText": [
-                        "最大8桁の適格請求書発行事業者レコードの版を表す数字。"
-                    ]
-                }
+            {
+              "kind": "text",
+              "text": "Yの部分は年、Mの部分は月、Dの部分は日をそれぞれ表しています。\n\n"
             },
-            "qualified_invoice_issuer_number": {
-                "comment": {
-                    "text": "例: `\"T2021001052596\"`",
-                    "shortText": "法人の適格請求書発行事業者登録番号。"
-                }
+            {
+              "kind": "text",
+              "text": "このフィールドは実際の更新日と同期していないことがあります。\n"
             },
-            "process": {
-                "comment": {
-                    "text": "Example: `NTAQualifiedInvoiceIssuerProcess.NEW`",
-                    "shortText": "登録状況を表します。"
-                }
+            {
+              "kind": "text",
+              "text": "公開日は更新日よりも後になることがあります。詳細は `update_date` を参照してください。\n"
             },
-            "correct": {
-                "comment": {
-                    "shortText": "レコードが更新された場合、その事由を表します。レコードが削除された場合は`null`となります。"
-                }
-            },
-            "kind": {
-                "comment": {
-                    "shortText": "適格請求書発行事業者の種別を表します。"
-                }
-            },
-            "country": {
-                "comment": {
-                    "shortText": [
-                        "適格請求書発行事業者が国内事業者かどうかを示します。",
-                        "また、もし国内事業者である場合、特定国外事業者かどうかを示します。"
-                    ]
-                }
-            },
-            "latest": {
-                "comment": {
-                    "shortText": "レコードが最新情報か過去情報かを表します。"
-                }
-            },
-            "registration_date": {
-                "comment": {
-                    "text": "例: `\"2021-01-01\"`",
-                    "shortText": [
-                        "適格請求書発行事業者として登録された年月日を表します。"
-                    ]
-                }
-            },
-            "update_date": {
-                "comment": {
-                    "text": "例: `\"2021-01-01\"`",
-                    "shortText": [
-                        "レコードが更新された年月日を表します。"
-                    ]
-                }
-            },
-            "disposal_date": {
-                "comment": {
-                    "text": "Example: `\"2021-01-01\"`",
-                    "shortText": [
-                        "適格請求書発行事業者が取消された年月日を表します。"
-                    ]
-                }
-            },
-            "expire_date": {
-                "comment": {
-                    "text": "Example: `\"2021-01-01\"`",
-                    "shortText": [
-                        "適格請求書発行事業者の登録が失効した年月日を表します。"
-                    ]
-                }
-            },
-            "address": {
-                "comment": {
-                    "shortText": [
-                        "法人 (人格のない社団等を除く) の本店、または主たる事務所の所在地を表します。",
-                        "`address_request` とは行政上の理由などで異なることがあります。"
-                    ]
-                }
-            },
-            "address_request": {
-                "comment": {
-                    "shortText": "『適格請求書発行事業者の公表事項の公表 (変更) 申請書』に記載された「主たる事務所の所在地等」 (個人の場合) あるいは「本店又は主たる事務所の所在地等」 (人格のない社団等の場合) を表します。"
-                }
-            },
-            "address_inside": {
-                "comment": {
-                    "shortText": "適格請求書発行事業者のうち、特定国外事業者以外の国外事業者の「国内において行う資産の譲渡等に係る事務所、事業所その他これらに準ずるもの所在地」を表します。"
-                }
-            },
-            "kana": {
-                "comment": {
-                    "shortText": "国外事業者が適格請求書発行事業者である場合、「氏名又は名称」の「日本語 (カナ) 表記」を表します。"
-                }
-            },
-            "name": {
-                "comment": {
-                    "shortText": "氏名または名称を表します。"
-                }
-            },
-            "trade_name": {
-                "comment": {
-                    "shortText": "主たる屋号を表します。"
-                }
-            },
-            "popular_name_previous_name": {
-                "comment": {
-                    "shortText": "通称・旧姓を表します。"
-                }
+            {
+              "kind": "text",
+              "text": "例: `\"2021-01-01\"`\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "sequence_number": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "最大8桁の適格請求書発行事業者レコードの版を表す数字。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "同一の適格請求書発行事業者レコードについての変更履歴番号。発行事業者ごとに数字が大きい方が最新。\n"
+            },
+            {
+              "kind": "text",
+              "text": " (採番はソースとなるファイル毎に行われるため、異なる事業者のレコードの間で大小は一貫していないことに留意。)\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `1`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "qualified_invoice_issuer_number": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "法人の適格請求書発行事業者登録番号。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"T2021001052596\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "process": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "登録状況を表します。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "Example: `NTAQualifiedInvoiceIssuerProcess.NEW`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "correct": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "レコードが更新された場合、その事由を表します。レコードが削除された場合は`null`となります。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "kind": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "適格請求書発行事業者の種別を表します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "country": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "適格請求書発行事業者が国内事業者かどうかを示します。\n"
+            },
+            {
+              "kind": "text",
+              "text": "また、もし国内事業者である場合、特定国外事業者かどうかを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "latest": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "レコードが最新情報か過去情報かを表します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "registration_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "適格請求書発行事業者として登録された年月日を表します。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2021-01-01\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "update_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "レコードが更新された年月日を表します。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2021-01-01\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "disposal_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "適格請求書発行事業者が取消された年月日を表します。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "Example: `\"2021-01-01\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "expire_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "適格請求書発行事業者の登録が失効した年月日を表します。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "Example: `\"2021-01-01\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "address": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "法人 (人格のない社団等を除く) の本店、または主たる事務所の所在地を表します。\n"
+            },
+            {
+              "kind": "text",
+              "text": "`address_request` とは行政上の理由などで異なることがあります。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "address_request": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "『適格請求書発行事業者の公表事項の公表 (変更) 申請書』に記載された「主たる事務所の所在地等」 (個人の場合) あるいは「本店又は主たる事務所の所在地等」 (人格のない社団等の場合) を表します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "address_inside": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "適格請求書発行事業者のうち、特定国外事業者以外の国外事業者の「国内において行う資産の譲渡等に係る事務所、事業所その他これらに準ずるもの所在地」を表します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "国外事業者が適格請求書発行事業者である場合、「氏名又は名称」の「日本語 (カナ) 表記」を表します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "name": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "氏名または名称を表します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "trade_name": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "主たる屋号を表します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "popular_name_previous_name": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "通称・旧姓を表します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

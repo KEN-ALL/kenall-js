@@ -1,21 +1,39 @@
 {
-    "NTAQualifiedInvoiceIssuerCorrect": {
-        "comment": {
-            "shortText": [
-                "`NTAQualifiedInvoiceIssuerCorrect`は、変更自由を表します。"
-            ]
-        },
-        "members": {
-            "OTHER": {
-                "comment": {
-                    "shortText": "訂正以外。"
-                }
-            },
-            "CORRECTION": {
-                "comment": {
-                    "shortText": "訂正。"
-                }
-            }
+  "NTAQualifiedInvoiceIssuerCorrect": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTAQualifiedInvoiceIssuerCorrect`は、変更自由を表します。\n"
         }
-    }
+      ]
+    },
+    "members": {
+      "OTHER": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "訂正以外。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "CORRECTION": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "訂正。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

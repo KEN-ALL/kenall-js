@@ -1,32 +1,82 @@
 {
     "NTAQualifiedInvoiceIssuerProcess": {
         "comment": {
-            "shortText": "An `NTAQualifiedInvoiceIssuerProcess` specifies the state of the registration."
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTAQualifiedInvoiceIssuerProcess`"
+                },
+                {
+                    "kind": "text",
+                    "text": " specifies the state of the registration."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "members": {
             "NEW": {
                 "comment": {
-                    "shortText": "Implies that the record is newly registered."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the record is newly registered."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "INFORMATION_CHANGED": {
                 "comment": {
-                    "shortText": "Implies that the record has been changed."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the record has been changed."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "REGISTRATION_EXPIRED": {
                 "comment": {
-                    "shortText": "Implies that the registration has been expired."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the registration has been expired."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "REGISTRATION_DISPOSED": {
                 "comment": {
-                    "shortText": "Implies that the registration has been invalidated."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the registration has been invalidated."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "DELETED": {
                 "comment": {
-                    "shortText": "Implies that the registration has been deleted."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the registration has been deleted."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         }

@@ -1,145 +1,346 @@
 {
     "NTAQualifiedInvoiceIssuerInfo": {
         "comment": {
-            "shortText": [
-                "An `NTAQualifiedInvoiceIssuerInfo` represents a record for the invoice issuer qualified by",
-                "the National Tax Agency."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTAQualifiedInvoiceIssuerInfo`"
+                },
+                {
+                    "kind": "text",
+                    "text": " represents a record for the invoice issuer qualified by\nthe National Tax Agency."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "published_date": {
                 "comment": {
-                    "text": [
-                        "Please note that this field doesn't indicate the actual date of",
-                        "the updated date of the record. The published date may",
-                        "be later than the updated date. Please see `update_date` for further",
-                        "details.",
-                        "Example: `\"2021-01-01\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The published date of the record, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day\nthe record was published.\n\nPlease note that this field doesn't indicate the actual date of\nthe updated date of the record. The published date may\nbe later than the updated date. Please see "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`update_date`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " for further\ndetails.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
                     ],
-                    "shortText": [
-                        "The published date of the record, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day",
-                        "the record was published."
-                    ]
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "sequence_number": {
                 "comment": {
-                    "text": "Example: `1`",
-                    "shortText": [
-                        "The revision number of the issuer record, non zero-padded",
-                        "8 digit number at maximum."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The revision number of the issuer record, non zero-padded\n8 digit number at maximum.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`1`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "qualified_invoice_issuer_number": {
                 "comment": {
-                    "text": "Example: `\"T2021001052596\"`",
-                    "shortText": "The qualified invoice issuer number of the entity."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The qualified invoice issuer number of the entity.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"T2021001052596\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "process": {
                 "comment": {
-                    "text": "Example: `NTAQualifiedInvoiceIssuerProcess.NEW`",
-                    "shortText": "The status of the registration."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The status of the registration.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`NTAQualifiedInvoiceIssuerProcess.NEW`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "correct": {
                 "comment": {
-                    "shortText": "The reason for the change, if the record has been updated. `null` when the record has been deleted."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reason for the change, if the record has been updated. "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " when the record has been deleted."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "kind": {
                 "comment": {
-                    "shortText": "The kind of the invoice issuer."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The kind of the invoice issuer."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "country": {
                 "comment": {
-                    "shortText": [
-                        "Whether the issuing entity is domestic or not, and if domestic, whether it is",
-                        "specifically designated by the National Tax Agency."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Whether the issuing entity is domestic or not, and if domestic, whether it is\nspecifically designated by the National Tax Agency."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "latest": {
                 "comment": {
-                    "shortText": "Whether the record is latest or obsolete."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Whether the record is latest or obsolete."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "registration_date": {
                 "comment": {
-                    "text": "Example: `\"2021-01-01\"`",
-                    "shortText": [
-                        "The date of the registration, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day",
-                        "the issuer was qualified and registered."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date of the registration, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day\nthe issuer was qualified and registered.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "update_date": {
                 "comment": {
-                    "text": "Example: `\"2021-01-01\"`",
-                    "shortText": [
-                        "The date the record was updated, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date the record was updated, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "disposal_date": {
                 "comment": {
-                    "text": "Example: `\"2021-01-01\"`",
-                    "shortText": [
-                        "The date the record was invalidated, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date the record was invalidated, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "expire_date": {
                 "comment": {
-                    "text": "Example: `\"2021-01-01\"`",
-                    "shortText": [
-                        "The date the record was expired, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date the record was expired, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "address": {
                 "comment": {
-                    "shortText": [
-                        "Address of the business entity's headquarter. This would differ from `address_request`",
-                        "for administrative or other reasons."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Address of the business entity's headquarter. This would differ from "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`address_request`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nfor administrative or other reasons."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "address_request": {
                 "comment": {
-                    "shortText": "Address of the business entity's headquarter, as provided in the original application."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Address of the business entity's headquarter, as provided in the original application."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "address_inside": {
                 "comment": {
-                    "shortText": "Address of the domestic business location, if the issuer is a foreign entity, and there's any."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Address of the domestic business location, if the issuer is a foreign entity, and there's any."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "kana": {
                 "comment": {
-                    "shortText": "Reading of the invoice issuer, if the issuer is a foreign entity."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Reading of the invoice issuer, if the issuer is a foreign entity."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "name": {
                 "comment": {
-                    "shortText": "Name of the issuer."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Name of the issuer."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "trade_name": {
                 "comment": {
-                    "shortText": "Trade name of the issuer, if any."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Trade name of the issuer, if any."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "popular_name_previous_name": {
                 "comment": {
-                    "shortText": "Alias or former name of the issuer."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Alias or former name of the issuer."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

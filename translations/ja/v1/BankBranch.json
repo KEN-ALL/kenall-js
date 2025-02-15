@@ -1,39 +1,92 @@
 {
-    "BankBranch": {
-        "comment": {
-            "shortText": "`BankBranch` は銀行の支店の情報を格納します。"
-        },
-        "properties": {
-            "code": {
-                "comment": {
-                    "text": "例: `\"188\"`",
-                    "shortText": "このオブジェクトが表現する支店の支店コード。"
-                }
-            },
-            "name": {
-                "comment": {
-                    "text": "例: `\"恵比寿\"`",
-                    "shortText": "このオブジェクトが表現する支店の支店名。"
-                  }
-            },
-            "katakana": {
-                "comment": {
-                    "text": "例: `\"エビス\"`",
-                    "shortText": "カタカナでの支店名の読み。"
-                }
-            },
-            "hiragana": {
-                "comment": {
-                    "text": "例: `\"えびす\"`",
-                    "shortText": "ひらがなでの支店名の読み。"
-                }
-            },
-            "romaji": {
-                "comment": {
-                    "text": "例: `\"ebisu\"`",
-                    "shortText": "ローマ字での支店名の読み。"
-                }
-            }
+  "BankBranch": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`BankBranch` は銀行の支店の情報を格納します。\n"
         }
-    }
+      ]
+    },
+    "properties": {
+      "code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このオブジェクトが表現する支店の支店コード。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"188\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "name": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このオブジェクトが表現する支店の支店名。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"恵比寿\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "katakana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "カタカナでの支店名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"エビス\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "hiragana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ひらがなでの支店名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"えびす\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "romaji": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での支店名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"ebisu\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

@@ -1,50 +1,122 @@
 {
     "NTACorporateInfoSearcherResponse": {
         "comment": {
-            "shortText": [
-                "An `NTACorporateInfoSearcherResponse` describes a response to",
-                "`searchNTACorporateInfo` API call."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTACorporateInfoSearcherResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": " describes a response to\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "`searchNTACorporateInfo`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "version": {
                 "comment": {
-                    "shortText": [
-                        "The version of the data, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day",
-                        "the source data became available."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The version of the data, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day\nthe source data became available."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "data": {
                 "comment": {
-                    "shortText": "The set of the data that match to the query."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The set of the data that match to the query."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "query": {
                 "comment": {
-                    "shortText": "The query that the search has been performed for."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The query that the search has been performed for."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "count": {
                 "comment": {
-                    "shortText": "The number of the resulting items in total."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The number of the resulting items in total."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "offset": {
                 "comment": {
-                    "shortText": "The offset from which the result has been retrieved."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The offset from which the result has been retrieved."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "limit": {
                 "comment": {
-                    "shortText": "The number of items that have been intended, at most, to retrieve from the result."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The number of items that have been intended, at most, to retrieve from the result."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "facets": {
                 "comment": {
-                    "text": "If no facet is given, those will be unavailable and this stores null.",
-                    "shortText": "The facets of the result that form with the query."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facets of the result that form with the query.\n\nIf no facet is given, those will be unavailable and this stores null."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

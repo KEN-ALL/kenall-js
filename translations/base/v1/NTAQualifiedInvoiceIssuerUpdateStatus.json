@@ -1,0 +1,48 @@
+{
+    "NTAQualifiedInvoiceIssuerUpdateStatus": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTAQualifiedInvoiceIssuerUpdateStatus`"
+                },
+                {
+                    "kind": "text",
+                    "text": " specifies whether the record is latest or obsolete."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "members": {
+            "OBSOLETE": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the record is obsolete"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "LATEST": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the record is the latest one."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        }
+    }
+}

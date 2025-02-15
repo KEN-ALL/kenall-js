@@ -1,19 +1,39 @@
 {
-    "NTAQualifiedInvoiceIssuerKind": {
-        "comment": {
-            "shortText": "`NTAQualifiedInvoiceIssuerKind`は、適格請求書発行事業者の種別を表します."
-        },
-        "members": {
-            "INDIVIDUAL": {
-                "comment": {
-                    "shortText": "個人事業主であることを示します。"
-                }
-            },
-            "CORPORATION": {
-                "comment": {
-                    "shortText": "法人や人格のない社団等であることを示します。"
-                }
-            }
+  "NTAQualifiedInvoiceIssuerKind": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTAQualifiedInvoiceIssuerKind`は、適格請求書発行事業者の種別を表します.\n"
         }
-    }
+      ]
+    },
+    "members": {
+      "INDIVIDUAL": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "個人事業主であることを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "CORPORATION": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "法人や人格のない社団等であることを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

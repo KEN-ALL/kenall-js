@@ -3,9 +3,4 @@ module.exports = {
   roots: [
     '<rootDir>/src/',
   ],
-  globals: {
-    'ts-jest': {
-      compiler: 'ttypescript',
-    },
-  },
 };

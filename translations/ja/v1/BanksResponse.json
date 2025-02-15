@@ -1,26 +1,51 @@
 {
-    "BanksResponse": {
-        "comment": {
-            "shortText": [
-                "`BanksResponse` は \"getBanks\" API 呼び出しの",
-                "応答を記述します。"
-            ]
+  "BanksResponse": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`BanksResponse` は \"getBanks\" API 呼び出しの\n"
         },
-        "properties": {
-            "version": {
-                "comment": {
-                    "text": [
-                        "デフォルトは最新バージョンとなります。",
-                        "例: `\"2021-04-30\"`"
-                    ],
-                    "shortText": "どのデータベースのバージョンに対して検索を実行するか。"
-                }
-            },
-            "data": {
-                "comment": {
-                    "shortText": "すべての銀行データの集合。"
-                }
-            }
+        {
+          "kind": "text",
+          "text": "応答を記述します。\n"
         }
-    }
+      ]
+    },
+    "properties": {
+      "version": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "どのデータベースのバージョンに対して検索を実行するか。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "デフォルトは最新バージョンとなります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2021-04-30\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "data": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "すべての銀行データの集合。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

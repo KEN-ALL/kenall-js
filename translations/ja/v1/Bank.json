@@ -1,39 +1,92 @@
 {
-    "Bank": {
-        "comment": {
-            "shortText": "`Bank` は日本全国の銀行と、それに対応する金融機関コードや銀行名等の情報を格納します。"
-        },
-        "properties": {
-            "code": {
-                "comment": {
-                    "text": "例: \"0001\"",
-                    "shortText": "このオブジェクトが表現する銀行の金融機関コード。4桁の数字で表す。"
-                }
-            },
-            "name": {
-                "comment": {
-                    "text": "例: \"みずほ\"",
-                    "shortText": "このオブジェクトが表現する銀行の銀行名。"
-                }
-            },
-            "katakana": {
-                "comment": {
-                    "text": "例: `\"ミズホ\"`",
-                    "shortText": "カタカナでの銀行名の読み。"
-                }
-            },
-            "hiragana": {
-                "comment": {
-                    "text": "例: `\"みずほ\"`",
-                    "shortText": "ひらがなでの銀行名の読み。"
-                }
-            },
-            "romaji": {
-                "comment": {
-                    "text": "例: `\"mizuho\"`",
-                    "shortText": "ローマ字での銀行名の読み。"
-                }
-            }
+  "Bank": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`Bank` は日本全国の銀行と、それに対応する金融機関コードや銀行名等の情報を格納します。\n"
         }
-    }
+      ]
+    },
+    "properties": {
+      "code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このオブジェクトが表現する銀行の金融機関コード。4桁の数字で表す。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: \"0001\"\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "name": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このオブジェクトが表現する銀行の銀行名。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: \"みずほ\"\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "katakana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "カタカナでの銀行名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"ミズホ\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "hiragana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ひらがなでの銀行名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"みずほ\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "romaji": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での銀行名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"mizuho\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

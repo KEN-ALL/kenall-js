@@ -1,0 +1,73 @@
+{
+    "BankBranchResolverResponse": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`BankBranchResolverResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": " describes a response to\n\"getBankBranch\" API call.\nThe response includes the bank and the branch data.\nThe bank data is the same as the "
+                },
+                {
+                    "kind": "code",
+                    "text": "`BankResolverResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": ".\nThe branch data is the same as the one in "
+                },
+                {
+                    "kind": "code",
+                    "text": "`BankBranchesResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": "."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "version": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The version of the data, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day\nthe source data became available."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "data": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The bank and branch data."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

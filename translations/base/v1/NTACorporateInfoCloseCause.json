@@ -1,30 +1,70 @@
 {
     "NTACorporateInfoCloseCause": {
         "comment": {
-            "shortText": [
-                "A `NTACorporateInfoCloseCause` represents the reason why the corporate",
-                "was closed."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTACorporateInfoCloseCause`"
+                },
+                {
+                    "kind": "text",
+                    "text": " represents the reason why the corporate\nwas closed."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "members": {
             "LIQUIDATION_COMPLETED": {
                 "comment": {
-                    "shortText": " Liquidation completed"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Liquidation completed"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "DISSOLUTION_BY_MERGER": {
                 "comment": {
-                    "shortText": " Dissolution by merger"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Dissolution by merger"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "CLOSED_BY_REGISTERER": {
                 "comment": {
-                    "shortText": " A registerer closed the corporate"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "A registerer closed the corporate"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "OTHER": {
                 "comment": {
-                    "shortText": " Other reasons"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Other reasons"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         }

@@ -1,6 +1,6 @@
-import { mocked } from 'jest-mock';
-import { KENALL, NTACorporateInfoSearchMode } from '..';
-import { AxiosInstance } from 'axios';
+import type { NTACorporateInfoSearchMode } from '..';
+import { KENALL } from '..';
+import type { AxiosInstance } from 'axios';
 import axios from 'axios';
 
 jest.mock('axios');
@@ -322,7 +322,7 @@ test.each([
   },
 ])('getNTACorporateInfo method', async ({ response, expected }) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+  axios.create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
     retval.get = mockedAxiosGet;
     return retval;
@@ -391,7 +391,7 @@ test.each([
   },
 ])('getNTACorporateInfo method with new API version', async (fixture) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+  axios.create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
     retval.get = mockedAxiosGet;
     return retval;
@@ -543,7 +543,7 @@ test.each([
   },
 ])('searchNTACorporateInfo method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+  axios.create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
     retval.get = mockedAxiosGet;
     return retval;

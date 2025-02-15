@@ -1,37 +1,102 @@
 {
     "Bank": {
         "comment": {
-            "shortText": "A `Bank` object would store the information about the bank."
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`Bank`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object would store the information about the bank."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "code": {
                 "comment": {
-                    "text": "Example: `\"0001\"`",
-                    "shortText": "The code of bank."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The code of bank.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"0001\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "name": {
                 "comment": {
-                    "text": "Example: `\"みずほ\"`",
-                    "shortText": "The name of bank."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of bank.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"みずほ\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "katakana": {
                 "comment": {
-                    "text": "Example: `\"ミズホ\"`",
-                    "shortText": "The reading of the name of bank in katakana."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of bank in katakana.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"ミズホ\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "hiragana": {
                 "comment": {
-                    "text": "Example: `\"みずほ\"`",
-                    "shortText": "The reading of the name of bank in hiragana."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of bank in hiragana.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"みずほ\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "romaji": {
                 "comment": {
-                    "text": "Example : `\"mizuho\"`",
-                    "shortText": "The \"romanized\" reading of the name of bank."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading of the name of bank.\n\nExample : "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"mizuho\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

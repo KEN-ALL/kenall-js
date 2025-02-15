@@ -1,57 +1,142 @@
 {
     "NTACorporateInfoKind": {
         "comment": {
-            "shortText": "A `NTACorporateInfoKind` represents the kind of corporate."
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTACorporateInfoKind`"
+                },
+                {
+                    "kind": "text",
+                    "text": " represents the kind of corporate."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "members": {
             "NATIONAL_PUBLIC_ENTITY": {
                 "comment": {
-                    "shortText": "National public entity"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "National public entity"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "LOCAL_PUBLIC_ENTITY": {
                 "comment": {
-                    "shortText": "Local public entity"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Local public entity"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "KABUSHIKI_KAISHA": {
                 "comment": {
-                    "shortText": "Limited liability company by share, aka K.K."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Limited liability company by share, aka K.K."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "YUGEN_KAISHA": {
                 "comment": {
-                    "shortText": "Old style of limited liability company not by share"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Old style of limited liability company not by share"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "GOMEI_KAISHA": {
                 "comment": {
-                    "shortText": "General partnership company"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "General partnership company"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "GOSHI_KAISHA": {
                 "comment": {
-                    "shortText": "Limited partnership company"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Limited partnership company"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "GODO_KAISHA": {
                 "comment": {
-                    "shortText": "Limited liability company, aka G.K."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Limited liability company, aka G.K."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "OTHER_COMPANY": {
                 "comment": {
-                    "shortText": "Other types of company"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Other types of company"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "FOREIGN_COMPANY": {
                 "comment": {
-                    "shortText": "Foreign company"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Foreign company"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "OTHER": {
                 "comment": {
-                    "shortText": "Other corporate kinds which do not belong to the above"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Other corporate kinds which do not belong to the above"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         }

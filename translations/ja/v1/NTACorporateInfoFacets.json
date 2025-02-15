@@ -1,16 +1,32 @@
 {
-    "NTACorporateInfoFacets": {
-        "comment": {
-            "text": [
-                "それぞれのファセット表現は、スラッシュで区切られたファセット文字列の階層で構成されます。",
-                "例: `{\"area\": [\"/東京都/港区\", 7], \"kind\": [\"/株式会社\", 7]}`"
-            ],
-            "shortText": [
-                "`NTACorporateInfoFacets`は、ある階層のファセットと、",
-                "そのファセットに属する結果の件数を表現します。"
-            ]
+  "NTACorporateInfoFacets": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTACorporateInfoFacets`は、ある階層のファセットと、\n"
         },
-        "properties": {},
-        "methods": {}
-    }
+        {
+          "kind": "text",
+          "text": "そのファセットに属する結果の件数を表現します。\n\n"
+        },
+        {
+          "kind": "text",
+          "text": "それぞれのファセット表現は、スラッシュで区切られたファセット文字列の階層で構成されます。\n"
+        },
+        {
+          "kind": "text",
+          "text": "例: `{\"area\": [\"/東京都/港区\", 7], \"kind\": [\"/株式会社\", 7]}`\n"
+        }
+      ]
+    },
+    "properties": {
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

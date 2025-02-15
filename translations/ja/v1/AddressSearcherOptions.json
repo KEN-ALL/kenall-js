@@ -1,60 +1,126 @@
 {
-    "AddressSearcherOptions": {
+  "AddressSearcherOptions": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`AddressSearcherOptions` は \"searchAddresses\" API に送られる\n"
+        },
+        {
+          "kind": "text",
+          "text": "パラメータを記述します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "query": {
         "comment": {
-            "shortText": [
-                "`AddressSearcherOptions` は \"searchAddresses\" API に送られる",
-                "パラメータを記述します。"
-            ]
-        },
-        "properties": {
-            "query": {
-                "comment": {
-                    "text": [
-                        "`query`あるいは`unprocessedAddressLine`のいずれかを必ず指定すうようにします。",
-                        "例: `\"東京都 AND 渋谷区\"`"
-                    ],
-                    "shortText": "住所データベースに対して検索する問い合わせ文。"
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "住所データベースに対して検索する問い合わせ文。\n\n"
             },
-            "unprocessedAddressLine": {
-                "comment": {
-                    "text": [
-                        "`query`あるいは`unprocessedAddressLine`のいずれかを必ず指定すうようにします。",
-                        "Example: `\"東京都渋谷区初台\"`"
-                    ],
-                    "shortText": "住所データベースに対して検索を行う、未処理の住所文字列。"
-                }
+            {
+              "kind": "text",
+              "text": "`query`あるいは`unprocessedAddressLine`のいずれかを必ず指定すうようにします。\n"
             },
-            "offset": {
-                "comment": {
-                    "shortText": "結果を取得する開始オフセット。"
-                }
-            },
-            "limit": {
-                "comment": {
-                    "text": "指定がない場合は100と見なされます。",
-                    "shortText": "取得したい項目の最大数。"
-                }
-            },
-            "version": {
-                "comment": {
-                    "text": [
-                        "デフォルトは利用可能な最新バージョンとなります。",
-                        "例: `\"2021-04-30\"`"
-                    ],
-                    "shortText": "検索を行うデータベースのバージョン。"
-                }
-            },
-            "facet": {
-                "comment": {
-                    "text": "例: `\"/東京都\"`",
-                    "shortText": [
-                        "結果として返されるファセットをどのレベルで形作るかを指定する",
-                        "ファセット表現。"
-                    ]
-                }
+            {
+              "kind": "text",
+              "text": "例: `\"東京都 AND 渋谷区\"`\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "unprocessedAddressLine": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "住所データベースに対して検索を行う、未処理の住所文字列。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "`query`あるいは`unprocessedAddressLine`のいずれかを必ず指定すうようにします。\n"
+            },
+            {
+              "kind": "text",
+              "text": "Example: `\"東京都渋谷区初台\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "offset": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果を取得する開始オフセット。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "limit": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "取得したい項目の最大数。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "指定がない場合は100と見なされます。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "version": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "検索を行うデータベースのバージョン。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "デフォルトは利用可能な最新バージョンとなります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2021-04-30\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果として返されるファセットをどのレベルで形作るかを指定する\n"
+            },
+            {
+              "kind": "text",
+              "text": "ファセット表現。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"/東京都\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

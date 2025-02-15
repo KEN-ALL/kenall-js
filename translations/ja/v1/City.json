@@ -1,87 +1,207 @@
 {
-    "City": {
+  "City": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`City` オブジェクトは解決された地域の情報を格納します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "jisx0402": {
         "comment": {
-            "shortText": "`City` オブジェクトは解決された地域の情報を格納します。"
-        },
-        "properties": {
-            "jisx0402": {
-                "comment": {
-                    "shortText": [
-                        "このオブジェクトが表現する行政区分に対応する5桁の全国地方公共団体コード。"
-                    ]
-                }
-            },
-            "prefecture_code": {
-                "comment": {
-                    "text": "例: `\"13\"`",
-                    "shortText": "JISX0401で定義された都道府県コード。"
-                }
-            },
-            "prefecture": {
-                "comment": {
-                    "text": "例: `\"東京都\"`",
-                    "shortText": "都道府県の漢字名。"
-                }
-            },
-            "prefecture_kana": {
-                "comment": {
-                    "text": "例: `\"トウキョウト\"`",
-                    "shortText": "カタカナでの都道府県名の読み。"
-                }
-            },
-            "prefecture_roman": {
-                "comment": {
-                    "text": "例: `\"Tokyo\"`",
-                    "shortText": "ローマ字での都道府県名の読み。"
-                }
-            },
-            "city_code": {
-                "comment": {
-                    "text": "例: `\"113\"`",
-                    "shortText": "JISX0402地方公共団体コードから最初の2桁の都道府県コードを取り除いたもの。"
-                }
-            },
-            "city": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"港区\"`",
-                        "* `\"大阪市北区\"`",
-                        "* `\"各務原市\"`",
-                        "* `\"秩父郡長瀞町\"`"
-                    ],
-                    "shortText": [
-                        "市区町村名。",
-                        "郡名が市区町村名の前につくことがあります。また逆に、",
-                        "当該市区町村が政令指定都市の場合は行政区名が後につきます。"
-                    ]
-                }
-            },
-            "city_kana": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"ミナトク\"`",
-                        "* `\"オオサカシキタク\"`",
-                        "* `\"カカミガハラシ\"`",
-                        "* `\"チチブグンナガトロマチ\"`"
-                    ],
-                    "shortText": "カタカナでの市区町村名の読み。"
-                }
-            },
-            "city_roman": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"Minato-ku\"`",
-                        "* `\"Kita-ku, Osaka\"`",
-                        "* `\"Kakamigahara\"`",
-                        "* `\"Nagatoro, Chichibu\"`"
-                    ],
-                    "shortText": "ローマ字での市区町村名の読み。"
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このオブジェクトが表現する行政区分に対応する5桁の全国地方公共団体コード。\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "prefecture_code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "JISX0401で定義された都道府県コード。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"13\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "prefecture": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "都道府県の漢字名。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"東京都\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "prefecture_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "カタカナでの都道府県名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"トウキョウト\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "prefecture_roman": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での都道府県名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"Tokyo\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "JISX0402地方公共団体コードから最初の2桁の都道府県コードを取り除いたもの。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"113\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "市区町村名。\n"
+            },
+            {
+              "kind": "text",
+              "text": "郡名が市区町村名の前につくことがあります。また逆に、\n"
+            },
+            {
+              "kind": "text",
+              "text": "当該市区町村が政令指定都市の場合は行政区名が後につきます。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"港区\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"大阪市北区\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"各務原市\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"秩父郡長瀞町\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "カタカナでの市区町村名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"ミナトク\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"オオサカシキタク\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"カカミガハラシ\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"チチブグンナガトロマチ\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_roman": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での市区町村名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Minato-ku\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Kita-ku, Osaka\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Kakamigahara\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Nagatoro, Chichibu\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

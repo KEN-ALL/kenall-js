@@ -1,87 +1,208 @@
 {
-    "NTACorporateInfoSearcherOptions": {
+  "NTACorporateInfoSearcherOptions": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTACorporateInfoSearcherOptions`は `searchCorporateInfo` API\n"
+        },
+        {
+          "kind": "text",
+          "text": "に送られるパラメータを記述します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "query": {
         "comment": {
-            "shortText": [
-                "`NTACorporateInfoSearcherOptions`は `searchCorporateInfo` API",
-                "に送られるパラメータを記述します。"
-            ]
-        },
-        "properties": {
-            "query": {
-                "comment": {
-                    "text": "例: `\"東京都 AND オープンコレクター\"`",
-                    "shortText": "データベースに対して検索する問い合わせ文。"
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "データベースに対して検索する問い合わせ文。\n\n"
             },
-            "offset": {
-                "comment": {
-                    "shortText": "結果を取得する開始オフセット。"
-                }
-            },
-            "limit": {
-                "comment": {
-                    "text": "指定がない場合は100と見なされます。",
-                    "shortText": "取得したい項目の最大数。"                }
-            },
-            "mode": {
-                "comment": {
-                    "text": [
-                        "デフォルトは`partial`です。`partial`が設定されていると、APIは",
-                        "部分一致検索の結果を返します。`exact`が設定されていると、",
-                        "法人種別を除いた法人名に対する完全一致検索の結果を返します。",
-                        "`exact`モードは法人種別が含まれているとマッチしないことに",
-                        "注意してください。例えば、`株式会社オープンコレクター`というクエリは",
-                        "`exact`モードでは何も結果を返しませんが、`オープンコレクター`であれば",
-                        "結果を返します。法人種別を含めた完全一致を行う場合は、`exact_with_kind`を",
-                        "設定してください。",
-                        "例: `\"exact\"`"
-
-                    ],
-                    "shortText": "検索モード。"
-                }
-            },
-            "facet_area": {
-                "comment": {
-                    "text": "例: `\"/東京都\"`",
-                    "shortText": [
-                        "結果として返される都道府県と市区町村ファセット",
-                        "をどのレベルで形作るかを指定するファセット表現。",
-                        "ファセットは日本語で指定する必要があります。",
-                        "国外法人を指定したい場合は`/海外など`と指定してください。"
-                    ]
-                }
-            },
-            "facet_kind": {
-                "comment": {
-                    "text": "例: `\"/株式会社\"`",
-                    "shortText": [
-                        "結果として返される法人種別ファセット",
-                        "をどのレベルで形作るかを指定するファセット表現。",
-                        "ファセットは日本語で指定する必要があります。"
-                    ]
-                }
-            },
-            "facet_process": {
-                "comment": {
-                    "text": "例: `\"/商号又は名称の変更\"`",
-                    "shortText": [
-                        "結果として返される処理区分ファセット",
-                        "をどのレベルで形作るかを指定するファセット表現。",
-                        "ファセットは日本語で指定する必要があります。"
-                    ]
-                }
-            },
-            "facet_close_cause": {
-                "comment": {
-                    "text": "例: `\"/清算の結了等\"`",
-                    "shortText": [
-                        "結果として返される閉鎖事由ファセット",
-                        "をどのレベルで形作るかを指定するファセット表現。",
-                        "ファセットは日本語で指定する必要があります。"
-                    ]
-                }
+            {
+              "kind": "text",
+              "text": "例: `\"東京都 AND オープンコレクター\"`\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "offset": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果を取得する開始オフセット。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "limit": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "取得したい項目の最大数。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "指定がない場合は100と見なされます。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "mode": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "検索モード。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "デフォルトは`partial`です。`partial`が設定されていると、APIは\n"
+            },
+            {
+              "kind": "text",
+              "text": "部分一致検索の結果を返します。`exact`が設定されていると、\n"
+            },
+            {
+              "kind": "text",
+              "text": "法人種別を除いた法人名に対する完全一致検索の結果を返します。\n"
+            },
+            {
+              "kind": "text",
+              "text": "`exact`モードは法人種別が含まれているとマッチしないことに\n"
+            },
+            {
+              "kind": "text",
+              "text": "注意してください。例えば、`株式会社オープンコレクター`というクエリは\n"
+            },
+            {
+              "kind": "text",
+              "text": "`exact`モードでは何も結果を返しませんが、`オープンコレクター`であれば\n"
+            },
+            {
+              "kind": "text",
+              "text": "結果を返します。法人種別を含めた完全一致を行う場合は、`exact_with_kind`を\n"
+            },
+            {
+              "kind": "text",
+              "text": "設定してください。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"exact\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet_area": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果として返される都道府県と市区町村ファセット\n"
+            },
+            {
+              "kind": "text",
+              "text": "をどのレベルで形作るかを指定するファセット表現。\n"
+            },
+            {
+              "kind": "text",
+              "text": "ファセットは日本語で指定する必要があります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "国外法人を指定したい場合は`/海外など`と指定してください。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"/東京都\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet_kind": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果として返される法人種別ファセット\n"
+            },
+            {
+              "kind": "text",
+              "text": "をどのレベルで形作るかを指定するファセット表現。\n"
+            },
+            {
+              "kind": "text",
+              "text": "ファセットは日本語で指定する必要があります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"/株式会社\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet_process": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果として返される処理区分ファセット\n"
+            },
+            {
+              "kind": "text",
+              "text": "をどのレベルで形作るかを指定するファセット表現。\n"
+            },
+            {
+              "kind": "text",
+              "text": "ファセットは日本語で指定する必要があります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"/商号又は名称の変更\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet_close_cause": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果として返される閉鎖事由ファセット\n"
+            },
+            {
+              "kind": "text",
+              "text": "をどのレベルで形作るかを指定するファセット表現。\n"
+            },
+            {
+              "kind": "text",
+              "text": "ファセットは日本語で指定する必要があります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"/清算の結了等\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

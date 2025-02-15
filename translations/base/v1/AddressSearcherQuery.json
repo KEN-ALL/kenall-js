@@ -1,88 +1,198 @@
 {
     "AddressSearcherQuery": {
         "comment": {
-            "shortText": "An `AddressSearcherQuery` describes a search query and its address elements."
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`AddressSearcherQuery`"
+                },
+                {
+                    "kind": "text",
+                    "text": " describes a search query and its address elements."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "q": {
                 "comment": {
-                    "shortText": "The query that the search has been performed for."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The query that the search has been performed for."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "t": {
                 "comment": {
-                    "shortText": "The unprocessed portions of the address string that the search has been performed for."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The unprocessed portions of the address string that the search has been performed for."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "prefecture": {
                 "comment": {
-                    "text": "Example: `\"東京都\"`",
-                    "shortText": "The name of the prefecture."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the prefecture.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東京都\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "county": {
                 "comment": {
-                    "text": "Example: `\"秩父郡\"`",
-                    "shortText": "The name of the county."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the county.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"秩父郡\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "city": {
                 "comment": {
-                    "text": "Example: `\"各務原市\"`",
-                    "shortText": "The name of the city, not including the county or the ward."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the city, not including the county or the ward.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"各務原市\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "city_ward": {
                 "comment": {
-                    "text": "Example: `\"北区\"`",
-                    "shortText": "The name of the ordinance-designated wards."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the ordinance-designated wards.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"千種区\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "town": {
                 "comment": {
-                    "text": "Example: `箱石`",
-                    "shortText": "The name of the town."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the town.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`箱石`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "kyoto_street": {
                 "comment": {
-                    "text": [
-                        "Examples:",
-                        "* `\"先斗町通蛸薬師上る\"`",
-                        "* `\"大宮通寺之内半丁下る東入\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The instructional phrase (通り名 in Japanese that signifies the (non-administrative)\nsub-area of the town, the way which describe is very specific to a district of\nKyoto city.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"先斗町通蛸薬師上る\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"大宮通寺之内半丁下る東入\"`"
+                        }
                     ],
-                    "shortText": [
-                        "The instructional phrase (通り名 in Japanese that signifies the (non-administrative)",
-                        "sub-area of the town, the way which describe is very specific to a district of",
-                        "Kyoto city."
-                    ]
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "block_lot_num": {
                 "comment": {
-                    "text": "Example: `\"3-12-14\"`",
-                    "shortText": [
-                        "The reconstructed numerical part of the address line below the second-level",
-                        "administrative division."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reconstructed numerical part of the address line below the second-level\nadministrative division.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"3-12-14\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "building": {
                 "comment": {
-                    "text": "Example: `\"麹町駅前ヒルトップ\"`",
-                    "shortText": [
-                        "The extracted building name in the address line below the second-level",
-                        "administrative devision, without the floor name."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The extracted building name in the address line below the second-level\nadministrative devision, without the floor name.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"麹町駅前ヒルトップ\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "floor_room": {
                 "comment": {
-                    "text": "Example: `\"8階801\"`",
-                    "shortText": [
-                        "The extracted floor name and room number in the address line below the",
-                        "second-level administrative devision."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The extracted floor name and room number in the address line below the\nsecond-level administrative devision.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"8階801\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

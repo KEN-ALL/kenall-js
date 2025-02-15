@@ -1,256 +1,576 @@
 {
-    "NTACorporateInfoV20240101": {
+  "NTACorporateInfoV20240101": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTACorporateInfo`オブジェクトは国税庁が公開する法人番号基本3情報を格納します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "published_date": {
         "comment": {
-            "shortText": [
-                "`NTACorporateInfo`オブジェクトは国税庁が公開する法人番号基本3情報を格納します。"
-            ]
-        },
-        "properties": {
-            "published_date": {
-                "comment": {
-                    "text": [
-                        "このフィールドは実際の更新日と同期していないことがあります。",
-                        "公開日は更新日よりも後になることがあります。詳細は `update_date` を参照してください。",
-                        "例: `\"2021-01-01\"`"
-                    ],
-                    "shortText": [
-                        "`\"YYYY-MM-DD\"`形式の公開年月日。",
-                        "Yの部分は年、Mの部分は月、Dの部分は日をそれぞれ表しています。"
-                    ]
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "`\"YYYY-MM-DD\"`形式の公開年月日。\n"
             },
-            "sequence_number": {
-                "comment": {
-                    "text": "例: `1`",
-                    "shortText": [
-                        "最大8桁の法人番号レコードの版を表す数字。新しいものほど大きな値となります。"
-                    ]
-                }
+            {
+              "kind": "text",
+              "text": "Yの部分は年、Mの部分は月、Dの部分は日をそれぞれ表しています。\n\n"
             },
-            "corporate_number": {
-                "comment": {
-                    "text": "例: `2021001052596`",
-                    "shortText": "法人番号。国税庁によって法人ごとに付与された、12桁+チェックディジット1桁の法人番号"
-                }
+            {
+              "kind": "text",
+              "text": "このフィールドは実際の更新日と同期していないことがあります。\n"
             },
-            "process": {
-                "comment": {
-                    "text": "例: `NTACorporateInfoProcess.NEW`",
-                    "shortText": "レコードがなぜ作成・更新されたかの処理区分。"
-                }
+            {
+              "kind": "text",
+              "text": "公開日は更新日よりも後になることがあります。詳細は `update_date` を参照してください。\n"
             },
-            "correct": {
-                "comment": {
-                    "text": "例: `0`",
-                    "shortText": "訂正区分。 0:訂正以外、1:訂正"
-                }
-            },
-            "update_date": {
-                "comment": {
-                    "text": [
-                        "`change_date` や `published_date` とは違い、このフィールドが国税庁のデータにおける法人情報の実際の更新日を反映しています。",
-                        "詳細については `change_date` や `published_date` を参照してください。",
-                        "例: `\"2021-01-01\"`"
-                    ],
-                    "shortText": [
-                        "`\"YYYY-MM-DD\"`形式の更新年月日。",
-                        "Yの部分は年、Mの部分は月、Dの部分は日をそれぞれ表しています。"
-                    ]
-                }
-            },
-            "change_date": {
-                "comment": {
-                    "text": [
-                        "`process`が`NEW`である場合, 法人番号が指定された年月日。",
-                        "`process`が`NEW`でない場合で、かつ`kind`が設立登記法人のときは、",
-                        "処理区分の自由に係る登記年月日。",
-                        "`kind`が設立登記法人以外のときは、処理区分の事由が生じた年月日。",
-                        "例: `\"2021-01-01\"`"
-                    ],
-                    "shortText": [
-                        "`\"YYYY-MM-DD\"`形式の変更年月日。",
-                        "Yの部分は年、Mの部分は月、Dの部分は日をそれぞれ表しています。"
-                    ]
-                }
-            },
-            "name": {
-                "comment": {
-                    "text": "例: `\"株式会社オープンコレクター\"`",
-                    "shortText": [
-                        "商号又は名称。全角。150文字を超過した場合は切り捨てられます。",
-                        "JIS第１・第２水準以外の文字を使用している場合はJIS第１・第２水準に",
-                        "縮退されています。前情報を確認するにはイメージファイルを閲覧してください。",
-                        "`name_image_id`も参照してください。"
-                    ]
-                }
-            },
-            "name_image_id": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        " * `\"99999999\"`",
-                        " * `null`"
-                    ],
-                    "shortText": [
-                        "商号又は名称イメージID。`name`にJIS第１・第２水準以外の文字を",
-                        "使用している、あるいは`name`の文字が150文字を超えた場合に値が",
-                        "設定されます。次のURLからイメージファイルを直接確認できます。",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=NAME_IMAGE_ID",
-                        "URLに指定するときは左にゼロを詰めて数字8桁にする必要があります。",
-                        "例えばIDが`100`の場合、以下のURLからイメージファイルを確認できます。",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100",
-                        "`name`が正規化されていない場合は`null`になります。"
-                    ]
-                }
-            },
-            "kind": {
-                "comment": {
-                    "text": "例: `NTACorporateInfoKind.KABUSHIKI_KAISHA`",
-                    "shortText": "法人番号種別。"
-                }
-            },
-            "address_image_id": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        " * `\"99999999\"`",
-                        " * `null`"
-                    ],
-                    "shortText": [
-                        "国内所在地イメージID。`street_number`にJIS第１・第２水準以外の文字を",
-                        "使用している、あるいは`street_number`の文字が300文字を超えた場合に値が",
-                        "設定されます。次のURLからイメージファイルを直接確認できます。",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID",
-                        "URLに指定するときは左にゼロを詰めて数字8桁にする必要があります。",
-                        "例えばIDが`100`の場合、以下のURLからイメージファイルを確認できます。",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100",
-                        "`street_number`が正規化されていない場合は`null`になります。"
-                    ]
-                }
-            },
-            "address_outside": {
-                "comment": {
-                    "text": "例: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`",
-                    "shortText": [
-                        "国外所在地。全角。300文字を超過した場合は切り捨てられます。",
-                        "JIS第１・第２水準以外の文字を使用している場合はJIS第１・第２水準に",
-                        "縮退されています。前情報を確認するにはイメージファイルを閲覧してください。",
-                        "`address_outside_image_id`も参照してください。"
-                    ]
-                }
-            },
-            "address_outside_image_id": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        " * `\"99999999\"`",
-                        " * `null`"
-                    ],
-                    "shortText": [
-                        "国外所在地イメージID。`address_outside`にJIS第１・第２水準以外の文字を",
-                        "使用している、あるいは`address_outside`の文字が300文字を超えた場合に値が",
-                        "設定されます。次のURLからイメージファイルを直接確認できます。",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_OUTSIDE_IMAGE_ID",
-                        "URLに指定するときは左にゼロを詰めて数字8桁にする必要があります。",
-                        "例えばIDが`100`の場合、以下のURLからイメージファイルを確認できます。",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100",
-                        "`address_outside`が正規化されていない場合は`null`になります。"
-                    ]
-                }
-            },
-            "close_date": {
-                "comment": {
-                    "text": "例: `\"2021-01-01\"`",
-                    "shortText": [
-                        "登記記録の閉鎖等年月日。閉鎖していない場合は`null`になります。"
-
-                    ]
-                }
-            },
-            "close_cause": {
-                "comment": {
-                    "text": "例: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`",
-                    "shortText": [
-                        "登記記録の閉鎖等の事由。閉鎖していない場合は`null`になります。"
-                    ]
-                }
-            },
-            "successor_corporate_number": {
-                "comment": {
-                    "text": "例: `2021001052596`",
-                    "shortText": [
-                        "合併等による事業承継があったときの存続法人の法人番号。12桁+チェックディジット1桁。",
-                        "存在しない場合は`null`になります。"
-                    ]
-                }
-            },
-            "change_cause": {
-                "comment": {
-                    "text": "例: `令和２年５月１日○○株式会社に合併し解散`",
-                    "shortText": [
-                        "変更事由の詳細。全角半角混在500文字。"
-                    ]
-                }
-            },
-            "assignment_date": {
-                "comment": {
-                    "text": "例: `\"2021-01-01\"`",
-                    "shortText": [
-                        "法人番号指定年月日。"
-                    ]
-                }
-            },
-            "en_name": {
-                "comment": {
-                    "text": "例: `\"Rumoi Summary Court\"`",
-                    "shortText": [
-                        "商号又は名称(英語表記) 半角英数300文字。登録がない場合はブランク"
-                    ]
-                }
-            },
-            "en_address_line": {
-                "comment": {
-                    "text": "例: `4-7, Kashiwagicho, Tomakomai shi`",
-                    "shortText": [
-                        "英語表記の市区町村以下の住所。",
-                        "半角600文字。601文字以降の文字は格納されない。",
-                        "存在しない場合は`null`になります。"
-                    ]
-                }
-            },
-            "en_address_outside": {
-                "comment": {
-                    "text": "例: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`",
-                    "shortText": [
-                        "国外所在地(英語表記) 半角600文字。601文字以降の文字は格納されない。",
-                        "存在しない場合は`null`になります。"
-                    ]
-                }
-            },
-            "furigana": {
-                "comment": {
-                    "text": "例: `オープンコレクター`",
-                    "shortText": [
-                        "nameに対するフリガナ。全角カナ及び長音のみ使用。",
-                        "フリガナの登録がない場合ブランクになります。"
-                    ]
-                }
-            },
-            "hihyoji": {
-                "comment": {
-                    "text": "例: `0`",
-                    "shortText": [
-                        "対象の法人の住所が存在しないことが確認できた場合、 `1`に設定されます。"
-                    ]
-                }
-            },
-            "qualified_invoice_issuer_number": {
-                "comment": {
-                    "text": "例: `\"T2021001052596\"`",
-                    "shortText": "法人の適格請求書発行事業者登録番号。"
-                }
+            {
+              "kind": "text",
+              "text": "例: `\"2021-01-01\"`\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "sequence_number": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "最大8桁の法人番号レコードの版を表す数字。新しいものほど大きな値となります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `1`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "corporate_number": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "法人番号。国税庁によって法人ごとに付与された、12桁+チェックディジット1桁の法人番号\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `2021001052596`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "process": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "レコードがなぜ作成・更新されたかの処理区分。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `NTACorporateInfoProcess.NEW`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "correct": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "訂正区分。 0:訂正以外、1:訂正\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `0`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "update_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "`\"YYYY-MM-DD\"`形式の更新年月日。\n"
+            },
+            {
+              "kind": "text",
+              "text": "Yの部分は年、Mの部分は月、Dの部分は日をそれぞれ表しています。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "`change_date` や `published_date` とは違い、このフィールドが国税庁のデータにおける法人情報の実際の更新日を反映しています。\n"
+            },
+            {
+              "kind": "text",
+              "text": "詳細については `change_date` や `published_date` を参照してください。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2021-01-01\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "change_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "`\"YYYY-MM-DD\"`形式の変更年月日。\n"
+            },
+            {
+              "kind": "text",
+              "text": "Yの部分は年、Mの部分は月、Dの部分は日をそれぞれ表しています。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "`process`が`NEW`である場合, 法人番号が指定された年月日。\n"
+            },
+            {
+              "kind": "text",
+              "text": "`process`が`NEW`でない場合で、かつ`kind`が設立登記法人のときは、\n"
+            },
+            {
+              "kind": "text",
+              "text": "処理区分の自由に係る登記年月日。\n"
+            },
+            {
+              "kind": "text",
+              "text": "`kind`が設立登記法人以外のときは、処理区分の事由が生じた年月日。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2021-01-01\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "name": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "商号又は名称。全角。150文字を超過した場合は切り捨てられます。\n"
+            },
+            {
+              "kind": "text",
+              "text": "JIS第１・第２水準以外の文字を使用している場合はJIS第１・第２水準に\n"
+            },
+            {
+              "kind": "text",
+              "text": "縮退されています。前情報を確認するにはイメージファイルを閲覧してください。\n"
+            },
+            {
+              "kind": "text",
+              "text": "`name_image_id`も参照してください。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"株式会社オープンコレクター\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "name_image_id": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "商号又は名称イメージID。`name`にJIS第１・第２水準以外の文字を\n"
+            },
+            {
+              "kind": "text",
+              "text": "使用している、あるいは`name`の文字が150文字を超えた場合に値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "設定されます。次のURLからイメージファイルを直接確認できます。\n"
+            },
+            {
+              "kind": "text",
+              "text": "https://www.houjin-bangou.nta.go.jp/image?imageid=NAME_IMAGE_ID\n"
+            },
+            {
+              "kind": "text",
+              "text": "URLに指定するときは左にゼロを詰めて数字8桁にする必要があります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例えばIDが`100`の場合、以下のURLからイメージファイルを確認できます。\n"
+            },
+            {
+              "kind": "text",
+              "text": "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100\n"
+            },
+            {
+              "kind": "text",
+              "text": "`name`が正規化されていない場合は`null`になります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": " * `\"99999999\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": " * `null`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "kind": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "法人番号種別。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `NTACorporateInfoKind.KABUSHIKI_KAISHA`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "address_image_id": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "国内所在地イメージID。`street_number`にJIS第１・第２水準以外の文字を\n"
+            },
+            {
+              "kind": "text",
+              "text": "使用している、あるいは`street_number`の文字が300文字を超えた場合に値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "設定されます。次のURLからイメージファイルを直接確認できます。\n"
+            },
+            {
+              "kind": "text",
+              "text": "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID\n"
+            },
+            {
+              "kind": "text",
+              "text": "URLに指定するときは左にゼロを詰めて数字8桁にする必要があります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例えばIDが`100`の場合、以下のURLからイメージファイルを確認できます。\n"
+            },
+            {
+              "kind": "text",
+              "text": "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100\n"
+            },
+            {
+              "kind": "text",
+              "text": "`street_number`が正規化されていない場合は`null`になります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": " * `\"99999999\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": " * `null`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "address_outside": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "国外所在地。全角。300文字を超過した場合は切り捨てられます。\n"
+            },
+            {
+              "kind": "text",
+              "text": "JIS第１・第２水準以外の文字を使用している場合はJIS第１・第２水準に\n"
+            },
+            {
+              "kind": "text",
+              "text": "縮退されています。前情報を確認するにはイメージファイルを閲覧してください。\n"
+            },
+            {
+              "kind": "text",
+              "text": "`address_outside_image_id`も参照してください。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "address_outside_image_id": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "国外所在地イメージID。`address_outside`にJIS第１・第２水準以外の文字を\n"
+            },
+            {
+              "kind": "text",
+              "text": "使用している、あるいは`address_outside`の文字が300文字を超えた場合に値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "設定されます。次のURLからイメージファイルを直接確認できます。\n"
+            },
+            {
+              "kind": "text",
+              "text": "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_OUTSIDE_IMAGE_ID\n"
+            },
+            {
+              "kind": "text",
+              "text": "URLに指定するときは左にゼロを詰めて数字8桁にする必要があります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例えばIDが`100`の場合、以下のURLからイメージファイルを確認できます。\n"
+            },
+            {
+              "kind": "text",
+              "text": "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100\n"
+            },
+            {
+              "kind": "text",
+              "text": "`address_outside`が正規化されていない場合は`null`になります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": " * `\"99999999\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": " * `null`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "close_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "登記記録の閉鎖等年月日。閉鎖していない場合は`null`になります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2021-01-01\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "close_cause": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "登記記録の閉鎖等の事由。閉鎖していない場合は`null`になります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "successor_corporate_number": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "合併等による事業承継があったときの存続法人の法人番号。12桁+チェックディジット1桁。\n"
+            },
+            {
+              "kind": "text",
+              "text": "存在しない場合は`null`になります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `2021001052596`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "change_cause": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "変更事由の詳細。全角半角混在500文字。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `令和２年５月１日○○株式会社に合併し解散`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "assignment_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "法人番号指定年月日。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2021-01-01\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "en_name": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "商号又は名称(英語表記) 半角英数300文字。登録がない場合はブランク\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"Rumoi Summary Court\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "en_address_line": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "英語表記の市区町村以下の住所。\n"
+            },
+            {
+              "kind": "text",
+              "text": "半角600文字。601文字以降の文字は格納されない。\n"
+            },
+            {
+              "kind": "text",
+              "text": "存在しない場合は`null`になります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `4-7, Kashiwagicho, Tomakomai shi`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "en_address_outside": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "国外所在地(英語表記) 半角600文字。601文字以降の文字は格納されない。\n"
+            },
+            {
+              "kind": "text",
+              "text": "存在しない場合は`null`になります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "furigana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "nameに対するフリガナ。全角カナ及び長音のみ使用。\n"
+            },
+            {
+              "kind": "text",
+              "text": "フリガナの登録がない場合ブランクになります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `オープンコレクター`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "hihyoji": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "対象の法人の住所が存在しないことが確認できた場合、 `1`に設定されます。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `0`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "qualified_invoice_issuer_number": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "法人の適格請求書発行事業者登録番号。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"T2021001052596\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

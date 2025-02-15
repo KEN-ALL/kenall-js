@@ -1,20 +1,46 @@
 {
     "NTAQualifiedInvoiceIssuerCorrect": {
         "comment": {
-            "shortText": [
-                "An `NTAQualifiedInvoiceIssuerCorrect` implies the reason for the change,",
-                "if the record has been updated."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTAQualifiedInvoiceIssuerCorrect`"
+                },
+                {
+                    "kind": "text",
+                    "text": " implies the reason for the change,\nif the record has been updated."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "members": {
             "OTHER": {
                 "comment": {
-                    "shortText": "Not the correction."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Not the correction."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "CORRECTION": {
                 "comment": {
-                    "shortText": "Correction."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Correction."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         }

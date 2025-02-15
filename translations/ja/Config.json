@@ -1,23 +1,42 @@
 {
-    "Config": {
-        "properties": {
-            "apibase": {
-                "comment": {
-                    "shortText": [
-                        "APIエンドポイントのベースURLを指定します。",
-                        "ベースURLのデフォルトは `https://api.kenall.jp/v1` となります。"
-                    ]
-                }
+  "Config": {
+    "properties": {
+      "apibase": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "APIエンドポイントのベースURLを指定します。\n"
             },
-            "timeout": {
-                "comment": {
-                    "shortText": [
-                        "APIリクエストのタイムアウト値を指定します。",
-                        "未指定時のデフォルトは1000ms (1秒) です。"
-                    ]
-                }
+            {
+              "kind": "text",
+              "text": "ベースURLのデフォルトは `https://api.kenall.jp/v1` となります。\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "timeout": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "APIリクエストのタイムアウト値を指定します。\n"
+            },
+            {
+              "kind": "text",
+              "text": "未指定時のデフォルトは1000ms (1秒) です。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

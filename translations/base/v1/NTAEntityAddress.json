@@ -1,0 +1,321 @@
+{
+    "NTAEntityAddress": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTAEntityAddress`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object would store the domestic or foreign address."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "postal_code": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The postal code for the place this object represents."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "jisx0402": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The 5 digit Japanese municipality code (全国地方公共団体コード)\nfor the administrative division where the place this object represents\nbelongs. Can be null either for the foreign address, or the address\nis based on the old address system."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "prefecture": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the prefecture in Kanji.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東京都\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "prefecture_kana": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of the prefecture in katakana.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"トウキョウト\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "prefecture_roman": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading of the name of the prefecture.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Tokyo\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "city": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the city.\nThe county name may precede it, or the name of the\nward would follow it in case the city has ordinance-designated wards.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"港区\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"大阪市北区\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"各務原市\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"秩父郡長瀞町\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "city_kana": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of the city in katakana.\nThe county name may precede it, or the name of the\nward would follow it in case the city has ordinance-designated wards.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"ミナトク\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"オオサカシキタク\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"カカミガハラシ\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"秩父郡長瀞町\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "city_roman": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading of the name of the city in katakana.\nThe county name may precede it, or the name of the\nward would follow it in case the city has ordinance-designated wards.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Minato-ku\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Kita-ku, Osaka\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Kakamigahara\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Nagatoro\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "street_number": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The part of the address line below the second-level administrative division.\nThe string is preprocessed so it would fit within 300 characters\nby NTA if it is longer than that length actually.\nIf the text uses a Kanji which is not JIS Level 1 or 2, The Kanji\nwill be converted into correspondent JIS Level 1 or 2 Kanjis.\nYou can refer to the unnormalized version of the text from a\ncorrespondent image file.\nSee "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`address_image_id`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " for details.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"麹町３丁目１２－１４麹町駅前ヒルトップ８階\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "town": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The extracted name of the third-level administrative division, which\ncorrespond to the \"o-aza\", or the \"cho\" with its chome part stripped out.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"麹町\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "kyoto_street": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The extracted instructional phrase (通り名 in Japanese) very specific\nto Kyoto city, which helps one to locate the place out of the area of\nthe town.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"先斗町通蛸薬師上る\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "block_lot_num": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reconstructed numerical part of the address line below the second-level\nadministrative division.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"3-12-14\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "building": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The extracted building name in the address line below the second-level\nadministrative division, without the floor name.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"麹町駅前ヒルトップ\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "floor_room": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The extracted floor name and room number in the address line below the\nsecond-level administrative division.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"８階８０１\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

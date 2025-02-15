@@ -1,126 +1,259 @@
 {
-    "KENALL": {
-        "properties": {},
-        "methods": {
-            "getAddress": {
-                "comment": {
-                    "shortText": "\"getAddress\" API (エンドポイント: `/postalcode/{postalcode}`) を呼び出します。",
-                    "returns": "{@link AddressResolverResponse}\n",
-                    "parameters": {
-                        "postalCode": {
-                            "comment": {
-                                "text": "問い合わせ対象の郵便番号。"
-                            }
-                        },
-                        "version": {
-                            "comment": {
-                                "text": "問い合わせが実行される対象となるデータベースのバージョン。指定がない場合は最新のものに対する問い合わせとなります。"
-                            }
-                        },
-                        "apiVersion": {
-                            "comment": {
-                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
-                            }
-                        }
-                    }
-                }
+  "KENALL": {
+    "properties": {
+      "summary": []
+    },
+    "methods": {
+      "getAddress": {
+        "comment": {
+          "returns": "{@link AddressResolverResponse}\n",
+          "parameters": {
+            "postalCode": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせ対象の郵便番号。\n"
+                  }
+                ]
+              },
+              "summary": []
             },
-            "getCities": {
-                "comment": {
-                    "shortText": "\"getCities\" API (エンドポイント: `/cities/{prefectureCode}`) を呼び出します。",
-                    "returns": "{@link CityResolverResponse}\n",
-                    "parameters": {
-                        "prefectureCode": {
-                            "comment": {
-                                "text": "問い合わせ対象の都道府県コード。"
-                            }
-                        },
-                        "version": {
-                            "comment": {
-                                "text": "問い合わせが実行される対象となるデータベースのバージョン。指定がない場合は最新のものに対する問い合わせとなります。"
-                            }
-                        },
-                        "apiVersion": {
-                            "comment": {
-                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
-                            }
-                        }
-                    }
-                }
+            "version": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせが実行される対象となるデータベースのバージョン。指定がない場合は最新のものに対する問い合わせとなります。\n"
+                  }
+                ]
+              },
+              "summary": []
             },
-            "searchAddresses": {
-                "comment": {
-                    "shortText": "\"searchAddresses\" API (エンドポイント: `/postalcode/?...`) を呼び出します。",
-                    "returns": "{@link AddressSearcherResponse}\n",
-                    "parameters": {
-                        "options": {
-                            "comment": {
-                                "text": "問い合わせ内容。"
-                            }
-                        },
-                        "apiVersion": {
-                            "comment": {
-                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
-                            }
-                        }
-                    }
-                }
+            "apiVersion": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。\n"
+                  }
+                ]
+              },
+              "summary": []
             },
-            "getNTACorporateInfo": {
-                "comment": {
-                    "shortText": "\"getNTACorporateInfo\" API (エンドポイント: `/houjinbangou/{corporateNumber}`) を呼び出します。",
-                    "returns": "{@link NTACorporateInfoResolverResponse}.\n",
-                    "parameters": {
-                        "corporateNumber": {
-                            "comment": {
-                                "text": "問い合わせ対象の法人番号。"
-                            }
-                        },
-                        "apiVersion": {
-                            "comment": {
-                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
-                            }
-                        }
-                    }
-                }
-            },
-            "searchNTACorporateInfo": {
-                "comment": {
-                    "shortText": "\"searchNTACorporateInfo\" API (エンドポイント: `/houjinbangou?...`) を呼び出します。",
-                    "returns": "{@link NTACorporateInfoSearcherResponse}.\n",
-                    "parameters": {
-                        "options": {
-                            "comment": {
-                                "text": "問い合わせ内容。"
-                            }
-                        },
-                        "apiVersion": {
-                            "comment": {
-                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
-                            }
-                        }
-                    }
-                }
-            },
-            "getNTAQualifiedInvoiceIssuerInfo": {
-                "comment": {
-                    "shortText": "\"getNTAQualifiedInvoiceIssuerInfo\" API (エンドポイント: `/invoice/{issuerNumber}`) を呼び出します。",
-                    "returns": "{@link NTAQualifiedInvoiceIssuerResolverResponse}.\n",
-                    "parameters": {
-                        "issuerNumber": {
-                            "comment": {
-                                "text": "問い合わせ対象の適格請求書発行事業者登録番号。"
-                            }
-                        },
-                        "apiVersion": {
-                            "comment": {
-                                "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。"
-                            }
-                        }
-                    }
-                }
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"getAddress\" API (エンドポイント: `/postalcode/{postalcode}`) を呼び出します。\n"
             }
+          ]
         },
-        "accessors": {}
-    }
+        "summary": []
+      },
+      "getCities": {
+        "comment": {
+          "returns": "{@link CityResolverResponse}\n",
+          "parameters": {
+            "prefectureCode": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせ対象の都道府県コード。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "version": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせが実行される対象となるデータベースのバージョン。指定がない場合は最新のものに対する問い合わせとなります。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "apiVersion": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"getCities\" API (エンドポイント: `/cities/{prefectureCode}`) を呼び出します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "searchAddresses": {
+        "comment": {
+          "returns": "{@link AddressSearcherResponse}\n",
+          "parameters": {
+            "options": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせ内容。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "apiVersion": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"searchAddresses\" API (エンドポイント: `/postalcode/?...`) を呼び出します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "getNTACorporateInfo": {
+        "comment": {
+          "returns": "{@link NTACorporateInfoResolverResponse}.\n",
+          "parameters": {
+            "corporateNumber": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせ対象の法人番号。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "apiVersion": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"getNTACorporateInfo\" API (エンドポイント: `/houjinbangou/{corporateNumber}`) を呼び出します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "searchNTACorporateInfo": {
+        "comment": {
+          "returns": "{@link NTACorporateInfoSearcherResponse}.\n",
+          "parameters": {
+            "options": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせ内容。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "apiVersion": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"searchNTACorporateInfo\" API (エンドポイント: `/houjinbangou?...`) を呼び出します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "getNTAQualifiedInvoiceIssuerInfo": {
+        "comment": {
+          "returns": "{@link NTAQualifiedInvoiceIssuerResolverResponse}.\n",
+          "parameters": {
+            "issuerNumber": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせ対象の適格請求書発行事業者登録番号。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "apiVersion": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "APIバージョン。戻り値の方はこの引数によって決定されるため、この引数は変数であってはなりません。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"getNTAQualifiedInvoiceIssuerInfo\" API (エンドポイント: `/invoice/{issuerNumber}`) を呼び出します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "accessors": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }
