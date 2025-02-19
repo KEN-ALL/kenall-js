@@ -163,7 +163,6 @@ export interface Address {
    * * `"オオサカシキタク"`
    * * `"カカミガハラシ"`
    * * `"チチブグンナガトロマチ"`
-   * "`
    */
   city_kana: string;
 
@@ -194,7 +193,6 @@ export interface Address {
    * Examples:
    *
    * * `"チチブグン"`
-   * "`
    */
   county_kana: string;
 
@@ -450,7 +448,7 @@ export interface Address {
 
 /**
  * An `AddressResolverResponse` describes a response to
- * "getAddress" API call.
+ * `getAddress` API call.
  */
 export interface AddressResolverResponse {
   /**
@@ -523,7 +521,7 @@ export interface AddressSearcherQuery {
   /**
    * The name of the town.
    *
-   * Example: `箱石`
+   * Example: `"箱石"`
    */
   town: string | null;
 
@@ -566,7 +564,7 @@ export interface AddressSearcherQuery {
 
 /**
  * An `AddressSearcherOptions` stores a set of parameters
- * that will be sent to "searchAddresses" API.
+ * that will be sent to `searchAddresses` API.
  */
 export interface AddressSearcherOptions {
   /**
@@ -619,7 +617,7 @@ export interface AddressSearcherOptions {
 
 /**
  * An `AddressSearcherResponse` describes a response to
- * "searchAddresses" API call.
+ * `searchAddresses` API call.
  */
 export interface AddressSearcherResponse extends AddressResolverResponse {
   /**
@@ -800,7 +798,7 @@ export interface City {
 }
 
 /**
- * A `CityResolverResponse` describes a response to "getCities" API call.
+ * A `CityResolverResponse` describes a response to `getCities` API call.
  */
 export interface CityResolverResponse {
   /**
@@ -898,7 +896,7 @@ export interface BankBranch {
 
 /**
  * An `BanksResponse` describes a response to
- * "getBanks" API call.
+ * `getBanks` API call.
  */
 export interface BanksResponse {
   /**
@@ -916,7 +914,7 @@ export interface BanksResponse {
 
 /**
  * An `BankResolverResponse` describes a response to
- * "getBank" API call.
+ * `getBank` API call.
  */
 export interface BankResolverResponse {
   /**
@@ -934,7 +932,7 @@ export interface BankResolverResponse {
 
 /**
  * An `BankBranchesResponse` describes a response to
- * "getBankBranches" API call.
+ * `getBankBranches` API call.
  * The response includes the bank and the branch data.
  * The bank data is the same as the `BankResolverResponse`.
  */
@@ -960,7 +958,7 @@ export interface BankBranchesResponse {
 
 /**
  * An `BankBranchResolverResponse` describes a response to
- * "getBankBranch" API call.
+ * `getBankBranch` API call.
  * The response includes the bank and the branch data.
  * The bank data is the same as the `BankResolverResponse`.
  * The branch data is the same as the one in `BankBranchesResponse`.
@@ -1286,7 +1284,7 @@ export interface NTACorporateInfo {
    * The extracted floor name and room number in the address line below the
    * second-level administrative devision.
    *
-   * Example: `"８階８０１"`
+   * Example: `"8階801"`
    */
   floor_room?: string | null;
 
@@ -1328,7 +1326,7 @@ export interface NTACorporateInfo {
    * correspondent image file.
    * See `address_outside_image_id` for details.
    *
-   * Example: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`
+   * Example: `"アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０"`
    */
   address_outside: string;
 
@@ -1371,7 +1369,7 @@ export interface NTACorporateInfo {
    * 12 digit number plus 1 check digit.
    * If the corporate is not closed, this value is set to `null`.
    *
-   * Example: `2021001052596`
+   * Example: `"2021001052596"`
    */
   successor_corporate_number: string | null;
 
@@ -1379,7 +1377,7 @@ export interface NTACorporateInfo {
    * The reason why the process occurred, 500 characters at maximum.
    * Both zenkaku and hankaku format are allowed.
    *
-   * Example: `令和２年５月１日○○株式会社に合併し解散`
+   * Example: `"令和２年５月１日○○株式会社に合併し解散"`
    */
   change_cause: string;
 
@@ -1414,7 +1412,7 @@ export interface NTACorporateInfo {
    * by NTA if it is longer than that length actually.
    * If the address is not registered, this value is set to `null`.
    *
-   * Example: `4-7, Kashiwagicho, Tomakomai shi`
+   * Example: `"4-7, Kashiwagicho, Tomakomai shi"`
    */
   en_address_line: string | null;
 
@@ -1424,7 +1422,7 @@ export interface NTACorporateInfo {
    * by NTA if it is longer than that length actually.
    * If the address is not registered, this value is set to `null`.
    *
-   * Example: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`
+   * Example: `"35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A."`
    */
   en_address_outside: string | null;
 
@@ -1432,7 +1430,7 @@ export interface NTACorporateInfo {
    * The furigana correspondent to the corporate name.
    * If the furigana is not registered, this value is set to blank.
    *
-   * Example: `オープンコレクター`
+   * Example: `"オープンコレクター"`
    */
   furigana: string;
 
@@ -1447,7 +1445,7 @@ export interface NTACorporateInfo {
 
 /**
  * An `NTACorporateInfoResolverResponse` describes a response to
- * "getNTACorporateInfo" API call.
+ * `getNTACorporateInfo` API call.
  */
 export interface NTACorporateInfoResolverResponse {
   /**

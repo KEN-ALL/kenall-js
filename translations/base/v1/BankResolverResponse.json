@@ -12,7 +12,15 @@
                 },
                 {
                     "kind": "text",
-                    "text": " describes a response to\n\"getBank\" API call."
+                    "text": " describes a response to\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "`getBank`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call."
                 }
             ],
             "blockTags": [],

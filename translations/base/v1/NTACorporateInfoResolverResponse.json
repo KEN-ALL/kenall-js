@@ -12,7 +12,15 @@
                 },
                 {
                     "kind": "text",
-                    "text": " describes a response to\n\"getNTACorporateInfo\" API call."
+                    "text": " describes a response to\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "`getNTACorporateInfo`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call."
                 }
             ],
             "blockTags": [],

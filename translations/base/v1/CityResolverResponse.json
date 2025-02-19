@@ -12,7 +12,15 @@
                 },
                 {
                     "kind": "text",
-                    "text": " describes a response to \"getCities\" API call."
+                    "text": " describes a response to "
+                },
+                {
+                    "kind": "code",
+                    "text": "`getCities`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call."
                 }
             ],
             "blockTags": [],

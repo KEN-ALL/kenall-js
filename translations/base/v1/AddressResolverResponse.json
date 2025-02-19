@@ -12,7 +12,15 @@
                 },
                 {
                     "kind": "text",
-                    "text": " describes a response to\n\"getAddress\" API call."
+                    "text": " describes a response to\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "`getAddress`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call."
                 }
             ],
             "blockTags": [],

@@ -12,7 +12,15 @@
                 },
                 {
                     "kind": "text",
-                    "text": " stores a set of parameters\nthat will be sent to \"searchAddresses\" API."
+                    "text": " stores a set of parameters\nthat will be sent to "
+                },
+                {
+                    "kind": "code",
+                    "text": "`searchAddresses`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API."
                 }
             ],
             "blockTags": [],

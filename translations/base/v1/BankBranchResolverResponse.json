@@ -12,7 +12,15 @@
                 },
                 {
                     "kind": "text",
-                    "text": " describes a response to\n\"getBankBranch\" API call.\nThe response includes the bank and the branch data.\nThe bank data is the same as the "
+                    "text": " describes a response to\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "`getBankBranch`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call.\nThe response includes the bank and the branch data.\nThe bank data is the same as the "
                 },
                 {
                     "kind": "code",

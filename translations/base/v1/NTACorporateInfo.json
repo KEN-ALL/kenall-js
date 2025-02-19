@@ -76,7 +76,7 @@
                         },
                         {
                             "kind": "code",
-                            "text": "`2021001052596`"
+                            "text": "`\"2021001052596\"`"
                         }
                     ],
                     "blockTags": [],
@@ -424,7 +424,7 @@
                         },
                         {
                             "kind": "code",
-                            "text": "`アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`"
+                            "text": "`\"アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０\"`"
                         }
                     ],
                     "blockTags": [],
@@ -552,7 +552,7 @@
                         },
                         {
                             "kind": "code",
-                            "text": "`2021001052596`"
+                            "text": "`\"2021001052596\"`"
                         }
                     ],
                     "blockTags": [],
@@ -568,7 +568,7 @@
                         },
                         {
                             "kind": "code",
-                            "text": "`令和２年５月１日○○株式会社に合併し解散`"
+                            "text": "`\"令和２年５月１日○○株式会社に合併し解散\"`"
                         }
                     ],
                     "blockTags": [],
@@ -632,7 +632,7 @@
                         },
                         {
                             "kind": "code",
-                            "text": "`4-7, Kashiwagicho, Tomakomai shi`"
+                            "text": "`\"4-7, Kashiwagicho, Tomakomai shi\"`"
                         }
                     ],
                     "blockTags": [],
@@ -656,7 +656,7 @@
                         },
                         {
                             "kind": "code",
-                            "text": "`35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`"
+                            "text": "`\"35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.\"`"
                         }
                     ],
                     "blockTags": [],
@@ -672,7 +672,7 @@
                         },
                         {
                             "kind": "code",
-                            "text": "`オープンコレクター`"
+                            "text": "`\"オープンコレクター\"`"
                         }
                     ],
                     "blockTags": [],

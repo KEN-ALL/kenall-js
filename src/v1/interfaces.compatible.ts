@@ -406,7 +406,7 @@ export interface Address {
 
 /**
  * An `AddressResolverResponse` describes a response to
- * "getAddress" API call.
+ * `getAddress` API call.
  */
 export interface AddressResolverResponse {
   /**
@@ -424,7 +424,7 @@ export interface AddressResolverResponse {
 
 /**
  * An `AddressSearcherResponse` describes a response to
- * "searchAddresses" API call.
+ * `searchAddresses` API call.
  */
 export interface AddressSearcherResponse extends AddressResolverResponse {
   /**
@@ -545,7 +545,7 @@ export interface City {
 }
 
 /**
- * A `CityResolverResponse` describes a response to "getCities" API call.
+ * A `CityResolverResponse` describes a response to `getCities` API call.
  */
 export interface CityResolverResponse {
   /**
