@@ -12,6 +12,9 @@ kenall-jsはブラウザでそのまま利用可能なスタンドアロンのJa
 
 ### ブラウザで使う場合
 
+> [!NOTE]
+> v2.0.0より、Internet Explorerはサポートされなくなりました。
+
 スクリプトを利用するHTMLファイルに
 
 ```html
@@ -44,7 +47,7 @@ function fill(form) {
 
 なお、最新のスクリプトバンドルのURLとして、以下を使うこともできます。可能な限り問題が発生しないよう配慮しますが、このURLの場所から常にバンドルをダウンロードできるかどうかは保証できません。
 
-* [https://js.kenall.jp/2024-02-09/kenall.js](https://js.kenall.jp/2024-02-09/kenall.js)
+* [https://js.kenall.jp/2025-03-03/kenall.js](https://js.kenall.jp/2025-03-03/kenall.js)
 
 以前のバージョン:
 
@@ -52,6 +55,8 @@ function fill(form) {
 * [https://js.kenall.jp/2022-02-11/kenall.js](https://js.kenall.jp/2022-02-11/kenall.js)
 * [https://js.kenall.jp/2021-05-28/kenall.js](https://js.kenall.jp/2021-05-28/kenall.js)
 * [https://js.kenall.jp/2022-11-25/kenall.js](https://js.kenall.jp/2022-11-25/kenall.js)
+* [https://js.kenall.jp/2024-02-09/kenall.js](https://js.kenall.jp/2024-02-09/kenall.js)
+* [https://js.kenall.jp/2024-04-05/kenall.js](https://js.kenall.jp/2024-04-05/kenall.js)
 
 ### Node.jsで使う場合
 

@@ -14,6 +14,9 @@ There are two options to use kenall-js in your project.  The one is to put a `<s
 
 ### Usage from within the plain-old JavaScript
 
+> [!NOTE]
+> As of v2.0.0, Internet Explorer is no longer supported.
+
 All you need is put a `<script>` tag that refers to the script bundle as follows:
 
 ```html
@@ -46,7 +49,7 @@ The script bundle can be downloaded at the release page.
 
 Alternatively, you can use the following URL for the latest bundle.  Beware that we don't provide any warranty on its availability, though we'll put as much effort as possible for keeping it up.
 
-* [https://js.kenall.jp/2024-04-05/kenall.js](https://js.kenall.jp/2024-04-05/kenall.js)
+* [https://js.kenall.jp/2025-03-03/kenall.js](https://js.kenall.jp/2025-03-03/kenall.js)
 
 Previous versions:
 
@@ -55,6 +58,7 @@ Previous versions:
 * [https://js.kenall.jp/2021-05-28/kenall.js](https://js.kenall.jp/2021-05-28/kenall.js)
 * [https://js.kenall.jp/2022-11-25/kenall.js](https://js.kenall.jp/2022-11-25/kenall.js)
 * [https://js.kenall.jp/2024-02-09/kenall.js](https://js.kenall.jp/2024-02-09/kenall.js)
+* [https://js.kenall.jp/2024-04-05/kenall.js](https://js.kenall.jp/2024-04-05/kenall.js)
 
 
 ### Usage in a Node.js project
