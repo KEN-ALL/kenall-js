@@ -1,381 +1,722 @@
 {
     "NTACorporateInfo": {
         "comment": {
-            "shortText": [
-                "A `NTACorporateInfo` object would store the information about Basic 3 Information",
-                "of Corporate Number, which is published by Japan National Tax Agency."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTACorporateInfo`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object would store the information about Basic 3 Information\nof Corporate Number, which is published by Japan National Tax Agency."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "published_date": {
                 "comment": {
-                    "text": [
-                        "Please note that this field doesn't indicate the actual date of",
-                        "the updated date of the record. The published date may",
-                        "be later than the updated date. Please see `update_date` for further",
-                        "details.",
-                        "Example: `\"2021-01-01\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The published date of the record, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day\nthe record was published.\n\nPlease note that this field doesn't indicate the actual date of\nthe updated date of the record. The published date may\nbe later than the updated date. Please see "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`update_date`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " for further\ndetails.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
                     ],
-                    "shortText": [
-                        "The published date of the record, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day",
-                        "the record was published."
-                    ]
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "sequence_number": {
                 "comment": {
-                    "text": "Example: `1`",
-                    "shortText": [
-                        "The revision number of the corporate record, non zero-padded",
-                        "8 digit number at maximum."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The revision number of the corporate record, non zero-padded\n8 digit number at maximum.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`1`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "corporate_number": {
                 "comment": {
-                    "text": "Example: `2021001052596`",
-                    "shortText": "The corporate number, 12 digit number plus 1 check digit."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The corporate number, 12 digit number plus 1 check digit.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021001052596\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "process": {
                 "comment": {
-                    "text": "Example: `NTACorporateInfoProcess.NEW`",
-                    "shortText": "The reason why the record was added."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reason why the record was added.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`NTACorporateInfoProcess.NEW`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "correct": {
                 "comment": {
-                    "text": [
-                        " * `1` indicates the record was corrected.",
-                        " * `0` indicates the record was not corrected.",
-                        "Example: `0`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The flag if the record was corrected or not.\n\n * "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`1`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " indicates the record was corrected.\n * "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`0`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " indicates the record was not corrected.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`0`"
+                        }
                     ],
-                    "shortText": "The flag if the record was corrected or not."
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "update_date": {
                 "comment": {
-                    "text": [
-                        "Unlike `change_date` and `published_date`, this field indicates the",
-                        "actual update date of the corporate information in NTA data.",
-                        "See `change_date` and `published_date` for further information.",
-                        "Example: `\"2021-01-01\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date the record was updated, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day.\n\nUnlike "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`change_date`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " and "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`published_date`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", this field indicates the\nactual update date of the corporate information in NTA data.\nSee "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`change_date`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " and "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`published_date`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " for further information.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
                     ],
-                    "shortText": [
-                        "The date the record was updated, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day."
-                    ]
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "change_date": {
                 "comment": {
-                    "text": [
-                        "The meaning of \"changed\" depends on other contexts of the record.",
-                        "If `process` is `NEW`, the changed date means the corporate number",
-                        "was assigned. If `process` is not `NEW` and `kind` is not a public",
-                        "entity, the changed date means the date related to the process.",
-                        "If `kind` is a public entity, the changed date means when the",
-                        "process occurred.",
-                        "Example: `\"2021-01-01\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The changed date of the record, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day.\n\nThe meaning of \"changed\" depends on other contexts of the record.\nIf "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`process`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`NEW`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", the changed date means the corporate number\nwas assigned. If "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`process`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is not "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`NEW`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " and "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`kind`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is not a public\nentity, the changed date means the date related to the process.\nIf "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`kind`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is a public entity, the changed date means when the\nprocess occurred.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
                     ],
-                    "shortText": [
-                        "The changed date of the record, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day."
-                    ]
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "name": {
                 "comment": {
-                    "text": "Example: `\"株式会社オープンコレクター\"`",
-                    "shortText": [
-                        "The trade name or corporate name in Japanese.",
-                        "All the characters are rendered in full-width form.",
-                        "The string is preprocessed so it would fit within 150 characters",
-                        "by NTA if it is longer than that length actually.",
-                        "If the text uses a Kanji which is not JIS Level 1 or 2, The Kanji",
-                        "will be converted into correspondent JIS Level 1 or 2 Kanjis.",
-                        "You can refer to the unnormalized version of the text from a",
-                        "correspondent image file.",
-                        "See `name_image_id` for details."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The trade name or corporate name in Japanese.\nAll the characters are rendered in full-width form.\nThe string is preprocessed so it would fit within 150 characters\nby NTA if it is longer than that length actually.\nIf the text uses a Kanji which is not JIS Level 1 or 2, The Kanji\nwill be converted into correspondent JIS Level 1 or 2 Kanjis.\nYou can refer to the unnormalized version of the text from a\ncorrespondent image file.\nSee "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`name_image_id`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " for details.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"株式会社オープンコレクター\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "name_image_id": {
                 "comment": {
-                    "text": [
-                        " Examples:",
-                        " * `\"99999999\"`",
-                        " * `null`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The trade name or corporate name image ID, 8 digit number at maximum.\nIf you want to obtain the image file, please refer to\nhttps://www.houjin-bangou.nta.go.jp/image?imageid=NAME_IMAGE_ID,\nwhere NAME_IMAGE_ID is a zero-padded 8 digit number of the ID.\nFor example, if the ID is "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`100`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", You can get the image file from\nhttps://www.houjin-bangou.nta.go.jp/image?imageid=00000100.\nIf "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`name`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is not normalized, This value is set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\n Examples:\n\n * "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"99999999\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n * "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        }
                     ],
-                    "shortText": [
-                        "The trade name or corporate name image ID, 8 digit number at maximum.",
-                        "If you want to obtain the image file, please refer to",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=NAME_IMAGE_ID,",
-                        "where NAME_IMAGE_ID is a zero-padded 8 digit number of the ID.",
-                        "For example, if the ID is `100`, You can get the image file from",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100.",
-                        "If `name` is not normalized, This value is set to `null`."
-                    ]
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "kind": {
                 "comment": {
-                    "text": "Example: `NTACorporateInfoKind.KABUSHIKI_KAISHA`",
-                    "shortText": "Kind of the corporate."
-                }
-            },
-            "prefecture_name": {
-                "comment": {
-                    "text": "Example: `\"東京都\"`",
-                    "shortText": "The name of the prefecture in Kanji."
-                }
-            },
-            "city_name": {
-                "comment": {
-                    "text": [
-                        "Examples:",
-                        "* `\"港区\"`",
-                        "* `\"大阪市北区\"`",
-                        "* `\"各務原市\"`",
-                        "* `\"秩父郡長瀞町\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Kind of the corporate.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`NTACorporateInfoKind.KABUSHIKI_KAISHA`"
+                        }
                     ],
-                    "shortText": [
-                        "The name of the city.",
-                        "The county name may precede it, or the name of the",
-                        "ward would follow it in case the city has ordinance-designated wards."
-                    ]
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
-            "street_number": {
+            "address": {
                 "comment": {
-                    "text": "Example: `\"麹町３丁目１２－１４麹町駅前ヒルトップ８階\"`",
-                    "shortText": [
-                        "The part of the address line below the second-level administrative division.",
-                        "The string is preprocessed so it would fit within 300 characters",
-                        "by NTA if it is longer than that length actually.",
-                        "If the text uses a Kanji which is not JIS Level 1 or 2, The Kanji",
-                        "will be converted into correspondent JIS Level 1 or 2 Kanjis.",
-                        "You can refer to the unnormalized version of the text from a",
-                        "correspondent image file.",
-                        "See `address_image_id` for details."
-                    ]
-                }
-            },
-            "town": {
-                "comment": {
-                    "text": "Example: `\"麹町\"`",
-                    "shortText": [
-                        "The extracted name of the third-level administrative division, which",
-                        "correspond to the \"o-aza\", or the \"cho\" with its chome part stripped out."
-                    ]
-                }
-            },
-            "kyoto_street": {
-                "comment": {
-                    "text": "Example: `\"先斗町通蛸薬師上る\"`",
-                    "shortText": [
-                        "The extracted instructional phrase (通り名 in Japanese) very specific",
-                        "to Kyoto city, which helps one to locate the place out of the area of",
-                        "the town."
-                    ]
-                }
-            },
-            "block_lot_num": {
-                "comment": {
-                    "text": "Example: `\"3-12-14\"`",
-                    "shortText": [
-                        "The reconstructed numerical part of the address line below the second-level",
-                        "administrative division."
-                    ]
-                }
-            },
-            "building": {
-                "comment": {
-                    "text": "Example: `\"麹町駅前ヒルトップ\"`",
-                    "shortText": [
-                        "The extracted building name in the address line below the second-level",
-                        "administrative devision, without the floor name."
-                    ]
-                }
-            },
-            "floor_room": {
-                "comment": {
-                    "text": "Example: `\"８階８０１\"`",
-                    "shortText": [
-                        "The extracted floor name and room number in the address line below the",
-                        "second-level administrative devision."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The address of the legal entity."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "address_image_id": {
                 "comment": {
-                    "text": [
-                        " Examples:",
-                        " * `\"99999999\"`",
-                        " * `null`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The address image ID, 8 digit number at maximum.\nIf you want to obtain the image file, please refer to\nhttps://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,\nwhere ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.\nFor example, if the ID is "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`100`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", You can get the image file from\nhttps://www.houjin-bangou.nta.go.jp/image?imageid=00000100.\nIf "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`street_number`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is not normalized, this value is set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\n Examples:\n\n * "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"99999999\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n * "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        }
                     ],
-                    "shortText": [
-                        "The address image ID, 8 digit number at maximum.",
-                        "If you want to obtain the image file, please refer to",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,",
-                        "where ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.",
-                        "For example, if the ID is `100`, You can get the image file from",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100.",
-                        "If `street_number` is not normalized, this value is set to `null`."
-                    ]
-                }
-            },
-            "jisx0402": {
-                "comment": {
-                    "shortText": [
-                        "The 5 digit Japanese municipality code (全国地方公共団体コード)",
-                        "for the administrative division where the place this object represents",
-                        "belongs."
-                    ]
-                }
-            },
-            "post_code": {
-                "comment": {
-                    "shortText": "The postal code for the place this object represents."
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "address_outside": {
                 "comment": {
-                    "text": "Example: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`",
-                    "shortText": [
-                        "The corporate address outside of Japan, written in Japanese.",
-                        "The string is preprocessed so it would fit within 300 characters",
-                        "by NTA if it is longer than that length actually.",
-                        "If the text uses a Kanji which is not JIS Level 1 or 2, The Kanji",
-                        "will be converted into correspondent JIS Level 1 or 2 Kanjis.",
-                        "You can refer to the unnormalized version of the text from a",
-                        "correspondent image file.",
-                        "See `address_outside_image_id` for details."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The corporate address outside of Japan, written in Japanese.\nThe string is preprocessed so it would fit within 300 characters\nby NTA if it is longer than that length actually.\nIf the text uses a Kanji which is not JIS Level 1 or 2, The Kanji\nwill be converted into correspondent JIS Level 1 or 2 Kanjis.\nYou can refer to the unnormalized version of the text from a\ncorrespondent image file.\nSee "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`address_outside_image_id`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " for details.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "address_outside_image_id": {
                 "comment": {
-                    "text": [
-                        " Examples:",
-                        " * `\"99999999\"`",
-                        " * `null`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The foreign address image ID, 8 digit number at maximum.\nIf you want to obtain the image file, please refer to\nhttps://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,\nwhere ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.\nFor example, if the ID is "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`100`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", You can get the image file from\nhttps://www.houjin-bangou.nta.go.jp/image?imageid=00000100.\nIf "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`address_outside`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is not normalized, this value is set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\n Examples:\n\n * "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"99999999\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n * "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        }
                     ],
-                    "shortText": [
-                        "The foreign address image ID, 8 digit number at maximum.",
-                        "If you want to obtain the image file, please refer to",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=ADDRESS_IMAGE_ID,",
-                        "where ADDRESS_IMAGE_ID is a zero-padded 8 digit number of the ID.",
-                        "For example, if the ID is `100`, You can get the image file from",
-                        "https://www.houjin-bangou.nta.go.jp/image?imageid=00000100.",
-                        "If `address_outside` is not normalized, this value is set to `null`."
-                    ]
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "close_date": {
                 "comment": {
-                    "text": "Example: `\"2021-01-01\"`",
-                    "shortText": [
-                        "The date of the record when the corporate was closed, in the",
-                        "form of `\"YYYY-MM-DD\"` where Y, M, and D represent digits of",
-                        "the year, month, and day.",
-                        "If the corporate is not closed, this value is set to `null`."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date of the record when the corporate was closed, in the\nform of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " where Y, M, and D represent digits of\nthe year, month, and day.\nIf the corporate is not closed, this value is set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "close_cause": {
                 "comment": {
-                    "text": "Example: `NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`",
-                    "shortText": [
-                        "The reason the corporate was closed.",
-                        "If the corporate is not closed, this value is set to `null`."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reason the corporate was closed.\nIf the corporate is not closed, this value is set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`NTACorporateInfoCloseCause.LIQUIDATION_COMPLETED`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "successor_corporate_number": {
                 "comment": {
-                    "text": "Example: `2021001052596`",
-                    "shortText": [
-                        "The corporate number of the successor of the closed corporate,",
-                        "12 digit number plus 1 check digit.",
-                        "If the corporate is not closed, this value is set to `null`."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The corporate number of the successor of the closed corporate,\n12 digit number plus 1 check digit.\nIf the corporate is not closed, this value is set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021001052596\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "change_cause": {
                 "comment": {
-                    "text": "Example: `令和２年５月１日○○株式会社に合併し解散`",
-                    "shortText": [
-                        "The reason why the process occurred, 500 characters at maximum.",
-                        "Both zenkaku and hankaku format are allowed."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reason why the process occurred, 500 characters at maximum.\nBoth zenkaku and hankaku format are allowed.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"令和２年５月１日○○株式会社に合併し解散\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "assignment_date": {
                 "comment": {
-                    "text": "Example: `\"2021-01-01\"`",
-                    "shortText": [
-                        "The date of the record when the corporate number was assigned,",
-                        "in the form of `\"YYYY-MM-DD\"` where Y, M, and D represent",
-                        "digits of the year, month, and day."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date of the record when the corporate number was assigned,\nin the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " where Y, M, and D represent\ndigits of the year, month, and day.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2021-01-01\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "en_name": {
                 "comment": {
-                    "text": "Example: `\"Rumoi Summary Court\"`",
-                    "shortText": [
-                        "The trade name or corporate name in English with hankaku format,",
-                        "300 characters at maximum.",
-                        "If the English name is not registered, this value is set to blank."
-                    ]
-                }
-            },
-            "en_prefecture_name": {
-                "comment": {
-                    "text": "Example: `\"Tokyo\"`",
-                    "shortText": "The name of the prefecture in English."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The trade name or corporate name in English with hankaku format,\n300 characters at maximum.\nIf the English name is not registered, this value is set to blank.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Rumoi Summary Court\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "en_address_line": {
                 "comment": {
-                    "text": "Example: `4-7, Kashiwagicho, Tomakomai shi`",
-                    "shortText": [
-                        "The address without prefecture in English with hankaku format.",
-                        "The string is preprocessed so it would fit within 600 characters",
-                        "by NTA if it is longer than that length actually.",
-                        "If the address is not registered, this value is set to `null`."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The address without prefecture in English with hankaku format.\nThe string is preprocessed so it would fit within 600 characters\nby NTA if it is longer than that length actually.\nIf the address is not registered, this value is set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"4-7, Kashiwagicho, Tomakomai shi\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "en_address_outside": {
                 "comment": {
-                    "text": "Example: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`",
-                    "shortText": [
-                        "The corporate address outside of Japan, written in alphabetical form.",
-                        "The string is preprocessed so it would fit within 600 characters",
-                        "by NTA if it is longer than that length actually.",
-                        "If the address is not registered, this value is set to `null`."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The corporate address outside of Japan, written in alphabetical form.\nThe string is preprocessed so it would fit within 600 characters\nby NTA if it is longer than that length actually.\nIf the address is not registered, this value is set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "furigana": {
                 "comment": {
-                    "text": "Example: `オープンコレクター`",
-                    "shortText": [
-                        "The furigana correspondent to the corporate name.",
-                        "If the furigana is not registered, this value is set to blank."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The furigana correspondent to the corporate name.\nIf the furigana is not registered, this value is set to blank.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"オープンコレクター\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "hihyoji": {
                 "comment": {
-                    "text": "Example: `\"0\"`",
-                    "shortText": [
-                        "If the corporate address is confirmed that it doesn't exist,",
-                        "this value is set to `\"1\"`."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "If the corporate address is confirmed that it doesn't exist,\nthis value is set to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"1\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`0`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "qualified_invoice_issuer_number": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The qualified invoice issuer number of the entity.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"T2021001052596\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

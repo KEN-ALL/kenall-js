@@ -1,0 +1,116 @@
+{
+    "UpdateReason": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "The enum for "
+                },
+                {
+                    "kind": "code",
+                    "text": "`update_reason`"
+                },
+                {
+                    "kind": "text",
+                    "text": " property of "
+                },
+                {
+                    "kind": "code",
+                    "text": "`Address`"
+                },
+                {
+                    "kind": "text",
+                    "text": " data."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "members": {
+            "NONE": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The record is not modified."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "REDESIGNATED": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The city where the area to which this record was assigned previously belongs\nwas merged with other cities."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "ADDRESSING_SYSTEM_RENEWAL": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The district to which this record is assigned had gone through address\nreorganization, such as designation as a building-based addressing area."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "READJUSTMENT": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The district to which this record is assigned had gone through area\nreorganization."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "REASSIGNMENT": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The area or its districts weren't changed, but the postal codes\nwere reassigned."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "AMENDMENT": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The record contained some errors and was amended."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "ABOLISHED": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The record is marked as no longer valid."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        }
+    }
+}

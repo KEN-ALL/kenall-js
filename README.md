@@ -103,7 +103,7 @@ Run
 $ npm run build
 ```
 
-to generate JavaScript scripts under `built/`.  If you want to get the bundle, run
+to generate JavaScript scripts under `dist/`.  If you want to get the bundle, run
 
 ```
 $ npm run bundle

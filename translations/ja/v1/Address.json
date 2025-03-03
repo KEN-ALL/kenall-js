@@ -1,337 +1,776 @@
 {
-    "Address": {
+  "Address": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`Address` オブジェクトは解決された地域、場所、もしくは組織の情報を格納します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "jisx0402": {
         "comment": {
-            "shortText": "`Address` オブジェクトは解決された地域、場所、もしくは組織の情報を格納します。"
-        },
-        "properties": {
-            "jisx0402": {
-                "comment": {
-                    "shortText": [
-                        "このオブジェクトが表現する行政区分に対応する5桁の全国地方公共団体コード。"
-                    ]
-                }
-            },
-            "old_code": {
-                "comment": {
-                    "shortText": "1998年2月2日以前に利用されていた5桁の郵便番号。"
-                }
-            },
-            "postal_code": {
-                "comment": {
-                    "shortText": "このオブジェクトが表現する場所の郵便番号。"
-                }
-            },
-            "prefecture": {
-                "comment": {
-                    "text": "例: `\"東京都\"`",
-                    "shortText": "漢字の都道府県名。"
-                }
-            },
-            "prefecture_kana": {
-                "comment": {
-                    "text": "例: `\"トウキョウト\"`",
-                    "shortText": "カタカナでの都道府県名の読み。"
-                }
-            },
-            "prefecture_roman": {
-                "comment": {
-                    "text": "例: `\"Tokyo\"`",
-                    "shortText": "ローマ字での都道府県名の読み。"
-                }
-            },
-            "city": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"港区\"`",
-                        "* `\"大阪市北区\"`",
-                        "* `\"各務原市\"`",
-                        "* `\"秩父郡長瀞町\"`"
-                    ],
-                    "shortText": [
-                        "市区町村名。",
-                        "郡名が市区町村名の前につくことがあります。また逆に、",
-                        "当該市区町村が政令指定都市の場合は行政区名が後につきます。"
-                    ]
-                }
-            },
-            "city_kana": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"ミナトク\"`",
-                        "* `\"オオサカシキタク\"`",
-                        "* `\"カカミガハラシ\"`",
-                        "* `\"チチブグンナガトロマチ\"`"
-                    ],
-                    "shortText": "カタカナでの市区町村名の読み。"
-                }
-            },
-            "city_roman": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"Minato-ku\"`",
-                        "* `\"Kita-ku, Osaka\"`",
-                        "* `\"Kakamigahara\"`",
-                        "* `\"Nagatoro, Chichibu\"`"
-                    ],
-                    "shortText": "ローマ字での市区町村名の読み。"
-                }
-            },
-            "city_without_county_and_ward": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"港区\"`",
-                        "* `\"大阪市\"`",
-                        "* `\"各務原市\"`",
-                        "* `\"長瀞町\"`"
-                    ],
-                    "shortText": "市区町村名から、郡と政令指定都市の行政区を取り除いたもの。"
-                }
-            },
-            "city_without_county_and_ward_kana": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"ミナトク\"`",
-                        "* `\"オオサカシ\"`",
-                        "* `\"カカミガハラシ\"`",
-                        "* `\"ナガトロマチ\"`"
-                    ],
-                    "shortText": [
-                        "市区町村名の読みから、郡と政令指定都市の行政区を取り除いたもの。"
-                    ]
-                }
-            },
-            "city_without_county_and_ward_roman": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"Minato-ku\"`",
-                        "* `\"Osaka\"`",
-                        "* `\"Kakamigahara\"`",
-                        "* `\"Nagatoro\"`"
-                    ],
-                    "shortText": [
-                        "ローマ字での市区町村名の読みから、郡と政令指定都市の行政区を取り除いたもの。"
-                    ]
-                }
-            },
-            "city_ward": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"港北区\"`"
-                    ],
-                    "shortText": "該当する場合、政令指定都市の行政区。"
-                }
-            },
-            "city_ward_kana": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"千種区\"`"
-                    ],
-                    "shortText": "該当する場合、政令指定都市の行政区の読み。"
-                }
-            },
-            "city_ward_roman": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"Chikusa-ku\"`"
-                    ],
-                    "shortText": "該当する場合、政令指定都市の行政区のローマ字での読み。"
-                }
-            },
-            "town": {
-                "comment": {
-                    "text": [
-                        "この値は合成されたものです。つまり、ケンオールが",
-                        "`town_raw`データを独自に解釈した結果であり、対応する値が",
-                        "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。",
-                        "例:",
-                        "* `箱石`",
-                        "* `晴海`",
-                        "* `西北小路町`"
-                    ],
-                    "shortText": [
-                        "町域名。これは概ね行政区分の最も下の階層に相当する",
-                        "ものです。"
-                    ]
-                }
-            },
-            "town_kana": {
-                "comment": {
-                    "text": [
-                        "この値は合成されたものです。つまり、ケンオールが",
-                        "`town_raw`データを独自に解釈した結果であり、対応する値が",
-                        "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。",
-                        "例:",
-                        "* `ハコイシ`",
-                        "* `ハルミ`",
-                        "* `ニシキタコウジチョウ`"
-                    ],
-                    "shortText": "カタカナでの町域名の読み。"
-                }
-            },
-            "town_roman": {
-                "comment": {
-                    "text": [
-                        "この値は合成されたものです。つまり、ケンオールが",
-                        "`town_raw`データを独自に解釈した結果であり、対応する値が",
-                        "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。",
-                        "例:",
-                        "* `\"Hakoishi\"`",
-                        "* `\"Harumi\"`",
-                        "* `\"Nishikitakojicho\"`"
-                    ],
-                    "shortText": "ローマ字での町域名の読み。"
-                }
-            },
-            "town_raw": {
-                "comment": {
-                    "text": [
-                        "日本郵便によって便宜的に割り当てられているだけの場合は、",
-                        "実際の地域名を表していないかもしれないことに注意してください。",
-                        "例:",
-                        "* `\"岩手県宮古市箱石（第２地割「７０〜１３６」〜第４地割「３〜１１」）\"`",
-                        "* `\"西北小路町（猪熊通上立売上る、猪熊通寺之内下る、大宮通寺之内下る東入、大宮通寺之内半丁下る東入、大宮通寺之内下る東入１丁目、寺之内通大宮東入下る、寺之内通大宮東入１丁目下る）\"`",
-                        "* `\"晴海　オフィスタワーＸ　１階\"`"
-                    ],
-                    "shortText": [
-                        "ケンオールで処理していない町域名の値。複数の (行政区画ではない)",
-                        "副地域を含むことがあります。"
-                    ]
-                }
-            },
-            "town_kana_raw": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"イワテケンミヤコシハコイシ(ダイ2チワリ<70-136>-ダイ4チワリ<3-11>)\"`",
-                        "* `\"ニシキタコウジチョウ\"`",
-                        "* `\"トウキョウトチユウオウクハルミ　オフイスタワーX　1カイ\"`"
-                    ],
-                    "shortText": "ケンオールで処理していない町域名の読み"
-                }
-            },
-            "koaza": {
-                "comment": {
-                    "text": [
-                        "この値は合成されたものです。つまり、ケンオールが",
-                        "`town_raw`データを独自に解釈した結果であり、対応する値が",
-                        "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。",
-                        "例:",
-                        "* `\"第２地割\"`",
-                        "* `\"１丁目\"`"
-                    ],
-                    "shortText": "町域内の (行政区画ではない) 副地域名。"
-                }
-            },
-            "kyoto_street": {
-                "comment": {
-                    "text": [
-                        "この値は合成されたものです。つまり、ケンオールが",
-                        "`town_raw`データを独自に解釈した結果であり、対応する値が",
-                        "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。",
-                        "例:",
-                        "* `\"先斗町通蛸薬師上る\"`",
-                        "* `\"大宮通寺之内半丁下る東入\"`"
-                    ],
-                    "shortText": [
-                        "京都市の特定地域に固有の指示的なフレーズからなる副地域 (通り名)。"
-                    ]
-                }
-            },
-            "building": {
-                "comment": {
-                    "text": [
-                        "この値は合成されたものです。つまり、ケンオールが",
-                        "`town_raw`データを独自に解釈した結果であり、対応する値が",
-                        "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。",
-                        "例:",
-                        "* `\"オフィスタワーＸ\"`"
-                    ],
-                    "shortText": [
-                        "郵便番号が建物や、あるいはその各階に割り当てられている場合、その建物名"
-                    ]
-                }
-            },
-            "floor": {
-                "comment": {
-                    "text": [
-                        "この値は合成されたものです。つまり、ケンオールが",
-                        "`town_raw`データを独自に解釈した結果であり、対応する値が",
-                        "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。",
-                        "例:",
-                        "* `\"１階\"`"
-                    ],
-                    "shortText": "建物の階名"
-                }
-            },
-            "town_partial": {
-                "comment": {
-                    "shortText": [
-                        "このプロパティの意味の詳細はAPIドキュメントを参照してください。",
-                        "この値には利用価値がないため、参照しないことをお勧めします。"
-                    ]
-                }
-            },
-            "town_addressed_koaza": {
-                "comment": {
-                    "shortText": [
-                        "このプロパティの意味の詳細はAPIドキュメントを参照してください。",
-                        "この値には利用価値がないため、参照しないことをお勧めします。"
-                    ]
-                }
-            },
-            "town_multi": {
-                "comment": {
-                    "shortText": [
-                        "このプロパティの意味の詳細はAPIドキュメントを参照してください。",
-                        "この値には利用価値がないため、参照しないことをお勧めします。"
-                    ]
-                }
-            },
-            "town_chome": {
-                "comment": {
-                    "shortText": [
-                        "このプロパティの意味の詳細はAPIドキュメントを参照してください。",
-                        "この値には利用価値がないため、参照しないことをお勧めします。"
-                    ]
-                }
-            },
-            "town_jukyohyoji": {
-                "comment": {
-                    "shortText": [
-                        "郵便番号に対応する地域が住居表示実施区域であることを示すフラグ。"
-                    ]
-                }
-            },
-            "update_status": {
-                "comment": {
-                    "shortText": "このバージョンについて、当該レコードが更新または削除されたことを示す値。"
-                }
-            },
-            "update_reason": {
-                "comment": {
-                    "shortText": [
-                        "`update_status` が`None`以外の値に設定されている時、当該レコードが変更された事由を示す値。"
-                    ]
-                }
-            },
-            "corporation": {
-                "comment": {
-                    "shortText": [
-                        "郵便番号が組織やその部署に割り当てられている場合、このプロパティには",
-                        "それを記述する {@link Corporation} オブジェクトが格納されます"
-                    ]
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このオブジェクトが表現する行政区分に対応する5桁の全国地方公共団体コード。\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "old_code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "1998年2月2日以前に利用されていた5桁の郵便番号。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "postal_code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このオブジェクトが表現する場所の郵便番号。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "prefecture": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "漢字の都道府県名。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"東京都\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "prefecture_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "カタカナでの都道府県名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"トウキョウト\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "prefecture_roman": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での都道府県名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"Tokyo\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "市区町村名。\n"
+            },
+            {
+              "kind": "text",
+              "text": "郡名が市区町村名の前につくことがあります。また逆に、\n"
+            },
+            {
+              "kind": "text",
+              "text": "当該市区町村が政令指定都市の場合は行政区名が後につきます。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"港区\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"大阪市北区\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"各務原市\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"秩父郡長瀞町\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "カタカナでの市区町村名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"ミナトク\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"オオサカシキタク\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"カカミガハラシ\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"チチブグンナガトロマチ\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_roman": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での市区町村名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Minato-ku\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Kita-ku, Osaka\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Kakamigahara\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Nagatoro, Chichibu\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_without_county_and_ward": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "市区町村名から、郡と政令指定都市の行政区を取り除いたもの。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"港区\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"大阪市\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"各務原市\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"長瀞町\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_without_county_and_ward_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "市区町村名の読みから、郡と政令指定都市の行政区を取り除いたもの。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"ミナトク\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"オオサカシ\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"カカミガハラシ\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"ナガトロマチ\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_without_county_and_ward_roman": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での市区町村名の読みから、郡と政令指定都市の行政区を取り除いたもの。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Minato-ku\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Osaka\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Kakamigahara\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Nagatoro\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_ward": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "該当する場合、政令指定都市の行政区。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"港北区\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_ward_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "該当する場合、政令指定都市の行政区の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"千種区\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_ward_roman": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "該当する場合、政令指定都市の行政区のローマ字での読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Chikusa-ku\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "町域名。これは概ね行政区分の最も下の階層に相当する\n"
+            },
+            {
+              "kind": "text",
+              "text": "ものです。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値は合成されたものです。つまり、ケンオールが\n"
+            },
+            {
+              "kind": "text",
+              "text": "`town_raw`データを独自に解釈した結果であり、対応する値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `箱石`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `晴海`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `西北小路町`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "カタカナでの町域名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値は合成されたものです。つまり、ケンオールが\n"
+            },
+            {
+              "kind": "text",
+              "text": "`town_raw`データを独自に解釈した結果であり、対応する値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `ハコイシ`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `ハルミ`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `ニシキタコウジチョウ`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town_roman": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での町域名の読み。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値は合成されたものです。つまり、ケンオールが\n"
+            },
+            {
+              "kind": "text",
+              "text": "`town_raw`データを独自に解釈した結果であり、対応する値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Hakoishi\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Harumi\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"Nishikitakojicho\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town_raw": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ケンオールで処理していない町域名の値。複数の (行政区画ではない)\n"
+            },
+            {
+              "kind": "text",
+              "text": "副地域を含むことがあります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "日本郵便によって便宜的に割り当てられているだけの場合は、\n"
+            },
+            {
+              "kind": "text",
+              "text": "実際の地域名を表していないかもしれないことに注意してください。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"岩手県宮古市箱石（第２地割「７０〜１３６」〜第４地割「３〜１１」）\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"西北小路町（猪熊通上立売上る、猪熊通寺之内下る、大宮通寺之内下る東入、大宮通寺之内半丁下る東入、大宮通寺之内下る東入１丁目、寺之内通大宮東入下る、寺之内通大宮東入１丁目下る）\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"晴海　オフィスタワーＸ　１階\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town_kana_raw": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ケンオールで処理していない町域名の読み\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"イワテケンミヤコシハコイシ(ダイ2チワリ<70-136>-ダイ4チワリ<3-11>)\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"ニシキタコウジチョウ\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"トウキョウトチユウオウクハルミ　オフイスタワーX　1カイ\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "koaza": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "町域内の (行政区画ではない) 副地域名。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値は合成されたものです。つまり、ケンオールが\n"
+            },
+            {
+              "kind": "text",
+              "text": "`town_raw`データを独自に解釈した結果であり、対応する値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"第２地割\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"１丁目\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "kyoto_street": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "京都市の特定地域に固有の指示的なフレーズからなる副地域 (通り名)。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値は合成されたものです。つまり、ケンオールが\n"
+            },
+            {
+              "kind": "text",
+              "text": "`town_raw`データを独自に解釈した結果であり、対応する値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"先斗町通蛸薬師上る\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"大宮通寺之内半丁下る東入\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "building": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "郵便番号が建物や、あるいはその各階に割り当てられている場合、その建物名\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値は合成されたものです。つまり、ケンオールが\n"
+            },
+            {
+              "kind": "text",
+              "text": "`town_raw`データを独自に解釈した結果であり、対応する値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"オフィスタワーＸ\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "floor": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "建物の階名\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値は合成されたものです。つまり、ケンオールが\n"
+            },
+            {
+              "kind": "text",
+              "text": "`town_raw`データを独自に解釈した結果であり、対応する値が\n"
+            },
+            {
+              "kind": "text",
+              "text": "日本郵便の提供するオリジナルのKEN_ALLに存在しないことがあります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"１階\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town_partial": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このプロパティの意味の詳細はAPIドキュメントを参照してください。\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値には利用価値がないため、参照しないことをお勧めします。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town_addressed_koaza": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このプロパティの意味の詳細はAPIドキュメントを参照してください。\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値には利用価値がないため、参照しないことをお勧めします。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town_multi": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このプロパティの意味の詳細はAPIドキュメントを参照してください。\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値には利用価値がないため、参照しないことをお勧めします。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town_chome": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このプロパティの意味の詳細はAPIドキュメントを参照してください。\n"
+            },
+            {
+              "kind": "text",
+              "text": "この値には利用価値がないため、参照しないことをお勧めします。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town_jukyohyoji": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "郵便番号に対応する地域が住居表示実施区域であることを示すフラグ。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "update_status": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "このバージョンについて、当該レコードが更新または削除されたことを示す値。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "update_reason": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "`update_status` が`None`以外の値に設定されている時、当該レコードが変更された事由を示す値。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "corporation": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "郵便番号が組織やその部署に割り当てられている場合、このプロパティには\n"
+            },
+            {
+              "kind": "text",
+              "text": "それを記述する {@link Corporation} オブジェクトが格納されます\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

@@ -1,11 +1,12 @@
-import axios, { AxiosInstance } from 'axios';
-import { StructError } from 'superstruct';
-import { Config } from '../config';
-import {
+import axios from 'axios';
+import type { AxiosInstance } from 'axios';
+import { ZodError } from 'zod';
+import type { Config } from '../config';
+import type {
   AddressSearcherOptions,
   NTACorporateInfoSearcherOptions,
 } from './interfaces.compatible';
-import {
+import type {
   APIVersion,
   AddressResolverResponseForVersion,
   AddressSearcherResponseForVersion,
@@ -17,8 +18,8 @@ import {
   BankResolverResponseForVersion,
   BankBranchesResponseForVersion,
   BankBranchResolverResponseForVersion,
-  getValidators,
 } from './validators';
+import { getValidators } from './validators';
 export type { APIVersion } from './validators';
 
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
@@ -44,7 +45,10 @@ export class KENALLV1 {
    *               signing in to the service.
    * @param config Specifies the configuration given by {@link Config}.
    */
-  constructor(readonly apikey: string, config: Config = {}) {
+  constructor(
+    readonly apikey: string,
+    config: Config = {}
+  ) {
     this.apibase = config.apibase || DEFAULT_APIBASE_V1;
     this.timeout = config.timeout || 1000;
     this.axios = axios.create({
@@ -84,7 +88,7 @@ export class KENALLV1 {
   ): Promise<AddressResolverResponseForVersion<T>> {
     const resp = await this.request(
       `/postalcode/${normalizePostalCode(postalCode)}`,
-      version != undefined ? { version: version } : {},
+      version !== undefined ? { version: version } : {},
       apiVersion
     );
     try {
@@ -92,13 +96,12 @@ export class KENALLV1 {
         resp
       ) as AddressResolverResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 
@@ -120,7 +123,7 @@ export class KENALLV1 {
   ): Promise<CityResolverResponseForVersion<T>> {
     const resp = await this.request(
       `/cities/${prefectureCode}`,
-      version != undefined ? { version: version } : {},
+      version !== undefined ? { version: version } : {},
       apiVersion
     );
     try {
@@ -128,13 +131,12 @@ export class KENALLV1 {
         resp
       ) as CityResolverResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 
@@ -152,22 +154,22 @@ export class KENALLV1 {
   ): Promise<AddressSearcherResponseForVersion<T>> {
     const params: { [k: string]: string } = {};
     if (options.q !== undefined) {
-      params['q'] = options.q;
+      params.q = options.q;
     }
     if (options.t !== undefined) {
-      params['t'] = options.t;
+      params.t = options.t;
     }
     if (options.offset !== undefined) {
-      params['offset'] = String(options.offset | 0);
+      params.offset = String(options.offset | 0);
     }
     if (options.limit !== undefined) {
-      params['limit'] = String(options.limit | 0);
+      params.limit = String(options.limit | 0);
     }
     if (options.version !== undefined) {
-      params['version'] = options.version;
+      params.version = options.version;
     }
     if (options.facet !== undefined) {
-      params['facet'] = options.facet;
+      params.facet = options.facet;
     }
     const resp = await this.request('/postalcode/', params, apiVersion);
     try {
@@ -175,13 +177,12 @@ export class KENALLV1 {
         resp
       ) as AddressSearcherResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 
@@ -207,13 +208,12 @@ export class KENALLV1 {
         resp
       ) as NTACorporateInfoResolverResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 
@@ -231,28 +231,28 @@ export class KENALLV1 {
   ): Promise<NTACorporateInfoSearcherResponseForVersion<T>> {
     const params: { [k: string]: string } = {};
     if (options.query !== undefined) {
-      params['q'] = options.query;
+      params.q = options.query;
     }
     if (options.mode !== undefined) {
-      params['mode'] = options.mode;
+      params.mode = options.mode;
     }
     if (options.offset !== undefined) {
-      params['offset'] = String(options.offset | 0);
+      params.offset = String(options.offset | 0);
     }
     if (options.limit !== undefined) {
-      params['limit'] = String(options.limit | 0);
+      params.limit = String(options.limit | 0);
     }
     if (options.facet_area !== undefined) {
-      params['facet_area'] = options.facet_area;
+      params.facet_area = options.facet_area;
     }
     if (options.facet_kind !== undefined) {
-      params['facet_kind'] = options.facet_kind;
+      params.facet_kind = options.facet_kind;
     }
     if (options.facet_process !== undefined) {
-      params['facet_process'] = options.facet_process;
+      params.facet_process = options.facet_process;
     }
     if (options.facet_close_cause !== undefined) {
-      params['facet_close_cause'] = options.facet_close_cause;
+      params.facet_close_cause = options.facet_close_cause;
     }
     try {
       const resp = await this.request('/houjinbangou', params, apiVersion);
@@ -260,13 +260,12 @@ export class KENALLV1 {
         resp
       ) as NTACorporateInfoSearcherResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 
@@ -276,10 +275,10 @@ export class KENALLV1 {
    * @param issuerNumber The qualified invoice issuer number to query with.
    * @param apiVersion The API version. The return type is determined based
    *                   on this argument, and thus it cannot be a variable.
-   * @returns An {@link NTAQualifiedInvoiceIssuerResolverResponse}.
+   * @returns An {@link NTAQualifiedInvoiceIssuerInfoResolverResponse}.
    */
   async getNTAQualifiedInvoiceIssuerInfo<
-    T extends APIVersion | undefined = undefined
+    T extends APIVersion | undefined = undefined,
   >(
     issuerNumber: string,
     apiVersion?: T
@@ -296,13 +295,12 @@ export class KENALLV1 {
         resp
       ) as NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 
@@ -322,13 +320,12 @@ export class KENALLV1 {
         resp
       ) as BanksResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 
@@ -350,13 +347,12 @@ export class KENALLV1 {
         resp
       ) as BankResolverResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 
@@ -382,13 +378,12 @@ export class KENALLV1 {
         resp
       ) as BankBranchesResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 
@@ -416,13 +411,12 @@ export class KENALLV1 {
         resp
       ) as BankBranchResolverResponseForVersion<T>;
     } catch (e) {
-      if (e instanceof StructError) {
+      if (e instanceof ZodError) {
         throw new Error(
-          `invalid response payload: ${e.path} must be ${e.type}`
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
         );
-      } else {
-        throw e;
       }
+      throw e;
     }
   }
 }

@@ -1,61 +1,127 @@
 {
-    "NTACorporateInfoProcess": {
-        "comment": {
-            "shortText": [
-                "`NTACorporateInfoProcess`は、なぜ当該レコードが作成されたかを表します。"
-            ]
-        },
-        "members": {
-            "NEW": {
-                "comment": {
-                    "shortText": "新規"
-                }
-            },
-            "NAME_CHANGED": {
-                "comment": {
-                    "shortText": "商号又は名称の変更"
-                }
-            },
-            "DOMESTIC_ADDRESS_CHANGED": {
-                "comment": {
-                    "shortText": "国内所在地の変更"
-                }
-            },
-            "OVERSEAS_ADDRESS_CHANGED": {
-                "comment": {
-                    "shortText": "国外所在地の変更"
-                }
-            },
-            "REGISTRATION_RECORD_CLOSED": {
-                "comment": {
-                    "shortText": "登記記録の閉鎖等"
-                }
-            },
-            "REGISTRATION_RECORD_REOPENED": {
-                "comment": {
-                    "shortText": "登記記録の復活等"
-                }
-            },
-            "ABSORPTION_MERGER_COMPLETED": {
-                "comment": {
-                    "shortText": "吸収合併"
-                }
-            },
-            "ABSORPTION_MERGER_INVALIDATED": {
-                "comment": {
-                    "shortText": "吸収合併無効"
-                }
-            },
-            "REGISTRATION_RECORD_ERASED": {
-                "comment": {
-                    "shortText": "商号の登記抹消"
-                }
-            },
-            "DELETED": {
-                "comment": {
-                    "shortText": "削除"
-                }
-            }
+  "NTACorporateInfoProcess": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTACorporateInfoProcess`は、なぜ当該レコードが作成されたかを表します。\n"
         }
-    }
+      ]
+    },
+    "members": {
+      "NEW": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "新規\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "NAME_CHANGED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "商号又は名称の変更\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "DOMESTIC_ADDRESS_CHANGED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "国内所在地の変更\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "OVERSEAS_ADDRESS_CHANGED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "国外所在地の変更\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "REGISTRATION_RECORD_CLOSED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "登記記録の閉鎖等\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "REGISTRATION_RECORD_REOPENED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "登記記録の復活等\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "ABSORPTION_MERGER_COMPLETED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "吸収合併\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "ABSORPTION_MERGER_INVALIDATED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "吸収合併無効\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "REGISTRATION_RECORD_ERASED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "商号の登記抹消\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "DELETED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "削除\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

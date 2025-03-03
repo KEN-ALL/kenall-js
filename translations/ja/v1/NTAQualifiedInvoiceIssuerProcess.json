@@ -1,34 +1,72 @@
 {
-    "NTAQualifiedInvoiceIssuerProcess": {
-        "comment": {
-            "shortText": "`NTAQualifiedInvoiceIssuerProcess`はレコードの登録状況を表します。"
-        },
-        "members": {
-            "NEW": {
-                "comment": {
-                    "shortText": "新規に登録されたことを示します。"
-                }
-            },
-            "INFORMATION_CHANGED": {
-                "comment": {
-                    "shortText": "情報が更新されたことを示します。"
-                }
-            },
-            "REGISTRATION_EXPIRED": {
-                "comment": {
-                    "shortText": "レコードに対応する適格請求書発行事業者の登録が失効したことを示します。"
-                }
-            },
-            "REGISTRATION_DISPOSED": {
-                "comment": {
-                    "shortText": "レコードに対応する適格請求書発行事業者が取消されたことを示します。"
-                }
-            },
-            "DELETED": {
-                "comment": {
-                    "shortText": "抹消されたことを示します。"
-                }
-            }
+  "NTAQualifiedInvoiceIssuerProcess": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTAQualifiedInvoiceIssuerProcess`はレコードの登録状況を表します。\n"
         }
-    }
+      ]
+    },
+    "members": {
+      "NEW": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "新規に登録されたことを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "INFORMATION_CHANGED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "情報が更新されたことを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "REGISTRATION_EXPIRED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "レコードに対応する適格請求書発行事業者の登録が失効したことを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "REGISTRATION_DISPOSED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "レコードに対応する適格請求書発行事業者が取消されたことを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "DELETED": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "抹消されたことを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

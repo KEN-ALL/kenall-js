@@ -1,21 +1,62 @@
 {
     "CityResolverResponse": {
         "comment": {
-            "shortText": "A `CityResolverResponse` describes a response to \"getCities\" API call."
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`CityResolverResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": " describes a response to "
+                },
+                {
+                    "kind": "code",
+                    "text": "`getCities`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "version": {
                 "comment": {
-                    "shortText": [
-                        "The version of the data, in the form of `\"YYYY-MM-DD\"`",
-                        "where Y, M, and D represent digits of the year, month, and day",
-                        "the source data became available."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The version of the data, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day\nthe source data became available."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "data": {
                 "comment": {
-                    "shortText": "The set of the data that match to the query."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The set of the data that match to the query."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

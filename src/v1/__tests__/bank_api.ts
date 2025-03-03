@@ -1,6 +1,5 @@
-import { mocked } from 'jest-mock';
 import { KENALL } from '..';
-import { AxiosInstance } from 'axios';
+import type { AxiosInstance } from 'axios';
 import axios from 'axios';
 
 jest.mock('axios');
@@ -95,7 +94,7 @@ const bankBranchResolverResponseV20230901 = [
 
 test.each(banksResponseV20230901)('getBanks method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+  axios.create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
     retval.get = mockedAxiosGet;
     return retval;
@@ -116,7 +115,7 @@ test.each(banksResponseV20230901)('getBanks method', async (fixture) => {
 
 test.each(bankResolverResponseV20230901)('getBank method', async (fixture) => {
   const mockedAxiosGet = jest.fn();
-  mocked(axios).create = jest.fn((...args): AxiosInstance => {
+  axios.create = jest.fn((...args): AxiosInstance => {
     const retval = jest.requireActual('axios').create(...args);
     retval.get = mockedAxiosGet;
     return retval;
@@ -139,7 +138,7 @@ test.each(bankBranchesResponseV20230901)(
   'getBankBranches method',
   async (fixture) => {
     const mockedAxiosGet = jest.fn();
-    mocked(axios).create = jest.fn((...args): AxiosInstance => {
+    axios.create = jest.fn((...args): AxiosInstance => {
       const retval = jest.requireActual('axios').create(...args);
       retval.get = mockedAxiosGet;
       return retval;
@@ -163,7 +162,7 @@ test.each(bankBranchResolverResponseV20230901)(
   'getBankBranch method',
   async (fixture) => {
     const mockedAxiosGet = jest.fn();
-    mocked(axios).create = jest.fn((...args): AxiosInstance => {
+    axios.create = jest.fn((...args): AxiosInstance => {
       const retval = jest.requireActual('axios').create(...args);
       retval.get = mockedAxiosGet;
       return retval;

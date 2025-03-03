@@ -1,27 +1,54 @@
 {
-    "NTAQualifiedInvoiceIssuerInfoResolverResponse": {
+  "NTAQualifiedInvoiceIssuerInfoResolverResponse": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTAQualifiedInvoiceIssuerInfoResolverResponse`は\n"
+        },
+        {
+          "kind": "text",
+          "text": "`getNTAQualifiedInvoiceIssuerInfo`APIの呼び出しの応答を記述します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "version": {
         "comment": {
-            "shortText": [
-                "`NTAQualifiedInvoiceIssuerInfoResolverResponse`は",
-                "`getNTAQualifiedInvoiceIssuerInfo`APIの呼び出しの応答を記述します。"
-            ]
-        },
-        "properties": {
-            "version": {
-                "comment": {
-                    "text": [
-                        "デフォルトは最新バージョンとなります。",
-                        "例: `\"2021-04-30\"`"
-                    ],
-                    "shortText": "どのデータベースのバージョンに対して検索を実行したか。"
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "どのデータベースのバージョンに対して検索を実行したか。\n\n"
             },
-            "data": {
-                "comment": {
-                    "shortText": "問い合わせにマッチしたデータ。"
-                }
+            {
+              "kind": "text",
+              "text": "デフォルトは最新バージョンとなります。\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2021-04-30\"`\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "data": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "問い合わせにマッチしたデータ。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

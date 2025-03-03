@@ -86,7 +86,7 @@ api.getAddress(postalCode).then(
 $ npm run build
 ```
 
-を実行すると、生成されたjsファイルが`built/`配下に出力されます。
+を実行すると、生成されたjsファイルが`dist/`配下に出力されます。
 
 ```
 $ npm run bundle

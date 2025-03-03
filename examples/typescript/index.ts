@@ -1,4 +1,4 @@
-import { KENALL } from 'kenall';
+import { KENALL } from '@ken-all/kenall';
 
 const postalCode = '1000001';
 const api = new KENALL('API_KEY');

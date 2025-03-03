@@ -1,5 +1,6 @@
-import * as v20221101 from './interfaces.v20221101';
-import * as v20230901 from './interfaces.v20230901';
+import type * as v20221101 from './interfaces.v20221101';
+import type * as v20230901 from './interfaces.v20230901';
+import type * as v20240101 from './interfaces.v20240101';
 
 export type UpdateStatus = v20221101.UpdateStatus;
 export type UpdateReason = v20221101.UpdateReason;
@@ -18,6 +19,18 @@ export type NTACorporateInfoSearcherOptions =
 export type NTACorporateInfoFacets = v20221101.NTACorporateInfoFacets;
 export type NTACorporateInfoSearcherResponse =
   v20221101.NTACorporateInfoSearcherResponse;
+export type NTAQualifiedInvoiceIssuerCorrect =
+  v20240101.NTAQualifiedInvoiceIssuerCorrect;
+export type NTAQualifiedInvoiceIssuerCountry =
+  v20240101.NTAQualifiedInvoiceIssuerCountry;
+export type NTAQualifiedInvoiceIssuerInfo =
+  v20240101.NTAQualifiedInvoiceIssuerInfo;
+export type NTAQualifiedInvoiceIssuerKind =
+  v20240101.NTAQualifiedInvoiceIssuerKind;
+export type NTAQualifiedInvoiceIssuerProcess =
+  v20240101.NTAQualifiedInvoiceIssuerProcess;
+export type NTAQualifiedInvoiceIssuerInfoResolverResponse =
+  v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse;
 export type Bank = v20230901.Bank;
 export type BankBranch = v20230901.BankBranch;
 export type BanksResponse = v20230901.BanksResponse;
@@ -393,7 +406,7 @@ export interface Address {
 
 /**
  * An `AddressResolverResponse` describes a response to
- * "getAddress" API call.
+ * `getAddress` API call.
  */
 export interface AddressResolverResponse {
   /**
@@ -411,7 +424,7 @@ export interface AddressResolverResponse {
 
 /**
  * An `AddressSearcherResponse` describes a response to
- * "searchAddresses" API call.
+ * `searchAddresses` API call.
  */
 export interface AddressSearcherResponse extends AddressResolverResponse {
   /**
@@ -532,7 +545,7 @@ export interface City {
 }
 
 /**
- * A `CityResolverResponse` describes a response to "getCities" API call.
+ * A `CityResolverResponse` describes a response to `getCities` API call.
  */
 export interface CityResolverResponse {
   /**

@@ -1,29 +1,61 @@
 {
-    "NTACorporateInfoCloseCause": {
+  "NTACorporateInfoCloseCause": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTACorporateInfoCloseCause`は、なぜその法人登記が閉鎖されたかを表します。\n"
+        }
+      ]
+    },
+    "members": {
+      "LIQUIDATION_COMPLETED": {
         "comment": {
-            "shortText": [
-                "`NTACorporateInfoCloseCause`は、なぜその法人登記が閉鎖されたかを表します。"            ]
-        },
-        "members": {
-            "LIQUIDATION_COMPLETED": {
-                "comment": {
-                    "shortText": "清算の結了等"
-                }
-            },
-            "DISSOLUTION_BY_MERGER": {
-                "comment": {
-                    "shortText": "合併による解散等"
-                }
-            },
-            "CLOSED_BY_REGISTERER": {
-                "comment": {
-                    "shortText": "登記官による閉鎖"
-                }
-            },
-            "OTHER": {
-                "comment": {
-                    "shortText": "その他の清算の結了等"
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "清算の結了等\n"
             }
-        }    }
+          ]
+        },
+        "summary": []
+      },
+      "DISSOLUTION_BY_MERGER": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "合併による解散等\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "CLOSED_BY_REGISTERER": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "登記官による閉鎖\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "OTHER": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "その他の清算の結了等\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

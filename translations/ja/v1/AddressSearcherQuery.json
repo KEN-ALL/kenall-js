@@ -1,81 +1,174 @@
 {
-    "AddressSearcherQuery": {
+  "AddressSearcherQuery": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`AddressSearcherQuery`は検索クエリとその中に含まれる住所要素を表現します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "raw": {
         "comment": {
-            "shortText": "`AddressSearcherQuery`は検索クエリとその中に含まれる住所要素を表現します。"
-        },
-        "properties": {
-            "raw": {
-                "comment": {
-                    "shortText": "検索が行われる対象となった問い合わせ。"
-                }
-            },
-            "prefecture": {
-                "comment": {
-                    "text": "例: `\"東京都\"`",
-                    "shortText": "都道府県名。"
-                }
-            },
-            "county": {
-                "comment": {
-                    "text": "例: `\"秩父郡\"`",
-                    "shortText": "郡名。"
-                }
-            },
-            "city": {
-                "comment": {
-                    "text": "例: `\"各務原市\"`",
-                    "shortText": "郡や政令指定都市の行政区を含まない市町村及び東京都特別区の名前。"
-                }
-            },
-            "city_ward": {
-                "comment": {
-                    "text": "例: `\"北区\"`",
-                    "shortText": "政令指定都市の行政区名。"
-                }
-            },
-            "town": {
-                "comment": {
-                    "text": "例: `箱石`",
-                    "shortText": "町名。"
-                }
-            },
-            "kyoto_street": {
-                "comment": {
-                    "text": [
-                        "例:",
-                        "* `\"先斗町通蛸薬師上る\"`",
-                        "* `\"大宮通寺之内半丁下る東入\"`"
-                    ],
-                    "shortText": [
-                        "京都市の特定地域に固有の指示的なフレーズからなる副地域 (通り名)。"
-                    ]
-                }
-            },
-            "block_lot_num": {
-                "comment": {
-                    "text": "例: `\"3-12-14\"`",
-                    "shortText": [
-                        "「番地」「丁目・番・号」といった要素を表す文字列を正規化し、ハイフンで繋いだ数字としたもの"
-                    ]
-                }
-            },
-            "building": {
-                "comment": {
-                    "text": "例: `\"麹町駅前ヒルトップ\"`",
-                    "shortText": [
-                        "建物名 (階名を含まない)"
-                    ]
-                }
-            },
-            "floor_room": {
-                "comment": {
-                    "text": "例: `\"8階801\"`",
-                    "shortText": [
-                        "階名 (部屋番号等を含む場合がある)"
-                    ]
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "検索が行われる対象となった問い合わせ。\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "prefecture": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "都道府県名。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"東京都\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "county": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "郡名。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"秩父郡\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "郡や政令指定都市の行政区を含まない市町村及び東京都特別区の名前。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"各務原市\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_ward": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "政令指定都市の行政区名。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"北区\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "町名。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `箱石`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "kyoto_street": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "京都市の特定地域に固有の指示的なフレーズからなる副地域 (通り名)。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例:\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"先斗町通蛸薬師上る\"`\n"
+            },
+            {
+              "kind": "text",
+              "text": "* `\"大宮通寺之内半丁下る東入\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "block_lot_num": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "「番地」「丁目・番・号」といった要素を表す文字列を正規化し、ハイフンで繋いだ数字としたもの\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"3-12-14\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "building": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "建物名 (階名を含まない)\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"麹町駅前ヒルトップ\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "floor_room": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "階名 (部屋番号等を含む場合がある)\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"8階801\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

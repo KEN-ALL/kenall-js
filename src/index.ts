@@ -18,7 +18,6 @@ export {
   NTACorporateInfoSearchMode,
   NTACorporateInfoSearcherOptions,
   NTACorporateInfoSearcherResponse,
-  NTACorporateInfoV20240101,
   NTAQualifiedInvoiceIssuerCorrect,
   NTAQualifiedInvoiceIssuerCountry,
   NTAQualifiedInvoiceIssuerInfo,

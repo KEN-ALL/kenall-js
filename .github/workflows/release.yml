@@ -1,33 +1,28 @@
 name: Release
 
 on:
-  push:
-    tags:
-      - "v**"
+  release:
+    types:
+      - published
 
 jobs:
-  draft-release:
+  build-docs:
     name: Draft release
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Use Node.js 16
-        uses: actions/setup-node@v1
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 22
 
       - name: Install dependencies
         run: |
           npm i
-
-      - name: Run gulp 
-        run: |
-          set -xe
-          npm run release
 
       - name: Build documents
         run: |
@@ -36,7 +31,7 @@ jobs:
           npm run doc:ja
 
       - name: Deploy document to GitHub pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./built/docs
+          publish_dir: ./dist/docs

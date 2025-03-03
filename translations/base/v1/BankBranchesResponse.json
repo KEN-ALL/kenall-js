@@ -1,0 +1,73 @@
+{
+    "BankBranchesResponse": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`BankBranchesResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": " describes a response to\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "`getBankBranches`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call.\nThe response includes the bank and the branch data.\nThe bank data is the same as the "
+                },
+                {
+                    "kind": "code",
+                    "text": "`BankResolverResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": "."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "version": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The version of the data, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nwhere Y, M, and D represent digits of the year, month, and day\nthe source data became available."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "data": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The bank and branch data.\nThe branches key is the bank branch code."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

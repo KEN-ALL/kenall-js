@@ -1,65 +1,418 @@
 {
     "KENALL": {
-        "properties": {},
+        "properties": {
+            "apikey": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The key string that you want to call the API with. The key is\n              shown in the dashboard you will be navigated to right after\n              signing in to the service."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
         "methods": {
             "getAddress": {
                 "comment": {
-                    "shortText": "Invokes \"getAddress\" API (endpoint: `/postalcode/{postalcode}`).",
-                    "returns": "An {@link AddressResolverResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getAddress\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/postalcode/{postalcode}`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "An "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "AddressResolverResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             },
             "getCities": {
                 "comment": {
-                    "shortText": "Invokes \"getCities\" API (endpoint: `/cities/{prefectureCode}`).",
-                    "returns": "A {@link CityResolverResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getCities\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/cities/{prefectureCode}`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "CityResolverResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             },
             "searchAddresses": {
                 "comment": {
-                    "shortText": "Invokes \"searchAddresses\" API (endpoint: `/postalcode/?...`).",
-                    "returns": "An {@link AddressSearcherResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"searchAddresses\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/postalcode/?...`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "An "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "AddressSearcherResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             },
             "getNTACorporateInfo": {
                 "comment": {
-                    "shortText": "Invokes \"getNTACorporateInfo\" API (endpoint: `/houjinbangou/{corporateNumber}`).",
-                    "returns": "An {@link NTACorporateInfoResolverResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getNTACorporateInfo\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/houjinbangou/{corporateNumber}`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "An "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "NTACorporateInfoResolverResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             },
             "searchNTACorporateInfo": {
                 "comment": {
-                    "shortText": "Invokes \"searchNTACorporateInfo\" API (endpoint: `/houjinbangou?...`).",
-                    "returns": "An {@link NTACorporateInfoSearcherResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"searchNTACorporateInfo\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/houjinbangou?...`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "An "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "NTACorporateInfoSearcherResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             },
             "getNTAQualifiedInvoiceIssuerInfo": {
                 "comment": {
-                    "shortText": "Invokes \"getNTAQualifiedInvoiceIssuerInfo\" API (endpoint: `/invoice/{issuerNumber}`).",
-                    "returns": "An {@link NTAQualifiedInvoiceIssuerResolverResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getNTAQualifiedInvoiceIssuerInfo\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/invoice/{issuerNumber}`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "An "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "NTAQualifiedInvoiceIssuerInfoResolverResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             },
             "getBanks": {
                 "comment": {
-                    "shortText": "Invokes \"getBanks\" API (endpoint: `/bank`).",
-                    "returns": "A {@link BanksResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getBanks\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/bank`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "BanksResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             },
             "getBank": {
                 "comment": {
-                    "shortText": "Invokes \"getBank\" API (endpoint: `/bank/{bankCode}`).",
-                    "returns": "A {@link BankResolverResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getBank\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/bank/{bankCode}`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "BankResolverResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             },
             "getBankBranches": {
                 "comment": {
-                    "shortText": "Invokes \"getBankBranch\" API (endpoint: `/bank/{bankCode}/branches`).",
-                    "returns": "A {@link BankBranchesResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getBankBranch\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/bank/{bankCode}/branches`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "BankBranchesResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             },
             "getBankBranch": {
                 "comment": {
-                    "shortText": "Invokes \"getBankBranch\" API (endpoint: `/bank/{bankCode}/branches/{branchCode}`).",
-                    "returns": "A {@link BankBranchResolverResponse}.\n"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getBankBranch\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/bank/{bankCode}/branches/{branchCode}`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "BankBranchResolverResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
                 }
             }
         },

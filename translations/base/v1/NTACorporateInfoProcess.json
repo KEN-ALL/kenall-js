@@ -1,60 +1,142 @@
 {
     "NTACorporateInfoProcess": {
         "comment": {
-            "shortText": [
-                "A `NTACorporateInfoProcess` represents the reason why the record",
-                "was added."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTACorporateInfoProcess`"
+                },
+                {
+                    "kind": "text",
+                    "text": " represents the reason why the record\nwas added."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "members": {
             "NEW": {
                 "comment": {
-                    "shortText": "Indicates new record."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates new record."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "NAME_CHANGED": {
                 "comment": {
-                    "shortText": "Indicates trade name or corporate name was changed."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates trade name or corporate name was changed."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "DOMESTIC_ADDRESS_CHANGED": {
                 "comment": {
-                    "shortText": "Indicates domestic address was changed."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates domestic address was changed."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "OVERSEAS_ADDRESS_CHANGED": {
                 "comment": {
-                    "shortText": "Indicates overseas address was changed."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates overseas address was changed."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "REGISTRATION_RECORD_CLOSED": {
                 "comment": {
-                    "shortText": "Indicates registration record was closed."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates registration record was closed."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "REGISTRATION_RECORD_REOPENED": {
                 "comment": {
-                    "shortText": "Indicates registration record was reopened."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates registration record was reopened."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "ABSORPTION_MERGER_COMPLETED": {
                 "comment": {
-                    "shortText": "Indicates absorption merger completed."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates absorption merger completed."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "ABSORPTION_MERGER_INVALIDATED": {
                 "comment": {
-                    "shortText": "Indicates absorption merger was invalidated."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates absorption merger was invalidated."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "REGISTRATION_RECORD_ERASED": {
                 "comment": {
-                    "shortText": "Indicates registration record was erased."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates registration record was erased."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "DELETED": {
                 "comment": {
-                    "shortText": "Indicates the record was deleted."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates the record was deleted."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         }

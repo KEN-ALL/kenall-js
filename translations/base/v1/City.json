@@ -1,85 +1,450 @@
 {
     "City": {
         "comment": {
-            "shortText": "A `City` object would store the information about the resolved area."
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`City`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object would store the information about the resolved area."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "jisx0402": {
                 "comment": {
-                    "shortText": [
-                        "The 5 digit Japanese municipality code (全国地方公共団体コード)",
-                        "for the administrative division this object represents."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The 5 digit Japanese municipality code (全国地方公共団体コード)\nfor the administrative division this object represents."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "prefecture_code": {
                 "comment": {
-                    "text": "Example: `\"13\"`",
-                    "shortText": "The prefecture code defined in JISX0401."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The prefecture code defined in JISX0401.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"13\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "prefecture": {
                 "comment": {
-                    "text": "Example: `\"東京都\"`",
-                    "shortText": "The name of the prefecture in Kanji."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the prefecture in Kanji.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東京都\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "prefecture_kana": {
                 "comment": {
-                    "text": "Example: `\"トウキョウト\"`",
-                    "shortText": "The reading of the name of the prefecture in katakana."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of the prefecture in katakana.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"トウキョウト\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "prefecture_roman": {
                 "comment": {
-                    "text": "Example: `\"Tokyo\"`",
-                    "shortText": "The \"romanized\" reading of the name of the prefecture."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading of the name of the prefecture.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Tokyo\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "city_code": {
                 "comment": {
-                    "text": "Example: `\"113\"`",
-                    "shortText": "The remaining portion of the JISX0402 code that has the leading two-dight prefecture code removed."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The remaining portion of the JISX0402 code that has the leading two-dight prefecture code removed.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"113\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "city": {
                 "comment": {
-                    "text": [
-                        "Examples:",
-                        "* `\"港区\"`",
-                        "* `\"大阪市北区\"`",
-                        "* `\"各務原市\"`",
-                        "* `\"秩父郡長瀞町\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the city.\nThe county name may precede it, or the name of the\nward would follow it in case the city has ordinance-designated wards.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"港区\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"大阪市北区\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"各務原市\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"秩父郡長瀞町\"`"
+                        }
                     ],
-                    "shortText": [
-                        "The name of the city.",
-                        "The county name may precede it, or the name of the",
-                        "ward would follow it in case the city has ordinance-designated wards."
-                    ]
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "city_kana": {
                 "comment": {
-                    "text": [
-                        "Examples:",
-                        "* `\"ミナトク\"`",
-                        "* `\"オオサカシキタク\"`",
-                        "* `\"カカミガハラシ\"`",
-                        "* `\"チチブグンナガトロマチ\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of the city in katakana.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"ミナトク\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"オオサカシキタク\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"カカミガハラシ\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"チチブグンナガトロマチ\"`"
+                        }
                     ],
-                    "shortText": "The reading of the name of the city in katakana."
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "city_roman": {
                 "comment": {
-                    "text": [
-                        "Examples:",
-                        "* `\"Minato-ku\"`",
-                        "* `\"Kita-ku, Osaka\"`",
-                        "* `\"Kakamigahara\"`",
-                        "* `\"Nagatoro, Chichibu\"`"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading of the name of the city.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Minato-ku\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Kita-ku, Osaka\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Kakamigahara\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Nagatoro, Chichibu\"`"
+                        }
                     ],
-                    "shortText": "The \"romanized\" reading of the name of the city."
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "county": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the county, if any. This should be contained as part of the city name.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"秩父郡\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"西多摩郡\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"薩摩郡\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東松浦郡\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "county_kana": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading name of the county in katakana, if any. This should be contained as part of the reading name of the city.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"チチブグン\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"ニシタマグン\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"サツマグン\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"ヒガシマツウラグン\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "county_roman": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading name of the county, if any. This should be contained as part of the reading name of the city.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Chichibu\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Nishitama\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Satsuma\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Higashimatsura\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "city_without_county_and_ward": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the city, excluding the county and ward part.\n\nExamples:\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"大阪市\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"長瀞町\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"横浜市\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "city_without_county_and_ward_kana": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading name of the city in katakana, excluding the county and ward part.\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"オオサカシ\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"ナガトロマチ\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"ヨコハマシ\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "city_without_county_and_ward_roman": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading name of the city, excluding the county and ward part.\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Osaka\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Nagatoro\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Yokohama\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },

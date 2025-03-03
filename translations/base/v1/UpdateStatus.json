@@ -1,0 +1,68 @@
+{
+    "UpdateStatus": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "The enum for "
+                },
+                {
+                    "kind": "code",
+                    "text": "`update_status`"
+                },
+                {
+                    "kind": "text",
+                    "text": " property of "
+                },
+                {
+                    "kind": "code",
+                    "text": "`Address`"
+                },
+                {
+                    "kind": "text",
+                    "text": " data."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "members": {
+            "NONE": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The record is not modified."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "UPDATED": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The record is modified."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "ABOLISHED": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The record is marked as no longer valid."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        }
+    }
+}

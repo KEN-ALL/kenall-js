@@ -100,7 +100,6 @@ export interface Address {
    * * `"オオサカシキタク"`
    * * `"カカミガハラシ"`
    * * `"チチブグンナガトロマチ"`
-   * "`
    */
   city_kana: string;
 
@@ -249,73 +248,8 @@ export interface Address {
 }
 
 /**
- * A `City` object would store the information about the resolved area.
- */
-export interface City {
-  /**
-   * The 5 digit Japanese municipality code (全国地方公共団体コード)
-   * for the administrative division this object represents.
-   */
-  jisx0402: string;
-
-  /**
-   * The prefecture code defined in JISX0401.
-   *
-   * Example: `"13"`
-   */
-  prefecture_code: string;
-
-  /**
-   * The name of the prefecture in Kanji.
-   *
-   * Example: `"東京都"`
-   */
-  prefecture: string;
-
-  /**
-   * The reading of the name of the prefecture in katakana.
-   *
-   * Example: `"トウキョウト"`
-   */
-  prefecture_kana: string;
-
-  /**
-   * The remaining portion of the JISX0402 code that has the leading two-dight prefecture code removed.
-   *
-   * Example: `"113"`
-   */
-  city_code: string;
-
-  /**
-   * The name of the city.
-   * The county name may precede it, or the name of the
-   * ward would follow it in case the city has ordinance-designated wards.
-   *
-   * Examples:
-   *
-   * * `"港区"`
-   * * `"大阪市北区"`
-   * * `"各務原市"`
-   * * `"秩父郡長瀞町"`
-   */
-  city: string;
-
-  /**
-   * The reading of the name of the city in katakana.
-   *
-   * Examples:
-   *
-   * * `"ミナトク"`
-   * * `"オオサカシキタク"`
-   * * `"カカミガハラシ"`
-   * * `"チチブグンナガトロマチ"`
-   */
-  city_kana: string;
-}
-
-/**
  * An `AddressResolverResponse` describes a response to
- * "getAddress" API call.
+ * `getAddress` API call.
  */
 export interface AddressResolverResponse {
   /**
@@ -388,7 +322,7 @@ export interface AddressSearcherQuery {
   /**
    * The name of the town.
    *
-   * Example: `箱石`
+   * Example: `"箱石"`
    */
   town: string | null;
 
@@ -431,7 +365,7 @@ export interface AddressSearcherQuery {
 
 /**
  * An `AddressSearcherOptions` stores a set of parameters
- * that will be sent to "searchAddresses" API.
+ * that will be sent to `searchAddresses` API.
  */
 export interface AddressSearcherOptions {
   /**
@@ -484,7 +418,7 @@ export interface AddressSearcherOptions {
 
 /**
  * An `AddressSearcherResponse` describes a response to
- * "searchAddresses" API call.
+ * `searchAddresses` API call.
  */
 export interface AddressSearcherResponse extends AddressResolverResponse {
   /**
@@ -574,14 +508,14 @@ export interface City {
    *
    * * `"ミナトク"`
    * * `"オオサカシキタク"`
-   * * `"カガミハラシ"`
-   * * `"チチブグンナガトロチョウ"`
+   * * `"カカミガハラシ"`
+   * * `"チチブグンナガトロマチ"`
    */
   city_kana: string;
 }
 
 /**
- * A `CityResolverResponse` describes a response to "getCities" API call.
+ * A `CityResolverResponse` describes a response to `getCities` API call.
  */
 export interface CityResolverResponse {
   /**
@@ -901,7 +835,7 @@ export interface NTACorporateInfo {
    * The extracted floor name and room number in the address line below the
    * second-level administrative devision.
    *
-   * Example: `"８階８０１"`
+   * Example: `"8階801"`
    */
   floor_room?: string | null;
 
@@ -943,7 +877,7 @@ export interface NTACorporateInfo {
    * correspondent image file.
    * See `address_outside_image_id` for details.
    *
-   * Example: `アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０`
+   * Example: `"アメリカ合衆国ハワイ州２２４１１メリーランド州トライオン・ストリート２０"`
    */
   address_outside: string;
 
@@ -986,7 +920,7 @@ export interface NTACorporateInfo {
    * 12 digit number plus 1 check digit.
    * If the corporate is not closed, this value is set to `null`.
    *
-   * Example: `2021001052596`
+   * Example: `"2021001052596"`
    */
   successor_corporate_number: string | null;
 
@@ -994,7 +928,7 @@ export interface NTACorporateInfo {
    * The reason why the process occurred, 500 characters at maximum.
    * Both zenkaku and hankaku format are allowed.
    *
-   * Example: `令和２年５月１日○○株式会社に合併し解散`
+   * Example: `"令和２年５月１日○○株式会社に合併し解散"`
    */
   change_cause: string;
 
@@ -1029,7 +963,7 @@ export interface NTACorporateInfo {
    * by NTA if it is longer than that length actually.
    * If the address is not registered, this value is set to `null`.
    *
-   * Example: `4-7, Kashiwagicho, Tomakomai shi`
+   * Example: `"4-7, Kashiwagicho, Tomakomai shi"`
    */
   en_address_line: string | null;
 
@@ -1039,7 +973,7 @@ export interface NTACorporateInfo {
    * by NTA if it is longer than that length actually.
    * If the address is not registered, this value is set to `null`.
    *
-   * Example: `35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A.`
+   * Example: `"35 Selegie Road, suiteA-2 Honolulu, Maryland 21401, U.S.A."`
    */
   en_address_outside: string | null;
 
@@ -1047,7 +981,7 @@ export interface NTACorporateInfo {
    * The furigana correspondent to the corporate name.
    * If the furigana is not registered, this value is set to blank.
    *
-   * Example: `オープンコレクター`
+   * Example: `"オープンコレクター"`
    */
   furigana: string;
 
@@ -1062,7 +996,7 @@ export interface NTACorporateInfo {
 
 /**
  * An `NTACorporateInfoResolverResponse` describes a response to
- * "getNTACorporateInfo" API call.
+ * `getNTACorporateInfo` API call.
  */
 export interface NTACorporateInfoResolverResponse {
   /**

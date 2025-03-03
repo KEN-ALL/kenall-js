@@ -1,41 +1,105 @@
 {
     "BankBranch": {
         "comment": {
-            "shortText": "A `BankBranch` object would store the information about the bank branch."
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`BankBranch`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object would store the information about the bank branch."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "properties": {
             "code": {
                 "comment": {
-                    "text": "Example: `\"188\"`",
-                    "shortText": "The code of bank branch."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The code of bank branch.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"188\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "name": {
                 "comment": {
-                    "text": "Example: `\"恵比寿\"`",
-                    "shortText": "The name of bank branch."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of bank branch.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"恵比寿\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "katakana": {
                 "comment": {
-                    "text": "Example: `\"エビス\"`",
-                    "shortText": "The reading of the name of bank branch in katakana."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of bank branch in katakana.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"エビス\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "hiragana": {
                 "comment": {
-                    "text": "Example: `\"えびす\"`",
-                    "shortText": "The reading of the name of bank branch in hiragana."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of bank branch in hiragana.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"えびす\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "romaji": {
                 "comment": {
-                    "text": "Example : `\"ebisu\"`",
-                    "shortText": "The \"romanized\" reading of the name of bank branch."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading of the name of bank branch.\n\nExample : "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"ebisu\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },
         "methods": {}
     }
 }
-

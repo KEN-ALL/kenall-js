@@ -1,25 +1,58 @@
 {
     "NTAQualifiedInvoiceIssuerCountry": {
         "comment": {
-            "shortText": [
-                "An `NTAQualifiedInvoiceIssuerCountry` specifies whether the issuing entity is domestic or not,",
-                "and if domestic, whether it is specifically designated by the National Tax Agency."
-            ]
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTAQualifiedInvoiceIssuerCountry`"
+                },
+                {
+                    "kind": "text",
+                    "text": " specifies whether the issuing entity is domestic or not,\nand if domestic, whether it is specifically designated by the National Tax Agency."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "members": {
             "DOMESTIC_ENTITY": {
                 "comment": {
-                    "shortText": "Implies that the record is for a domestic entity"
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the record is for a domestic entity"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "DESIGNATED_FOREIGN_ENTITY": {
                 "comment": {
-                    "shortText": "Implies that the record is for a designated foreign entity."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the record is for a designated foreign entity."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "GENERAL_FOREIGN_ENTITY": {
                 "comment": {
-                    "shortText": "Implies that the record is for a general (not specifically designated) foreign entity."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the record is for a general (not specifically designated) foreign entity."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         }

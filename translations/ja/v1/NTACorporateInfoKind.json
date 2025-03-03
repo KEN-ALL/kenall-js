@@ -1,59 +1,127 @@
 {
-    "NTACorporateInfoKind": {
-        "comment": {
-            "shortText": "`NTACorporateInfoKind`は、法人種別を表します。"
-        },
-        "members": {
-            "NATIONAL_PUBLIC_ENTITY": {
-                "comment": {
-                    "shortText": "国の機関"
-                }
-            },
-            "LOCAL_PUBLIC_ENTITY": {
-                "comment": {
-                    "shortText": "地方公共団体"
-                }
-            },
-            "KABUSHIKI_KAISHA": {
-                "comment": {
-                    "shortText": "株式会社"
-                }
-            },
-            "YUGEN_KAISHA": {
-                "comment": {
-                    "shortText": "有限会社"
-                }
-            },
-            "GOMEI_KAISHA": {
-                "comment": {
-                    "shortText": "合名会社"
-                }
-            },
-            "GOSHI_KAISHA": {
-                "comment": {
-                    "shortText": "合資会社"
-                }
-            },
-            "GODO_KAISHA": {
-                "comment": {
-                    "shortText": "合同会社"
-                }
-            },
-            "OTHER_COMPANY": {
-                "comment": {
-                    "shortText": "その他の設立登記法人"
-                }
-            },
-            "FOREIGN_COMPANY": {
-                "comment": {
-                    "shortText": "外国会社等"
-                }
-            },
-            "OTHER": {
-                "comment": {
-                    "shortText": "その他"
-                }
-            }
+  "NTACorporateInfoKind": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTACorporateInfoKind`は、法人種別を表します。\n"
         }
-    }
+      ]
+    },
+    "members": {
+      "NATIONAL_PUBLIC_ENTITY": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "国の機関\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "LOCAL_PUBLIC_ENTITY": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "地方公共団体\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "KABUSHIKI_KAISHA": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "株式会社\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "YUGEN_KAISHA": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "有限会社\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "GOMEI_KAISHA": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "合名会社\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "GOSHI_KAISHA": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "合資会社\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "GODO_KAISHA": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "合同会社\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "OTHER_COMPANY": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "その他の設立登記法人\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "FOREIGN_COMPANY": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "外国会社等\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "OTHER": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "その他\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

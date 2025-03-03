@@ -1,17 +1,46 @@
 {
     "NTAQualifiedInvoiceIssuerKind": {
         "comment": {
-            "shortText": "An `NTAQualifiedInvoiceIssuerKind` specifies the kind of the invoice issuer."
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "An "
+                },
+                {
+                    "kind": "code",
+                    "text": "`NTAQualifiedInvoiceIssuerKind`"
+                },
+                {
+                    "kind": "text",
+                    "text": " specifies the kind of the invoice issuer."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
         },
         "members": {
             "INDIVIDUAL": {
                 "comment": {
-                    "shortText": "Implies that the record is for a sole proprietor."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the record is for a sole proprietor."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "CORPORATION": {
                 "comment": {
-                    "shortText": "Implies that the record is for a corporate entity."
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Implies that the record is for a corporate entity."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         }

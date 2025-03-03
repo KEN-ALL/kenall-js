@@ -1,24 +1,50 @@
 {
-    "CityResolverResponse": {
+  "CityResolverResponse": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`City` オブジェクトは解決された地域の情報を格納します。\n"
+        }
+      ]
+    },
+    "properties": {
+      "version": {
         "comment": {
-            "shortText": "`City` オブジェクトは解決された地域の情報を格納します。"
-        },
-        "properties": {
-            "version": {
-                "comment": {
-                    "shortText": [
-                        "データのバージョン。 `\"YYYY-MM-DD\"`形式で、",
-                        "Y、M、Dはそれぞれソースとなったデータが利用可能になった日の",
-                        "年月日を表します。"
-                    ]
-                }
+          "summary": [
+            {
+              "kind": "text",
+              "text": "データのバージョン。 `\"YYYY-MM-DD\"`形式で、\n"
             },
-            "data": {
-                "comment": {
-                    "shortText": "問い合わせに合致する項目の集合。"
-                }
+            {
+              "kind": "text",
+              "text": "Y、M、Dはそれぞれソースとなったデータが利用可能になった日の\n"
+            },
+            {
+              "kind": "text",
+              "text": "年月日を表します。\n"
             }
+          ]
         },
-        "methods": {}
-    }
+        "summary": []
+      },
+      "data": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "問い合わせに合致する項目の集合。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

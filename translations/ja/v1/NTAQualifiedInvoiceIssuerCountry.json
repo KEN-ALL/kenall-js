@@ -1,27 +1,54 @@
 {
-    "NTAQualifiedInvoiceIssuerCountry": {
-        "comment": {
-            "shortText": [
-                "`NTAQualifiedInvoiceIssuerCountry` は発行者が国内事業者かどうかを示します。",
-                "また、もし国内事業者である場合、特定国外事業者かどうかを示します。"
-            ]
+  "NTAQualifiedInvoiceIssuerCountry": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`NTAQualifiedInvoiceIssuerCountry` は発行者が国内事業者かどうかを示します。\n"
         },
-        "members": {
-            "DOMESTIC_ENTITY": {
-                "comment": {
-                    "shortText": "国内事業者であることを示します。"
-                }
-            },
-            "DESIGNATED_FOREIGN_ENTITY": {
-                "comment": {
-                    "shortText": "特定国外事業者であることを示します。"
-                }
-            },
-            "GENERAL_FOREIGN_ENTITY": {
-                "comment": {
-                    "shortText": "その他の国外事業者であることを示します。"
-                }
-            }
+        {
+          "kind": "text",
+          "text": "また、もし国内事業者である場合、特定国外事業者かどうかを示します。\n"
         }
-    }
+      ]
+    },
+    "members": {
+      "DOMESTIC_ENTITY": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "国内事業者であることを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "DESIGNATED_FOREIGN_ENTITY": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "特定国外事業者であることを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "GENERAL_FOREIGN_ENTITY": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "その他の国外事業者であることを示します。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
 }

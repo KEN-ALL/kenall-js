@@ -3,18 +3,34 @@
         "properties": {
             "apibase": {
                 "comment": {
-                    "shortText": [
-                        "Specifies the API endpoint's base URL.",
-                        "The base URL defaults to `https://api.kenall.jp/v1`."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Specifies the API endpoint's base URL.\nThe base URL defaults to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`https://api.kenall.jp/v1`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             },
             "timeout": {
                 "comment": {
-                    "shortText": [
-                        "Specifies the timeout value for API requests.",
-                        "It defaults to 1000ms (1 second) when unspecified."
-                    ]
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Specifies the timeout value for API requests.\nIt defaults to 1000ms (1 second) when unspecified."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
                 }
             }
         },
