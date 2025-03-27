@@ -7,11 +7,11 @@
   "module": ".",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
+      "import": "./dist/index.js",
       "require": "./dist/cjs/index.js"
     },
     "./*": {
-      "import": "./dist/esm/*",
+      "import": "./dist/*",
       "require": "./dist/cjs/*"
     }
   },
