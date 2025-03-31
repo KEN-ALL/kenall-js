@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm i
+          npm ci
 
       - name: Lint
         run: |
@@ -31,3 +31,20 @@ jobs:
       - name: Test
         run: |
           npm run test
+
+      - name: Build
+        run: |
+          npm run build
+
+      - name: Test CJS build
+        run: |
+          cd examples/typescript
+          npm i
+          npm run build
+
+      - name: Test ESM build
+        run: |
+          cd examples/typescript-esm
+          npm i
+          npm run build
+
