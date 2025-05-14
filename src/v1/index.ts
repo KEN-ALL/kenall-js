@@ -1,4 +1,4 @@
-export { KENALLV1 as KENALL } from './core';
+export { KENALLV1 as KENALL } from './core.js';
 export {
   Address,
   AddressResolverResponse,
@@ -30,9 +30,9 @@ export {
   NTAQualifiedInvoiceIssuerKind,
   NTAQualifiedInvoiceIssuerProcess,
   NTAQualifiedInvoiceIssuerInfoResolverResponse,
-} from './interfaces.compatible';
-export * as v20221101 from './interfaces.v20221101';
-export * as v20220901 from './interfaces.v20220901';
-export * as v20230901 from './interfaces.v20230901';
-export * as v20240101 from './interfaces.v20240101';
-export * as v20250101 from './interfaces.v20250101';
+} from './interfaces.compatible.js';
+export * as v20221101 from './interfaces.v20221101.js';
+export * as v20220901 from './interfaces.v20220901.js';
+export * as v20230901 from './interfaces.v20230901.js';
+export * as v20240101 from './interfaces.v20240101.js';
+export * as v20250101 from './interfaces.v20250101.js';

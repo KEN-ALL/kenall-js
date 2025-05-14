@@ -1,6 +1,14 @@
+const { createDefaultEsmPreset } = require('ts-jest');
+/** @type {import('ts-jest').JestConfigWithTsJest} **/
 module.exports = {
-  preset: 'ts-jest',
+  ...createDefaultEsmPreset({
+    tsconfig: {
+      // to suppress warnings
+      esModuleInterop: true,
+    }
+  }),
   roots: [
-    '<rootDir>/src/',
+    "<rootDir>/src/",
   ],
+  resolver: "<rootDir>/jest.resolver.cjs",
 };
