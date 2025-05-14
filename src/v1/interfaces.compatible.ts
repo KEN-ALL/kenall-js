@@ -1,6 +1,6 @@
-import type * as v20221101 from './interfaces.v20221101';
-import type * as v20230901 from './interfaces.v20230901';
-import type * as v20240101 from './interfaces.v20240101';
+import type * as v20221101 from './interfaces.v20221101.js';
+import type * as v20230901 from './interfaces.v20230901.js';
+import type * as v20240101 from './interfaces.v20240101.js';
 
 export type UpdateStatus = v20221101.UpdateStatus;
 export type UpdateReason = v20221101.UpdateReason;

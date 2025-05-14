@@ -11,7 +11,7 @@ import {
   NTAQualifiedInvoiceIssuerUpdateStatus,
   UpdateReason,
   UpdateStatus,
-} from './interfaces.v20240101';
+} from './interfaces.v20240101.js';
 
 export const corporationSchema = z.object({
   name: z.string(),

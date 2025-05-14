@@ -6,7 +6,7 @@ import {
   NTACorporateInfoCloseCause,
   NTACorporateInfoKind,
   NTACorporateInfoProcess,
-} from './interfaces.v20221101';
+} from './interfaces.v20221101.js';
 
 export const corporationSchema = z.object({
   name: z.string(),

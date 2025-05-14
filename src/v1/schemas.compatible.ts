@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
-import * as v20221101 from './interfaces.v20221101';
-import * as v20221101S from './schemas.v20221101';
+import * as v20221101 from './interfaces.v20221101.js';
+import * as v20221101S from './schemas.v20221101.js';
 
 export const corporationSchema = v20221101S.corporationSchema;
 
