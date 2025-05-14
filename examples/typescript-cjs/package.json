@@ -1,11 +1,10 @@
 {
-  "name": "kenall-example-typescript-esm",
+  "name": "kenall-example-typescript-cjs",
   "version": "0.0.0",
   "description": "",
   "author": "Open Collector, Inc.",
   "license": "MIT",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "build": "tsc"
   },

@@ -1,5 +1,5 @@
-import axios from 'axios';
-import type { AxiosInstance } from 'axios';
+import { default as axios } from 'axios';
+import type { AxiosInstance, CreateAxiosDefaults } from 'axios';
 import { ZodError } from 'zod';
 import type { Config } from '../config.js';
 import type {
@@ -51,7 +51,9 @@ export class KENALLV1 {
   ) {
     this.apibase = config.apibase || DEFAULT_APIBASE_V1;
     this.timeout = config.timeout || 1000;
-    this.axios = axios.create({
+    this.axios = (
+      axios as unknown as { create(_: CreateAxiosDefaults): AxiosInstance }
+    ).create({
       baseURL: this.apibase,
       timeout: this.timeout,
       headers: { Authorization: `Token ${this.apikey}` },

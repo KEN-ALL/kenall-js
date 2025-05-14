@@ -38,13 +38,27 @@ jobs:
 
       - name: Test CJS build
         run: |
-          cd examples/typescript
+          cd examples/cjs
           npm i
-          npm run build
+          KENALL_API_KEY=${{ secrets.KENALL_API_KEY }} node index.js
 
       - name: Test ESM build
+        run: |
+          cd examples/esm
+          npm i
+          KENALL_API_KEY=${{ secrets.KENALL_API_KEY }} node index.js
+
+      - name: Test TypeScript CJS build
+        run: |
+          cd examples/typescript-cjs
+          npm i
+          npm run build
+          KENALL_API_KEY=${{ secrets.KENALL_API_KEY }} node index.js
+
+      - name: Test TypeScript ESM build
         run: |
           cd examples/typescript-esm
           npm i
           npm run build
+          KENALL_API_KEY=${{ secrets.KENALL_API_KEY }} node index.js
 
