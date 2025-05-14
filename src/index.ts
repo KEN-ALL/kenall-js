@@ -30,5 +30,5 @@ export {
   BankResolverResponse,
   BankBranchesResponse,
   BankBranchResolverResponse,
-} from './v1';
-export { Config } from './config';
+} from './v1/index.js';
+export { Config } from './config.js';

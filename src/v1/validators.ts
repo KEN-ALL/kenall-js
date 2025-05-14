@@ -1,16 +1,18 @@
-import type * as _compatible from './interfaces.compatible';
-import type * as _v20220901 from './interfaces.v20220901';
-import type * as _v20221101 from './interfaces.v20221101';
-import type * as _v20230901 from './interfaces.v20230901';
-import type * as _v20240101 from './interfaces.v20240101';
-import type * as _v20250101 from './interfaces.v20250101';
+import type * as _compatible from './interfaces.compatible.js';
+import type * as _v20220901 from './interfaces.v20220901.js';
+import type * as _v20221101 from './interfaces.v20221101.js';
+import type * as _v20230901 from './interfaces.v20230901.js';
+import type * as _v20240101 from './interfaces.v20240101.js';
+import type * as _v20250101 from './interfaces.v20250101.js';
+
 import { ZodError } from 'zod';
-import * as compatibleS from './schemas.compatible';
-import * as v20220901S from './schemas.v20220901';
-import * as v20221101S from './schemas.v20221101';
-import * as v20230901S from './schemas.v20230901';
-import * as v20240101S from './schemas.v20240101';
-import * as v20250101S from './schemas.v20250101';
+
+import * as compatibleS from './schemas.compatible.js';
+import * as v20220901S from './schemas.v20220901.js';
+import * as v20221101S from './schemas.v20221101.js';
+import * as v20230901S from './schemas.v20230901.js';
+import * as v20240101S from './schemas.v20240101.js';
+import * as v20250101S from './schemas.v20250101.js';
 
 export type APIVersion =
   | '2022-09-01'

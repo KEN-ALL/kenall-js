@@ -1,11 +1,11 @@
 import axios from 'axios';
 import type { AxiosInstance } from 'axios';
 import { ZodError } from 'zod';
-import type { Config } from '../config';
+import type { Config } from '../config.js';
 import type {
   AddressSearcherOptions,
   NTACorporateInfoSearcherOptions,
-} from './interfaces.compatible';
+} from './interfaces.compatible.js';
 import type {
   APIVersion,
   AddressResolverResponseForVersion,
@@ -18,9 +18,9 @@ import type {
   BankResolverResponseForVersion,
   BankBranchesResponseForVersion,
   BankBranchResolverResponseForVersion,
-} from './validators';
-import { getValidators } from './validators';
-export type { APIVersion } from './validators';
+} from './validators.js';
+import { getValidators } from './validators.js';
+export type { APIVersion } from './validators.js';
 
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
