@@ -1,19 +1,12 @@
 {
-  "name": "kenall-example-typescript",
+  "name": "kenall-example-cjs",
   "version": "0.0.0",
   "description": "",
   "author": "Open Collector, Inc.",
   "license": "MIT",
   "main": "index.js",
-  "module": ".",
-  "scripts": {
-    "build": "tsc"
-  },
   "dependencies": {
     "@ken-all/kenall": "file:../.."
   },
-  "devDependencies": {
-    "@types/node": "^22.13.14",
-    "typescript": "^5.0.0"
-  }
+  "devDependencies": {}
 }

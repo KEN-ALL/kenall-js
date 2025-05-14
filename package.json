@@ -2,9 +2,9 @@
   "name": "@ken-all/kenall",
   "version": "2.0.3",
   "description": "KENALL JavaScript SDK",
-  "main": "./dist/index.js",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "module": ".",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -19,7 +19,7 @@
     "lint": "eslint src/",
     "format": "prettier --write src/",
     "check-format": "prettier -c src/",
-    "build": "tsc -d && tsc -d -p tsconfig.cjs.json",
+    "build": "tsc -d && tsc -d -p tsconfig.cjs.json && echo '{\"type\":\"module\"}' > dist/package.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
     "bundle": "rollup -c",
     "test": "jest",
     "doc:gen-json": "typedoc --plugin typedoc-plugin-localization --generate-json translations/base",
