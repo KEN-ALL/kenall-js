@@ -50,7 +50,7 @@ export class KENALLV1 {
     config: Config = {}
   ) {
     this.apibase = config.apibase || DEFAULT_APIBASE_V1;
-    this.timeout = config.timeout || 1000;
+    this.timeout = config.timeout || 10000;
     this.axios = (
       axios as unknown as { create(_: CreateAxiosDefaults): AxiosInstance }
     ).create({
