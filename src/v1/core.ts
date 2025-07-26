@@ -1,5 +1,3 @@
-import { default as axios } from 'axios';
-import type { AxiosInstance, CreateAxiosDefaults } from 'axios';
 import { ZodError } from 'zod';
 import type { Config } from '../config.js';
 import type {
@@ -19,6 +17,7 @@ import type {
   BankBranchesResponseForVersion,
   BankBranchResolverResponseForVersion,
 } from './validators.js';
+import { buildAugmentedFetch } from './fetch_shim.js';
 import { getValidators } from './validators.js';
 export type { APIVersion } from './validators.js';
 
@@ -33,7 +32,7 @@ function normalizePostalCode(postalCode: string): string {
 }
 
 export class KENALLV1 {
-  private readonly axios: AxiosInstance;
+  private readonly fetch: ReturnType<typeof buildAugmentedFetch>;
   readonly apibase: string;
   readonly timeout: number;
 
@@ -51,12 +50,11 @@ export class KENALLV1 {
   ) {
     this.apibase = config.apibase || DEFAULT_APIBASE_V1;
     this.timeout = config.timeout || 10000;
-    this.axios = (
-      axios as unknown as { create(_: CreateAxiosDefaults): AxiosInstance }
-    ).create({
+    this.fetch = buildAugmentedFetch({
       baseURL: this.apibase,
       timeout: this.timeout,
       headers: { Authorization: `Token ${this.apikey}` },
+      throwErrorsForNon2xx: true,
     });
   }
 
@@ -65,11 +63,12 @@ export class KENALLV1 {
     params = {},
     apiVersion?: string
   ): Promise<unknown> {
-    const r = await this.axios.get(endpoint, {
+    const r = await this.fetch(endpoint, {
+      method: 'GET',
       params: params,
       headers: { ...(apiVersion ? { 'KenAll-API-Version': apiVersion } : {}) },
     });
-    return r.data;
+    return await r.json();
   }
 
   /**
@@ -89,7 +88,7 @@ export class KENALLV1 {
     apiVersion?: T
   ): Promise<AddressResolverResponseForVersion<T>> {
     const resp = await this.request(
-      `/postalcode/${normalizePostalCode(postalCode)}`,
+      `./postalcode/${encodeURIComponent(normalizePostalCode(postalCode))}`,
       version !== undefined ? { version: version } : {},
       apiVersion
     );
@@ -124,7 +123,7 @@ export class KENALLV1 {
     apiVersion?: T
   ): Promise<CityResolverResponseForVersion<T>> {
     const resp = await this.request(
-      `/cities/${prefectureCode}`,
+      `./cities/${encodeURIComponent(prefectureCode)}`,
       version !== undefined ? { version: version } : {},
       apiVersion
     );
@@ -173,7 +172,7 @@ export class KENALLV1 {
     if (options.facet !== undefined) {
       params.facet = options.facet;
     }
-    const resp = await this.request('/postalcode/', params, apiVersion);
+    const resp = await this.request('./postalcode/', params, apiVersion);
     try {
       return getValidators(apiVersion).validateAddressSearcherResponse(
         resp
@@ -202,7 +201,7 @@ export class KENALLV1 {
   ): Promise<NTACorporateInfoResolverResponseForVersion<T>> {
     try {
       const resp = await this.request(
-        `/houjinbangou/${corporateNumber}`,
+        `./houjinbangou/${encodeURIComponent(corporateNumber)}`,
         {},
         apiVersion
       );
@@ -257,7 +256,7 @@ export class KENALLV1 {
       params.facet_close_cause = options.facet_close_cause;
     }
     try {
-      const resp = await this.request('/houjinbangou', params, apiVersion);
+      const resp = await this.request('./houjinbangou', params, apiVersion);
       return getValidators(apiVersion).validateNTACorporateInfoSearcherResponse(
         resp
       ) as NTACorporateInfoSearcherResponseForVersion<T>;
@@ -287,7 +286,7 @@ export class KENALLV1 {
   ): Promise<NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<T>> {
     try {
       const resp = await this.request(
-        `/invoice/${issuerNumber}`,
+        `./invoice/${encodeURIComponent(issuerNumber)}`,
         {},
         apiVersion
       );
@@ -317,7 +316,7 @@ export class KENALLV1 {
     apiVersion?: T
   ): Promise<BanksResponseForVersion<T>> {
     try {
-      const resp = await this.request('/bank', {}, apiVersion);
+      const resp = await this.request('./bank', {}, apiVersion);
       return getValidators(apiVersion).validateBanksResponse(
         resp
       ) as BanksResponseForVersion<T>;
@@ -344,7 +343,11 @@ export class KENALLV1 {
     apiVersion?: T
   ): Promise<BankResolverResponseForVersion<T>> {
     try {
-      const resp = await this.request(`/bank/${bankCode}`, {}, apiVersion);
+      const resp = await this.request(
+        `./bank/${encodeURIComponent(bankCode)}`,
+        {},
+        apiVersion
+      );
       return getValidators(apiVersion).validateBankResolverResponse(
         resp
       ) as BankResolverResponseForVersion<T>;
@@ -372,7 +375,7 @@ export class KENALLV1 {
   ): Promise<BankBranchesResponseForVersion<T>> {
     try {
       const resp = await this.request(
-        `/bank/${bankCode}/branches`,
+        `./bank/${encodeURIComponent(bankCode)}/branches`,
         {},
         apiVersion
       );
@@ -405,7 +408,7 @@ export class KENALLV1 {
   ): Promise<BankBranchResolverResponseForVersion<T>> {
     try {
       const resp = await this.request(
-        `/bank/${bankCode}/branches/${branchCode}`,
+        `./bank/${encodeURIComponent(bankCode)}/branches/${encodeURIComponent(branchCode)}`,
         {},
         apiVersion
       );
