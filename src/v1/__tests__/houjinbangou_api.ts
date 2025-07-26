@@ -1,9 +1,10 @@
 import type { NTACorporateInfoSearchMode } from '..';
-import { KENALL } from '..';
-import type { AxiosInstance } from 'axios';
-import axios from 'axios';
 
-jest.mock('axios');
+import { expect, jest, test } from '@jest/globals';
+import { KENALL } from '..';
+import { buildAugmentedFetch } from '../fetch_shim';
+
+jest.mock('../fetch_shim.js');
 
 test.each([
   {
@@ -321,24 +322,19 @@ test.each([
     },
   },
 ])('getNTACorporateInfo method', async ({ response, expected }) => {
-  const mockedAxiosGet = jest.fn();
-  axios.create = jest.fn((...args): AxiosInstance => {
-    const retval = jest.requireActual('axios').create(...args);
-    retval.get = mockedAxiosGet;
-    return retval;
-  });
-  mockedAxiosGet.mockResolvedValue({
-    data: response,
-  });
+  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  mockFetch.mockResolvedValue({
+    json: jest.fn<Response['json']>().mockResolvedValue(response),
+  } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getNTACorporateInfo('0000000000000');
-  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/houjinbangou/0000000000000');
-  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+  expect(mockFetch).toHaveBeenCalledTimes(1);
+  expect(mockFetch.mock.calls[0][0]).toBe('./houjinbangou/0000000000000');
+  expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+    method: 'GET',
     headers: {},
-    params: {
-      version: undefined,
-    },
+    params: {},
   });
   expect(result).toEqual(expected);
 });
@@ -390,26 +386,21 @@ test.each([
     },
   },
 ])('getNTACorporateInfo method with new API version', async (fixture) => {
-  const mockedAxiosGet = jest.fn();
-  axios.create = jest.fn((...args): AxiosInstance => {
-    const retval = jest.requireActual('axios').create(...args);
-    retval.get = mockedAxiosGet;
-    return retval;
-  });
-  mockedAxiosGet.mockResolvedValue({
-    data: fixture,
-  });
+  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  mockFetch.mockResolvedValue({
+    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+  } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getNTACorporateInfo('0000000000000', '2024-01-01');
-  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/houjinbangou/0000000000000');
-  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+  expect(mockFetch).toHaveBeenCalledTimes(1);
+  expect(mockFetch.mock.calls[0][0]).toBe('./houjinbangou/0000000000000');
+  expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+    method: 'GET',
     headers: {
       'KenAll-API-Version': '2024-01-01',
     },
-    params: {
-      version: undefined,
-    },
+    params: {},
   });
   expect(result).toEqual(fixture);
 });
@@ -542,15 +533,11 @@ test.each([
     facets: null,
   },
 ])('searchNTACorporateInfo method', async (fixture) => {
-  const mockedAxiosGet = jest.fn();
-  axios.create = jest.fn((...args): AxiosInstance => {
-    const retval = jest.requireActual('axios').create(...args);
-    retval.get = mockedAxiosGet;
-    return retval;
-  });
-  mockedAxiosGet.mockResolvedValue({
-    data: fixture,
-  });
+  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  mockFetch.mockResolvedValue({
+    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+  } as unknown as Response);
   const ka = new KENALL('key');
   const options = {
     query: 'オープンコレクター',
@@ -558,9 +545,10 @@ test.each([
     limit: 1,
   };
   const result = await ka.searchNTACorporateInfo(options);
-  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/houjinbangou');
-  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+  expect(mockFetch).toHaveBeenCalledTimes(1);
+  expect(mockFetch.mock.calls[0][0]).toBe('./houjinbangou');
+  expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+    method: 'GET',
     headers: {},
     params: {
       q: 'オープンコレクター',

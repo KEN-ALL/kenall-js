@@ -1,8 +1,9 @@
-import { KENALL } from '..';
-import type { AxiosInstance } from 'axios';
-import axios from 'axios';
+import { expect, jest, test } from '@jest/globals';
 
-jest.mock('axios');
+import { KENALL } from '..';
+import { buildAugmentedFetch } from '../fetch_shim';
+
+jest.mock('../fetch_shim.js');
 
 const addressResolverResponsesV20220901 = [
   {
@@ -356,24 +357,19 @@ const addressResolverResponsesExtra = [
 test.each(addressResolverResponsesV20220901)(
   'getAddress method succeeds with compatible mode and old API',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: fixture,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getAddress('0000000');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/0000000');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/0000000');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {},
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }
@@ -382,24 +378,19 @@ test.each(addressResolverResponsesV20220901)(
 test.each(addressResolverResponsesV20221101)(
   'getAddress method succeeds with compatible mode and newer API',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: fixture,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getAddress('0000000');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/0000000');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/0000000');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {},
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }
@@ -408,24 +399,19 @@ test.each(addressResolverResponsesV20221101)(
 test.each(addressResolverResponsesExtra)(
   'getAddress method succeeds with compatible mode and unknown API version',
   async (case_) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: case_.input,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(case_.input),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getAddress('0000000');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/0000000');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/0000000');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {},
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(case_.expected);
   }
@@ -434,26 +420,21 @@ test.each(addressResolverResponsesExtra)(
 test.each(addressResolverResponsesV20220901)(
   'getAddress method succeeds with strict mode and old API',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: fixture,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getAddress('0000000', undefined, '2022-09-01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/0000000');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/0000000');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {
         'KenAll-API-Version': '2022-09-01',
       },
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }
@@ -462,26 +443,21 @@ test.each(addressResolverResponsesV20220901)(
 test.each(addressResolverResponsesV20221101)(
   'getAddress method succeeds with strict mode and newer API',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: fixture,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getAddress('0000000', undefined, '2022-11-01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/0000000');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/0000000');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {
         'KenAll-API-Version': '2022-11-01',
       },
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }
@@ -492,24 +468,19 @@ test('getAddress method: normalize postal code before sending request', async ()
     version: '2020-08-31',
     data: [],
   };
-  const mockedAxiosGet = jest.fn();
-  axios.create = jest.fn((...args): AxiosInstance => {
-    const retval = jest.requireActual('axios').create(...args);
-    retval.get = mockedAxiosGet;
-    return retval;
-  });
-  mockedAxiosGet.mockResolvedValue({
-    data: fixture,
-  });
+  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  mockFetch.mockResolvedValue({
+    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+  } as unknown as Response);
   const ka = new KENALL('key');
   await ka.getAddress('000-0000');
-  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/0000000');
-  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+  expect(mockFetch).toHaveBeenCalledTimes(1);
+  expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/0000000');
+  expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+    method: 'GET',
     headers: {},
-    params: {
-      version: undefined,
-    },
+    params: {},
   });
 });
 
@@ -643,24 +614,19 @@ const cityResolverResponsesV20230901 = [
 test.each(cityResolverResponsesV20220901)(
   'getCities method succeeds with compatible mode and old API',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: fixture,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getCities('01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./cities/01');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {},
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }
@@ -669,24 +635,19 @@ test.each(cityResolverResponsesV20220901)(
 test.each(cityResolverResponsesV20221101)(
   'getCities method succeeds with compatible mode and newer API',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: fixture,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getCities('01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./cities/01');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {},
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }
@@ -695,24 +656,19 @@ test.each(cityResolverResponsesV20221101)(
 test.each(cityResolverResponsesV20230901)(
   'getCities method succeeds with compatible mode and newer API',
   async (case_) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: case_.input,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(case_.input),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getCities('01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./cities/01');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {},
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(case_.expectedCompatible);
   }
@@ -721,26 +677,21 @@ test.each(cityResolverResponsesV20230901)(
 test.each(cityResolverResponsesV20220901)(
   'getCities method succeeds with strict mode and old API',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: fixture,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getCities('01', undefined, '2022-09-01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./cities/01');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {
         'KenAll-API-Version': '2022-09-01',
       },
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }
@@ -749,26 +700,21 @@ test.each(cityResolverResponsesV20220901)(
 test.each(cityResolverResponsesV20221101)(
   'getCities method succeeds with strict mode and newer API',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: fixture,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getCities('01', undefined, '2022-11-01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./cities/01');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {
         'KenAll-API-Version': '2022-11-01',
       },
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }
@@ -777,26 +723,21 @@ test.each(cityResolverResponsesV20221101)(
 test.each(cityResolverResponsesV20230901)(
   'getCities method succeeds with strict mode and newer API',
   async (case_) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: case_.input,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(case_.input),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getCities('01', undefined, '2023-09-01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/cities/01');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./cities/01');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {
         'KenAll-API-Version': '2023-09-01',
       },
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(case_.input);
   }
@@ -1283,20 +1224,20 @@ const searchAddressResponseV20221101 = [
 test.each(searchAddressResponseV20220901)(
   'searchAddresses method with compatible mode and old API',
   async ({ expected, options, response }) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: response,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(response),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.searchAddresses(options);
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual(expected.secondArg);
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
+      headers: expected.secondArg.headers,
+      params: expected.secondArg.params,
+    });
     expect(result).toEqual(expected.data);
   }
 );
@@ -1304,20 +1245,20 @@ test.each(searchAddressResponseV20220901)(
 test.each(searchAddressResponseV20221101)(
   'searchAddresses method with compatible mode and newer API',
   async ({ expected, options, response }) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: response,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(response),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.searchAddresses(options);
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual(expected.secondArg);
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
+      headers: expected.secondArg.headers,
+      params: expected.secondArg.params,
+    });
     expect(result).toEqual(expected.data);
   }
 );
@@ -1325,25 +1266,22 @@ test.each(searchAddressResponseV20221101)(
 test.each(searchAddressResponseV20220901)(
   'searchAddresses method with strict mode and old API',
   async ({ expected, options, response }) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: response,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(response),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.searchAddresses(options, '2022-09-01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
-      ...expected.secondArg,
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {
         ...expected.secondArg.headers,
         'KenAll-API-Version': '2022-09-01',
       },
+      params: expected.secondArg.params,
     });
     expect(result).toEqual(expected.data);
   }
@@ -1352,25 +1290,22 @@ test.each(searchAddressResponseV20220901)(
 test.each(searchAddressResponseV20221101)(
   'searchAddresses method with strict mode and newer API',
   async ({ expected, options, response }) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({
-      data: response,
-    });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(response),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.searchAddresses(options, '2022-11-01');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/postalcode/');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
-      ...expected.secondArg,
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./postalcode/');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {
         ...expected.secondArg.headers,
         'KenAll-API-Version': '2022-11-01',
       },
+      params: expected.secondArg.params,
     });
     expect(result).toEqual(expected.data);
   }

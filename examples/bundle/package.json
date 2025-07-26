@@ -1,0 +1,15 @@
+{
+  "name": "kenall-example-bundle",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Open Collector, Inc.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite --port=9876"
+  },
+  "devDependencies": {
+    "@ken-all/kenall": "file:../..",
+    "vite": "^7.0.6"
+  }
+}
