@@ -61,6 +61,9 @@ function fill(form) {
 
 ### Node.jsで使う場合
 
+`@ken-all/kenall` は Node.js 環境ではネイティブの Fetch API を利用するため、
+Node.js 20 以降が必要です。
+
 プロジェクトのディレクトリで
 
 ```

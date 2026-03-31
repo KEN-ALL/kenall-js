@@ -1,8 +1,9 @@
-import { KENALL } from '..';
-import type { AxiosInstance } from 'axios';
-import axios from 'axios';
+import { expect, jest, test } from '@jest/globals';
 
-jest.mock('axios');
+import { KENALL } from '..';
+import { buildAugmentedFetch } from '../fetch_shim';
+
+jest.mock('../fetch_shim.js');
 
 const banksResponseV20230901 = [
   {
@@ -93,43 +94,37 @@ const bankBranchResolverResponseV20230901 = [
 ];
 
 test.each(banksResponseV20230901)('getBanks method', async (fixture) => {
-  const mockedAxiosGet = jest.fn();
-  axios.create = jest.fn((...args): AxiosInstance => {
-    const retval = jest.requireActual('axios').create(...args);
-    retval.get = mockedAxiosGet;
-    return retval;
-  });
-  mockedAxiosGet.mockResolvedValue({ data: fixture });
+  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  mockFetch.mockResolvedValue({
+    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+  } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getBanks();
-  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/bank');
-  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+  expect(mockFetch).toHaveBeenCalledTimes(1);
+  expect(mockFetch.mock.calls[0][0]).toBe('./bank');
+  expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+    method: 'GET',
     headers: {},
-    params: {
-      version: undefined,
-    },
+    params: {},
   });
   expect(result).toEqual(fixture);
 });
 
 test.each(bankResolverResponseV20230901)('getBank method', async (fixture) => {
-  const mockedAxiosGet = jest.fn();
-  axios.create = jest.fn((...args): AxiosInstance => {
-    const retval = jest.requireActual('axios').create(...args);
-    retval.get = mockedAxiosGet;
-    return retval;
-  });
-  mockedAxiosGet.mockResolvedValue({ data: fixture });
+  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  mockFetch.mockResolvedValue({
+    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+  } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getBank('0001');
-  expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-  expect(mockedAxiosGet.mock.calls[0][0]).toBe('/bank/0001');
-  expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+  expect(mockFetch).toHaveBeenCalledTimes(1);
+  expect(mockFetch.mock.calls[0][0]).toBe('./bank/0001');
+  expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+    method: 'GET',
     headers: {},
-    params: {
-      version: undefined,
-    },
+    params: {},
   });
   expect(result).toEqual(fixture);
 });
@@ -137,22 +132,19 @@ test.each(bankResolverResponseV20230901)('getBank method', async (fixture) => {
 test.each(bankBranchesResponseV20230901)(
   'getBankBranches method',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({ data: fixture });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getBankBranches('0001');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/bank/0001/branches');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./bank/0001/branches');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {},
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }
@@ -161,22 +153,19 @@ test.each(bankBranchesResponseV20230901)(
 test.each(bankBranchResolverResponseV20230901)(
   'getBankBranch method',
   async (fixture) => {
-    const mockedAxiosGet = jest.fn();
-    axios.create = jest.fn((...args): AxiosInstance => {
-      const retval = jest.requireActual('axios').create(...args);
-      retval.get = mockedAxiosGet;
-      return retval;
-    });
-    mockedAxiosGet.mockResolvedValue({ data: fixture });
+    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+    mockFetch.mockResolvedValue({
+      json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    } as unknown as Response);
     const ka = new KENALL('key');
     const result = await ka.getBankBranch('0001', '001');
-    expect(mockedAxiosGet.mock.calls).toHaveLength(1);
-    expect(mockedAxiosGet.mock.calls[0][0]).toBe('/bank/0001/branches/001');
-    expect(mockedAxiosGet.mock.calls[0][1]).toEqual({
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('./bank/0001/branches/001');
+    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+      method: 'GET',
       headers: {},
-      params: {
-        version: undefined,
-      },
+      params: {},
     });
     expect(result).toEqual(fixture);
   }

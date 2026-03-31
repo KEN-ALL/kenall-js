@@ -64,6 +64,9 @@ Previous versions:
 
 ### Usage in a Node.js project
 
+`@ken-all/kenall` requires Node.js 20 or later in Node.js environments because
+it relies on the native Fetch API.
+
 Run
 
 ```
