@@ -7,6 +7,5 @@
   "main": "index.js",
   "dependencies": {
     "@ken-all/kenall": "file:../.."
-  },
-  "devDependencies": {}
+  }
 }

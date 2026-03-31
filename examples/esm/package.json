@@ -8,6 +8,5 @@
   "type": "module",
   "dependencies": {
     "@ken-all/kenall": "file:../.."
-  },
-  "devDependencies": {}
+  }
 }

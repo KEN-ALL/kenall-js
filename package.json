@@ -1,6 +1,6 @@
 {
   "name": "@ken-all/kenall",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "KENALL JavaScript SDK",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
@@ -31,14 +31,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/opencollector/kenall-js.git"
+    "url": "https://github.com/ken-all/kenall-js.git"
   },
   "author": "Open Collector, Inc.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/opencollector/kenall-js/issues"
+    "url": "https://github.com/ken-all/kenall-js/issues"
   },
-  "homepage": "https://github.com/opencollector/kenall-js#readme",
+  "homepage": "https://github.com/ken-all/kenall-js#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-json": "^6.1.0",
