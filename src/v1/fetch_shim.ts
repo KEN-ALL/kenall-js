@@ -178,10 +178,6 @@ export const buildAugmentedFetch =
             ...init_,
             headers: mergeHeaders(init_.headers, input.headers),
           } as RequestInitExt);
-    console.log(
-      typeof input === 'object' && !(input instanceof URL) ? { ...input } : '*',
-      init_
-    );
     try {
       const resp = await fetch(req);
       if (!resp.ok && throwErrorsForNon2xx) {
