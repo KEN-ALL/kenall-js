@@ -49,7 +49,7 @@ The script bundle can be downloaded at the release page.
 
 Alternatively, you can use the following URL for the latest bundle.  Beware that we don't provide any warranty on its availability, though we'll put as much effort as possible for keeping it up.
 
-* [https://js.kenall.jp/2026-03-31/kenall.js](https://js.kenall.jp/2026-03-31/kenall.js)
+* [https://js.kenall.jp/2026-04-15/kenall.js](https://js.kenall.jp/2026-04-15/kenall.js)
 
 Previous versions:
 
@@ -61,6 +61,7 @@ Previous versions:
 * [https://js.kenall.jp/2022-11-25/kenall.js](https://js.kenall.jp/2022-11-25/kenall.js)
 * [https://js.kenall.jp/2022-02-11/kenall.js](https://js.kenall.jp/2022-02-11/kenall.js)
 * [https://js.kenall.jp/2021-05-28/kenall.js](https://js.kenall.jp/2021-05-28/kenall.js)
+* [https://js.kenall.jp/2026-03-31/kenall.js](https://js.kenall.jp/2026-03-31/kenall.js)
 
 
 ### Usage in a Node.js project

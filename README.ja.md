@@ -47,10 +47,11 @@ function fill(form) {
 
 なお、最新のスクリプトバンドルのURLとして、以下を使うこともできます。可能な限り問題が発生しないよう配慮しますが、このURLの場所から常にバンドルをダウンロードできるかどうかは保証できません。
 
-* [https://js.kenall.jp/2026-03-31/kenall.js](https://js.kenall.jp/2026-03-31/kenall.js)
+* [https://js.kenall.jp/2026-04-15/kenall.js](https://js.kenall.jp/2026-04-15/kenall.js)
 
 以前のバージョン:
 
+* [https://js.kenall.jp/2026-03-31/kenall.js](https://js.kenall.jp/2026-03-31/kenall.js)
 * [https://js.kenall.jp/2025-07-29/kenall.js](https://js.kenall.jp/2025-07-29/kenall.js)
 * [https://js.kenall.jp/2025-03-03/kenall.js](https://js.kenall.jp/2025-03-03/kenall.js)
 * [https://js.kenall.jp/2024-04-05/kenall.js](https://js.kenall.jp/2024-04-05/kenall.js)
