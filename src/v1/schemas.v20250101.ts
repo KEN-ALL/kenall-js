@@ -147,7 +147,7 @@ export const bankBranchesResponseSchema = z.object({
   version: z.string(),
   data: z.object({
     bank: bankSchema,
-    branches: z.record(z.array(bankBranchSchema)),
+    branches: z.record(z.string(), z.array(bankBranchSchema)),
   }),
 });
 

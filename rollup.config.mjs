@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import banner from 'rollup-plugin-banner2';
+import license from 'rollup-plugin-license';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
@@ -32,12 +32,12 @@ export default [
       json(),
       commonjs(),
       terser(),
-      banner(
-        () => {
-          const pkg = readPackageMetadata();
-          return `/* @license ${pkg.license}\nv${pkg.version}\nBuild time: ${new Date()}\nby ${pkg.author} */\n`;
-        }
-      ),
-    ]
-  }
-]
+      license({
+        sourcemap: true,
+        banner: {
+          content: `@license <%= pkg.license %>\n@version v<%= pkg.version %>\nBuild time: <%= new Date() %>\nby <%= pkg.author %>`,
+        },
+      }),
+    ],
+  },
+];

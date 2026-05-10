@@ -135,7 +135,7 @@ export const buildAugmentedFetch =
       headers: mergeHeaders(headers, init?.headers),
       signal: controller.signal,
     };
-    let t: unknown | undefined = undefined;
+    let t: unknown | undefined;
     if (timeout !== undefined) {
       t = setTimeout(() => controller.abort('timed out'), timeout) as unknown;
     }
