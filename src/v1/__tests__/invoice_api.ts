@@ -1,9 +1,9 @@
-import { expect, jest, test } from '@jest/globals';
+import { expect, test, vi } from 'vitest';
 
 import { KENALL } from '..';
 import { buildAugmentedFetch } from '../fetch_shim';
 
-jest.mock('../fetch_shim.js');
+vi.mock('../fetch_shim.js');
 
 test.each([
   {
@@ -150,10 +150,10 @@ test.each([
   response,
   expected,
 }) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(response),
+    json: vi.fn<Response['json']>().mockResolvedValue(response),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getNTAQualifiedInvoiceIssuerInfo('T0000000000000');

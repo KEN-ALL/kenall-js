@@ -1,9 +1,9 @@
-import { expect, jest, test } from '@jest/globals';
+import { expect, test, vi } from 'vitest';
 
 import { KENALL } from '..';
 import { buildAugmentedFetch } from '../fetch_shim';
 
-jest.mock('../fetch_shim.js');
+vi.mock('../fetch_shim.js');
 
 const addressResolverResponsesV20220901 = [
   {
@@ -357,10 +357,10 @@ const addressResolverResponsesExtra = [
 test.each(
   addressResolverResponsesV20220901
 )('getAddress method succeeds with compatible mode and old API', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getAddress('0000000');
@@ -377,10 +377,10 @@ test.each(
 test.each(
   addressResolverResponsesV20221101
 )('getAddress method succeeds with compatible mode and newer API', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getAddress('0000000');
@@ -397,10 +397,10 @@ test.each(
 test.each(
   addressResolverResponsesExtra
 )('getAddress method succeeds with compatible mode and unknown API version', async (case_) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(case_.input),
+    json: vi.fn<Response['json']>().mockResolvedValue(case_.input),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getAddress('0000000');
@@ -417,10 +417,10 @@ test.each(
 test.each(
   addressResolverResponsesV20220901
 )('getAddress method succeeds with strict mode and old API', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getAddress('0000000', undefined, '2022-09-01');
@@ -439,10 +439,10 @@ test.each(
 test.each(
   addressResolverResponsesV20221101
 )('getAddress method succeeds with strict mode and newer API', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getAddress('0000000', undefined, '2022-11-01');
@@ -463,10 +463,10 @@ test('getAddress method: normalize postal code before sending request', async ()
     version: '2020-08-31',
     data: [],
   };
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   await ka.getAddress('000-0000');
@@ -609,10 +609,10 @@ const cityResolverResponsesV20230901 = [
 test.each(
   cityResolverResponsesV20220901
 )('getCities method succeeds with compatible mode and old API', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getCities('01');
@@ -629,10 +629,10 @@ test.each(
 test.each(
   cityResolverResponsesV20221101
 )('getCities method succeeds with compatible mode and newer API', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getCities('01');
@@ -649,10 +649,10 @@ test.each(
 test.each(
   cityResolverResponsesV20230901
 )('getCities method succeeds with compatible mode and newer API', async (case_) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(case_.input),
+    json: vi.fn<Response['json']>().mockResolvedValue(case_.input),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getCities('01');
@@ -669,10 +669,10 @@ test.each(
 test.each(
   cityResolverResponsesV20220901
 )('getCities method succeeds with strict mode and old API', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getCities('01', undefined, '2022-09-01');
@@ -691,10 +691,10 @@ test.each(
 test.each(
   cityResolverResponsesV20221101
 )('getCities method succeeds with strict mode and newer API', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getCities('01', undefined, '2022-11-01');
@@ -713,10 +713,10 @@ test.each(
 test.each(
   cityResolverResponsesV20230901
 )('getCities method succeeds with strict mode and newer API', async (case_) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(case_.input),
+    json: vi.fn<Response['json']>().mockResolvedValue(case_.input),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getCities('01', undefined, '2023-09-01');
@@ -1217,10 +1217,10 @@ test.each(
   options,
   response,
 }) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(response),
+    json: vi.fn<Response['json']>().mockResolvedValue(response),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.searchAddresses(options);
@@ -1241,10 +1241,10 @@ test.each(
   options,
   response,
 }) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(response),
+    json: vi.fn<Response['json']>().mockResolvedValue(response),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.searchAddresses(options);
@@ -1265,10 +1265,10 @@ test.each(
   options,
   response,
 }) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(response),
+    json: vi.fn<Response['json']>().mockResolvedValue(response),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.searchAddresses(options, '2022-09-01');
@@ -1292,10 +1292,10 @@ test.each(
   options,
   response,
 }) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(response),
+    json: vi.fn<Response['json']>().mockResolvedValue(response),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.searchAddresses(options, '2022-11-01');

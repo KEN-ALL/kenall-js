@@ -1,9 +1,9 @@
-import { expect, jest, test } from '@jest/globals';
+import { expect, test, vi } from 'vitest';
 
 import { KENALL } from '..';
 import { buildAugmentedFetch } from '../fetch_shim';
 
-jest.mock('../fetch_shim.js');
+vi.mock('../fetch_shim.js');
 
 const banksResponseV20230901 = [
   {
@@ -94,10 +94,10 @@ const bankBranchResolverResponseV20230901 = [
 ];
 
 test.each(banksResponseV20230901)('getBanks method', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getBanks();
@@ -112,10 +112,10 @@ test.each(banksResponseV20230901)('getBanks method', async (fixture) => {
 });
 
 test.each(bankResolverResponseV20230901)('getBank method', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getBank('0001');
@@ -132,10 +132,10 @@ test.each(bankResolverResponseV20230901)('getBank method', async (fixture) => {
 test.each(
   bankBranchesResponseV20230901
 )('getBankBranches method', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getBankBranches('0001');
@@ -152,10 +152,10 @@ test.each(
 test.each(
   bankBranchResolverResponseV20230901
 )('getBankBranch method', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getBankBranch('0001', '001');

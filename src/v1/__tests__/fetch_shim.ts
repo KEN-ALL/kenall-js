@@ -1,12 +1,12 @@
-import type { SpiedFunction } from 'jest-mock';
+import type { MockInstance } from 'vitest';
 import {
   afterEach,
   beforeEach,
   describe,
   expect,
-  jest,
   test,
-} from '@jest/globals';
+  vi,
+} from 'vitest';
 
 import type {
   RequestAugmentation,
@@ -14,7 +14,7 @@ import type {
 } from '../fetch_shim.js';
 import { buildAugmentedFetch } from '../fetch_shim.js';
 
-let mockedFetch: SpiedFunction<
+let mockedFetch: MockInstance<
   (
     input: RequestInfo | URL,
     init?: RequestInitWithAuxiliaryOptions
@@ -39,11 +39,11 @@ expect.addEqualityTesters([
 ]);
 
 beforeEach(() => {
-  mockedFetch = jest.spyOn(globalThis, 'fetch');
+  mockedFetch = vi.spyOn(globalThis, 'fetch');
 });
 
 afterEach(() => {
-  jest.restoreAllMocks();
+  vi.restoreAllMocks();
 });
 
 describe('buildAugmentedFetch', () => {
@@ -61,13 +61,13 @@ describe('buildAugmentedFetch', () => {
       './test',
     ],
     ['https://example.com/test?c=d', 'https://example.com/?a=b', '/test?c=d'],
-  ])('succeed with an incomplete URL and a base URL', (expectedURL, baseURL, input) => {
+  ])('succeed with an incomplete URL and a base URL', async (expectedURL, baseURL, input) => {
     const fetch = buildAugmentedFetch({ baseURL });
     expect(fetch).toBeInstanceOf(Function);
     mockedFetch.mockResolvedValue({
       ok: true,
     } as Response);
-    expect(
+    await expect(
       fetch(input, {
         method: 'GET',
       })
@@ -81,7 +81,7 @@ describe('buildAugmentedFetch', () => {
     });
   });
 
-  test('throw an error if the response is not ok', () => {
+  test('throw an error if the response is not ok', async () => {
     const fetch = buildAugmentedFetch({
       baseURL: 'https://example.com',
       throwErrorsForNon2xx: true,
@@ -92,7 +92,7 @@ describe('buildAugmentedFetch', () => {
       status: 404,
       statusText: 'Not Found',
     } as Response);
-    expect(
+    await expect(
       fetch('https://example.com/test', {
         method: 'GET',
       })
@@ -188,13 +188,13 @@ describe('buildAugmentedFetch', () => {
     expected: Partial<Mutable<Request>>;
     augmentation: RequestAugmentation;
     fetchArgs: [RequestInfo | URL, RequestInitWithAuxiliaryOptions?];
-  }[])('$description', ({ expected, augmentation, fetchArgs }) => {
+  }[])('$description', async ({ expected, augmentation, fetchArgs }) => {
     const fetch = buildAugmentedFetch(augmentation);
     expect(fetch).toBeInstanceOf(Function);
     mockedFetch.mockResolvedValue({
       ok: true,
     } as Response);
-    expect(fetch(...fetchArgs)).resolves.toMatchObject({
+    await expect(fetch(...fetchArgs)).resolves.toMatchObject({
       ok: true,
     });
     expect(mockedFetch.mock.calls[0][0]).toBeInstanceOf(Request);

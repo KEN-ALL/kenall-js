@@ -1,10 +1,10 @@
 import type { NTACorporateInfoSearchMode } from '..';
 
-import { expect, jest, test } from '@jest/globals';
+import { expect, test, vi } from 'vitest';
 import { KENALL } from '..';
 import { buildAugmentedFetch } from '../fetch_shim';
 
-jest.mock('../fetch_shim.js');
+vi.mock('../fetch_shim.js');
 
 test.each([
   {
@@ -322,10 +322,10 @@ test.each([
     },
   },
 ])('getNTACorporateInfo method', async ({ response, expected }) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(response),
+    json: vi.fn<Response['json']>().mockResolvedValue(response),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getNTACorporateInfo('0000000000000');
@@ -386,10 +386,10 @@ test.each([
     },
   },
 ])('getNTACorporateInfo method with new API version', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const result = await ka.getNTACorporateInfo('0000000000000', '2024-01-01');
@@ -533,10 +533,10 @@ test.each([
     facets: null,
   },
 ])('searchNTACorporateInfo method', async (fixture) => {
-  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  const mockFetch = vi.fn<ReturnType<typeof buildAugmentedFetch>>();
+  vi.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
   mockFetch.mockResolvedValue({
-    json: jest.fn<Response['json']>().mockResolvedValue(fixture),
+    json: vi.fn<Response['json']>().mockResolvedValue(fixture),
   } as unknown as Response);
   const ka = new KENALL('key');
   const options = {

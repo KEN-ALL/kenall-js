@@ -24,7 +24,7 @@
     "check-format": "biome format src/",
     "build": "tsc -d && tsc -d -p tsconfig.cjs.json && echo '{\"type\":\"module\"}' > dist/package.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
     "bundle": "rollup -c",
-    "test": "jest",
+    "test": "vitest run",
     "doc:gen-json": "typedoc --plugin typedoc-plugin-localization --generate-json translations/base",
     "doc:base": "typedoc --out dist/docs",
     "doc:ja": "typedoc --plugin typedoc-plugin-localization --out dist/docs/ja --readme README.ja.md --generate-from-json translations/ja"
@@ -46,15 +46,13 @@
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^1.0.0",
     "@rollup/plugin-typescript": "^12.3.0",
-    "jest": "^30.0.0",
     "rollup": "^4.60.0",
     "rollup-plugin-license": "^3.7.0",
-    "ts-jest": "^29.4.0",
-    "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
     "typedoc": "^0.28.0",
     "typedoc-plugin-localization": "^3.1.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
   },
   "dependencies": {
     "zod": "^4.4.0"
