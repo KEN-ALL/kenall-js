@@ -61,28 +61,25 @@ describe('buildAugmentedFetch', () => {
       './test',
     ],
     ['https://example.com/test?c=d', 'https://example.com/?a=b', '/test?c=d'],
-  ])(
-    'succeed with an incomplete URL and a base URL',
-    (expectedURL, baseURL, input) => {
-      const fetch = buildAugmentedFetch({ baseURL });
-      expect(fetch).toBeInstanceOf(Function);
-      mockedFetch.mockResolvedValue({
-        ok: true,
-      } as Response);
-      expect(
-        fetch(input, {
-          method: 'GET',
-        })
-      ).resolves.toMatchObject({
-        ok: true,
-      });
-      expect(mockedFetch.mock.calls[0][0]).toBeInstanceOf(Request);
-      expect(mockedFetch.mock.calls[0][0]).toMatchObject({
+  ])('succeed with an incomplete URL and a base URL', (expectedURL, baseURL, input) => {
+    const fetch = buildAugmentedFetch({ baseURL });
+    expect(fetch).toBeInstanceOf(Function);
+    mockedFetch.mockResolvedValue({
+      ok: true,
+    } as Response);
+    expect(
+      fetch(input, {
         method: 'GET',
-        url: expectedURL,
-      });
-    }
-  );
+      })
+    ).resolves.toMatchObject({
+      ok: true,
+    });
+    expect(mockedFetch.mock.calls[0][0]).toBeInstanceOf(Request);
+    expect(mockedFetch.mock.calls[0][0]).toMatchObject({
+      method: 'GET',
+      url: expectedURL,
+    });
+  });
 
   test('throw an error if the response is not ok', () => {
     const fetch = buildAugmentedFetch({

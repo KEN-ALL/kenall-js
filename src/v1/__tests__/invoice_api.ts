@@ -146,23 +146,23 @@ test.each([
       },
     },
   },
-])(
-  'getNTAQualifiedInvoiceIssuerInfoResolver method',
-  async ({ response, expected }) => {
-    const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
-    jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
-    mockFetch.mockResolvedValue({
-      json: jest.fn<Response['json']>().mockResolvedValue(response),
-    } as unknown as Response);
-    const ka = new KENALL('key');
-    const result = await ka.getNTAQualifiedInvoiceIssuerInfo('T0000000000000');
-    expect(mockFetch).toHaveBeenCalledTimes(1);
-    expect(mockFetch.mock.calls[0][0]).toBe('./invoice/T0000000000000');
-    expect(mockFetch.mock.calls[0][1]).toStrictEqual({
-      method: 'GET',
-      headers: {},
-      params: {},
-    });
-    expect(result).toEqual(expected);
-  }
-);
+])('getNTAQualifiedInvoiceIssuerInfoResolver method', async ({
+  response,
+  expected,
+}) => {
+  const mockFetch = jest.fn<ReturnType<typeof buildAugmentedFetch>>();
+  jest.mocked(buildAugmentedFetch).mockReturnValue(mockFetch);
+  mockFetch.mockResolvedValue({
+    json: jest.fn<Response['json']>().mockResolvedValue(response),
+  } as unknown as Response);
+  const ka = new KENALL('key');
+  const result = await ka.getNTAQualifiedInvoiceIssuerInfo('T0000000000000');
+  expect(mockFetch).toHaveBeenCalledTimes(1);
+  expect(mockFetch.mock.calls[0][0]).toBe('./invoice/T0000000000000');
+  expect(mockFetch.mock.calls[0][1]).toStrictEqual({
+    method: 'GET',
+    headers: {},
+    params: {},
+  });
+  expect(result).toEqual(expected);
+});
