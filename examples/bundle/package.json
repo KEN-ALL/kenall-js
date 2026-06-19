@@ -10,6 +10,6 @@
   },
   "devDependencies": {
     "@ken-all/kenall": "file:../..",
-    "vite": "^7.3.2"
+    "vite": "^7.3.5"
   }
 }
