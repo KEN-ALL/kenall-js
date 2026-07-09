@@ -30,5 +30,17 @@ export {
   BankResolverResponse,
   BankBranchesResponse,
   BankBranchResolverResponse,
+  RemoteAddress,
+  WhoamiResponse,
+  Holiday,
+  HolidaysOptions,
+  HolidaysResponse,
+  BusinessDayCheckResponse,
+  SchoolAddress,
+  School,
+  SchoolResolverResponse,
+  SchoolFacets,
+  SchoolSearcherOptions,
+  SchoolSearcherResponse,
 } from './v1/index.js';
 export { Config } from './config.js';

@@ -1,0 +1,229 @@
+{
+    "SchoolAddress": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`SchoolAddress`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object stores the resolved address of a school."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "postal_code": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The postal code assigned to the location of the school."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "jisx0402": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The 5 digit Japanese municipality code (全国地方公共団体コード)."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "prefecture": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the prefecture in Kanji.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東京都\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "prefecture_kana": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of the prefecture in katakana.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"トウキョウト\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "prefecture_roman": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading of the name of the prefecture.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Tokyo\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "city": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the city.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"文京区\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "city_kana": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The reading of the name of the city in katakana.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"ブンキョウク\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "city_roman": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The \"romanized\" reading of the name of the city.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"Bunkyo-ku\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "street_number": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The remaining part of the address below the city level.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"本郷7-3-1\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "town": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the town.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"本郷\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "kyoto_street": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The instructional phrase (通り名) specific to Kyoto city, if any."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "block_lot_num": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The block and lot number part of the address.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"7-3-1\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "building": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the building, if any."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "floor_room": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The floor and room part of the address, if any."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

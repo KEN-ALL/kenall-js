@@ -1,0 +1,31 @@
+{
+  "HolidaysResponse": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`HolidaysResponse` は `getHolidays` API呼び出しに対するレスポンスを表します。"
+        }
+      ]
+    },
+    "properties": {
+      "data": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "問い合わせた年または範囲に含まれる祝日の一覧。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

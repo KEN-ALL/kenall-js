@@ -1,0 +1,98 @@
+{
+    "SchoolFacets": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`SchoolFacets`"
+                },
+                {
+                    "kind": "text",
+                    "text": " represents the facets of a school search result.\n\nIt is only available when at least one "
+                },
+                {
+                    "kind": "code",
+                    "text": "`facet_*`"
+                },
+                {
+                    "kind": "text",
+                    "text": " option is given,\nand each facet is a list of "
+                },
+                {
+                    "kind": "inline-tag",
+                    "tag": "@link",
+                    "text": "Facet",
+                    "target": {
+                        "packageName": "@ken-all/kenall",
+                        "packagePath": "src/v1/interfaces.v20250101.ts",
+                        "qualifiedName": "Facet",
+                        "pos": 11103,
+                        "transientId": null,
+                        "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.v20250101.ts"
+                    }
+                },
+                {
+                    "kind": "text",
+                    "text": " tuples."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "area": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facet of the area (地域)."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "type": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facet of the school type (学校種)."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "establishment_type": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facet of the establishment type (設置区分)."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "branch": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The facet of the branch (本分校)."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

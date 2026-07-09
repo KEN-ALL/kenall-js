@@ -1,0 +1,31 @@
+{
+  "WhoamiResponse": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`WhoamiResponse` は `whoami` API呼び出しに対するレスポンスを表します。"
+        }
+      ]
+    },
+    "properties": {
+      "remote_addr": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "リクエストの送信元となったIPアドレス。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

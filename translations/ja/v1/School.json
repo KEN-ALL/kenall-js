@@ -1,0 +1,152 @@
+{
+  "School": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`School` オブジェクトは、文部科学省によって指定された学校コード（学校コード）で識別される学校の情報を格納します。"
+        }
+      ]
+    },
+    "properties": {
+      "code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "13桁の学校コード（学校コード）。\n\n例: `\"F113110102700\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "type": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "学校種コード。\n\n例: `\"F1\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "jurisdiction_prefecture_code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "JISX0401で定義された、所管の都道府県コード。\n\n例: `\"13\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "establishment_type": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "設置区分コード（設置区分）。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "branch": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "本分校コード（本分校）。`1` が本校を表します。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "name": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "学校名。\n\n例: `\"東京大学\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "address_raw": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "学校の未加工の所在地文字列。\n\n例: `\"東京都文京区本郷７－３－１\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "addresses": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "解決された学校の所在地。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "established_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "学校が設置された日付。`\"YYYY-MM-DD\"` 形式。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "abolished_date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "学校が廃止された日付（`\"YYYY-MM-DD\"` 形式）。まだ存続している場合はnull。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "school_survey_number": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "学校調査番号。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "new_code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "この学校を承継した学校コードの一覧（あれば）。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

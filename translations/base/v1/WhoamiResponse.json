@@ -1,0 +1,45 @@
+{
+    "WhoamiResponse": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`WhoamiResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": " describes a response to "
+                },
+                {
+                    "kind": "code",
+                    "text": "`whoami`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "remote_addr": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The IP address the request was made from."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

@@ -1,6 +1,7 @@
 import type * as v20221101 from './interfaces.v20221101.js';
 import type * as v20230901 from './interfaces.v20230901.js';
 import type * as v20240101 from './interfaces.v20240101.js';
+import type * as v20250101 from './interfaces.v20250101.js';
 
 export type UpdateStatus = v20221101.UpdateStatus;
 export type UpdateReason = v20221101.UpdateReason;
@@ -37,6 +38,18 @@ export type BanksResponse = v20230901.BanksResponse;
 export type BankResolverResponse = v20230901.BankResolverResponse;
 export type BankBranchesResponse = v20230901.BankBranchesResponse;
 export type BankBranchResolverResponse = v20230901.BankBranchResolverResponse;
+export type RemoteAddress = v20250101.RemoteAddress;
+export type WhoamiResponse = v20250101.WhoamiResponse;
+export type Holiday = v20250101.Holiday;
+export type HolidaysOptions = v20250101.HolidaysOptions;
+export type HolidaysResponse = v20250101.HolidaysResponse;
+export type BusinessDayCheckResponse = v20250101.BusinessDayCheckResponse;
+export type SchoolAddress = v20250101.SchoolAddress;
+export type School = v20250101.School;
+export type SchoolResolverResponse = v20250101.SchoolResolverResponse;
+export type SchoolFacets = v20250101.SchoolFacets;
+export type SchoolSearcherOptions = v20250101.SchoolSearcherOptions;
+export type SchoolSearcherResponse = v20250101.SchoolSearcherResponse;
 
 /**
  * A `Corporation` object would store the information about the organization,

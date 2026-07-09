@@ -1,0 +1,221 @@
+{
+    "School": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`School`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object stores the information about a school identified by\na school code (学校コード) designated by MEXT."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "code": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The 13 digit school code (学校コード).\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"F113110102700\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "type": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The school type code.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"F1\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "jurisdiction_prefecture_code": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The prefecture code of the jurisdiction, defined in JISX0401.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"13\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "establishment_type": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The establishment type code (設置区分)."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "branch": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The branch code (本分校) where "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`1`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " denotes the main school."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "name": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the school.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東京大学\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "address_raw": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The raw, unprocessed address string of the school.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"東京都文京区本郷７－３－１\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "addresses": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The resolved addresses of the school."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "established_date": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date the school was established, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "abolished_date": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date the school was abolished, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ",\nor "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`null`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " if it is still active."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "school_survey_number": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The school survey number (学校調査番号)."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "new_code": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The list of the school codes that superseded this school, if any."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

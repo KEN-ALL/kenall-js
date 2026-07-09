@@ -1,3 +1,5 @@
+import type * as v20250101 from './interfaces.v20250101.js';
+
 /**
  * A `Corporation` object would store the information about the organization,
  * or the division of a organization, which has its special postal code designated.
@@ -1377,3 +1379,10 @@ export interface NTACorporateInfoSearcherResponse {
    */
   facets: NTACorporateInfoFacets | null;
 }
+
+export type RemoteAddress = v20250101.RemoteAddress;
+export type WhoamiResponse = v20250101.WhoamiResponse;
+export type Holiday = v20250101.Holiday;
+export type HolidaysOptions = v20250101.HolidaysOptions;
+export type HolidaysResponse = v20250101.HolidaysResponse;
+export type BusinessDayCheckResponse = v20250101.BusinessDayCheckResponse;

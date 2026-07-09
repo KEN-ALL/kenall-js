@@ -1,0 +1,108 @@
+{
+  "SchoolSearcherOptions": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`searchSchool` に渡すことのできるオプションの集合。"
+        }
+      ]
+    },
+    "properties": {
+      "q": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "検索クエリ。\n\n例: `\"name:東京大学\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "offset": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果を取得するオフセット値。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "limit": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "取得する最大件数。1以上100以下の値を指定できます。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet_area": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果を絞り込む地域ファセットの階層。\n\n例: `\"/東京都/文京区\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet_prefecture": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果を絞り込む都道府県ファセットの階層。\n\n例: `\"/東京都\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet_type": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果を絞り込む学校種ファセットの階層。\n\n例: `\"/大学\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet_establishment_type": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果を絞り込む設置区分ファセットの階層。\n\n例: `\"/公立\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facet_branch": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果を絞り込む本分校ファセットの階層。\n\n例: `\"/本校\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

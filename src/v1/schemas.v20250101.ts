@@ -252,3 +252,81 @@ export const ntaQualifiedInvoiceIssuerInfoResolverResponseSchema = z.object({
   version: z.string(),
   data: ntaQualifiedInvoiceIssuerInfoSchema,
 });
+
+export const remoteAddressSchema = z.object({
+  type: z.enum(['v4', 'v6']),
+  address: z.string(),
+});
+
+export const whoamiResponseSchema = z.object({
+  remote_addr: remoteAddressSchema,
+});
+
+export const holidaySchema = z.object({
+  title: z.string(),
+  date: z.string(),
+  day_of_week: z.number(),
+  day_of_week_text: z.string(),
+});
+
+export const holidaysResponseSchema = z.object({
+  data: z.array(holidaySchema),
+});
+
+export const businessDayCheckResponseSchema = z.object({
+  result: z.boolean(),
+});
+
+export const schoolAddressSchema = z.object({
+  postal_code: z.string(),
+  jisx0402: z.string(),
+  prefecture: z.string(),
+  prefecture_kana: z.string(),
+  prefecture_roman: z.string(),
+  city: z.string(),
+  city_kana: z.string(),
+  city_roman: z.string(),
+  street_number: z.string(),
+  town: z.string(),
+  kyoto_street: z.string().nullable(),
+  block_lot_num: z.string(),
+  building: z.string().nullable(),
+  floor_room: z.string().nullable(),
+});
+
+export const schoolSchema = z.object({
+  code: z.string(),
+  type: z.string(),
+  jurisdiction_prefecture_code: z.string(),
+  establishment_type: z.number(),
+  branch: z.number(),
+  name: z.string(),
+  address_raw: z.string(),
+  addresses: z.array(schoolAddressSchema),
+  established_date: z.string(),
+  abolished_date: z.string().nullable(),
+  school_survey_number: z.string(),
+  new_code: z.array(z.string()),
+});
+
+export const schoolResolverResponseSchema = z.object({
+  version: z.string(),
+  data: schoolSchema,
+});
+
+export const schoolFacetsSchema = z.object({
+  area: z.array(facetSchema).optional(),
+  type: z.array(facetSchema).optional(),
+  establishment_type: z.array(facetSchema).optional(),
+  branch: z.array(facetSchema).optional(),
+});
+
+export const schoolSearcherResponseSchema = z.object({
+  version: z.string(),
+  data: z.array(schoolSchema),
+  query: z.string(),
+  count: z.number(),
+  offset: z.number(),
+  limit: z.number(),
+  facets: schoolFacetsSchema.nullable(),
+});

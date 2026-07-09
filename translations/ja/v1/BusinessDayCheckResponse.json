@@ -1,0 +1,31 @@
+{
+  "BusinessDayCheckResponse": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`BusinessDayCheckResponse` は `checkBusinessDay` API呼び出しに対するレスポンスを表します。"
+        }
+      ]
+    },
+    "properties": {
+      "result": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "問い合わせた日付が営業日（土日でも祝日でもない日）であるかどうか。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}
