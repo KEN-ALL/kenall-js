@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import * as v20250101S from './schemas.v20250101.js';
+
 import {
   NTACorporateInfoCloseCause,
   NTACorporateInfoKind,
@@ -252,3 +254,17 @@ export const ntaQualifiedInvoiceIssuerInfoResolverResponseSchema = z.object({
   version: z.string(),
   data: ntaQualifiedInvoiceIssuerInfoSchema,
 });
+
+export const remoteAddressSchema = v20250101S.remoteAddressSchema;
+export const whoamiResponseSchema = v20250101S.whoamiResponseSchema;
+export const holidaySchema = v20250101S.holidaySchema;
+export const holidaysResponseSchema = v20250101S.holidaysResponseSchema;
+export const businessDayCheckResponseSchema =
+  v20250101S.businessDayCheckResponseSchema;
+export const schoolAddressSchema = v20250101S.schoolAddressSchema;
+export const schoolSchema = v20250101S.schoolSchema;
+export const schoolResolverResponseSchema =
+  v20250101S.schoolResolverResponseSchema;
+export const schoolFacetsSchema = v20250101S.schoolFacetsSchema;
+export const schoolSearcherResponseSchema =
+  v20250101S.schoolSearcherResponseSchema;

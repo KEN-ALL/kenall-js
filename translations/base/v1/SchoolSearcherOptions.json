@@ -1,0 +1,145 @@
+{
+    "SchoolSearcherOptions": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "The set of options that can be passed to "
+                },
+                {
+                    "kind": "code",
+                    "text": "`searchSchool`"
+                },
+                {
+                    "kind": "text",
+                    "text": "."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "q": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The search query.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"name:東京大学\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "offset": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The offset from which the result has to be retrieved."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "limit": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The maximum number of the items to retrieve, between 1 and 100."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "facet_area": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The hierarchy of the area facet to narrow the result down to.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/東京都/文京区\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "facet_prefecture": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The hierarchy of the prefecture facet to narrow the result down to.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/東京都\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "facet_type": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The hierarchy of the school type facet to narrow the result down to.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/大学\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "facet_establishment_type": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The hierarchy of the establishment type facet to narrow the result down to.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/公立\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "facet_branch": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The hierarchy of the branch facet to narrow the result down to.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"/本校\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

@@ -1,0 +1,64 @@
+{
+  "SchoolFacets": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`SchoolFacets` は学校検索結果のファセットを表します。\n\n少なくとも1つの `facet_*` オプションが与えられた場合にのみ利用可能で、各ファセットは Facet タプルのリストです。"
+        }
+      ]
+    },
+    "properties": {
+      "area": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "地域（地域）のファセット。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "type": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "学校種（学校種）のファセット。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "establishment_type": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "設置区分（設置区分）のファセット。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "branch": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "本分校（本分校）のファセット。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

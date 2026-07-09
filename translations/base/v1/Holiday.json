@@ -1,0 +1,109 @@
+{
+    "Holiday": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`Holiday`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object represents a single public holiday in Japan."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "title": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The name of the holiday.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"元日\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "date": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The date of the holiday, in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2022-01-01\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "day_of_week": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The day of the week, represented as a number where\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`0`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is Sunday and "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`6`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is Saturday."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "day_of_week_text": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The day of the week, spelled out in lowercase English.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"saturday\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

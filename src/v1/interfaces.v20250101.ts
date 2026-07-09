@@ -1908,3 +1908,432 @@ export interface NTAQualifiedInvoiceIssuerInfoResolverResponse {
    */
   data: NTAQualifiedInvoiceIssuerInfo;
 }
+
+/**
+ * A `RemoteAddress` object stores the IP address the request originated from,
+ * as observed by the API server.
+ */
+export interface RemoteAddress {
+  /**
+   * The kind of the IP address.
+   *
+   * * `"v4"` for an IPv4 address
+   * * `"v6"` for an IPv6 address
+   */
+  type: 'v4' | 'v6';
+
+  /**
+   * The IP address in its textual representation.
+   *
+   * Example: `"192.0.2.1"`
+   */
+  address: string;
+}
+
+/**
+ * A `WhoamiResponse` describes a response to `whoami` API call.
+ */
+export interface WhoamiResponse {
+  /**
+   * The IP address the request was made from.
+   */
+  remote_addr: RemoteAddress;
+}
+
+/**
+ * A `Holiday` object represents a single public holiday in Japan.
+ */
+export interface Holiday {
+  /**
+   * The name of the holiday.
+   *
+   * Example: `"元日"`
+   */
+  title: string;
+
+  /**
+   * The date of the holiday, in the form of `"YYYY-MM-DD"`.
+   *
+   * Example: `"2022-01-01"`
+   */
+  date: string;
+
+  /**
+   * The day of the week, represented as a number where
+   * `0` is Sunday and `6` is Saturday.
+   */
+  day_of_week: number;
+
+  /**
+   * The day of the week, spelled out in lowercase English.
+   *
+   * Example: `"saturday"`
+   */
+  day_of_week_text: string;
+}
+
+/**
+ * The set of options that can be passed to `getHolidays`.
+ *
+ * When `year` is specified, `from` and `to` are ignored and the whole year
+ * is returned. Otherwise the range designated by `from` and `to` is used.
+ */
+export interface HolidaysOptions {
+  /**
+   * The calendar year to retrieve the holidays for.
+   *
+   * Example: `2022`
+   */
+  year?: number | string;
+
+  /**
+   * The start of the range to retrieve the holidays for, inclusive,
+   * in the form of `"YYYY-MM-DD"`.
+   */
+  from?: string;
+
+  /**
+   * The end of the range to retrieve the holidays for, inclusive,
+   * in the form of `"YYYY-MM-DD"`.
+   */
+  to?: string;
+}
+
+/**
+ * A `HolidaysResponse` describes a response to `getHolidays` API call.
+ */
+export interface HolidaysResponse {
+  /**
+   * The list of the holidays that fall within the queried year or range.
+   */
+  data: Holiday[];
+}
+
+/**
+ * A `BusinessDayCheckResponse` describes a response to
+ * `checkBusinessDay` API call.
+ */
+export interface BusinessDayCheckResponse {
+  /**
+   * Whether the queried date is a business day, i.e. neither a weekend
+   * nor a public holiday.
+   */
+  result: boolean;
+}
+
+/**
+ * A `SchoolAddress` object stores the resolved address of a school.
+ */
+export interface SchoolAddress {
+  /**
+   * The postal code assigned to the location of the school.
+   */
+  postal_code: string;
+
+  /**
+   * The 5 digit Japanese municipality code (全国地方公共団体コード).
+   */
+  jisx0402: string;
+
+  /**
+   * The name of the prefecture in Kanji.
+   *
+   * Example: `"東京都"`
+   */
+  prefecture: string;
+
+  /**
+   * The reading of the name of the prefecture in katakana.
+   *
+   * Example: `"トウキョウト"`
+   */
+  prefecture_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the prefecture.
+   *
+   * Example: `"Tokyo"`
+   */
+  prefecture_roman: string;
+
+  /**
+   * The name of the city.
+   *
+   * Example: `"文京区"`
+   */
+  city: string;
+
+  /**
+   * The reading of the name of the city in katakana.
+   *
+   * Example: `"ブンキョウク"`
+   */
+  city_kana: string;
+
+  /**
+   * The "romanized" reading of the name of the city.
+   *
+   * Example: `"Bunkyo-ku"`
+   */
+  city_roman: string;
+
+  /**
+   * The remaining part of the address below the city level.
+   *
+   * Example: `"本郷7-3-1"`
+   */
+  street_number: string;
+
+  /**
+   * The name of the town.
+   *
+   * Example: `"本郷"`
+   */
+  town: string;
+
+  /**
+   * The instructional phrase (通り名) specific to Kyoto city, if any.
+   */
+  kyoto_street: string | null;
+
+  /**
+   * The block and lot number part of the address.
+   *
+   * Example: `"7-3-1"`
+   */
+  block_lot_num: string;
+
+  /**
+   * The name of the building, if any.
+   */
+  building: string | null;
+
+  /**
+   * The floor and room part of the address, if any.
+   */
+  floor_room: string | null;
+}
+
+/**
+ * A `School` object stores the information about a school identified by
+ * a school code (学校コード) designated by MEXT.
+ */
+export interface School {
+  /**
+   * The 13 digit school code (学校コード).
+   *
+   * Example: `"F113110102700"`
+   */
+  code: string;
+
+  /**
+   * The school type code.
+   *
+   * Example: `"F1"`
+   */
+  type: string;
+
+  /**
+   * The prefecture code of the jurisdiction, defined in JISX0401.
+   *
+   * Example: `"13"`
+   */
+  jurisdiction_prefecture_code: string;
+
+  /**
+   * The establishment type code (設置区分).
+   */
+  establishment_type: number;
+
+  /**
+   * The branch code (本分校) where `1` denotes the main school.
+   */
+  branch: number;
+
+  /**
+   * The name of the school.
+   *
+   * Example: `"東京大学"`
+   */
+  name: string;
+
+  /**
+   * The raw, unprocessed address string of the school.
+   *
+   * Example: `"東京都文京区本郷７－３－１"`
+   */
+  address_raw: string;
+
+  /**
+   * The resolved addresses of the school.
+   */
+  addresses: SchoolAddress[];
+
+  /**
+   * The date the school was established, in the form of `"YYYY-MM-DD"`.
+   */
+  established_date: string;
+
+  /**
+   * The date the school was abolished, in the form of `"YYYY-MM-DD"`,
+   * or `null` if it is still active.
+   */
+  abolished_date: string | null;
+
+  /**
+   * The school survey number (学校調査番号).
+   */
+  school_survey_number: string;
+
+  /**
+   * The list of the school codes that superseded this school, if any.
+   */
+  new_code: string[];
+
+  /**
+   * A catch-all property
+   */
+  [key: string]: unknown;
+}
+
+/**
+ * A `SchoolResolverResponse` describes a response to `getSchool` API call.
+ */
+export interface SchoolResolverResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`.
+   */
+  version: string;
+
+  /**
+   * The resolved school.
+   */
+  data: School;
+}
+
+/**
+ * A `SchoolFacets` represents the facets of a school search result.
+ *
+ * It is only available when at least one `facet_*` option is given,
+ * and each facet is a list of {@link Facet} tuples.
+ */
+export interface SchoolFacets {
+  /**
+   * The facet of the area (地域).
+   */
+  area?: Facet[];
+
+  /**
+   * The facet of the school type (学校種).
+   */
+  type?: Facet[];
+
+  /**
+   * The facet of the establishment type (設置区分).
+   */
+  establishment_type?: Facet[];
+
+  /**
+   * The facet of the branch (本分校).
+   */
+  branch?: Facet[];
+}
+
+/**
+ * The set of options that can be passed to `searchSchool`.
+ */
+export interface SchoolSearcherOptions {
+  /**
+   * The search query.
+   *
+   * Example: `"name:東京大学"`
+   */
+  q: string;
+
+  /**
+   * The offset from which the result has to be retrieved.
+   */
+  offset?: number;
+
+  /**
+   * The maximum number of the items to retrieve, between 1 and 100.
+   */
+  limit?: number;
+
+  /**
+   * The hierarchy of the area facet to narrow the result down to.
+   *
+   * Example: `"/東京都/文京区"`
+   */
+  facet_area?: string;
+
+  /**
+   * The hierarchy of the prefecture facet to narrow the result down to.
+   *
+   * Example: `"/東京都"`
+   */
+  facet_prefecture?: string;
+
+  /**
+   * The hierarchy of the school type facet to narrow the result down to.
+   *
+   * Example: `"/大学"`
+   */
+  facet_type?: string;
+
+  /**
+   * The hierarchy of the establishment type facet to narrow the result down to.
+   *
+   * Example: `"/公立"`
+   */
+  facet_establishment_type?: string;
+
+  /**
+   * The hierarchy of the branch facet to narrow the result down to.
+   *
+   * Example: `"/本校"`
+   */
+  facet_branch?: string;
+}
+
+/**
+ * A `SchoolSearcherResponse` describes a response to `searchSchool` API call.
+ */
+export interface SchoolSearcherResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`.
+   */
+  version: string;
+
+  /**
+   * The set of the schools that match to the query.
+   */
+  data: School[];
+
+  /**
+   * The query that the search has been performed for.
+   */
+  query: string;
+
+  /**
+   * The number of the resulting items in total.
+   */
+  count: number;
+
+  /**
+   * The offset from which the result has been retrieved.
+   */
+  offset: number;
+
+  /**
+   * The number of items that have been intended, at most, to retrieve.
+   */
+  limit: number;
+
+  /**
+   * The facets of the result that form with the query.
+   *
+   * If no facet is given, those will be unavailable and this stores null.
+   */
+  facets: SchoolFacets | null;
+}

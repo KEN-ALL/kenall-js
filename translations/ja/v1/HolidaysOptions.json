@@ -1,0 +1,53 @@
+{
+  "HolidaysOptions": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`getHolidays` に渡すことのできるオプションの集合。\n\n`year` が指定された場合、`from` と `to` は無視され、その年全体が返されます。それ以外の場合は `from` と `to` で指定された範囲が使われます。"
+        }
+      ]
+    },
+    "properties": {
+      "year": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "祝日を取得する対象の暦年。\n\n例: `2022`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "from": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "祝日を取得する範囲の開始日（この日を含む）。`\"YYYY-MM-DD\"` 形式。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "to": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "祝日を取得する範囲の終了日（この日を含む）。`\"YYYY-MM-DD\"` 形式。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

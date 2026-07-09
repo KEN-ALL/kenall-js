@@ -1,9 +1,23 @@
-import { ZodError } from 'zod';
+import { ZodError, type ZodType } from 'zod';
 import type { Config } from '../config.js';
 import type {
   AddressSearcherOptions,
+  BusinessDayCheckResponse,
+  HolidaysOptions,
+  HolidaysResponse,
   NTACorporateInfoSearcherOptions,
+  SchoolResolverResponse,
+  SchoolSearcherOptions,
+  SchoolSearcherResponse,
+  WhoamiResponse,
 } from './interfaces.compatible.js';
+import {
+  businessDayCheckResponseSchema,
+  holidaysResponseSchema,
+  schoolResolverResponseSchema,
+  schoolSearcherResponseSchema,
+  whoamiResponseSchema,
+} from './schemas.compatible.js';
 import type {
   APIVersion,
   AddressResolverResponseForVersion,
@@ -69,6 +83,23 @@ export class KENALLV1 {
       headers: { ...(apiVersion ? { 'KenAll-API-Version': apiVersion } : {}) },
     });
     return await r.json();
+  }
+
+  /**
+   * Validates the response payload against the given schema, converting a
+   * {@link ZodError} into a plain {@link Error} for a consistent error surface.
+   */
+  private validate<T>(schema: ZodType<T>, payload: unknown): T {
+    try {
+      return schema.parse(payload);
+    } catch (e) {
+      if (e instanceof ZodError) {
+        throw new Error(
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
+        );
+      }
+      throw e;
+    }
   }
 
   /**
@@ -423,5 +454,107 @@ export class KENALLV1 {
       }
       throw e;
     }
+  }
+
+  /**
+   * Invokes "whoami" API (endpoint: `/whoami`).
+   *
+   * This API is not versioned.
+   *
+   * @returns A {@link WhoamiResponse} that contains the IP address the request
+   *          was made from.
+   */
+  async whoami(): Promise<WhoamiResponse> {
+    const resp = await this.request('./whoami');
+    return this.validate(whoamiResponseSchema, resp);
+  }
+
+  /**
+   * Invokes "getHolidays" API (endpoint: `/holidays`).
+   *
+   * This API is not versioned.
+   *
+   * @param options The query. When `year` is given, `from` and `to` are
+   *                ignored and the whole year is returned.
+   * @returns A {@link HolidaysResponse}.
+   */
+  async getHolidays(options: HolidaysOptions = {}): Promise<HolidaysResponse> {
+    const params: { [k: string]: string } = {};
+    if (options.year !== undefined) {
+      params.year = String(options.year);
+    }
+    if (options.from !== undefined) {
+      params.from = options.from;
+    }
+    if (options.to !== undefined) {
+      params.to = options.to;
+    }
+    const resp = await this.request('./holidays', params);
+    return this.validate(holidaysResponseSchema, resp);
+  }
+
+  /**
+   * Invokes "checkBusinessDay" API (endpoint: `/businessdays/check`).
+   *
+   * This API is not versioned.
+   *
+   * @param date The date to check, in the form of `"YYYY-MM-DD"`.
+   * @returns A {@link BusinessDayCheckResponse}.
+   */
+  async checkBusinessDay(date: string): Promise<BusinessDayCheckResponse> {
+    const resp = await this.request('./businessdays/check', { date: date });
+    return this.validate(businessDayCheckResponseSchema, resp);
+  }
+
+  /**
+   * Invokes "getSchool" API (endpoint: `/school/{schoolCode}`).
+   *
+   * This API is not versioned.
+   *
+   * @param schoolCode The 13 digit school code to query with.
+   * @returns A {@link SchoolResolverResponse}.
+   */
+  async getSchool(schoolCode: string): Promise<SchoolResolverResponse> {
+    const resp = await this.request(
+      `./school/${encodeURIComponent(schoolCode)}`
+    );
+    return this.validate(schoolResolverResponseSchema, resp);
+  }
+
+  /**
+   * Invokes "searchSchool" API (endpoint: `/school/?...`).
+   *
+   * This API is not versioned.
+   *
+   * @param options The query.
+   * @returns A {@link SchoolSearcherResponse}.
+   */
+  async searchSchool(
+    options: SchoolSearcherOptions
+  ): Promise<SchoolSearcherResponse> {
+    const params: { [k: string]: string } = { q: options.q };
+    if (options.offset !== undefined) {
+      params.offset = String(options.offset | 0);
+    }
+    if (options.limit !== undefined) {
+      params.limit = String(options.limit | 0);
+    }
+    if (options.facet_area !== undefined) {
+      params.facet_area = options.facet_area;
+    }
+    if (options.facet_prefecture !== undefined) {
+      params.facet_prefecture = options.facet_prefecture;
+    }
+    if (options.facet_type !== undefined) {
+      params.facet_type = options.facet_type;
+    }
+    if (options.facet_establishment_type !== undefined) {
+      params.facet_establishment_type = options.facet_establishment_type;
+    }
+    if (options.facet_branch !== undefined) {
+      params.facet_branch = options.facet_branch;
+    }
+    const resp = await this.request('./school/', params);
+    return this.validate(schoolSearcherResponseSchema, resp);
   }
 }

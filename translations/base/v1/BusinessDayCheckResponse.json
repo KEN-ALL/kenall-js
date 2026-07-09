@@ -1,0 +1,45 @@
+{
+    "BusinessDayCheckResponse": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`BusinessDayCheckResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": " describes a response to\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "`checkBusinessDay`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "result": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Whether the queried date is a business day, i.e. neither a weekend\nnor a public holiday."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

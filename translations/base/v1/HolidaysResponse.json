@@ -1,0 +1,45 @@
+{
+    "HolidaysResponse": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`HolidaysResponse`"
+                },
+                {
+                    "kind": "text",
+                    "text": " describes a response to "
+                },
+                {
+                    "kind": "code",
+                    "text": "`getHolidays`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API call."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "data": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The list of the holidays that fall within the queried year or range."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

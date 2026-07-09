@@ -1,0 +1,121 @@
+{
+    "HolidaysOptions": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "The set of options that can be passed to "
+                },
+                {
+                    "kind": "code",
+                    "text": "`getHolidays`"
+                },
+                {
+                    "kind": "text",
+                    "text": ".\n\nWhen "
+                },
+                {
+                    "kind": "code",
+                    "text": "`year`"
+                },
+                {
+                    "kind": "text",
+                    "text": " is specified, "
+                },
+                {
+                    "kind": "code",
+                    "text": "`from`"
+                },
+                {
+                    "kind": "text",
+                    "text": " and "
+                },
+                {
+                    "kind": "code",
+                    "text": "`to`"
+                },
+                {
+                    "kind": "text",
+                    "text": " are ignored and the whole year\nis returned. Otherwise the range designated by "
+                },
+                {
+                    "kind": "code",
+                    "text": "`from`"
+                },
+                {
+                    "kind": "text",
+                    "text": " and "
+                },
+                {
+                    "kind": "code",
+                    "text": "`to`"
+                },
+                {
+                    "kind": "text",
+                    "text": " is used."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "year": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The calendar year to retrieve the holidays for.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`2022`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "from": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The start of the range to retrieve the holidays for, inclusive,\nin the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "to": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The end of the range to retrieve the holidays for, inclusive,\nin the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"YYYY-MM-DD\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

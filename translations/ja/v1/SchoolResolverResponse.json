@@ -1,0 +1,42 @@
+{
+  "SchoolResolverResponse": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`SchoolResolverResponse` は `getSchool` API呼び出しに対するレスポンスを表します。"
+        }
+      ]
+    },
+    "properties": {
+      "version": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "データのバージョン。`\"YYYY-MM-DD\"` 形式。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "data": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "解決された学校。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

@@ -414,6 +414,246 @@
                     ],
                     "modifierTags": {}
                 }
+            },
+            "whoami": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"whoami\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/whoami`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ").\n\nThis API is not versioned."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "WhoamiResponse",
+                                    "target": {
+                                        "packageName": "@ken-all/kenall",
+                                        "packagePath": "src/v1/interfaces.compatible.ts",
+                                        "qualifiedName": "WhoamiResponse",
+                                        "pos": 2200,
+                                        "transientId": null,
+                                        "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
+                                    }
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " that contains the IP address the request\n         was made from."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
+                }
+            },
+            "getHolidays": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getHolidays\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/holidays`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ").\n\nThis API is not versioned."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "HolidaysResponse",
+                                    "target": {
+                                        "packageName": "@ken-all/kenall",
+                                        "packagePath": "src/v1/interfaces.compatible.ts",
+                                        "qualifiedName": "HolidaysResponse",
+                                        "pos": 2353,
+                                        "transientId": null,
+                                        "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
+                                    }
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
+                }
+            },
+            "checkBusinessDay": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"checkBusinessDay\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/businessdays/check`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ").\n\nThis API is not versioned."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "BusinessDayCheckResponse",
+                                    "target": {
+                                        "packageName": "@ken-all/kenall",
+                                        "packagePath": "src/v1/interfaces.compatible.ts",
+                                        "qualifiedName": "BusinessDayCheckResponse",
+                                        "pos": 2412,
+                                        "transientId": null,
+                                        "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
+                                    }
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
+                }
+            },
+            "getSchool": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getSchool\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/school/{schoolCode}`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ").\n\nThis API is not versioned."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "SchoolResolverResponse",
+                                    "target": {
+                                        "packageName": "@ken-all/kenall",
+                                        "packagePath": "src/v1/interfaces.compatible.ts",
+                                        "qualifiedName": "SchoolResolverResponse",
+                                        "pos": 2579,
+                                        "transientId": null,
+                                        "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
+                                    }
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
+                }
+            },
+            "searchSchool": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"searchSchool\" API (endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/school/?...`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ").\n\nThis API is not versioned."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "SchoolSearcherResponse",
+                                    "target": {
+                                        "packageName": "@ken-all/kenall",
+                                        "packagePath": "src/v1/interfaces.compatible.ts",
+                                        "qualifiedName": "SchoolSearcherResponse",
+                                        "pos": 2770,
+                                        "transientId": null,
+                                        "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
+                                    }
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
+                }
             }
         },
         "accessors": {}

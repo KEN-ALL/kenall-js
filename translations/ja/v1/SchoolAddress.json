@@ -1,0 +1,174 @@
+{
+  "SchoolAddress": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`SchoolAddress` オブジェクトは、解決された学校の所在地を格納します。"
+        }
+      ]
+    },
+    "properties": {
+      "postal_code": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "学校の所在地に割り当てられた郵便番号。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "jisx0402": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "5桁の全国地方公共団体コード。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "prefecture": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "都道府県の漢字名。\n\n例: `\"東京都\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "prefecture_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "カタカナでの都道府県名の読み。\n\n例: `\"トウキョウト\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "prefecture_roman": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での都道府県名の読み。\n\n例: `\"Tokyo\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "市区町村名。\n\n例: `\"文京区\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_kana": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "カタカナでの市区町村名の読み。\n\n例: `\"ブンキョウク\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "city_roman": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "ローマ字での市区町村名の読み。\n\n例: `\"Bunkyo-ku\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "street_number": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "市区町村より下位の住所部分。\n\n例: `\"本郷7-3-1\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "town": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "町域名。\n\n例: `\"本郷\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "kyoto_street": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "京都市特有の通り名（通り名）。該当しない場合はnull。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "block_lot_num": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "住所の番地部分。\n\n例: `\"7-3-1\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "building": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "建物名（あれば）。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "floor_room": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "住所の階・部屋部分（あれば）。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

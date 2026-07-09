@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import * as v20250101S from './schemas.v20250101.js';
+
 import {
   UpdateReason,
   UpdateStatus,
@@ -162,3 +164,10 @@ export const ntaCorporateInfoSearcherResponseSchema = z.object({
   limit: z.number(),
   facets: ntaCorporateInfoFacetsSchema.nullable(),
 });
+
+export const remoteAddressSchema = v20250101S.remoteAddressSchema;
+export const whoamiResponseSchema = v20250101S.whoamiResponseSchema;
+export const holidaySchema = v20250101S.holidaySchema;
+export const holidaysResponseSchema = v20250101S.holidaysResponseSchema;
+export const businessDayCheckResponseSchema =
+  v20250101S.businessDayCheckResponseSchema;

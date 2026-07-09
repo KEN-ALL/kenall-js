@@ -1,0 +1,42 @@
+{
+  "RemoteAddress": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`RemoteAddress` オブジェクトは、APIサーバーから見た、リクエスト元のIPアドレスを格納します。"
+        }
+      ]
+    },
+    "properties": {
+      "type": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "IPアドレスの種別。\n\n* `\"v4\"` はIPv4アドレス\n* `\"v6\"` はIPv6アドレス"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "address": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "IPアドレスの文字列表現。\n\n例: `\"192.0.2.1\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

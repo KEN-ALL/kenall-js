@@ -1,0 +1,97 @@
+{
+  "SchoolSearcherResponse": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`SchoolSearcherResponse` は `searchSchool` API呼び出しに対するレスポンスを表します。"
+        }
+      ]
+    },
+    "properties": {
+      "version": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "データのバージョン。`\"YYYY-MM-DD\"` 形式。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "data": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "クエリに合致した学校の集合。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "query": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "検索が実行されたクエリ。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "count": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "合致した結果の総数。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "offset": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "結果を取得したオフセット値。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "limit": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "取得しようとした最大件数。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "facets": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "クエリに対する結果のファセット。\n\nファセットが指定されていない場合は利用できず、nullが格納されます。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}

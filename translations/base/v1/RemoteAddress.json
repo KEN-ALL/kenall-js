@@ -1,0 +1,69 @@
+{
+    "RemoteAddress": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`RemoteAddress`"
+                },
+                {
+                    "kind": "text",
+                    "text": " object stores the IP address the request originated from,\nas observed by the API server."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "type": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The kind of the IP address.\n\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"v4\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " for an IPv4 address\n* "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"v6\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " for an IPv6 address"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "address": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The IP address in its textual representation.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"192.0.2.1\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

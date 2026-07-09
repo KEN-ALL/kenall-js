@@ -248,7 +248,123 @@
         },
         "summary": []
       },
-      "summary": []
+      "summary": [],
+      "whoami": {
+        "comment": {
+          "returns": "リクエストの送信元IPアドレスを含む {@link WhoamiResponse}。\n",
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"whoami\" API (エンドポイント: `/whoami`) を呼び出します。\n\nこのAPIはバージョン管理されていません。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "getHolidays": {
+        "comment": {
+          "returns": "{@link HolidaysResponse}。\n",
+          "parameters": {
+            "options": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせ内容。`year` が指定された場合、`from` と `to` は無視され、その年全体が返されます。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"getHolidays\" API (エンドポイント: `/holidays`) を呼び出します。\n\nこのAPIはバージョン管理されていません。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "checkBusinessDay": {
+        "comment": {
+          "returns": "{@link BusinessDayCheckResponse}。\n",
+          "parameters": {
+            "date": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "確認する日付。`\"YYYY-MM-DD\"` 形式。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"checkBusinessDay\" API (エンドポイント: `/businessdays/check`) を呼び出します。\n\nこのAPIはバージョン管理されていません。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "getSchool": {
+        "comment": {
+          "returns": "{@link SchoolResolverResponse}。\n",
+          "parameters": {
+            "schoolCode": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせ対象の13桁の学校コード。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"getSchool\" API (エンドポイント: `/school/{schoolCode}`) を呼び出します。\n\nこのAPIはバージョン管理されていません。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "searchSchool": {
+        "comment": {
+          "returns": "{@link SchoolSearcherResponse}。\n",
+          "parameters": {
+            "options": {
+              "comment": {
+                "summary": [
+                  {
+                    "kind": "text",
+                    "text": "問い合わせ内容。\n"
+                  }
+                ]
+              },
+              "summary": []
+            },
+            "summary": []
+          },
+          "summary": [
+            {
+              "kind": "text",
+              "text": "\"searchSchool\" API (エンドポイント: `/school/?...`) を呼び出します。\n\nこのAPIはバージョン管理されていません。\n"
+            }
+          ]
+        },
+        "summary": []
+      }
     },
     "accessors": {
       "summary": []

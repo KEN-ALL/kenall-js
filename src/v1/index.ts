@@ -30,6 +30,18 @@ export {
   NTAQualifiedInvoiceIssuerKind,
   NTAQualifiedInvoiceIssuerProcess,
   NTAQualifiedInvoiceIssuerInfoResolverResponse,
+  RemoteAddress,
+  WhoamiResponse,
+  Holiday,
+  HolidaysOptions,
+  HolidaysResponse,
+  BusinessDayCheckResponse,
+  SchoolAddress,
+  School,
+  SchoolResolverResponse,
+  SchoolFacets,
+  SchoolSearcherOptions,
+  SchoolSearcherResponse,
 } from './interfaces.compatible.js';
 export * as v20221101 from './interfaces.v20221101.js';
 export * as v20220901 from './interfaces.v20220901.js';

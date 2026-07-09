@@ -1,0 +1,64 @@
+{
+  "Holiday": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`Holiday` オブジェクトは日本の祝日1件を表します。"
+        }
+      ]
+    },
+    "properties": {
+      "title": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "祝日の名称。\n\n例: `\"元日\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "date": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "祝日の日付。`\"YYYY-MM-DD\"` 形式。\n\n例: `\"2022-01-01\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "day_of_week": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "曜日を表す数値。`0` が日曜日、`6` が土曜日。"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "day_of_week_text": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "曜日を英語の小文字で表したもの。\n\n例: `\"saturday\"`"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "methods": {
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}
