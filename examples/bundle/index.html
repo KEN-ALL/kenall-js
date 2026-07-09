@@ -19,26 +19,100 @@
     </label>
     <button>送信</button>
   </form>
+  <p>
+    <button id="run-all" type="button">すべてのAPIを実行 (Run all APIs)</button>
+  </p>
   <pre id="result"></pre>
   <script type="text/javascript">
     (function (d, kenall) {
       var apiKey = '%VITE_KENALL_API_KEY%';
       var form = d.getElementById('form');
       var postalcodeElem = d.getElementById('postalcode');
+      var runAllElem = d.getElementById('run-all');
       var result = d.getElementById('result');
+      var api = new kenall.KENALL(apiKey);
+
+      // Interactive postal code → address lookup.
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var kenallApi = new kenall.KENALL(apiKey);
-        var postalcode = postalcodeElem.value;
-        kenallApi.getAddress(postalcode).then(
+        api.getAddress(postalcodeElem.value).then(
           function (data) {
-            result.innerText = JSON.stringify(data);
+            result.innerText = JSON.stringify(data, null, 2);
           }
         ).catch(
           function (e) {
             result.innerText = e.stack;
           }
         );
+      }, false);
+
+      function log(label, value) {
+        result.innerText += label + ': ' + JSON.stringify(value) + '\n';
+      }
+
+      // Runs every available API in turn with sample inputs.
+      async function runAll() {
+        result.innerText = '';
+
+        // Postal code → address
+        var address = await api.getAddress('1000001');
+        log('getAddress', address.data[0].prefecture + address.data[0].city);
+
+        // Free-text address search
+        var foundAddresses = await api.searchAddresses({ q: '東京都 千代田区 麹町', limit: 2 });
+        log('searchAddresses', foundAddresses.count);
+
+        // Prefecture code (JIS X 0401) → cities
+        var cities = await api.getCities('13');
+        log('getCities', cities.data.map(function (city) { return city.city; }));
+
+        // Corporate number (法人番号)
+        var corporation = await api.getNTACorporateInfo('2021001052596');
+        log('getNTACorporateInfo', corporation.data.name);
+
+        var foundCorporations = await api.searchNTACorporateInfo({ query: 'ケンオール', limit: 2 });
+        log('searchNTACorporateInfo', foundCorporations.count);
+
+        // Qualified invoice issuer (適格請求書発行事業者)
+        var issuer = await api.getNTAQualifiedInvoiceIssuerInfo('T2021001052596');
+        log('getNTAQualifiedInvoiceIssuerInfo', issuer.data.name);
+
+        // Banks and branches
+        var banks = await api.getBanks();
+        log('getBanks', banks.data.length);
+
+        var bank = await api.getBank('0001');
+        log('getBank', bank.data.name);
+
+        var branches = await api.getBankBranches('0001');
+        log('getBankBranches', Object.keys(branches.data.branches).length);
+
+        var branch = await api.getBankBranch('0001', '001');
+        log('getBankBranch', branch.data.branch.name);
+
+        // The IP address the request originates from, as seen by the API
+        var me = await api.whoami();
+        log('whoami', me.remote_addr.address);
+
+        // Japanese public holidays and business-day check
+        var holidays = await api.getHolidays({ year: 2026 });
+        log('getHolidays', holidays.data.length);
+
+        var businessDay = await api.checkBusinessDay('2026-01-01');
+        log('checkBusinessDay', businessDay.result);
+
+        // School code (学校コード)
+        var school = await api.getSchool('F113110102700');
+        log('getSchool', school.data.name);
+
+        var foundSchools = await api.searchSchool({ q: 'name:東京大学', limit: 2 });
+        log('searchSchool', foundSchools.count);
+      }
+
+      runAllElem.addEventListener('click', function () {
+        runAll().catch(function (e) {
+          result.innerText += '\nError: ' + (e && e.stack ? e.stack : e);
+        });
       }, false);
     })(window.document, window.kenall);
   </script>
