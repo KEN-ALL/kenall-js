@@ -14,12 +14,18 @@ import * as v20230901S from './schemas.v20230901.js';
 import * as v20240101S from './schemas.v20240101.js';
 import * as v20250101S from './schemas.v20250101.js';
 
-export type APIVersion =
-  | '2022-09-01'
-  | '2022-11-01'
-  | '2023-09-01'
-  | '2024-01-01'
-  | '2025-01-01';
+export const API_VERSIONS = [
+  '2022-09-01',
+  '2022-11-01',
+  '2023-09-01',
+  '2024-01-01',
+  '2025-01-01',
+] as const;
+
+export type APIVersion = (typeof API_VERSIONS)[number];
+
+export const isValidAPIVersion = (version: unknown): version is APIVersion =>
+  (API_VERSIONS as readonly unknown[]).includes(version);
 
 export type AddressResolverResponseForVersion<
   T extends APIVersion | undefined,
@@ -208,6 +214,30 @@ const refillToCompatibleNTACorporateInfo = (
   hihyoji: String(data.hihyoji),
 });
 
+const isBankBranchArray = (
+  v: _v20230901.BankBranch | _v20240101.BankBranch | _v20250101.BankBranch[]
+): v is _v20250101.BankBranch[] => Array.isArray(v);
+
+const refillToCompatibleBankBranch = (
+  data: _v20230901.BankBranch | _v20240101.BankBranch | _v20250101.BankBranch[]
+): _compatible.BankBranch =>
+  isBankBranchArray(data)
+    ? (Object.assign(data, data[0]) as _compatible.BankBranch)
+    : Object.assign([data], data);
+
+const refillToCompatibleBankBranchRecords = (
+  bankToBranchRecords: Record<
+    string,
+    _v20230901.BankBranch | _v20240101.BankBranch | _v20250101.BankBranch[]
+  >
+): Record<string, _compatible.BankBranch> =>
+  Object.fromEntries(
+    Object.entries(bankToBranchRecords).map(([k, v]) => [
+      k,
+      refillToCompatibleBankBranch(v),
+    ])
+  );
+
 export const compatible = {
   validateAddressResolverResponse: (
     payload: unknown
@@ -303,12 +333,29 @@ export const compatible = {
     v20230901S.bankResolverResponseSchema.parse(payload),
   validateBankBranchesResponse: (
     payload: unknown
-  ): _compatible.BankBranchesResponse =>
-    v20230901S.bankBranchesResponseSchema.parse(payload),
+  ): _compatible.BankBranchesResponse => {
+    const _payload = compatibleS.bankBranchesResponseSchema.parse(payload);
+    return {
+      ..._payload,
+      data: {
+        ..._payload.data,
+        branches: refillToCompatibleBankBranchRecords(_payload.data.branches),
+      },
+    };
+  },
   validateBankBranchResolverResponse: (
     payload: unknown
-  ): _compatible.BankBranchResolverResponse =>
-    v20230901S.bankBranchResolverResponseSchema.parse(payload),
+  ): _compatible.BankBranchResolverResponse => {
+    const _payload =
+      compatibleS.bankBranchResolverResponseSchema.parse(payload);
+    return {
+      ..._payload,
+      data: {
+        ..._payload.data,
+        branch: refillToCompatibleBankBranch(_payload.data.branch),
+      },
+    };
+  },
 };
 
 export const v20220901 = {

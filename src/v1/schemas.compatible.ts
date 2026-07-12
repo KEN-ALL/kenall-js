@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 import * as v20221101 from './interfaces.v20221101.js';
 import * as v20221101S from './schemas.v20221101.js';
+import * as v20230901S from './schemas.v20230901.js';
 import * as v20250101S from './schemas.v20250101.js';
 
 export const corporationSchema = v20221101S.corporationSchema;
@@ -79,6 +80,28 @@ export const citySchema = z.object({
 export const cityResolverResponseSchema = z.object({
   version: z.string(),
   data: z.array(citySchema),
+});
+
+export const bankSchema = v20230901S.bankSchema;
+export const bankBranchSchema = v20230901S.bankBranchSchema;
+export const banksResponseSchema = v20230901S.banksResponseSchema;
+export const bankBranchesResponseSchema = z.object({
+  version: z.string(),
+  data: z.object({
+    bank: bankSchema,
+    branches: z.record(
+      z.string(),
+      z.union([bankBranchSchema, z.array(bankBranchSchema)])
+    ),
+  }),
+});
+export const bankResolverResponseSchema = v20230901S.bankResolverResponseSchema;
+export const bankBranchResolverResponseSchema = z.object({
+  version: z.string(),
+  data: z.object({
+    bank: bankSchema,
+    branch: z.union([bankBranchSchema, z.array(bankBranchSchema)]),
+  }),
 });
 
 export const remoteAddressSchema = v20250101S.remoteAddressSchema;
