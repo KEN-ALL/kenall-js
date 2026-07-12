@@ -25,6 +25,7 @@
     "build": "tsc -d && tsc -d -p tsconfig.cjs.json && echo '{\"type\":\"module\"}' > dist/package.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
     "bundle": "rollup -c",
     "test": "vitest run",
+    "release": "node scripts/release-bump.mjs",
     "doc:gen-json": "typedoc --plugin typedoc-plugin-localization --generate-json translations/base",
     "doc:base": "typedoc --out dist/docs",
     "doc:ja": "typedoc --plugin typedoc-plugin-localization --out dist/docs/ja --readme README.ja.md --generate-from-json translations/ja"

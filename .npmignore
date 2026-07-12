@@ -3,6 +3,7 @@ dist/bundle.js
 dist/bundle.js.map
 examples/
 src/
+scripts/
 translations/
 .github/
 **/__tests__
