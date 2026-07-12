@@ -33,11 +33,22 @@ export type NTAQualifiedInvoiceIssuerProcess =
 export type NTAQualifiedInvoiceIssuerInfoResolverResponse =
   v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse;
 export type Bank = v20230901.Bank;
-export type BankBranch = v20230901.BankBranch;
+/**
+ * A compatible `BankBranch` is a hybrid value that can be accessed **both** as
+ * a single branch (the legacy shape, e.g. `branch.code`) **and** as an array of
+ * branches (the shape introduced in the 2025-01-01 API version, e.g.
+ * `branch[0].code`). The scalar fields mirror the first element of the array.
+ *
+ * Caveat: because the scalar fields are attached to an array, this hybrid is
+ * transparent for field access but **not** for serialization or key
+ * enumeration. `JSON.stringify(branch)` emits the array form (`[{...}]`) and
+ * drops the top-level scalar fields, and `Object.keys(branch)` yields the
+ * numeric indices alongside the scalar keys (e.g. `["0", "code", ...]`). Read
+ * fields directly rather than round-tripping the value through JSON.
+ */
+export type BankBranch = v20230901.BankBranch & v20250101.BankBranch[];
 export type BanksResponse = v20230901.BanksResponse;
 export type BankResolverResponse = v20230901.BankResolverResponse;
-export type BankBranchesResponse = v20230901.BankBranchesResponse;
-export type BankBranchResolverResponse = v20230901.BankBranchResolverResponse;
 export type RemoteAddress = v20250101.RemoteAddress;
 export type WhoamiResponse = v20250101.WhoamiResponse;
 export type Holiday = v20250101.Holiday;
@@ -572,4 +583,54 @@ export interface CityResolverResponse {
    * The set of the data that match to the query.
    */
   data: City[];
+}
+
+/**
+ * An `BankBranchesResponse` describes a response to
+ * `getBankBranches` API call.
+ * The response includes the bank and the branch data.
+ * The bank data is the same as the `BankResolverResponse`.
+ */
+export interface BankBranchesResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day
+   * the source data became available.
+   */
+  version: string;
+
+  /**
+   * The bank and branch data.
+   * The branches key is the bank branch code.
+   */
+  data: {
+    bank: Bank;
+    branches: {
+      [key: string]: BankBranch;
+    };
+  };
+}
+
+/**
+ * An `BankBranchResolverResponse` describes a response to
+ * `getBankBranch` API call.
+ * The response includes the bank and the branch data.
+ * The bank data is the same as the `BankResolverResponse`.
+ * The branch data is the same as the one in `BankBranchesResponse`.
+ */
+export interface BankBranchResolverResponse {
+  /**
+   * The version of the data, in the form of `"YYYY-MM-DD"`
+   * where Y, M, and D represent digits of the year, month, and day
+   * the source data became available.
+   */
+  version: string;
+
+  /**
+   * The bank and branch data.
+   */
+  data: {
+    bank: Bank;
+    branch: BankBranch;
+  };
 }
