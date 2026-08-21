@@ -295,6 +295,95 @@
                     "modifierTags": {}
                 }
             },
+            "searchBanks": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getBanks\" API with a set of search parameters\n(endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/bank?...`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ").\n\nUnlike "
+                        },
+                        {
+                            "kind": "inline-tag",
+                            "tag": "@link",
+                            "text": "getBanks",
+                            "target": {
+                                "packageName": "@ken-all/kenall",
+                                "packagePath": "src/v1/core.ts",
+                                "qualifiedName": "KENALLV1.getBanks",
+                                "pos": 11545,
+                                "transientId": 81,
+                                "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/core.ts"
+                            }
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", an empty result is not an error here: as long as\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`q`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " or "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`type`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is given, the API responds with a 200 and an empty "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`data`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\ninstead of a 404.\n\nThe search parameters were introduced in the 2026-08-01 API version;\nearlier versions ignore them and return the whole set, which is why\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`apiVersion`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " cannot be an older one."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "BanksResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
+                }
+            },
             "getBank": {
                 "comment": {
                     "summary": [
@@ -349,6 +438,87 @@
                         {
                             "kind": "text",
                             "text": ")."
+                        }
+                    ],
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "A "
+                                },
+                                {
+                                    "kind": "inline-tag",
+                                    "tag": "@link",
+                                    "text": "BankBranchesResponse"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "."
+                                }
+                            ],
+                            "skipRendering": false
+                        }
+                    ],
+                    "modifierTags": {}
+                }
+            },
+            "searchBankBranches": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Invokes \"getBankBranches\" API with a set of search parameters\n(endpoint: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`/bank/{bankCode}/branches?...`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ").\n\nUnlike "
+                        },
+                        {
+                            "kind": "inline-tag",
+                            "tag": "@link",
+                            "text": "getBankBranches",
+                            "target": {
+                                "packageName": "@ken-all/kenall",
+                                "packagePath": "src/v1/core.ts",
+                                "qualifiedName": "KENALLV1.getBankBranches",
+                                "pos": 15043,
+                                "transientId": 84,
+                                "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/core.ts"
+                            }
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", an empty result is not an error here: as\nlong as "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`q`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is given and the bank itself exists, the API responds with a\n200 and an empty "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`branches`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " instead of a 404.\n\nThe search parameters were introduced in the 2026-08-01 API version;\nearlier versions ignore them and return every branch, which is why\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`apiVersion`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " cannot be an older one."
                         }
                     ],
                     "blockTags": [
@@ -447,7 +617,7 @@
                                         "packageName": "@ken-all/kenall",
                                         "packagePath": "src/v1/interfaces.compatible.ts",
                                         "qualifiedName": "WhoamiResponse",
-                                        "pos": 2200,
+                                        "pos": 3160,
                                         "transientId": null,
                                         "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
                                     }
@@ -495,7 +665,7 @@
                                         "packageName": "@ken-all/kenall",
                                         "packagePath": "src/v1/interfaces.compatible.ts",
                                         "qualifiedName": "HolidaysResponse",
-                                        "pos": 2353,
+                                        "pos": 3313,
                                         "transientId": null,
                                         "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
                                     }
@@ -543,7 +713,7 @@
                                         "packageName": "@ken-all/kenall",
                                         "packagePath": "src/v1/interfaces.compatible.ts",
                                         "qualifiedName": "BusinessDayCheckResponse",
-                                        "pos": 2412,
+                                        "pos": 3372,
                                         "transientId": null,
                                         "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
                                     }
@@ -591,7 +761,7 @@
                                         "packageName": "@ken-all/kenall",
                                         "packagePath": "src/v1/interfaces.compatible.ts",
                                         "qualifiedName": "SchoolResolverResponse",
-                                        "pos": 2579,
+                                        "pos": 3539,
                                         "transientId": null,
                                         "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
                                     }
@@ -639,7 +809,7 @@
                                         "packageName": "@ken-all/kenall",
                                         "packagePath": "src/v1/interfaces.compatible.ts",
                                         "qualifiedName": "SchoolSearcherResponse",
-                                        "pos": 2770,
+                                        "pos": 3730,
                                         "transientId": null,
                                         "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.compatible.ts"
                                     }

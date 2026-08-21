@@ -1,0 +1,129 @@
+{
+    "BankSearcherOptions": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`BankSearcherOptions`"
+                },
+                {
+                    "kind": "text",
+                    "text": " stores a set of parameters that will be sent to\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "`searchBanks`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API.\n\nEvery property is optional; an empty query simply retrieves the whole set,\nin which case the API responds with a 404 when nothing is available."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "q": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The text to search the bank names and the kana readings with.\n\nHiragana, katakana and kanji are all accepted; the differences in small\nkana, prolonged sound marks and character width are normalized away\nbefore matching, and a trailing institution-type suffix such as "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"銀行\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nor "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"信用金庫\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is ignored.\n\nWhen this is given, an empty result comes back as a 200 with an empty\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`data`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " rather than a 404.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"みずほ\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "match": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "How "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`q`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is matched against the names and the readings.\n\nDefaults to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"prefix\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "type": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The category of the institutions to retrieve."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "version": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The version of the database that the query has to be performed against.\n\nDefaults to the latest available version.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2026-08-01\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

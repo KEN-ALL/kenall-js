@@ -1,0 +1,151 @@
+{
+    "BankBranchSearcherOptions": {
+        "comment": {
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "A "
+                },
+                {
+                    "kind": "code",
+                    "text": "`BankBranchSearcherOptions`"
+                },
+                {
+                    "kind": "text",
+                    "text": " stores a set of parameters that will be sent\nto "
+                },
+                {
+                    "kind": "code",
+                    "text": "`searchBankBranches`"
+                },
+                {
+                    "kind": "text",
+                    "text": " API.\n\nNote that, unlike "
+                },
+                {
+                    "kind": "inline-tag",
+                    "tag": "@link",
+                    "text": "BankSearcherOptions",
+                    "target": {
+                        "packageName": "@ken-all/kenall",
+                        "packagePath": "src/v1/interfaces.v20260801.ts",
+                        "qualifiedName": "BankSearcherOptions",
+                        "pos": 1697,
+                        "transientId": null,
+                        "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.v20260801.ts"
+                    }
+                },
+                {
+                    "kind": "text",
+                    "text": ", there is no "
+                },
+                {
+                    "kind": "code",
+                    "text": "`type`"
+                },
+                {
+                    "kind": "text",
+                    "text": " here as\nthe category is already determined by the bank being queried."
+                }
+            ],
+            "blockTags": [],
+            "modifierTags": {}
+        },
+        "properties": {
+            "q": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The text to search the branch names and the kana readings with.\n\nThe same normalization as "
+                        },
+                        {
+                            "kind": "inline-tag",
+                            "tag": "@link",
+                            "text": "BankSearcherOptions.q",
+                            "target": {
+                                "packageName": "@ken-all/kenall",
+                                "packagePath": "src/v1/interfaces.v20260801.ts",
+                                "qualifiedName": "BankSearcherOptions.q",
+                                "pos": 2215,
+                                "transientId": null,
+                                "fileName": "/Users/moriyoshi/Source/kenall-js/src/v1/interfaces.v20260801.ts"
+                            }
+                        },
+                        {
+                            "kind": "text",
+                            "text": " applies, except\nthat the suffix being ignored is "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"支店\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ".\n\nWhen this is given, an empty result comes back as a 200 with an empty\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`branches`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " rather than a 404, as long as the bank itself exists.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"丸の内\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "match": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "How "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`q`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " is matched against the names and the readings.\n\nDefaults to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"prefix\"`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "."
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            },
+            "version": {
+                "comment": {
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The version of the database that the query has to be performed against.\n\nDefaults to the latest available version.\n\nExample: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`\"2026-08-01\"`"
+                        }
+                    ],
+                    "blockTags": [],
+                    "modifierTags": {}
+                }
+            }
+        },
+        "methods": {}
+    }
+}

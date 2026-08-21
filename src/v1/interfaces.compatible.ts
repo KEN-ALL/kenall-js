@@ -2,6 +2,7 @@ import type * as v20221101 from './interfaces.v20221101.js';
 import type * as v20230901 from './interfaces.v20230901.js';
 import type * as v20240101 from './interfaces.v20240101.js';
 import type * as v20250101 from './interfaces.v20250101.js';
+import type * as v20260801 from './interfaces.v20260801.js';
 
 export type UpdateStatus = v20221101.UpdateStatus;
 export type UpdateReason = v20221101.UpdateReason;
@@ -49,6 +50,10 @@ export type Bank = v20230901.Bank;
 export type BankBranch = v20230901.BankBranch & v20250101.BankBranch[];
 export type BanksResponse = v20230901.BanksResponse;
 export type BankResolverResponse = v20230901.BankResolverResponse;
+export type BankSearchMatchMode = v20260801.BankSearchMatchMode;
+export type BankType = v20260801.BankType;
+export type BankSearcherOptions = v20260801.BankSearcherOptions;
+export type BankBranchSearcherOptions = v20260801.BankBranchSearcherOptions;
 export type RemoteAddress = v20250101.RemoteAddress;
 export type WhoamiResponse = v20250101.WhoamiResponse;
 export type Holiday = v20250101.Holiday;

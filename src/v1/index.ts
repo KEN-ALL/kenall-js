@@ -24,6 +24,10 @@ export {
   BankResolverResponse,
   BankBranchesResponse,
   BankBranchResolverResponse,
+  BankSearchMatchMode,
+  BankType,
+  BankSearcherOptions,
+  BankBranchSearcherOptions,
   NTAQualifiedInvoiceIssuerCorrect,
   NTAQualifiedInvoiceIssuerCountry,
   NTAQualifiedInvoiceIssuerInfo,
@@ -48,3 +52,4 @@ export * as v20220901 from './interfaces.v20220901.js';
 export * as v20230901 from './interfaces.v20230901.js';
 export * as v20240101 from './interfaces.v20240101.js';
 export * as v20250101 from './interfaces.v20250101.js';
+export * as v20260801 from './interfaces.v20260801.js';

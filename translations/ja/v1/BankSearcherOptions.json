@@ -1,0 +1,101 @@
+{
+  "BankSearcherOptions": {
+    "comment": {
+      "summary": [
+        {
+          "kind": "text",
+          "text": "`BankSearcherOptions` は \"searchBanks\" API に渡すことのできるオプションの集合です。\n\n"
+        },
+        {
+          "kind": "text",
+          "text": "すべての項目は省略可能で、何も指定しなければ単に全件を取得します。その場合、\n"
+        },
+        {
+          "kind": "text",
+          "text": "該当するデータがなければ 404 が返ります。\n"
+        }
+      ]
+    },
+    "properties": {
+      "q": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "金融機関の名称およびカナ読みを検索する文字列。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "ひらがな・カタカナ・漢字のいずれでも指定でき、小書き文字・長音記号・全半角の\n"
+            },
+            {
+              "kind": "text",
+              "text": "表記揺れは照合前に正規化されます。また、`\"銀行\"` や `\"信用金庫\"` のような\n"
+            },
+            {
+              "kind": "text",
+              "text": "業態を表す接尾語は無視されます。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "この項目を指定した場合、該当が0件でも 404 ではなく `data` が空の 200 が返ります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"みずほ\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "match": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "`q` を名称・カナ読みとどのように照合するか。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "デフォルトは `\"prefix\"` (前方一致) です。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "type": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "取得する金融機関の業態。\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "version": {
+        "comment": {
+          "summary": [
+            {
+              "kind": "text",
+              "text": "どのデータベースのバージョンに対して検索を実行するか。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "デフォルトは最新バージョンとなります。\n\n"
+            },
+            {
+              "kind": "text",
+              "text": "例: `\"2026-08-01\"`\n"
+            }
+          ]
+        },
+        "summary": []
+      },
+      "summary": []
+    },
+    "summary": []
+  },
+  "summary": []
+}
