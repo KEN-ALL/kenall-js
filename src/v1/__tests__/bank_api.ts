@@ -18,14 +18,16 @@ const mockKENALL = (fixture: unknown) => {
 
 const expectGetRequest = (
   mockFetch: ReturnType<typeof mockKENALL>['mockFetch'],
-  path: string
+  path: string,
+  params: Record<string, string> = {},
+  headers: Record<string, string> = {}
 ) => {
   expect(mockFetch).toHaveBeenCalledTimes(1);
   expect(mockFetch.mock.calls[0][0]).toBe(path);
   expect(mockFetch.mock.calls[0][1]).toStrictEqual({
     method: 'GET',
-    headers: {},
-    params: {},
+    headers: headers,
+    params: params,
   });
 };
 
@@ -153,6 +155,44 @@ test('getBanks method', async () => {
   expect(result).toEqual(fixture);
 });
 
+test('searchBanks method (no options behaves like a plain listing)', async () => {
+  const fixture = banksResponseV20230901[0];
+  const { ka, mockFetch } = mockKENALL(fixture);
+  const result = await ka.searchBanks();
+  expectGetRequest(mockFetch, './bank');
+  expect(result).toEqual(fixture);
+});
+
+test('searchBanks method (every parameter is passed through)', async () => {
+  const fixture = { version: '2026-08-01', data: [mizuho] };
+  const { ka, mockFetch } = mockKENALL(fixture);
+  const result = await ka.searchBanks(
+    { q: 'みずほ', match: 'contains', type: 'bank', version: '2026-08-01' },
+    '2026-08-01'
+  );
+  expectGetRequest(
+    mockFetch,
+    './bank',
+    { q: 'みずほ', match: 'contains', type: 'bank', version: '2026-08-01' },
+    { 'KenAll-API-Version': '2026-08-01' }
+  );
+  expect(result).toEqual(fixture);
+});
+
+test('searchBanks method (unset parameters are omitted from the query)', async () => {
+  const { ka, mockFetch } = mockKENALL({ version: '2026-08-01', data: [] });
+  await ka.searchBanks({ q: 'ぴ' });
+  expectGetRequest(mockFetch, './bank', { q: 'ぴ' });
+});
+
+test('searchBanks method (search is rejected for versions that ignore it)', async () => {
+  const { ka } = mockKENALL({ version: '2026-08-01', data: [mizuho] });
+  // The search parameters landed in 2026-08-01; pinning an older version
+  // would silently return the whole set, so it must not type-check.
+  // @ts-expect-error
+  await ka.searchBanks({ q: 'みずほ' }, '2025-01-01');
+});
+
 test('getBank method', async () => {
   const fixture = bankResolverResponseV20230901[0];
   const { ka, mockFetch } = mockKENALL(fixture);
@@ -222,6 +262,39 @@ test('getBankBranches method (version-pinned payloads pass through unchanged)', 
     const result = await ka.getBankBranches('0001', '2025-01-01');
     expect(result).toEqual(bankBranchesResponseV20250101);
   }
+});
+
+test('searchBankBranches method (every parameter is passed through)', async () => {
+  const { ka, mockFetch } = mockKENALL(bankBranchesResponseV20250101);
+  const result = await ka.searchBankBranches(
+    '0001',
+    { q: '丸の内', match: 'contains', version: '2026-08-01' },
+    '2026-08-01'
+  );
+  expectGetRequest(
+    mockFetch,
+    './bank/0001/branches',
+    { q: '丸の内', match: 'contains', version: '2026-08-01' },
+    { 'KenAll-API-Version': '2026-08-01' }
+  );
+  expect(result).toEqual(bankBranchesResponseV20250101);
+});
+
+test('searchBankBranches method (compatible, empty result)', async () => {
+  const fixture = {
+    version: '2026-08-01',
+    data: { bank: mizuho, branches: {} },
+  };
+  const { ka, mockFetch } = mockKENALL(fixture);
+  const result = await ka.searchBankBranches('0001', { q: 'ぴ' });
+  expectGetRequest(mockFetch, './bank/0001/branches', { q: 'ぴ' });
+  expect(result.data.branches).toEqual({});
+});
+
+test('searchBankBranches method (search is rejected for versions that ignore it)', async () => {
+  const { ka } = mockKENALL(bankBranchesResponseV20250101);
+  // @ts-expect-error
+  await ka.searchBankBranches('0001', { q: '丸の内' }, '2025-01-01');
 });
 
 test('getBankBranch method (compatible, legacy single-branch payload)', async () => {

@@ -2,6 +2,8 @@ import { ZodError, type ZodType } from 'zod';
 import type { Config } from '../config.js';
 import type {
   AddressSearcherOptions,
+  BankBranchSearcherOptions,
+  BankSearcherOptions,
   BusinessDayCheckResponse,
   HolidaysOptions,
   HolidaysResponse,
@@ -20,6 +22,7 @@ import {
 } from './schemas.compatible.js';
 import type {
   APIVersion,
+  BankSearchAPIVersion,
   AddressResolverResponseForVersion,
   AddressSearcherResponseForVersion,
   CityResolverResponseForVersion,
@@ -33,7 +36,7 @@ import type {
 } from './validators.js';
 import { buildAugmentedFetch } from './fetch_shim.js';
 import { getValidators } from './validators.js';
-export type { APIVersion } from './validators.js';
+export type { APIVersion, BankSearchAPIVersion } from './validators.js';
 
 const DEFAULT_APIBASE_V1 = 'https://api.kenall.jp/v1';
 
@@ -362,6 +365,55 @@ export class KENALLV1 {
   }
 
   /**
+   * Invokes "getBanks" API with a set of search parameters
+   * (endpoint: `/bank?...`).
+   *
+   * Unlike {@link getBanks}, an empty result is not an error here: as long as
+   * `q` or `type` is given, the API responds with a 200 and an empty `data`
+   * instead of a 404.
+   *
+   * The search parameters were introduced in the 2026-08-01 API version;
+   * earlier versions ignore them and return the whole set, which is why
+   * `apiVersion` cannot be an older one.
+   *
+   * @param options The query.
+   * @param apiVersion The API version. The return type is determined based
+   *                   on this argument, and thus it cannot be a variable.
+   * @returns A {@link BanksResponse}.
+   */
+  async searchBanks<T extends BankSearchAPIVersion | undefined = undefined>(
+    options: BankSearcherOptions = {},
+    apiVersion?: T
+  ): Promise<BanksResponseForVersion<T>> {
+    const params: { [k: string]: string } = {};
+    if (options.q !== undefined) {
+      params.q = options.q;
+    }
+    if (options.match !== undefined) {
+      params.match = options.match;
+    }
+    if (options.type !== undefined) {
+      params.type = options.type;
+    }
+    if (options.version !== undefined) {
+      params.version = options.version;
+    }
+    try {
+      const resp = await this.request('./bank', params, apiVersion);
+      return getValidators(apiVersion).validateBanksResponse(
+        resp
+      ) as BanksResponseForVersion<T>;
+    } catch (e) {
+      if (e instanceof ZodError) {
+        throw new Error(
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
+        );
+      }
+      throw e;
+    }
+  }
+
+  /**
    * Invokes "getBank" API (endpoint: `/bank/{bankCode}`).
    *
    * @param bankCode The bank code to query with.
@@ -408,6 +460,60 @@ export class KENALLV1 {
       const resp = await this.request(
         `./bank/${encodeURIComponent(bankCode)}/branches`,
         {},
+        apiVersion
+      );
+      return getValidators(apiVersion).validateBankBranchesResponse(
+        resp
+      ) as BankBranchesResponseForVersion<T>;
+    } catch (e) {
+      if (e instanceof ZodError) {
+        throw new Error(
+          `invalid response payload: ${e.issues.map((i) => `${i.path}: ${i.message}`).join(', ')}`
+        );
+      }
+      throw e;
+    }
+  }
+
+  /**
+   * Invokes "getBankBranches" API with a set of search parameters
+   * (endpoint: `/bank/{bankCode}/branches?...`).
+   *
+   * Unlike {@link getBankBranches}, an empty result is not an error here: as
+   * long as `q` is given and the bank itself exists, the API responds with a
+   * 200 and an empty `branches` instead of a 404.
+   *
+   * The search parameters were introduced in the 2026-08-01 API version;
+   * earlier versions ignore them and return every branch, which is why
+   * `apiVersion` cannot be an older one.
+   *
+   * @param bankCode The bank code to query with.
+   * @param options The query.
+   * @param apiVersion The API version. The return type is determined based
+   *                   on this argument, and thus it cannot be a variable.
+   * @returns A {@link BankBranchesResponse}.
+   */
+  async searchBankBranches<
+    T extends BankSearchAPIVersion | undefined = undefined,
+  >(
+    bankCode: string,
+    options: BankBranchSearcherOptions = {},
+    apiVersion?: T
+  ): Promise<BankBranchesResponseForVersion<T>> {
+    const params: { [k: string]: string } = {};
+    if (options.q !== undefined) {
+      params.q = options.q;
+    }
+    if (options.match !== undefined) {
+      params.match = options.match;
+    }
+    if (options.version !== undefined) {
+      params.version = options.version;
+    }
+    try {
+      const resp = await this.request(
+        `./bank/${encodeURIComponent(bankCode)}/branches`,
+        params,
         apiVersion
       );
       return getValidators(apiVersion).validateBankBranchesResponse(

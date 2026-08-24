@@ -4,6 +4,7 @@ import type * as _v20221101 from './interfaces.v20221101.js';
 import type * as _v20230901 from './interfaces.v20230901.js';
 import type * as _v20240101 from './interfaces.v20240101.js';
 import type * as _v20250101 from './interfaces.v20250101.js';
+import type * as _v20260801 from './interfaces.v20260801.js';
 
 import { ZodError } from 'zod';
 
@@ -13,6 +14,7 @@ import * as v20221101S from './schemas.v20221101.js';
 import * as v20230901S from './schemas.v20230901.js';
 import * as v20240101S from './schemas.v20240101.js';
 import * as v20250101S from './schemas.v20250101.js';
+import * as v20260801S from './schemas.v20260801.js';
 
 export const API_VERSIONS = [
   '2022-09-01',
@@ -20,12 +22,23 @@ export const API_VERSIONS = [
   '2023-09-01',
   '2024-01-01',
   '2025-01-01',
+  '2026-08-01',
 ] as const;
 
 export type APIVersion = (typeof API_VERSIONS)[number];
 
 export const isValidAPIVersion = (version: unknown): version is APIVersion =>
   (API_VERSIONS as readonly unknown[]).includes(version);
+
+/**
+ * The API versions in which the bank APIs honor the search parameters
+ * (`q`, `match` and `type`). Older versions silently ignore them and keep
+ * returning the whole set, so `searchBanks` and `searchBankBranches` only
+ * accept the versions listed here.
+ */
+export const BANK_SEARCH_API_VERSIONS = ['2026-08-01'] as const;
+
+export type BankSearchAPIVersion = (typeof BANK_SEARCH_API_VERSIONS)[number];
 
 export type AddressResolverResponseForVersion<
   T extends APIVersion | undefined,
@@ -39,7 +52,9 @@ export type AddressResolverResponseForVersion<
         ? _v20240101.AddressResolverResponse
         : T extends '2025-01-01'
           ? _v20250101.AddressResolverResponse
-          : _compatible.AddressResolverResponse;
+          : T extends '2026-08-01'
+            ? _v20260801.AddressResolverResponse
+            : _compatible.AddressResolverResponse;
 
 export type CityResolverResponseForVersion<T extends APIVersion | undefined> =
   T extends '2022-09-01'
@@ -52,7 +67,9 @@ export type CityResolverResponseForVersion<T extends APIVersion | undefined> =
           ? _v20240101.CityResolverResponse
           : T extends '2025-01-01'
             ? _v20250101.CityResolverResponse
-            : _compatible.CityResolverResponse;
+            : T extends '2026-08-01'
+              ? _v20260801.CityResolverResponse
+              : _compatible.CityResolverResponse;
 
 export type AddressSearcherResponseForVersion<
   T extends APIVersion | undefined,
@@ -66,7 +83,9 @@ export type AddressSearcherResponseForVersion<
         ? _v20240101.AddressSearcherResponse
         : T extends '2025-01-01'
           ? _v20250101.AddressSearcherResponse
-          : _compatible.AddressSearcherResponse;
+          : T extends '2026-08-01'
+            ? _v20260801.AddressSearcherResponse
+            : _compatible.AddressSearcherResponse;
 
 export type NTACorporateInfoResolverResponseForVersion<
   T extends APIVersion | undefined,
@@ -80,7 +99,9 @@ export type NTACorporateInfoResolverResponseForVersion<
         ? _v20240101.NTACorporateInfoResolverResponse
         : T extends '2025-01-01'
           ? _v20250101.NTACorporateInfoResolverResponse
-          : _compatible.NTACorporateInfoResolverResponse;
+          : T extends '2026-08-01'
+            ? _v20260801.NTACorporateInfoResolverResponse
+            : _compatible.NTACorporateInfoResolverResponse;
 
 export type NTACorporateInfoSearcherResponseForVersion<
   T extends APIVersion | undefined,
@@ -94,7 +115,9 @@ export type NTACorporateInfoSearcherResponseForVersion<
         ? _v20240101.NTACorporateInfoSearcherResponse
         : T extends '2025-01-01'
           ? _v20250101.NTACorporateInfoSearcherResponse
-          : _compatible.NTACorporateInfoSearcherResponse;
+          : T extends '2026-08-01'
+            ? _v20260801.NTACorporateInfoSearcherResponse
+            : _compatible.NTACorporateInfoSearcherResponse;
 
 export type NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<
   T extends APIVersion | undefined,
@@ -102,7 +125,9 @@ export type NTAQualifiedInvoiceIssuerInfoResolverResponseForVersion<
   ? _v20240101.NTAQualifiedInvoiceIssuerInfoResolverResponse
   : T extends '2025-01-01'
     ? _v20250101.NTAQualifiedInvoiceIssuerInfoResolverResponse
-    : _compatible.NTAQualifiedInvoiceIssuerInfoResolverResponse;
+    : T extends '2026-08-01'
+      ? _v20260801.NTAQualifiedInvoiceIssuerInfoResolverResponse
+      : _compatible.NTAQualifiedInvoiceIssuerInfoResolverResponse;
 
 export type BanksResponseForVersion<T extends APIVersion | undefined> =
   T extends '2023-09-01'
@@ -111,7 +136,9 @@ export type BanksResponseForVersion<T extends APIVersion | undefined> =
       ? _v20240101.BanksResponse
       : T extends '2025-01-01'
         ? _v20250101.BanksResponse
-        : _compatible.BanksResponse;
+        : T extends '2026-08-01'
+          ? _v20260801.BanksResponse
+          : _compatible.BanksResponse;
 
 export type BankResolverResponseForVersion<T extends APIVersion | undefined> =
   T extends '2023-09-01'
@@ -120,7 +147,9 @@ export type BankResolverResponseForVersion<T extends APIVersion | undefined> =
       ? _v20240101.BankResolverResponse
       : T extends '2025-01-01'
         ? _v20250101.BankResolverResponse
-        : _compatible.BankResolverResponse;
+        : T extends '2026-08-01'
+          ? _v20260801.BankResolverResponse
+          : _compatible.BankResolverResponse;
 
 export type BankBranchesResponseForVersion<T extends APIVersion | undefined> =
   T extends '2023-09-01'
@@ -129,7 +158,9 @@ export type BankBranchesResponseForVersion<T extends APIVersion | undefined> =
       ? _v20240101.BankBranchesResponse
       : T extends '2025-01-01'
         ? _v20250101.BankBranchesResponse
-        : _compatible.BankBranchesResponse;
+        : T extends '2026-08-01'
+          ? _v20260801.BankBranchesResponse
+          : _compatible.BankBranchesResponse;
 
 export type BankBranchResolverResponseForVersion<
   T extends APIVersion | undefined,
@@ -139,7 +170,9 @@ export type BankBranchResolverResponseForVersion<
     ? _v20240101.BankBranchResolverResponse
     : T extends '2025-01-01'
       ? _v20250101.BankBranchResolverResponse
-      : _compatible.BankBranchResolverResponse;
+      : T extends '2026-08-01'
+        ? _v20260801.BankBranchResolverResponse
+        : _compatible.BankBranchResolverResponse;
 
 export type Validators<T extends APIVersion | undefined> = {
   validateAddressResolverResponse: (
@@ -573,6 +606,49 @@ export const v20250101 = {
     v20250101S.bankBranchResolverResponseSchema.parse(payload),
 };
 
+export const v20260801 = {
+  validateAddressResolverResponse: (
+    payload: unknown
+  ): _v20260801.AddressResolverResponse =>
+    v20260801S.addressResolverResponseSchema.parse(payload),
+  validateCityResolverResponse: (
+    payload: unknown
+  ): _v20260801.CityResolverResponse =>
+    v20260801S.cityResolverResponseSchema.parse(payload),
+  validateAddressSearcherResponse: (
+    payload: unknown
+  ): _v20260801.AddressSearcherResponse =>
+    v20260801S.addressSearcherResponseSchema.parse(payload),
+  validateNTACorporateInfoResolverResponse: (
+    payload: unknown
+  ): _v20260801.NTACorporateInfoResolverResponse =>
+    v20260801S.ntaCorporateInfoResolverResponseSchema.parse(payload),
+  validateNTACorporateInfoSearcherResponse: (
+    payload: unknown
+  ): _v20260801.NTACorporateInfoSearcherResponse =>
+    v20260801S.ntaCorporateInfoSearcherResponseSchema.parse(payload),
+  validateNTAQualifiedInvoiceIssuerInfoResolverResponse: (
+    payload: unknown
+  ): _v20260801.NTAQualifiedInvoiceIssuerInfoResolverResponse =>
+    v20260801S.ntaQualifiedInvoiceIssuerInfoResolverResponseSchema.parse(
+      payload
+    ),
+  validateBanksResponse: (payload: unknown): _v20260801.BanksResponse =>
+    v20260801S.banksResponseSchema.parse(payload),
+  validateBankResolverResponse: (
+    payload: unknown
+  ): _v20260801.BankResolverResponse =>
+    v20260801S.bankResolverResponseSchema.parse(payload),
+  validateBankBranchesResponse: (
+    payload: unknown
+  ): _v20260801.BankBranchesResponse =>
+    v20260801S.bankBranchesResponseSchema.parse(payload),
+  validateBankBranchResolverResponse: (
+    payload: unknown
+  ): _v20260801.BankBranchResolverResponse =>
+    v20260801S.bankBranchResolverResponseSchema.parse(payload),
+};
+
 export const getValidators = <T extends APIVersion | undefined>(
   version: T
 ): Validators<T> => {
@@ -590,6 +666,9 @@ export const getValidators = <T extends APIVersion | undefined>(
   }
   if (version === '2025-01-01') {
     return v20250101 as Validators<T>;
+  }
+  if (version === '2026-08-01') {
+    return v20260801 as Validators<T>;
   }
   return compatible as Validators<T>;
 };
