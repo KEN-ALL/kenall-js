@@ -61,10 +61,45 @@ Previous versions:
 * [https://js.kenall.jp/2025-03-03/kenall.js](https://js.kenall.jp/2025-03-03/kenall.js)
 * [https://js.kenall.jp/2024-04-05/kenall.js](https://js.kenall.jp/2024-04-05/kenall.js)
 * [https://js.kenall.jp/2024-02-09/kenall.js](https://js.kenall.jp/2024-02-09/kenall.js)
-* [https://js.kenall.jp/2023-01-15/kenall.js](https://js.kenall.jp/2024-01-15/kenall.js)
+* [https://js.kenall.jp/2024-01-15/kenall.js](https://js.kenall.jp/2024-01-15/kenall.js)
 * [https://js.kenall.jp/2022-11-25/kenall.js](https://js.kenall.jp/2022-11-25/kenall.js)
 * [https://js.kenall.jp/2022-02-11/kenall.js](https://js.kenall.jp/2022-02-11/kenall.js)
 * [https://js.kenall.jp/2021-05-28/kenall.js](https://js.kenall.jp/2021-05-28/kenall.js)
+
+#### Verifying the bundle
+
+Every bundle we publish is listed below with its SHA-384 digest, so that you can confirm the file you downloaded is the one we published:
+
+```
+$ curl -s https://js.kenall.jp/2026-08-25/kenall.js | openssl dgst -sha384 -binary | openssl base64 -A
+NWNItGymmaDpiPW267sOuu1fjDQrO8DEMJ0RDsxlV5nYDQijSUR+Z/BuYJETxaEh
+```
+
+| Bundle | Version | Digest |
+| --- | --- | --- |
+| 2026-08-25 | v2.6.0 | `sha384-NWNItGymmaDpiPW267sOuu1fjDQrO8DEMJ0RDsxlV5nYDQijSUR+Z/BuYJETxaEh` |
+| 2026-07-13 | v2.5.0 | `sha384-rRkg+O195Y5HhTEmtkr16pcaAymKqSh1VMOvaX10QCaQR7wt16x0VB5hB4nUiMxI` |
+| 2026-05-11 | v2.4.0 | `sha384-FsIxgYCG+goBmwuJdspexqbuq4X+fkvR2JWqXe7H6IM6v6IWUm1MR2XhXBYGtEid` |
+| 2026-04-15 | v2.3.1 | `sha384-PyTTUMQfYXRbUWeP7A45P13hLrQQvDutQw04PIH2DnQBD9dqUwVO4PD1KMnkk1+O` |
+| 2026-03-31 | v2.3.0 | `sha384-sjplGluMYZ9bdtbygsHmW6ceIcIyfb8x2tk3XDwWyqmlFo6cXRaSQw4OaoHSZlzd` |
+| 2025-07-29 | v2.2.0 | `sha384-pk6HO8dcbUQjrSr/h3d5Qo+yboR8ialYflx5XLziu+mNWZ2VbzdnZuHpLDrnPbMI` |
+| 2025-03-03 | v2.0.2 | `sha384-22xzS3h2lyHd03wVaI1bXagi26pBz3dmEZtjeafr9pC7dMZshwDf23VYmvs1tVA9` |
+| 2024-04-05 | v1.9.1 | `sha384-JKqK06lGVbyfjNXUc6DlfgOshYyvxsj13CvDlF1z3775pXKug9Z8SflqpZ0xyfqk` |
+| 2024-02-09 | v1.9.0 | `sha384-RodYHbmzUhi6bf5NFFs+ryuowGeE4TScVxrF0D0wkQfptfnmA7iotMov6dhh9T7D` |
+| 2024-01-15 | v1.8.0 | `sha384-yXu/QCY5KdpxBb05LShova2b5MGORjOLXKTt9DvVd8eNgYgNRRJcUKE304y5OSz+` |
+| 2022-11-25 | v1.7.1 | `sha384-nAwLAkh27N0+NkFDSVCK8HxUzrI5flz5CyTFmvGj+AlV33ayUP80UjXlCeCPNq2J` |
+| 2022-02-11 | v1.6.0 | `sha384-GWECS8KUC7mtF4Xh//+4u74HvfLtYWD4zvy9OUsBNruRoxJfWUQl+CYuWaxqBocC` |
+| 2021-05-28 | v1.1.0 | `sha384-laNMxLo6r+Jm1XnJAS0rVWC0YmiK5vJYf6EHY4t1R6gYAe4x/JzP/u/YecRUNdeQ` |
+
+> [!NOTE]
+> The digests are given in the `sha384-BASE64` form that [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) uses, but note that an `integrity` attribute on a `<script>` tag pointing at `js.kenall.jp` will not work yet: validating integrity for a cross-origin subresource requires the response to carry CORS headers, which `js.kenall.jp` does not currently send.  If you need SRI today, host a copy of the bundle yourself after verifying its digest against the table above.
+
+As of v2.7.0 the bundle is also reproducible: the build stamps the commit date rather than the wall clock, so building a tag yourself yields a byte-for-byte identical file and you can check a published bundle against its source.
+
+```
+$ git checkout v2.7.0 && npm ci && npm run bundle
+$ openssl dgst -sha384 -binary dist/bundle.js | openssl base64 -A
+```
 
 
 ### Usage in a Node.js project
