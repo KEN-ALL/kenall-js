@@ -9,6 +9,11 @@ jobs:
   linting-and-testing:
     name: Do linting and testing
     runs-on: ubuntu-latest
+    env:
+      # Exposed through the job environment so the steps below can tell whether a
+      # key is available at all: Dependabot-triggered runs read from the separate
+      # Dependabot secret store and therefore see this as an empty string.
+      KENALL_API_KEY: ${{ secrets.KENALL_API_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,29 +41,25 @@ jobs:
         run: |
           npm run build
 
-      - name: Test CJS build
+      - name: Build the examples
         run: |
-          cd examples/cjs
-          npm i
-          KENALL_API_KEY=${{ secrets.KENALL_API_KEY }} node index.js
+          set -xe
+          for example in cjs esm typescript-cjs typescript-esm; do
+            (
+              cd "examples/${example}"
+              npm i
+              if [ -f tsconfig.json ]; then
+                npm run build
+              fi
+            )
+          done
 
-      - name: Test ESM build
+      # These hit the live API, so they can only run when a key is available.
+      - name: Run the examples against the live API
+        if: env.KENALL_API_KEY != ''
         run: |
-          cd examples/esm
-          npm i
-          KENALL_API_KEY=${{ secrets.KENALL_API_KEY }} node index.js
-
-      - name: Test TypeScript CJS build
-        run: |
-          cd examples/typescript-cjs
-          npm i
-          npm run build
-          KENALL_API_KEY=${{ secrets.KENALL_API_KEY }} node index.js
-
-      - name: Test TypeScript ESM build
-        run: |
-          cd examples/typescript-esm
-          npm i
-          npm run build
-          KENALL_API_KEY=${{ secrets.KENALL_API_KEY }} node index.js
+          set -xe
+          for example in cjs esm typescript-cjs typescript-esm; do
+            (cd "examples/${example}" && node index.js)
+          done
 
